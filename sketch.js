@@ -11,10 +11,10 @@ function fetchData() {
 		console.log(data);
 		const wind_speed = data.wind.speed;
 		if (wind_speed > 5) {
-			document.getElementsByClassName("title").style.color = "blue";
+			document.getElementsByClassName("title").style.color = "#39D391";
 		}
 		else {
-			document.getElementsByClassName("title").style.color = "red";
+			document.getElementsByClassName("title").style.color = "#707070";
 		}
 	});
 }
