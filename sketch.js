@@ -10,14 +10,13 @@ function fetchData() {
 	.then(data => {
 		console.log(data);
 	});
+}
 
-	if (data.wind.speed > 5) {
+fetchData();
+
+if (data.wind.speed > 5) {
 	document.getElementsByClassName("title").style.color = "blue";
 }
 else {
 	document.getElementsByClassName("title").style.color = "red";
 }
-
-}
-
-fetchData();
