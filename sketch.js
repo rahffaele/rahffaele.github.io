@@ -3,7 +3,7 @@
 		console.log('data');
 });*/
 
-function fetchData {
+function fetchData() {
 	console.log('start fetch');
 }
 
