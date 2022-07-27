@@ -9,7 +9,7 @@ function fetchData() {
 	})
 	.then(data => {
 		console.log(data);
-	}
+	});
 }
 
 fetchData();
