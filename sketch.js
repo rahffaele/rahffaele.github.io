@@ -10,14 +10,15 @@ function fetchData() {
 	.then(data => {
 		console.log(data);
 		const wind_speed = data.wind.speed;
+		if (wind_speed > 5) {
+			document.getElementsByClassName("title").style.color = "blue";
+		}
+		else {
+			document.getElementsByClassName("title").style.color = "red";
+		}
 	});
 }
 
 fetchData();
 
-if (wind_speed > 5) {
-	document.getElementsByClassName("title").style.color = "blue";
-}
-else {
-	document.getElementsByClassName("title").style.color = "red";
-}
+
