@@ -4,7 +4,7 @@
 });*/
 
 function fetchData {
-	console.log('start fecth');
+	console.log('start fetch');
 }
 
 fetchData();
