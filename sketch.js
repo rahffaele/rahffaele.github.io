@@ -9,12 +9,13 @@ function fetchData() {
 	})
 	.then(data => {
 		console.log(data);
+		const wind_speed = data.wind.speed;
 	});
 }
 
 fetchData();
 
-if (wind.speed > 5) {
+if (wind_speed > 5) {
 	document.getElementsByClassName("title").style.color = "blue";
 }
 else {
