@@ -13,3 +13,10 @@ function fetchData() {
 }
 
 fetchData();
+
+if (wind.speed > 5) {
+	document.getElementsByClassName("title").style.color = "blue";
+}
+else {
+	document.getElementsByClassName("title").style.color = "red";
+}
