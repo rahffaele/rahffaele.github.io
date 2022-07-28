@@ -9,8 +9,9 @@ var vScale;
 function setup() {
     frameRate(30);
     initializeFields();
-    createCanvas(1080, 600, WEBGL);
-    pg = createGraphics(1080, 600, WEBGL);
+    createCanvas(1080, 600);
+    pg = createGraphics(1080, 600);
+    translate(width/2, height/2);
 }
 
 function draw() {
@@ -57,6 +58,6 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    vScale = 200;
+    vScale = 150;
 }
 
