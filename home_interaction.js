@@ -20,7 +20,7 @@ function draw() {
     //pg.background(0);
     pg.fill(255);
     pg.textFont("Helvetica");
-    pg.textSize(250);
+    pg.textSize(200);
     pg.push();
     pg.translate(width / 2, height / 2);
     pg.textAlign(CENTER, CENTER);
@@ -58,6 +58,6 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    vScale = 120;
+    vScale = 90;
 }
 
