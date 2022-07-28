@@ -9,8 +9,8 @@ var vScale;
 function setup() {
     frameRate(30);
     initializeFields();
-    createCanvas(1200, 400);
-    pg = createGraphics(1200, 400);
+    createCanvas(900, 300);
+    pg = createGraphics(900, 300);
     translate(-width/2, -height/2);
 }
 
@@ -20,7 +20,7 @@ function draw() {
     //pg.background(0);
     pg.fill(255);
     pg.textFont("Helvetica");
-    pg.textSize(300);
+    pg.textSize(250);
     pg.push();
     pg.translate(width / 2, height / 2);
     pg.textAlign(CENTER, CENTER);
