@@ -10,7 +10,13 @@ function setup() {
     initializeFields();
     createCanvas(displayWidth, displayHeight, P2D);
     pg = createGraphics(displayWidth, displayHeight, P2D);
-     pg.fill(255);
+}
+
+function draw() {
+    background(0);
+    // PGraphics
+    //pg.background(0);
+    pg.fill(255);
     pg.textFont("Helvetica");
     pg.textSize(300);
     pg.push();
@@ -18,13 +24,6 @@ function setup() {
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
-}
-
-function draw() {
-    background(0);
-    // PGraphics
-    //pg.background(0);
-   
     var tilesX = width / vScale;
     var tilesY = width / vScale;
     var tileW = int(width / tilesX);
