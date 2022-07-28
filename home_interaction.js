@@ -9,8 +9,8 @@ var vScale;
 function setup() {
     frameRate(30);
     initializeFields();
-    createCanvas(1080, 600);
-    pg = createGraphics(1080, 600);
+    createCanvas(1080, 400);
+    pg = createGraphics(1080, 400);
     translate(width/2, height/2);
 }
 
@@ -22,7 +22,7 @@ function draw() {
     pg.textFont("Helvetica");
     pg.textSize(300);
     pg.push();
-    pg.translate(width / 2, height / 2);
+    pg.translate(-width / 2, -height / 2);
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
@@ -58,6 +58,6 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    vScale = 150;
+    vScale = 120;
 }
 
