@@ -4,8 +4,8 @@ int vScale = 130;
 
 void setup() {
   font = createFont("DMSans-Regular.ttf", 600);
-  width = 600;
-  height = 600;
+  width = screen.width;
+  height = screen.height;
   size(width, height, P2D);
   pg = createGraphics(width, height, P2D);
   
@@ -13,7 +13,7 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  background(0, 0);
 
   // PGraphics 
 
