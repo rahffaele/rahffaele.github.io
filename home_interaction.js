@@ -1,4 +1,5 @@
 p5.disableFriendlyErrors = true;
+console.log(frameCount());
 
 var font;
 
