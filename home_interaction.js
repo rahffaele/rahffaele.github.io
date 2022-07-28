@@ -11,14 +11,14 @@ function setup() {
 }
 
 function draw() {
-    background(0, 0);
+    background(0);
     // PGraphics
-    pg.background(0, 0);
+    //pg.background(0);
     pg.fill(255);
     pg.textFont("Helvetica");
     pg.textSize(300);
     pg.push();
-    pg.translate(width / 2, height / 4);
+    pg.translate(width / 2, height / 2);
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
