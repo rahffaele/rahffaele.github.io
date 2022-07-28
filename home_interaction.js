@@ -37,8 +37,8 @@ function draw() {
             noFill();
             stroke(255);
             // WARP
-            var wavex = int(sin((frameCount) * 0.005 + (x * y) * 0.07) * 100);
-            var wavey = int(sin((frameCount) * 0.005 + (x * y) * 0.07) * 100);
+            var wavex = int(sin((frameCount+mouseX) * 0.005 + (x * y) * 0.07) * 100);
+            var wavey = int(sin((frameCount+mouseY) * 0.005 + (x * y) * 0.07) * 100);
             // SOURCE
             var sx = x * vScale + wavex;
             var sy = y * vScale + wavey;
@@ -57,6 +57,6 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    vScale = 130;
+    vScale = 200;
 }
 
