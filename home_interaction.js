@@ -49,7 +49,7 @@ function draw() {
             var dy = y * vScale;
             var dw = vScale;
             var dh = vScale;
-            copy(pg, sx, sy, sw, sh, dx, dy, dw, dh);
+            copy(pg, sx, sy, sw, sh, dx, dy, sw, sh);
         }
     }
 }
