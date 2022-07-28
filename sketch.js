@@ -8,7 +8,7 @@ function fetchData() {
 		return response.json();
 	})
 	.then(data => {
-		console.log(data);
+		console.log(data.wind);
 		const wind_speed = data.wind.speed;
 		if (wind_speed > 5) {
 			document.getElementsByClassName("title").style.color = "#39D391";
