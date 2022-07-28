@@ -10,6 +10,7 @@ function setup() {
     frameRate(30);
     initializeFields();
     createCanvas(displayWidth, displayHeight, WEBGL);
+    translate(-width / 2, -height / 2);
     pg = createGraphics(displayWidth, displayHeight, WEBGL);
 }
 
@@ -21,7 +22,7 @@ function draw() {
     pg.textFont("Helvetica");
     pg.textSize(300);
     pg.push();
-    pg.translate(-width / 2, -height / 2);
+    pg.translate(width / 2, height / 2);
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
