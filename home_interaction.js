@@ -24,8 +24,8 @@ function draw() {
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
-    var tilesX = width / vScale;
-    var tilesY = width / vScale;
+    var tilesX = int(width / vScale);
+    var tilesY = int(width / vScale);
     var tileW = int(width / tilesX);
     var tileH = int(height / tilesY);
     for (var y = 0; y < tilesY; y++) {
