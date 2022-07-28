@@ -9,8 +9,8 @@ var vScale;
 function setup() {
     frameRate(30);
     initializeFields();
-    createCanvas(displayWidth, displayHeight);
-    pg = createGraphics(displayWidth, displayHeight);
+    createCanvas(1080, 600);
+    pg = createGraphics(1080, 600);
 }
 
 function draw() {
