@@ -4,8 +4,8 @@ int vScale = 130;
 
 void setup() {
   font = createFont("DMSans-Regular.ttf", 600);
-  width = 2040;
-  height = 1080
+  width = 600;
+  height = 600;
   size(width, height, P2D);
   pg = createGraphics(width, height, P2D);
   
