@@ -1,4 +1,3 @@
-// noprotect
 var font;
 
 var pg;
