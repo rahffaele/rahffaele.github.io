@@ -1,5 +1,3 @@
-p5.disableFriendlyErrors = true; // disables FES
-
 var font;
 
 var pg;
