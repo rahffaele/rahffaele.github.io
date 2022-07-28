@@ -34,8 +34,8 @@ function draw() {
             noFill();
             stroke(255);
             // WARP
-            var wavex = ((sin(mouseX + frameCount) * 0.005 + (x * y) * 0.07) * 100);
-            var wavey = ((sin(mouseY + frameCount) * 0.005 + (x * y) * 0.07) * 100);
+            var wavex = (int(sin(mouseX + frameCount) * 0.005 + (x * y) * 0.07) * 100);
+            var wavey = (int(sin(mouseY + frameCount) * 0.005 + (x * y) * 0.07) * 100);
             // SOURCE
             var sx = x * vScale + wavex;
             var sy = y * vScale + wavey;
