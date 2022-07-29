@@ -73,4 +73,6 @@ function initializeFields() {
 }
 
 
-function windowResized() { resizeCanvas(windowWidth, windowHeight); }
+function windowResized() { 
+    resizeCanvas(windowWidth, windowHeight+100); 
+}
