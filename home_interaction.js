@@ -9,8 +9,8 @@ var textSize;
 
 function setup() {
     initializeFields();
-    createCanvas(screen.width, screen.height, P2D);
-    pg = createGraphics(screen.width, screen.height, P2D);
+    createCanvas(windowWidth, windowHeight, P2D);
+    pg = createGraphics(windowWidth, windowHeight, P2D);
 }
 
 function draw() {
@@ -32,10 +32,10 @@ function draw() {
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
-    var tilesX = screen.width / vScale;
-    var tilesY = screen.height / vScale;
-    var tileW = int(screen.width / tilesX);
-    var tileH = int(screen.height / tilesY);
+    var tilesX = width / vScale;
+    var tilesY = width / vScale;
+    var tileW = int(width / tilesX);
+    var tileH = int(height / tilesY);
     for (var y = 0; y < tilesY; y++) {
         for (var x = 0; x < tilesX; x++) {
             var i = y * vScale;
