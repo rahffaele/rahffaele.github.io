@@ -68,7 +68,7 @@ function initializeFields() {
         vScale = 130;
     }
     else {
-        vScale = 80;
+        vScale = 50;
     }
 }
 
