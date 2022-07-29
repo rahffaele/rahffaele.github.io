@@ -1,5 +1,4 @@
-p5.disableFriendlyErrors = true;
-
+// noprotect
 var font;
 
 var pg;
@@ -7,27 +6,25 @@ var pg;
 var vScale;
 
 function setup() {
-    frameRate(30);
     initializeFields();
-    createCanvas(windowWidth, windowHeight);
-    pg = createGraphics(windowWidth, windowHeight);
-    translate(-width/2, -height/2);
-{
+    createCanvas(displayWidth, displayHeight, P2D);
+    pg = createGraphics(displayWidth, displayHeight, P2D);
+}
 
 function draw() {
-    background(0);
+    background(0, 0);
     // PGraphics
-    //pg.background(0);
+    // pg.background(0);
     pg.fill(255);
     pg.textFont("Helvetica");
-    pg.textSize(200);
+    pg.textSize(300);
     pg.push();
-    pg.translate(width / 2, height / 2);
+    pg.translate(width / 2, height / 4);
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
-    var tilesX = int(width / vScale);
-    var tilesY = int(width / vScale);
+    var tilesX = width / vScale;
+    var tilesY = width / vScale;
     var tileW = int(width / tilesX);
     var tileH = int(height / tilesY);
     for (var y = 0; y < tilesY; y++) {
@@ -38,8 +35,8 @@ function draw() {
             noFill();
             stroke(255);
             // WARP
-            var wavex = int(sin((frameCount+mouseX) * 0.005 + (x * y) * 0.07) * 100);
-            var wavey = int(sin((frameCount+mouseY) * 0.005 + (x * y) * 0.07) * 100);
+            var wavex = int(sin((mouseX + frameCount) * 0.005 + (x * y) * 0.07) * 100);
+            var wavey = int(sin((mouseY + frameCount) * 0.005 + (x * y) * 0.07) * 100);
             // SOURCE
             var sx = x * vScale + wavex;
             var sy = y * vScale + wavey;
@@ -50,7 +47,7 @@ function draw() {
             var dy = y * vScale;
             var dw = vScale;
             var dh = vScale;
-            drawingContext.drawImage(pg.canvas, sx, sy, sw, sh, dx, dy, sw, sh);
+            copy(pg, sx, sy, sw, sh, dx, dy, dw, dh);
         }
     }
 }
@@ -58,6 +55,5 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    vScale = 90;
+    vScale = 130;
 }
-
