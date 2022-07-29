@@ -3,7 +3,7 @@ p5.disableFriendlyErrors = true;
 
 var textSize;
 
-if (windowWidth()>800){
+if (windowWidth>800){
     textSize = 200;
 }
 else {
