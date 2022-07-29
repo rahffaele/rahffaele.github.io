@@ -58,3 +58,5 @@ function initializeFields() {
     vScale = 130;
 }
 
+
+function windowResized() { resizeCanvas(windowWidth, windowHeight); }
