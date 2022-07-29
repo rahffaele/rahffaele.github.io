@@ -5,6 +5,8 @@ var pg;
 
 var vScale;
 
+var textSize;
+
 function setup() {
     initializeFields();
     createCanvas(windowWidth, windowHeight, P2D);
@@ -12,12 +14,19 @@ function setup() {
 }
 
 function draw() {
+
+    if (windowWidth>800) {
+        textSize = 130;
+    }
+    else {
+        textSize = 15;
+    }
     background(0);
     // PGraphics
     //pg.background(0, 0);
     pg.fill(255);
     pg.textFont("Helvetica");
-    pg.textSize(130);
+    pg.textSize(textSize);
     pg.push();
     pg.translate(width / 4, height / 4);
     pg.textAlign(CENTER, CENTER);
