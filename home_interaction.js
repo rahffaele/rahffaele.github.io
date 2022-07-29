@@ -12,12 +12,12 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(0, 0);
     // PGraphics
     pg.background(0);
     pg.fill(255);
     pg.textFont("Helvetica");
-    pg.textSize(200);
+    pg.textSize(130);
     pg.push();
     pg.translate(width / 4, height / 4);
     pg.textAlign(CENTER, CENTER);
