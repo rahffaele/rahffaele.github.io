@@ -1,11 +1,13 @@
-h1 {
+h2 {
 	color: WHITE;
 	font-family: helvetica;
+	margin: none;
 }
 
 a {
 	text-decoration: none;
 	color: white;
+	margin: none;
 }
 
 body {
