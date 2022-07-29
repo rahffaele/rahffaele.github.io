@@ -1,8 +1,4 @@
 // noprotect
-
-var w = window.innerWidth;
-var h = window.innerHeight;  
-
 var font;
 
 var pg;
@@ -11,8 +7,8 @@ var vScale;
 
 function setup() {
     initializeFields();
-    createCanvas(w, h, P2D);
-    pg = createGraphics(w, h, P2D);
+    createCanvas(windowWidth, windowHeight, P2D);
+    pg = createGraphics(windowWidth, windowHeight, P2D);
 }
 
 function draw() {
@@ -62,9 +58,3 @@ function initializeFields() {
     vScale = 130;
 }
 
-window.onresize = function() {
-  // assigns new values for width and height variables
-  w = window.innerWidth;
-  h = window.innerHeight;  
-  canvas.size(w,h);
-}
