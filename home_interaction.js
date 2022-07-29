@@ -9,8 +9,8 @@ var textSize;
 
 function setup() {
     initializeFields();
-    createCanvas(windowWidth, windowHeight, P2D);
-    pg = createGraphics(windowWidth, windowHeight-200, P2D);
+    createCanvas(windowWidth, windowHeight-100, P2D);
+    pg = createGraphics(windowWidth, windowHeight-100, P2D);
 }
 
 function draw() {
@@ -64,7 +64,12 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    vScale = 130;
+    if (windowWidth>800) {
+        vScale = 130;
+    }
+    else {
+        vScale = 25;
+    }
 }
 
 
