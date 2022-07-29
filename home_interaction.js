@@ -9,8 +9,8 @@ var textSize;
 
 function setup() {
     initializeFields();
-    createCanvas(screen.width, screen.height, P2D);
-    pg = createGraphics(screen.width, screen.height, P2D);
+    createCanvas(screen.width, screen.height);
+    pg = createGraphics(screen.width, screen.height);
 }
 
 function draw() {
