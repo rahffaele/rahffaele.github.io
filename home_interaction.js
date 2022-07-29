@@ -12,9 +12,9 @@ function setup() {
 }
 
 function draw() {
-    background(0, 0);
+    background(0);
     // PGraphics
-    pg.background(0, 0);
+    //pg.background(0, 0);
     pg.fill(255);
     pg.textFont("Helvetica");
     pg.textSize(130);
