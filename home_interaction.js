@@ -19,7 +19,7 @@ function draw() {
     pg.textFont("Helvetica");
     pg.textSize(200);
     pg.push();
-    pg.translate(width / 2, height / 2);
+    //pg.translate(width / 4, height / 4);
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
