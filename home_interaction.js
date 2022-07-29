@@ -19,7 +19,7 @@ function draw() {
         textSize = 130;
     }
     else {
-        textSize = 15;
+        textSize = 30;
     }
     background(0);
     // PGraphics
@@ -68,7 +68,7 @@ function initializeFields() {
         vScale = 130;
     }
     else {
-        vScale = 25;
+        vScale = 50;
     }
 }
 
