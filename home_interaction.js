@@ -1,5 +1,17 @@
 p5.disableFriendlyErrors = true;
 
+Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+var textSize;
+
+if (screenSize.getWidth()>800){
+    textSize = 200;
+}
+else {
+    textSize = 15;
+}
+
+
 var font;
 
 var pg;
@@ -9,10 +21,10 @@ var vScale;
 function setup() {
     frameRate(30);
     initializeFields();
-    createCanvas(900, 300);
-    pg = createGraphics(900, 300);
+    createCanvas(displayWidth, displayHeight);
+    pg = createGraphics(displayWidth, displayHeight);
     translate(-width/2, -height/2);
-}
+{
 
 function draw() {
     background(0);
