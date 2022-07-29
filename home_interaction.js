@@ -21,8 +21,8 @@ var vScale;
 function setup() {
     frameRate(30);
     initializeFields();
-    createCanvas(displayWidth, displayHeight);
-    pg = createGraphics(displayWidth, displayHeight);
+    createCanvas(windowWidth, windowHeight);
+    pg = createGraphics(windowWidth, windowHeight);
     translate(-width/2, -height/2);
 {
 
