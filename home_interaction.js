@@ -1,16 +1,5 @@
 p5.disableFriendlyErrors = true;
 
-
-var textSize;
-
-if (windowWidth>800){
-    textSize = 200;
-}
-else {
-    textSize = 15;
-}
-
-
 var font;
 
 var pg;
