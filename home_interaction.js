@@ -1,10 +1,9 @@
 p5.disableFriendlyErrors = true;
 
-Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 var textSize;
 
-if (screenSize.getWidth()>800){
+if (windowWidth()>800){
     textSize = 200;
 }
 else {
