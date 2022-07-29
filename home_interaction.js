@@ -64,7 +64,7 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    vScale = 130;
+    vScale = windowWidth/12;
 }
 
 
