@@ -71,7 +71,7 @@ function initializeFields() {
     }
     else {
         vScale = 50;
-        txtposdiff = 4;
+        txtposdiff = 0.25;
     }
 }
 
