@@ -19,3 +19,7 @@ canvas {
 	margin: auto;
 	border-color: white;
 }
+
+div {
+	white-space: nowrap;
+}
