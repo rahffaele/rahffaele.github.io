@@ -4,6 +4,7 @@ var font;
 var pg;
 
 var vScale;
+var txtposdiff;
 
 var textSize;
 
@@ -28,7 +29,7 @@ function draw() {
     pg.textFont("Helvetica");
     pg.textSize(textSize);
     pg.push();
-    pg.translate(width / 4, height / 4);
+    pg.translate(width / 4, height / 4 * txtposdiff);
     pg.textAlign(CENTER, CENTER);
     pg.text("rahffaele", 0, 0);
     pg.pop();
@@ -66,9 +67,11 @@ function initializeFields() {
     pg = null;
     if (windowWidth>800) {
         vScale = 130;
+        txtposdiff = 1;
     }
     else {
         vScale = 50;
+        txtposdiff = 4;
     }
 }
 
