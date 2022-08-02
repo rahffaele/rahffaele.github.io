@@ -20,7 +20,7 @@ function draw() {
         textSize = 130;
     }
     else {
-        textSize = 30;
+        textSize = 40;
     }
     background(0);
     // PGraphics
