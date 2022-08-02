@@ -24,3 +24,6 @@ canvas {
 div {
 	white-space: nowrap;
 }
+
+
+/* @media (max-width:960px) { css... } //nothing with screen size bigger than 960px
