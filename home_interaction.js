@@ -39,11 +39,13 @@ function draw() {
     var tileH = int(height / tilesY);
     for (var y = 0; y < tilesY; y++) {
         for (var x = 0; x < tilesX; x++) {
-            var i = y * vScale;
-            var j = x * vScale;
-            rect(i, j, vScale, vScale);
-            noFill();
-            stroke(255);
+            if (windowWidth>800) {
+                var i = y * vScale;
+                var j = x * vScale;
+                rect(i, j, vScale, vScale);
+                noFill();
+                stroke(255);
+            }
             // WARP
             var wavex = int(sin((mouseX + frameCount) * 0.005 + (x * y) * 0.07) * 100 * mov);
             var wavey = int(sin((mouseY + frameCount) * 0.005 + (x * y) * 0.07) * 100 * mov);
