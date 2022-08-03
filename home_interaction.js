@@ -67,13 +67,13 @@ function draw() {
 function initializeFields() {
     font = null;
     pg = null;
-    if (windowWidth>800) {
+    if (windowWidth>960) {
         vScale = 130;
         txtposdiff = 1;
         mov = 1;
     }
     else {
-        vScale = 50;
+        vScale = 60;
         txtposdiff = 0.5;
         mov = 0.5;
     }
