@@ -26,4 +26,8 @@ div {
 }
 
 
-/* @media (max-width:960px) { css... } //nothing with screen size bigger than 960px
+@media (max-width:960px) {
+	h2 {
+		font-size: 5vw;
+	}
+} 
