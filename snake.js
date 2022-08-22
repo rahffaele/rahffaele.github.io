@@ -20,7 +20,7 @@ function setup() {
   scoreElem.id = 'score';
   scoreElem.style('color', 'white');
 
-  createCanvas(500, 500);
+  createCanvas(windowWidth, windowHeight);
   frameRate(15);
   stroke(255);
   strokeWeight(10);
@@ -35,7 +35,7 @@ function setup() {
 function draw() {
   background(0);
   for (let i = 0; i < numSegments - 1; i++) {
-    line(xCor[i], yCor[i], xCor[i + 1], yCor[i + 1]);
+    text(xCor[i], yCor[i], xCor[i + 1], yCor[i + 1]);
   }
   updateSnakeCoordinates();
   checkGameStatus();
