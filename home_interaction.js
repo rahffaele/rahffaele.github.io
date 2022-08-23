@@ -221,12 +221,12 @@ function link1() {
     window.open("https://www.w3schools.com");
 }*/
 
-function link1() {
+/*function link1() {
 
 if (voice1.mouseOver(true) && mouseClicked(true)) {
     window.open("https://www.w3schools.com");
 }
-}
+}*/
 
 function mouseReleased() {
   control = control +1;
@@ -236,6 +236,9 @@ function mouseReleased() {
 function mousePressed() {
   x = mouseX;
   y = mouseY;
+  if (voice1.mouseOver(true)) {
+     window.open("https://www.w3schools.com");
+  }
 }
 
 function keyReleased() {
