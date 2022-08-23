@@ -102,6 +102,7 @@ let angleDistortion = 0.0;
 let counter = 0;
 
 
+
 function preload() {
     PPHatton = loadFont('fonts/PPHatton-Medium.otf');
 }
@@ -211,6 +212,10 @@ function draw() {
       y = y + sin(angle) * stepSize;
     }
   }
+
+  if (mouseIsPressed && voice1.mouseOver()) {
+    window.open("https://www.w3schools.com");
+  }
 }
 function mouseReleased() {
   control = control +1;
@@ -220,10 +225,6 @@ function mouseReleased() {
 function mousePressed() {
   x = mouseX;
   y = mouseY;
-}
-
-if (mouseIsPressed && voice1.mouseOver()) {
-    window.open("https://www.w3schools.com");
 }
 
 function keyReleased() {
