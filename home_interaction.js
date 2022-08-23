@@ -148,7 +148,7 @@ function draw() {
       pop();
       
       counter++;
-      if (counter == voice1.length) counter = voice1.length;
+      if (counter = voice1.length) counter = voice1.length;
 
      
       x = x + cos(angle) * stepSize;
@@ -216,7 +216,7 @@ function draw() {
       pop();
       
       counter++
-      if (counter == smile.length) counter = smile.length;
+      if (counter = smile.length) counter = smile.length;
 
 
       x = x + cos(angle) * stepSize;
