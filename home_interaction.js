@@ -119,6 +119,11 @@ function setup() {
   textSize(30);
   textAlign(CENTER, CENTER);
   text("Rahffaele - Designer", displayWidth/2, displayHeight/2);
+  fill(0);
+  textFont("Helvetica");
+  textSize(20);
+  textAlign(CENTER, CENTER);
+  text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+30);
 
   textFont(font);
   textAlign(LEFT);
