@@ -89,6 +89,8 @@ let y = 0;
 var control = 0;
 let stepSize = 5.0;
 
+let PPHatton;
+
 let font = 'Helvetica';
 let voice1 = "ABOUT ME:";
 let voice2 = "PORTFOLIO:";
@@ -98,6 +100,11 @@ let angleDistortion = 0.0;
 
 let counter = 0;
 
+
+function preload() {
+    PPHatton = loadFont('fonts/PPHatton-Medium.otf');
+}
+
 function setup() {
   // use full screen size
   createCanvas(displayWidth, displayHeight);
@@ -106,8 +113,7 @@ function setup() {
   x = mouseX;
   y = mouseY;
 
-  let PPHatton;
-  PPHatton = loadFont('fonts/PPHatton-Medium.otf');
+  
   fill(0);
   textFont(PPHatton);
   textSize(50);
