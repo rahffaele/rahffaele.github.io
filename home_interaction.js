@@ -95,7 +95,7 @@ let font = 'Helvetica';
 let voice1 = "ABOUT ME:";
 let voice2 = "PORTFOLIO:";
 let voice3 = "ARCHIVES:";
-let smile = ":)";
+let smile = "HI";
 let fontSizeMin = 20;
 let angleDistortion = 0.0;
 
