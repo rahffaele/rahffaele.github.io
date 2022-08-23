@@ -93,7 +93,7 @@ let PPHatton;
 
 let font = 'Helvetica';
 
-String voice1 = ":ABOUT ME";
+let voice1 = ":ABOUT ME";
 let voice2 = ":PORTFOLIO";
 let voice3 = ":ARCHIVES";
 let fontSizeMin = 20;
