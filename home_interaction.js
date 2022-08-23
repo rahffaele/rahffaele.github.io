@@ -116,7 +116,7 @@ function setup() {
   
   fill(0);
   textFont(PPHatton);
-  textSize(50);
+  textSize(30);
   textAlign(CENTER, CENTER);
   text("Rahffaele - Designer", displayWidth/2, displayHeight/2);
 
@@ -148,7 +148,7 @@ function draw() {
       y = y + sin(angle) * stepSize;
     }
   }
-  if (mouseIsPressed && mouseButton == LEFT && control == 1) {
+  if (mouseIsPressed  && control == 1) {
     let d = dist(x, y, mouseX, mouseY);
     textSize(20);
     let newLetter = voice2.charAt(counter);
