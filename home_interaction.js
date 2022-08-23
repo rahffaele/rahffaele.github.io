@@ -95,7 +95,6 @@ let font = 'Helvetica';
 let voice1 = "ABOUT ME:";
 let voice2 = "PORTFOLIO:";
 let voice3 = "ARCHIVES:";
-let smile = "HI";
 let fontSizeMin = 20;
 let angleDistortion = 0.0;
 
@@ -147,8 +146,8 @@ function draw() {
       text(newLetter, 0, 0);
       pop();
       
-      if (counter == 5) {
-        counter = 5;
+      if (counter > voice1.length-1) {
+        counter = 6;
     } else {
         counter++;
     } 
@@ -197,30 +196,6 @@ function draw() {
       pop();
       
       counter++;
-
-      x = x + cos(angle) * stepSize;
-      y = y + sin(angle) * stepSize;
-    }
-  }
-
-   if (mouseIsPressed && control == 3) {
-    let d = dist(x, y, mouseX, mouseY);
-    textSize(20);
-    let newLetter = smile.charAt(counter);
-    stepSize = textWidth(newLetter);
-
-    if (d > stepSize) {
-      let angle = atan2(mouseY - y, mouseX - x);
-
-      push();
-      translate(x, y);
-      rotate(angle + random(angleDistortion));
-      text(newLetter, 0, 0);
-      pop();
-      
-      counter++;
-      if (counter = smile.length) counter = smile.length;
-
 
       x = x + cos(angle) * stepSize;
       y = y + sin(angle) * stepSize;
