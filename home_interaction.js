@@ -101,7 +101,6 @@ let counter = 0;
 function setup() {
   // use full screen size
   createCanvas(displayWidth, displayHeight);
-  background(255);
   cursor(CROSS);
 
   x = mouseX;
