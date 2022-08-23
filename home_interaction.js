@@ -236,11 +236,8 @@ function mouseReleased() {
 function mousePressed() {
   x = mouseX;
   y = mouseY;
-  voice1.mouseOver(link1); 
 }
-function link1() {
-     window.open("https://www.w3schools.com");
-}
+
 function keyReleased() {
   if (keyCode == DELETE || keyCode == BACKSPACE) background(255);
 }
