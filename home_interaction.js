@@ -93,7 +93,7 @@ let PPHatton;
 
 let font = 'Helvetica';
 
-let voice1;
+let voice1 = ":ABOUT ME";
 let voice2 = ":PORTFOLIO";
 let voice3 = ":ARCHIVES";
 let fontSizeMin = 20;
@@ -109,7 +109,6 @@ function preload() {
 
 function setup() {
 
-    let voice1 = ":ABOUT ME";
   // use full screen size
   createCanvas(window.innerWidth, window.innerHeight);
   cursor(CROSS);
@@ -133,7 +132,6 @@ function setup() {
   textAlign(LEFT);
   fill(0);
 
-  voice1.mousePressed(link1);
 
 }
 
@@ -218,8 +216,7 @@ function draw() {
   }
 }
 
-function mousePressed() {}
-
+voice1.mousePressed(link1);
 function link1() {
     window.open("https://www.w3schools.com");
 }
