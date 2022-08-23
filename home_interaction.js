@@ -131,6 +131,8 @@ function setup() {
   textAlign(LEFT);
   fill(0);
 
+  voice1.mousePressed(link1);
+
 }
 
 function draw() {
@@ -214,12 +216,9 @@ function draw() {
   }
 }
 
-voice1.mouseOver(link1);
 
 function link1() {
-  if (mouseIsPressed && ) {
     window.open("https://www.w3schools.com");
-  }
 }
 
 function mouseReleased() {
