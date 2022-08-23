@@ -89,6 +89,14 @@ let y = 0;
 var control = 0;
 let stepSize = 5.0;
 
+let PPHatton;
+PPHatton = loadFont('fonts/PPHatton-Medium.otf');
+fill(0);
+textFont(PPHatton);
+textSize(50);
+textAlign(CENTER, CENTER);
+text("Rahffaele - Designer", displayWidth/2, displayHeight/2);
+
 let font = 'Helvetica';
 let voice1 = "ABOUT ME:";
 let about = voice1.link('https://www.techonthenet.com/index.php');
