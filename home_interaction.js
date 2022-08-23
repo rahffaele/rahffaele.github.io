@@ -118,12 +118,12 @@ function setup() {
   textFont(PPHatton);
   textSize(30);
   textAlign(CENTER, CENTER);
-  text("Rahffaele - Designer", displayWidth/2, displayHeight/2);
+  text("Rahffaele - Designer", displayWidth/2, displayHeight/2-20);
   fill(0);
   textFont("Helvetica");
-  textSize(20);
+  textSize(15);
   textAlign(CENTER, CENTER);
-  text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+30);
+  text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+20);
 
   textFont(font);
   textAlign(LEFT);
@@ -131,7 +131,7 @@ function setup() {
 }
 
 function draw() {
-  if (mouseIsPressed && mouseButton == LEFT && control == 0) {
+  if (mouseIsPressed && control == 0) {
     let d = dist(x, y, mouseX, mouseY);
     textSize(20);
     let newLetter = voice1.charAt(counter);
@@ -176,7 +176,7 @@ function draw() {
   }
   
   
-  if (mouseIsPressed && mouseButton == LEFT && control == 2) {
+  if (mouseIsPressed && control == 2) {
     let d = dist(x, y, mouseX, mouseY);
     textSize(20);
     let newLetter = voice3.charAt(counter);
