@@ -92,9 +92,9 @@ let stepSize = 5.0;
 let PPHatton;
 
 let font = 'Helvetica';
-let voice1 = "ABOUT ME:";
-let voice2 = "PORTFOLIO:";
-let voice3 = "ARCHIVES:";
+let voice1 = ":ABOUT ME";
+let voice2 = ":PORTFOLIO";
+let voice3 = ":ARCHIVES";
 let fontSizeMin = 20;
 let angleDistortion = 0.0;
 
@@ -147,7 +147,7 @@ function draw() {
       pop();
       
       if (counter > voice1.length-1) {
-        counter = 6;
+        counter = 8;
     } else {
         counter++;
     } 
@@ -172,7 +172,11 @@ function draw() {
       text(newLetter, 0, 0);
       pop();
 
-      counter++;
+       if (counter > voice2.length-1) {
+        counter = 9;
+    } else {
+        counter++;
+    } 
       
       x = x + cos(angle) * stepSize;
       y = y + sin(angle) * stepSize;
@@ -195,7 +199,11 @@ function draw() {
       text(newLetter, 0, 0);
       pop();
       
-      counter++;
+      if (counter > voice3.length-1) {
+        counter = 8;
+    } else {
+        counter++;
+    } 
 
       x = x + cos(angle) * stepSize;
       y = y + sin(angle) * stepSize;
