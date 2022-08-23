@@ -1,5 +1,4 @@
-// noprotect
-var font;
+/*var font;
 
 var pg;
 
@@ -82,4 +81,125 @@ function initializeFields() {
 
 function windowResized() { 
     resizeCanvas(windowWidth, windowHeight+100); 
+}
+*/
+
+let x = 0;
+let y = 0;
+var control = 0;
+let stepSize = 5.0;
+
+let font = 'Helvetica';
+let voice1 = "ABOUT ME:";
+let about = voice1.link('https://www.techonthenet.com/index.php');
+document.getElementById("voice1").innerHTML = result;
+let voice2 = "PORTFOLIO:";
+let voice3 = "ARCHIVES:";
+let fontSizeMin = 20;
+let angleDistortion = 0.0;
+
+let counter = 0;
+
+function setup() {
+  // use full screen size
+  createCanvas(displayWidth, displayHeight);
+  background(255);
+  cursor(CROSS);
+
+  x = mouseX;
+  y = mouseY;
+
+  textFont(font);
+  textAlign(LEFT);
+  fill(0);
+}
+
+function draw() {
+  if (mouseIsPressed && mouseButton == LEFT && control == 0) {
+    let d = dist(x, y, mouseX, mouseY);
+    textSize(20);
+    let newLetter = voice1.charAt(counter);
+    stepSize = textWidth(newLetter);
+
+    if (d > stepSize) {
+      let angle = atan2(mouseY - y, mouseX - x);
+
+      push();
+      translate(x, y);
+      rotate(angle + random(angleDistortion));
+      text(newLetter, 0, 0);
+      pop();
+      
+      counter++;
+     
+      x = x + cos(angle) * stepSize;
+      y = y + sin(angle) * stepSize;
+    }
+  }
+  if (mouseIsPressed && mouseButton == LEFT && control == 1) {
+    let d = dist(x, y, mouseX, mouseY);
+    textSize(20);
+    let newLetter = voice2.charAt(counter);
+    stepSize = textWidth(newLetter);
+
+    if (d > stepSize) {
+      let angle = atan2(mouseY - y, mouseX - x);
+
+      push();
+      translate(x, y);
+      rotate(angle + random(angleDistortion));
+      text(newLetter, 0, 0);
+      pop();
+
+      counter++
+      
+      x = x + cos(angle) * stepSize;
+      y = y + sin(angle) * stepSize;
+    }
+  }
+  
+  
+  if (mouseIsPressed && mouseButton == LEFT && control == 2) {
+    let d = dist(x, y, mouseX, mouseY);
+    textSize(20);
+    let newLetter = voice3.charAt(counter);
+    stepSize = textWidth(newLetter);
+
+    if (d > stepSize) {
+      let angle = atan2(mouseY - y, mouseX - x);
+
+      push();
+      translate(x, y);
+      rotate(angle + random(angleDistortion));
+      text(newLetter, 0, 0);
+      pop();
+      
+      counter++
+
+      x = x + cos(angle) * stepSize;
+      y = y + sin(angle) * stepSize;
+    }
+  }
+}
+function mouseReleased() {
+  control = control +1;
+  counter=0;
+}
+
+
+
+function mousePressed() {
+  x = mouseX;
+  y = mouseY;
+}
+
+function keyReleased() {
+  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+  if (keyCode == DELETE || keyCode == BACKSPACE) background(255);
+}
+
+function keyPressed() {
+  // angleDistortion ctrls arrowkeys up/down
+  if (keyCode == UP_ARROW) angleDistortion += 0.1;
+  if (keyCode == DOWN_ARROW) angleDistortion -= 0.1;
 }
