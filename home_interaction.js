@@ -93,14 +93,7 @@ let PPHatton;
 
 let font = 'Helvetica';
 
-var voice1 = document.createElement('voice1');
-      var linkText = document.createTextNode("about me");
-      voice1.appendChild(linkText);
-      voice1.title = "about me";
-      voice1.href = "http://example.com";
-      document.body.appendChild(voice1);
-
-//let voice1 = ":ABOUT ME";
+let voice1 = ":ABOUT ME";
 let voice2 = ":PORTFOLIO";
 let voice3 = ":ARCHIVES";
 let fontSizeMin = 20;
