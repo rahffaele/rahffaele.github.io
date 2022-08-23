@@ -117,7 +117,7 @@ function setup() {
   
   fill(0);
   textFont(PPHatton);
-  textSize(30);
+  textSize(25);
   textAlign(CENTER, CENTER);
   text("Rahffaele - Designer", displayWidth/2, displayHeight/2-30);
   fill(0);
@@ -148,7 +148,7 @@ function draw() {
       pop();
       
       counter++;
-      if (counter = voice1.length) counter = voice1.length;
+      if (counter == 5) counter = 5;
 
      
       x = x + cos(angle) * stepSize;
