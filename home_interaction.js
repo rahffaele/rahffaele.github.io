@@ -212,11 +212,16 @@ function draw() {
       y = y + sin(angle) * stepSize;
     }
   }
+}
 
-  if (mouseIsPressed && voice1.mouseOver()) {
+voice1.mouseOver(link1);
+
+function link1() {
+  if (mouseIsPressed && ) {
     window.open("https://www.w3schools.com");
   }
 }
+
 function mouseReleased() {
   control = control +1;
   counter=0;
