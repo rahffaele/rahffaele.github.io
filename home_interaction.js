@@ -147,7 +147,7 @@ function draw() {
       pop();
       
       counter++;
-      if (counter = voice1.length-1) counter = voice1.length-1;
+      if (counter == voice1.length-1) counter = voice1.length-1;
 
      
       x = x + cos(angle) * stepSize;
