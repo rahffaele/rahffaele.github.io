@@ -118,12 +118,12 @@ function setup() {
   textFont(PPHatton);
   textSize(30);
   textAlign(CENTER, CENTER);
-  text("Rahffaele - Designer", displayWidth/2, displayHeight/2-20);
+  text("Rahffaele - Designer", displayWidth/2, displayHeight/2-30);
   fill(0);
   textFont("Helvetica");
   textSize(15);
   textAlign(CENTER, CENTER);
-  text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+20);
+  text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+10);
 
   textFont(font);
   textAlign(LEFT);
