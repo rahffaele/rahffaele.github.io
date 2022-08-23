@@ -129,6 +129,7 @@ function setup() {
   textFont(font);
   textAlign(LEFT);
   fill(0);
+
 }
 
 function draw() {
@@ -219,6 +220,10 @@ function mouseReleased() {
 function mousePressed() {
   x = mouseX;
   y = mouseY;
+}
+
+if (mouseIsPressed && voice1.mouseOver()) {
+    window.open("https://www.w3schools.com");
 }
 
 function keyReleased() {
