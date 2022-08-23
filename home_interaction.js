@@ -214,7 +214,7 @@ function draw() {
       pop();
       
       counter++
-      if (counter == smile.length-1) counter = smile.length-1;
+      if (counter == smile.length) counter = smile.length;
 
 
       x = x + cos(angle) * stepSize;
