@@ -147,8 +147,11 @@ function draw() {
       text(newLetter, 0, 0);
       pop();
       
-      counter++;
-      if (counter == 5) counter = 5;
+      if (counter == 5) {
+        counter = 5;
+    } else {
+        counter++;
+    } 
 
      
       x = x + cos(angle) * stepSize;
