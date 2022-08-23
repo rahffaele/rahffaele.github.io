@@ -99,8 +99,6 @@ text("Rahffaele - Designer", displayWidth/2, displayHeight/2);
 
 let font = 'Helvetica';
 let voice1 = "ABOUT ME:";
-let about = voice1.link('https://www.techonthenet.com/index.php');
-document.getElementById("voice1").innerHTML = about;
 let voice2 = "PORTFOLIO:";
 let voice3 = "ARCHIVES:";
 let fontSizeMin = 20;
