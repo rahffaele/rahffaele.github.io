@@ -170,7 +170,7 @@ function draw() {
       text(newLetter, 0, 0);
       pop();
 
-      counter++
+      counter++;
       
       x = x + cos(angle) * stepSize;
       y = y + sin(angle) * stepSize;
@@ -193,7 +193,7 @@ function draw() {
       text(newLetter, 0, 0);
       pop();
       
-      counter++
+      counter++;
 
       x = x + cos(angle) * stepSize;
       y = y + sin(angle) * stepSize;
@@ -215,7 +215,7 @@ function draw() {
       text(newLetter, 0, 0);
       pop();
       
-      counter++
+      counter++;
       if (counter = smile.length) counter = smile.length;
 
 
