@@ -147,7 +147,6 @@ function draw() {
       pop();
       
       counter++;
-      if (counter == letters.length - 1) counter = letters.length;
      
       x = x + cos(angle) * stepSize;
       y = y + sin(angle) * stepSize;
