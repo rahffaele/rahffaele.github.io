@@ -216,6 +216,7 @@ function draw() {
   }
 }
 
+function mousePressed() {}
 
 function link1() {
     window.open("https://www.w3schools.com");
