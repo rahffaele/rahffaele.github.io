@@ -93,7 +93,7 @@ let PPHatton;
 
 let font = 'Helvetica';
 
-let voice1 = ":ABOUT ME";
+let voice1;
 let voice2 = ":PORTFOLIO";
 let voice3 = ":ARCHIVES";
 let fontSizeMin = 20;
@@ -108,6 +108,8 @@ function preload() {
 }
 
 function setup() {
+
+    let voice1 = ":ABOUT ME";
   // use full screen size
   createCanvas(window.innerWidth, window.innerHeight);
   cursor(CROSS);
