@@ -101,7 +101,7 @@ let angleDistortion = 0.0;
 
 let counter = 0;
 
-
+var pos1;
 
 function preload() {
     PPHatton = loadFont('fonts/PPHatton-Medium.otf');
@@ -137,10 +137,13 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed && control == 0) {
+
     let d = dist(x, y, mouseX, mouseY);
     textSize(20);
     let newLetter1 = voice1.charAt(counter);
     stepSize = textWidth(newLetter1);
+
+    pos1 = newLetter1.getBoundingClientReact();
 
     if (d > stepSize) {
       let angle = atan2(mouseY - y, mouseX - x);
@@ -238,8 +241,8 @@ function mousePressed() {
   y = mouseY;
 }
 
-function mouseClicled() {
-    if (dist(mouseX, mouseY, newLetter1.x, newLetter1.y)<10 && control > 2) {
+function mouseClicked() {
+    if (dist(mouseX, mouseY, pos1.right, pos1.bottom)<10 && control > 2) {
         window.open("https://www.w3schools.com");
     }
     console.log(newLetter1.x);
