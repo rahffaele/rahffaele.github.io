@@ -237,7 +237,7 @@ function link1() {
 }*/
 
 function link1() {
-    window.location.href("about.html");
+    window.open("../about.html");
 }
 
 function mouseReleased() {
