@@ -86,6 +86,11 @@ function windowResized() {
 
 let x = 0;
 let y = 0;
+
+let button1;
+let button2;
+let button3;
+
 var control = 0;
 let stepSize = 5.0;
 
@@ -148,6 +153,14 @@ function draw() {
       translate(x, y);
       rotate(angle + random(angleDistortion));
       text(newLetter, 0, 0);
+
+      button1 = createButton("");
+      button1.position(x-10,y-10);
+      button1.mouseClicked(link1);
+      button1.style('background-color', col);
+      button1.style('border-color', col); 
+      button1.style('height', 15); 
+      button1.size(20, 20);      
       pop();
       
       if (counter > voice1.length-1) {
@@ -220,12 +233,9 @@ function link1() {
     window.open("https://www.w3schools.com");
 }*/
 
-/*function link1() {
-
-if (voice1.mouseOver(true) && mouseClicked(true)) {
-    window.open("https://www.w3schools.com");
+function link1() {
+    window.location.href("about.html");
 }
-}*/
 
 function mouseReleased() {
   control = control +1;
