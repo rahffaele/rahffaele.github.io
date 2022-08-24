@@ -96,6 +96,8 @@ let stepSize = 5.0;
 
 let PPHatton;
 
+let font;
+
 let voice1 = ":ABOUT ME";
 let voice2 = ":PORTFOLIO";
 let voice3 = ":ARCHIVES";
