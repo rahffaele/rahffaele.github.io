@@ -150,6 +150,9 @@ function draw() {
       let angle = atan2(mouseY - y, mouseX - x);
 
       push();
+
+      let col = color(0,0,0,0);
+
       translate(x, y);
       rotate(angle + random(angleDistortion));
       text(newLetter, 0, 0);
