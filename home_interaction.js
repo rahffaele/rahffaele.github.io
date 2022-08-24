@@ -140,7 +140,7 @@ function draw() {
     let d = dist(x, y, mouseX, mouseY);
     textSize(20);
     let newLetter1 = voice1.charAt(counter);
-    stepSize = textWidth(newLetter);
+    stepSize = textWidth(newLetter1);
 
     if (d > stepSize) {
       let angle = atan2(mouseY - y, mouseX - x);
