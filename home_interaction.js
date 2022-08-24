@@ -187,9 +187,20 @@ function draw() {
       let angle = atan2(mouseY - y, mouseX - x);
 
       push();
+
+      let col = color(0,0,0,0);
+
       translate(x, y);
       rotate(angle + random(angleDistortion));
       text(newLetter, 0, 0);
+
+      button2 = createButton("");
+      button2.position(x-10,y-10);
+      button2.mouseClicked(link2);
+      button2.style('background-color', col);
+      button2.style('border-color', col); 
+      button2.style('height', 15); 
+      button2.size(20, 20);  
       pop();
 
        if (counter > voice2.length-1) {
@@ -214,9 +225,20 @@ function draw() {
       let angle = atan2(mouseY - y, mouseX - x);
 
       push();
+
+      let col = color(0,0,0,0);
+      
       translate(x, y);
       rotate(angle + random(angleDistortion));
       text(newLetter, 0, 0);
+
+      button3 = createButton("");
+      button3.position(x-10,y-10);
+      button3.mouseClicked(link3);
+      button3.style('background-color', col);
+      button3.style('border-color', col); 
+      button3.style('height', 15); 
+      button3.size(20, 20);  
       pop();
       
       if (counter > voice3.length-1) {
@@ -238,6 +260,17 @@ function link1() {
 
 function link1() {
     window.open("../about.html");
+    control = control -1;
+}
+
+function link2() {
+    window.open("../portfolio.html");
+    control = control -1;
+}
+
+function link3() {
+    window.open("../archives.html");
+    control = control -1;
 }
 
 function mouseReleased() {
