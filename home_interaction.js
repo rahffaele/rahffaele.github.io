@@ -139,7 +139,7 @@ function draw() {
   if (mouseIsPressed && control == 0) {
     let d = dist(x, y, mouseX, mouseY);
     textSize(20);
-    let newLetter = voice1.charAt(counter);
+    let newLetter1 = voice1.charAt(counter);
     stepSize = textWidth(newLetter);
 
     if (d > stepSize) {
@@ -148,7 +148,7 @@ function draw() {
       push();
       translate(x, y);
       rotate(angle + random(angleDistortion));
-      text(newLetter, 0, 0);
+      text(newLetter1, 0, 0);
       pop();
       
       if (counter > voice1.length-1) {
@@ -236,10 +236,12 @@ function mouseReleased() {
 function mousePressed() {
   x = mouseX;
   y = mouseY;
+}
 
-  if (control > 1 && mouseX < positionX(rect1)+10 && mouseX > positionX(rect1)- 10 && mouseY < positionY(rect1)+10 && mouseY > positionY(rect1)- 10) {
-    window.open("https://www.w3schools.com");    
-  }
+function mouseClicled() {
+    if (dist(mouseX, mouseY, newLetter1.x, newLetter1.y)<10) {
+        window.open("https://www.w3schools.com");
+    }
 }
 
 function keyReleased() {
