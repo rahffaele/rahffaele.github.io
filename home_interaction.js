@@ -236,6 +236,10 @@ function mouseReleased() {
 function mousePressed() {
   x = mouseX;
   y = mouseY;
+
+  if (control > 1 && mouseX < positionX(rect1)+10 && mouseX > positionX(rect1)- 10 && mouseY < positionY(rect1)+10 && mouseY > positionY(rect1)- 10) {
+    window.open("https://www.w3schools.com");    
+  }
 }
 
 function keyReleased() {
