@@ -239,9 +239,10 @@ function mousePressed() {
 }
 
 function mouseClicled() {
-    if (dist(mouseX, mouseY, newLetter1.x, newLetter1.y)<10) {
+    if (dist(mouseX, mouseY, newLetter1.x, newLetter1.y)<10 && control > 2) {
         window.open("https://www.w3schools.com");
     }
+    console.log(newLetter1.x);
 }
 
 function keyReleased() {
