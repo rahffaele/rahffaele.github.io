@@ -143,7 +143,7 @@ function draw() {
     let newLetter1 = voice1.charAt(counter);
     stepSize = textWidth(newLetter1);
 
-    pos1 = newLetter1.getBoundingClientReact();
+    pos1 = newLetter1.getBoundingClientRect();
 
     if (d > stepSize) {
       let angle = atan2(mouseY - y, mouseX - x);
