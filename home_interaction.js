@@ -132,7 +132,7 @@ function setup() {
   textAlign(CENTER, CENTER);
   text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+10);
 
-  textFont(font);
+  textFont(AlbertSans);
   textAlign(LEFT);
   fill(0);
 
