@@ -108,6 +108,7 @@ let counter = 0;
 
 function preload() {
     PPHatton = loadFont('fonts/PPHatton-Medium.otf');
+    AlbertSans = loadFont('fonts/AlbertSans-Medium.ttf');
 }
 
 function setup() {
@@ -126,7 +127,7 @@ function setup() {
   textAlign(CENTER, CENTER);
   text("Rahffaele - Designer", displayWidth/2, displayHeight/2-30);
   fill(0);
-  textFont("Helvetica");
+  textFont(AlbertSans);
   textSize(15);
   textAlign(CENTER, CENTER);
   text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+10);
@@ -227,7 +228,7 @@ function draw() {
       push();
 
       let col = color(0,0,0,0);
-      
+
       translate(x, y);
       rotate(angle + random(angleDistortion));
       text(newLetter, 0, 0);
