@@ -1,27 +1,30 @@
-h2 {
-	color: WHITE;
-	font-family: helvetica;
-	margin: none;
-	display: inline-block;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-	margin: none;
-}
+ @font-face { font-family: AlbertSans; src: url('AlbertSans-Medium.ttf'); }
+ @font-face { font-family: PPHatton; src: url('PPHatton-Medium.ttf'); } 
 
 body {
 	background-color: white;
 }
 
+h2 {
+	color: BLACK;
+	font-family:  PPHatton;
+}
+
+p {
+	font-family: AlbertSans;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+
+
+
+
+
 canvas {
 	margin: auto;
 	border-color: white;
-}
-
-div {
-	white-space: nowrap;
 }
 
 
