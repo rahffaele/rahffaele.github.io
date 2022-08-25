@@ -16,6 +16,7 @@ p {
 }
 a {
 	text-decoration: underline;
+	text-decoration-thickness:  1px;
 	font-family: PPHatton-UltraLight;
 	color: black;
 	margin-right: 15px;
