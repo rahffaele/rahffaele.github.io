@@ -1,5 +1,7 @@
  @font-face { font-family: AlbertSans; src: url('fonts/AlbertSans-Medium.ttf'); }
- @font-face { font-family: PPHatton; src: url('fonts/PPHatton-Medium.otf'); } 
+ @font-face { font-family: PPHatton-Medium; src: url('fonts/PPHatton-Medium.otf'); }
+ @font-face { font-family: PPHatto-UltraLight; src: url('fonts/PPHatton-Ultralight.otf'); } 
+
 
 body {
 	background-color: white;
@@ -7,7 +9,7 @@ body {
 
 h2 {
 	color: BLACK;
-	font-family:  PPHatton;
+	font-family:  PPHatton-Ultralight;
 }
 
 p {
