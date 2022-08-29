@@ -2,6 +2,17 @@
  @font-face { font-family: PPHatton-Medium; src: url('fonts/PPHatton-Medium.otf'); }
  @font-face { font-family: PPHatton-UltraLight; src: url('fonts/PPHatton-Ultralight.otf'); } 
 
+@media (max-width:960px) {
+	h2 {
+		font-size: 5vw;
+	}
+
+	#business-card {
+	max-width: 200px;
+	transform: rotate(105deg);
+	box-shadow: 10px 10px 20px;
+	}
+} 
 
 body {
 	background-color: white;
@@ -23,21 +34,10 @@ a {
 	display: inline-block;
 }
 
-
-
-
-
 canvas {
 	margin: auto;
 	border-color: white;
 }
-
-
-@media (max-width:960px) {
-	h2 {
-		font-size: 5vw;
-	}
-} 
 
 #business-card {
 	max-width: 200px;
