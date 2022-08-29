@@ -10,7 +10,7 @@
 	#business-card {
 	max-width: 250px;
 	transform: rotate(15deg);
-	box-shadow: 10px 10px 40px;
+	box-shadow: 15px 15px 30px;
 	padding: 10px;
 	margin-top: 50px;
 	margin-left: 30px;
@@ -45,7 +45,7 @@ canvas {
 #business-card {
 	max-width: 250px;
 	transform: rotate(15deg);
-	box-shadow: 10px 10px 40px;
+	box-shadow: 15px 15px 30px;
 	padding: 10px;
 	margin-top: 50px;
 	margin-left: 30px;
