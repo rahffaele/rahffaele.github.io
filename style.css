@@ -43,4 +43,5 @@ canvas {
 	max-width: 200px;
 	transform: rotate(15deg);
 	box-shadow: 10px 10px 20px;
+	padding: 10px;
 } 
