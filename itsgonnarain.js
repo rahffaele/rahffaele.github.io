@@ -1,1 +1,4 @@
-console.log("It's gonna rain");
+fetch('itsgonnarain.mp3')
+  .then(response => response.arrayBuffer())
+  .then(arrayBuffer => console.log('Received', arrayBuffer))
+  .catch(e => console.error(e));
