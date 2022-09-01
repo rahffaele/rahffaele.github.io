@@ -6,6 +6,7 @@ fetch('../resource/bass.mp3')
   .then(audioBuffer => {
     let sourceNode = audioContext.createBufferSource();
     sourceNode.buffer = audioBuffer;
+    sourceNode.loop = true;
     sourceNode.connect(audioContext.destination);
     sourceNode.start();
   })
