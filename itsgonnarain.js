@@ -1,3 +1,5 @@
+function play(){
+
 let audioContext = new AudioContext();
 
 fetch('../resource/bass.mp3')
@@ -10,8 +12,9 @@ fetch('../resource/bass.mp3')
     sourceNode.buffer = audioBuffer;
     sourceNode.loop = true;
     sourceNode.connect(audioContext.destination);
-    function play(){
     sourceNode.start();
-    }
+    
   })
   .catch(e => console.error(e));
+
+  }
