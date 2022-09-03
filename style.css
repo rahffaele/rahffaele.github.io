@@ -29,9 +29,9 @@ p {
 	font-family: AlbertSans;
 }
 a {
-	text-decoration: underline;
+	text-decoration: none;
 	text-decoration-thickness:  1px;
-	font-family: PPHatton-UltraLight;
+	font-family: PPHatton-Ultralight;
 	color: black;
 	margin-right: 15px;
 	display: inline-block;
