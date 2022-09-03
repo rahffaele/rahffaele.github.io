@@ -11,9 +11,9 @@ fetch('../resource/bass.mp3')
     
     sourceNode.buffer = audioBuffer;
     sourceNode.loop = true;
-    sourceNode.loopStart = 0.25;
+    sourceNode.loopStart = 0.5;
     sourceNode.connect(audioContext.destination);
-    sourceNode.start(0, 0.25);
+    sourceNode.start(0, 0.5);
     
   })
   .catch(e => console.error(e));
