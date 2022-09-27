@@ -125,7 +125,7 @@ function setup() {
   textFont(PPHatton);
   textSize(25);
   textAlign(CENTER, CENTER);
-  text("Rahffaele - Designer", displayWidth/2, displayHeight/2-30);
+  text("Raffaele Amietta - Designer", displayWidth/2, displayHeight/2-30);
   fill(0);
   textFont(AlbertSans);
   textSize(15);
