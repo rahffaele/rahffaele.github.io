@@ -28,15 +28,19 @@ h2 {
 }
 
 p {
-	font-family: 'Cormorant Garamond', serif;
+	font-family: 'AlbertSans', serif;
 }
 a {
 	text-decoration: none;
 	text-decoration-thickness:  1px;
-	font-family: font-family: 'Cormorant Garamond', serif;;
 	color: black;
 	margin-right: 15px;
 	display: inline-block;
+}
+
+.bc {
+	font-family: Cormorant Garamond;
+	font-size: 15vw;
 }
 
 canvas {
