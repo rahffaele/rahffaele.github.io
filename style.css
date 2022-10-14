@@ -1,6 +1,8 @@
  @font-face { font-family: AlbertSans; src: url('fonts/AlbertSans-Medium.ttf'); }
  @font-face { font-family: PPHatton-Medium; src: url('fonts/PPHatton-Medium.otf'); }
  @font-face { font-family: PPHatton-UltraLight; src: url('fonts/PPHatton-Ultralight.otf'); } 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
 
 @media (max-width:960px) {
 	h2 {
@@ -22,7 +24,7 @@ body {
 }
 
 h2 {
-	font-family:  PPHatton-UltraLight;
+	font-family: 'Cormorant Garamond', serif;;
 }
 
 p {
@@ -31,7 +33,7 @@ p {
 a {
 	text-decoration: none;
 	text-decoration-thickness:  1px;
-	font-family: PPHatton-Ultralight;
+	font-family: font-family: 'Cormorant Garamond', serif;;
 	color: black;
 	margin-right: 15px;
 	display: inline-block;
