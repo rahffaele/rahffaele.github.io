@@ -5,8 +5,8 @@
 
 
 @media (max-width:960px) {
-	h2 {
-		font-size: 5vw;
+	.bc {
+		font-size: 50px;
 	}
 
 	#business-card {
