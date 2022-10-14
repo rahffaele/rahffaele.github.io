@@ -122,7 +122,7 @@ function setup() {
 
   
   fill(0);
-  textFont(Serif);
+  textFont(PPHatton);
   textSize(25);
   textAlign(CENTER, CENTER);
   text("Raffaele Amietta - Designer", displayWidth/2, displayHeight/2-30);
