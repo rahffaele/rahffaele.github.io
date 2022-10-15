@@ -2,7 +2,7 @@ function play(){
 
 let audioContext = new AudioContext();
 
-fetch('../resource/bass.mp3')
+fetch('../samples/Warm pad G4.wav')
   .then(response => response.arrayBuffer())
   .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
   .then(audioBuffer => {
