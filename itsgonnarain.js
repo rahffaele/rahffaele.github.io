@@ -1,4 +1,4 @@
-const sample_library = {
+const warm_pad = {
   'WARM PAD' : [
     {note: 'A#', octave: 4, file: "../samples/Warm pad/Warm pad A#4.wav"},
     {note: 'A', octave: 4, file: "../samples/Warm pad/Warm pad A4.wav"},
@@ -14,7 +14,9 @@ const sample_library = {
     {note: 'G', octave: 4, file: "../samples/Warm pad/Warm pad G4.wav"},
     {note: 'C', octave: 5, file: "../samples/Warm pad/Warm pad C5.wav"},
   ]
+};
 
+const synth_bass = {
   'SYNTH BASS' : [
     {note: 'A#', octave: 2, file: "../samples/Synth Bass/Synth Bass A#2.wav"},
     {note: 'A', octave: 2, file: "../samples/Synth Bass/Synth Bass A2.wav"},
@@ -30,7 +32,9 @@ const sample_library = {
     {note: 'G', octave: 2, file: "../samples/Synth Bass/Synth Bass G2.wav"},
     {note: 'C', octave: 3, file: "../samples/Synth Bass/Synth Bass C3.wav"},
   ]
+};
 
+const brightness_lead = {
   'BRIGHTNESS LEAD' : [
     {note: 'A#', octave: 5, file: "../samples/Brightness lead/Brightness lead A#5.wav"},
     {note: 'A', octave: 5, file: "../samples/Brightness lead/Brightness lead A5.wav"},
@@ -46,7 +50,9 @@ const sample_library = {
     {note: 'G', octave: 5, file: "../samples/Brightness lead/Brightness lead G5.wav"},
     {note: 'C', octave: 6, file: "../samples/Brightness lead/Brightness lead C6.wav"},
   ]
+};
 
+const drums = {
   'DRUMS' : [
     {drum : 'snare', file: "../samples/Drums/Snare.wav"},
     {drum : 'kick', file: "../samples/Drums/Kick.wav"},
