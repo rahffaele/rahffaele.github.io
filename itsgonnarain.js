@@ -30,6 +30,27 @@ const sample_library = {
     {note: 'G', octave: 2, file: "../samples/Synth Bass/Synth Bass G2.wav"},
     {note: 'C', octave: 3, file: "../samples/Synth Bass/Synth Bass C3.wav"},
   ]
+
+  'BRIGHTNESS LEAD' : [
+    {note: 'A#', octave: 5, file: "../samples/Brightness lead/Brightness lead A#5.wav"},
+    {note: 'A', octave: 5, file: "../samples/Brightness lead/Brightness lead A5.wav"},
+    {note: 'B', octave: 5, file: "../samples/Brightness lead/Brightness lead B5.wav"},
+    {note: 'C#', octave: 5, file: "../samples/Brightness lead/Brightness lead C#5.wav"},
+    {note: 'C', octave: 5, file: "../samples/Brightness lead/Brightness lead C5.wav"},
+    {note: 'D#', octave: 5, file: "../samples/Brightness lead/Brightness lead D#5.wav"},
+    {note: 'D', octave: 5, file: "../samples/Brightness lead/Brightness lead D5.wav"},
+    {note: 'E', octave: 5, file: "../samples/Brightness lead/Brightness lead E5.wav"},
+    {note: 'F#', octave: 5, file: "../samples/Brightness lead/Brightness lead F#5.wav"},
+    {note: 'F', octave: 5, file: "../samples/Brightness lead/Brightness lead F5.wav"},
+    {note: 'G#', octave: 5, file: "../samples/Brightness lead/Brightness lead G#5.wav"},
+    {note: 'G', octave: 5, file: "../samples/Brightness lead/Brightness lead G5.wav"},
+    {note: 'C', octave: 6, file: "../samples/Brightness lead/Brightness lead C6.wav"},
+  ]
+
+  'DRUMS' : [
+    {drum : 'snare', file: "../samples/Drums/Snare.wav"},
+    {drum : 'kick', file: "../samples/Drums/Kick.wav"},
+  ]
 };
 
 
