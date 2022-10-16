@@ -11,10 +11,9 @@ fetch('../samples/Warm pad/Warm pad G4.wav')
     
     sourceNode.buffer = audioBuffer;
     sourceNode.loop = true;
-    sourceNode.loopStart = 0.5;
+    sourceNode.loopEnd = 0.75;
     sourceNode.connect(audioContext.destination);
-    sourceNode.playbackRate.value = 2;
-    sourceNode.start(0, 0.5);
+    sourceNode.start(0, 0);
     
   })
   .catch(e => console.error(e));
