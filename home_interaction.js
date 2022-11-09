@@ -169,7 +169,7 @@ function draw() {
       pop();
       
       if (counter > voice1.length-1) {
-        counter = 8;
+        counter = 7;
     } else {
         counter++;
     } 
@@ -206,7 +206,7 @@ function draw() {
       pop();
 
        if (counter > voice2.length-1) {
-        counter = 9;
+        counter = 8;
     } else {
         counter++;
     } 
@@ -244,7 +244,7 @@ function draw() {
       pop();
       
       if (counter > voice3.length-1) {
-        counter = 8;
+        counter = 7;
     } else {
         counter++;
     } 
