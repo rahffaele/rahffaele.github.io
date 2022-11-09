@@ -109,6 +109,7 @@ let counter = 0;
 function preload() {
     PPHatton = loadFont('fonts/PPHatton-Medium.otf');
     AlbertSans = loadFont('fonts/AlbertSans-Medium.ttf');
+    Mori = loadFont('fonts/PPMori-Regular.otf');
 }
 
 function setup() {
@@ -122,7 +123,7 @@ function setup() {
 
   
   fill(0);
-  textFont(PPHatton);
+  textFont(Mori);
   textSize(25);
   textAlign(CENTER, CENTER);
   text("Raffaele Amietta - Designer", displayWidth/2, displayHeight/2-30);
