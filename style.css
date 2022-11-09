@@ -49,3 +49,8 @@ canvas {
 #about {
 	padding: 20px, 20px;
 } 
+
+#contacts {
+	position: fixed;
+	bottom: 0;
+}
