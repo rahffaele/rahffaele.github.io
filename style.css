@@ -50,7 +50,7 @@ canvas {
 	padding: 20px, 20px;
 } 
 
-#contacts {
+.contacts {
 	position: fixed;
 	bottom: 0;
 }
