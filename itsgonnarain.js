@@ -60,7 +60,7 @@ const drums = {
 };
 
 
-function play(){
+/*function play(){
 
 let audioContext = new AudioContext();
 
@@ -80,4 +80,50 @@ fetch('../samples/Warm pad/Warm pad G4.wav')
   })
   .catch(e => console.error(e));
 
-  }
+  }*/
+
+
+function play(){
+
+
+}
+
+
+function getSample(instrument, noteAndOctave) {
+  let [, requestedNote, requestedOctave] = /^(\w[b#]?)(\d)$/.exec(noteAndOctave);
+  requestedOctave = parseInt(requestedOctave, 10);
+}
+
+let audioContext = new AudioContext();
+
+function fetchSample(path) {
+  return fetch(encodeURIComponent(path))
+    .then(response => response.arrayBuffer())
+    .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
