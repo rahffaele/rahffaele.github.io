@@ -82,6 +82,7 @@ fetch('../samples/Synth Bass/Synth Bass A2.wav')
   })
   .catch(e => console.error(e));
   synth = random(1, 3)
+  play();
   }
 
   if (synth == 2) {
@@ -103,6 +104,7 @@ fetch('../samples/Synth Bass/Synth Bass C2.wav')
   })
   .catch(e => console.error(e));
   synth = random(1, 3)
+  play();
   }
 
   if (synth == 3) {
@@ -124,6 +126,7 @@ fetch('../samples/Warm pad/Warm pad G4.wav')
   })
   .catch(e => console.error(e));
   synth = random(1, 3)
+  play();
   }
 }
 
