@@ -59,10 +59,54 @@ const drums = {
   ]
 };
 
+var synth = random(1, 3)
 
-/*function play(){
+function play(){
 
-let audioContext = new AudioContext();
+if (synth == 1) {
+  let audioContext = new AudioContext();
+
+fetch('../samples/Synth Bass/Synth Bass A2.wav')
+  .then(response => response.arrayBuffer())
+  .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+  .then(audioBuffer => {
+    let sourceNode = audioContext.createBufferSource();
+
+    
+    sourceNode.buffer = audioBuffer;
+    //sourceNode.loop = true;
+    sourceNode.loopEnd = 0.75;
+    sourceNode.connect(audioContext.destination);
+    sourceNode.start(0, 0);
+    
+  })
+  .catch(e => console.error(e));
+  synth = random(1, 3)
+  }
+
+  if (synth == 2) {
+  let audioContext = new AudioContext();
+
+fetch('../samples/Synth Bass/Synth Bass C2.wav')
+  .then(response => response.arrayBuffer())
+  .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+  .then(audioBuffer => {
+    let sourceNode = audioContext.createBufferSource();
+
+    
+    sourceNode.buffer = audioBuffer;
+    //sourceNode.loop = true;
+    sourceNode.loopEnd = 0.75;
+    sourceNode.connect(audioContext.destination);
+    sourceNode.start(0, 0);
+    
+  })
+  .catch(e => console.error(e));
+  synth = random(1, 3)
+  }
+
+  if (synth == 3) {
+  let audioContext = new AudioContext();
 
 fetch('../samples/Warm pad/Warm pad G4.wav')
   .then(response => response.arrayBuffer())
@@ -72,24 +116,23 @@ fetch('../samples/Warm pad/Warm pad G4.wav')
 
     
     sourceNode.buffer = audioBuffer;
-    sourceNode.loop = true;
+    //sourceNode.loop = true;
     sourceNode.loopEnd = 0.75;
     sourceNode.connect(audioContext.destination);
     sourceNode.start(0, 0);
     
   })
   .catch(e => console.error(e));
-
-  }*/
-
-
-function play(){
-
-
+  synth = random(1, 3)
+  }
 }
 
 
-function getSample(instrument, noteAndOctave) {
+
+
+
+
+/*function getSample(instrument, noteAndOctave) {
   let [, requestedNote, requestedOctave] = /^(\w[b#]?)(\d)$/.exec(noteAndOctave);
   requestedOctave = parseInt(requestedOctave, 10);
 }
@@ -102,7 +145,7 @@ function fetchSample(path) {
     .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer));
 }
 
-
+*/
 
 
 
