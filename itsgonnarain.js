@@ -62,7 +62,8 @@ const drums = {
 var synth = Math.floor(Math.random() * 2);
 
 function play(){
-
+let control = 1;
+while (control == 1){
 if (synth == 0) {
   let audioContext = new AudioContext();
 
@@ -82,10 +83,8 @@ fetch('../samples/Synth Bass/Synth Bass A2.wav')
   })
   .catch(e => console.error(e));
   synth = Math.floor(Math.random() * 2);
-  play();
   }
-
-  if (synth == 1) {
+  else if (synth == 1) {
   let audioContext = new AudioContext();
 
 fetch('../samples/Synth Bass/Synth Bass C2.wav')
@@ -104,10 +103,9 @@ fetch('../samples/Synth Bass/Synth Bass C2.wav')
   })
   .catch(e => console.error(e));
   synth = Math.floor(Math.random() * 2);
-  play();
   }
 
-  if (synth == 2) {
+  else if (synth == 2) {
   let audioContext = new AudioContext();
 
 fetch('../samples/Warm pad/Warm pad G4.wav')
@@ -126,8 +124,8 @@ fetch('../samples/Warm pad/Warm pad G4.wav')
   })
   .catch(e => console.error(e));
   synth = Math.floor(Math.random() * 2);
-  play();
   }
+}
 }
 
 
