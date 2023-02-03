@@ -46,6 +46,13 @@ a:hover {
 	color: #989898;
 }
 
+.bc_selected {
+	font-family: "Mori", sans-serif;
+	font-size: 3vw;
+	font-weight: regular;
+	color: black;
+}
+
 canvas {
 	margin: auto;
 	border-color: white;
