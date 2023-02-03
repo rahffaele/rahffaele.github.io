@@ -1,4 +1,4 @@
-var circ = document.getElementsByClassName("archive_card");
+var cars = document.getElementsByClassName("archive_card");
 var newq;
 let h,w,nh,nw,s; 
 
@@ -11,12 +11,12 @@ function newPosition(){
   return [nh,nw,s];       
 }
 
-circ.forEach(function circ(myclass) {
+card.forEach(function card(myclass) {
   var newq = newPosition();
   $(myclass).animate({ 
     top: newq[0], left: newq[1] 
     },
     newq[2],   function(){
-    circ(myclass);        
+    card(myclass);        
   });
 });
