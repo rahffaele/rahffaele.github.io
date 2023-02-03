@@ -67,3 +67,24 @@ canvas {
 	position: fixed;
 	bottom: 0;
 }
+
+/* -------------- ARCHIVES CSS -------------------*/
+
+.archive_card {
+  height: 60px;
+  width: 80px;
+  background-color: grey;
+  border-radius: 16px; 
+  position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+{}
