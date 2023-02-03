@@ -71,8 +71,8 @@ canvas {
 /* -------------- ARCHIVES CSS -------------------*/
 
 .archive_card {
-  height: 60px;
-  width: 80px;
+  height: 180px;
+  width: 240px;
   background-color: grey;
   border-radius: 16px; 
   position: absolute;
