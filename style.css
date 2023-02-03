@@ -44,6 +44,7 @@ a:hover {
 	font-size: 3vw;
 	font-weight: regular;
 	color: #989898;
+	z-index: 2;
 }
 
 .bc_selected {
@@ -51,6 +52,7 @@ a:hover {
 	font-size: 3vw;
 	font-weight: regular;
 	color: black;
+	z-index: 2;
 }
 
 canvas {
