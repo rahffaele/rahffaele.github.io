@@ -14,7 +14,7 @@ function newPosition(){
 card.forEach(function card(myclass) {
   var newq = newPosition();
   $(myclass).animate({ 
-    top: newq[0], left: newq[1] 
+    top: nh, left: nw; 
     },
     newq[2],   function(){
     card(myclass);        
