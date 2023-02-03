@@ -1,7 +1,7 @@
 var card = document.getElementsByClassName("archive_card");
 
-var posx = getRandomNumber(); 
-var posy = getRandomNumber(); 
+var posx = Math.floor(Math.random()*(innerWidth-200));
+var posy = Math.floor(Math.random()*(innerHeight-200));
 
 
 function newPos() {
