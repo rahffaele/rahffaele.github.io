@@ -1,4 +1,4 @@
-var cars = document.getElementsByClassName("archive_card");
+var card = document.getElementsByClassName("archive_card");
 var newq;
 let h,w,nh,nw,s; 
 

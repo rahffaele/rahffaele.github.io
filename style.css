@@ -74,7 +74,7 @@ canvas {
   height: 180px;
   width: 240px;
   background-color: grey;
-  border-radius: 16px; 
+  border-radius: 8px; 
   position: absolute;
 }
 
