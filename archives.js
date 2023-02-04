@@ -6,7 +6,7 @@ let innerHeight = screen.height;
 var posx = Math.floor(Math.random()*(innerWidth-200));
 var posy = Math.floor(Math.random()*(innerHeight-200));
 
-
-card.style.left = posx + 'px';
-card.style.top = posy + 'px';
-
+for (var i = 0; i < card.length; i++) {
+  card[i].style.left = posx + 'px';
+  card[i].style.top = posy + 'px';
+}
