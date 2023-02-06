@@ -87,6 +87,9 @@ canvas {
 
 h3{
 	text-align: center;
+	line-height: normal;
+  	display: inline-block;
+  	vertical-align: middle;
 	font-family: 'AlbertSans', sans-serif;
 }
 
