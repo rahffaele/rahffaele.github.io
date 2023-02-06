@@ -76,7 +76,6 @@ canvas {
   height: 180px;
   width: 240px;
   background-color: transparent;
-  border-radius: 8px; 
   position: absolute;
   z-index: 1;
   border-style: solid;
