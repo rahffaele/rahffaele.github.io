@@ -75,11 +75,12 @@ canvas {
 .archive_card {
   height: 180px;
   width: 240px;
-  background-color: #0000ffff;
+  background-color: transparent;
   border-radius: 8px; 
   position: absolute;
   z-index: 1;
   border-color: black;
+  border: black;
 }
 
 
