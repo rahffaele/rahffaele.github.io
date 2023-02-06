@@ -40,8 +40,8 @@ archiveCards.forEach(card => {
   // repeat until no overlapping occurs
   while (overlapping) {
     // generate random values for top and left positions
-    const randomTop = getRandomNumber(0, window.innerHeight - card.offsetHeight);
-    const randomLeft = getRandomNumber(300, window.innerWidth - card.offsetWidth);
+    const randomTop = getRandomNumber(0, window.innerHeight - card.offsetHeight +300);
+    const randomLeft = getRandomNumber(300, window.innerWidth - card.offsetWidth + 300);
     
     // set the generated random values as top and left positions for the card
     card.style.top = `${randomTop}px`;
