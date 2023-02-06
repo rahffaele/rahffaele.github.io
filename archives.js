@@ -1,6 +1,8 @@
 window.onload = function() {
 
 const archiveCards = document.querySelectorAll('.archive_card');
+const cover = document.querySelectorAll('.cover');
+
 
 // function to generate a random number between min and max
 function getRandomNumber(min, max) {
@@ -51,6 +53,10 @@ archiveCards.forEach(card => {
     overlapping = checkOverlap(card);
   }
 });
+
+cover.style.top = `${randomTop}px`;
+cover.style.left = `${randomLeft}px`;
+
 $(document).ready(function(){
     $(".archive_card").hover(function(){
         $(".archive_card").addClass("hide");
