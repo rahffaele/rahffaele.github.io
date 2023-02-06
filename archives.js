@@ -54,6 +54,11 @@ archiveCards.forEach(card => {
   }
 });
 
+const randomTopCover = getRandomNumber(0, window.innerHeight - cover.offsetHeight);
+const randomLeftCover = getRandomNumber(0, window.innerWidth - cover.offsetWidth);
+
+cover.style.top = `${randomTop}px`;
+cover.style.left = `${randomLeft}px`;
 
 $(document).ready(function(){
     $(".archive_card").hover(function(){
