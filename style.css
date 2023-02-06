@@ -33,6 +33,7 @@ a {
 	color: black;
 	margin-right: 15px;
 	display: inline-block;
+	font-family: 'AlbertSans', sans-serif;
 }
 
 a:hover {
