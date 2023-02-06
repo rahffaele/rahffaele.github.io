@@ -75,7 +75,7 @@ canvas {
 .archive_card {
   height: 180px;
   width: 240px;
-  background-color: white;
+  background-color: #0000ffff;
   border-radius: 8px; 
   position: absolute;
   z-index: 1;
@@ -83,7 +83,7 @@ canvas {
 }
 
 
-hr{
+h3{
 	text-align: center;
 	font-family: 'AlbertSans', sans-serif;
 	font-size: 1vw;
