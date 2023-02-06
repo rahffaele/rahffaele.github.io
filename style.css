@@ -98,7 +98,8 @@ h3{
 .tag {
 	display: inline-block;
 	background-color: #B6F72E;
-	border-radius: 100%;
+	border-radius: 25px;
+	font-family: "Mori", sans-serif;
 	font-size: 16px;
 	text-align: center;
 }
