@@ -53,5 +53,14 @@ archiveCards.forEach(card => {
 });
 };
 
+$(document).ready(function(){
+    $("archive_card").hover(function(){
+        $("archive_card").addClass("hide");
+        $(this).removeClass("hide");
+    }, function(){
+        $("archive_card").removeClass("hide");
+    });
+});
+
 
   
