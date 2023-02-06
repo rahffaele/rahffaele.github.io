@@ -78,6 +78,7 @@ canvas {
   background-color: grey;
   border-radius: 8px; 
   position: absolute;
+  z-index: 1;
 }
 
 
