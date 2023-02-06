@@ -95,8 +95,13 @@ h3{
 	max-width: 300px;
 }
 
-
-
+.tag {
+	display: inline-block;
+	background-color: #B6F72E;
+	border-radius: 100%;
+	font-size: 16px;
+	text-align: center;
+}
 
 
 
