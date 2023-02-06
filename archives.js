@@ -44,11 +44,26 @@ archiveCards.forEach(card => {
     const randomLeft = getRandomNumber(0, window.innerWidth - card.offsetWidth);
     
     // set the generated random values as top and left positions for the card
-    card.style.top = `${randomTop}px`;
-    card.style.left = `${randomLeft}px`;
+    for (var i = 0; i < cards.length; i++) {
+    cards[i].style.left = window.innerWidth + 'px';
+    cards[i].style.top = window.innerHeight + 'px';
+  }
+
+  // wait for a short time to let the initial positions take effect
+  setTimeout(function() {
+    // set the final random positions of the cards
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].style.left = randomX() + 'px';
+      cards[i].style.top = randomY() + 'px';
+      cards[i].style.opacity = 1;
+    }
+  }, 100);
     
     // check if the card overlaps with any other card
     overlapping = checkOverlap(card);
   }
 });
 };
+
+
+  

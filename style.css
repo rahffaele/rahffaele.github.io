@@ -78,6 +78,8 @@ canvas {
   background-color: grey;
   border-radius: 8px; 
   position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
   z-index: 1;
 }
 
