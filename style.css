@@ -125,9 +125,13 @@ h3{
 
 
 /*---------------------COVER IMAGES -----------------*/
-#scifi-ui-cover {
+.cover {
 	position: absolute;
+	max-width: 20%;
+	margin-top: 5%;
 }
+
+	
 
 
 {}
