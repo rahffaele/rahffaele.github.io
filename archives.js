@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.archive_card');
+const archiveCards = document.querySelectorAll('.archive_card');
 
 // function to generate a random number between min and max
 function getRandomNumber(min, max) {
@@ -10,7 +10,7 @@ function checkOverlap(card) {
   let overlapping = false;
   
   // loop through each card element
-  cards.forEach(otherCard => {
+  archiveCards.forEach(otherCard => {
     // check if the card is the same as the one being passed to the function
     if (card === otherCard) return;
     
@@ -32,7 +32,7 @@ function checkOverlap(card) {
 }
 
 // loop through each card element
-cards.forEach(card => {
+archiveCards.forEach(card => {
   let overlapping = true;
   
   // repeat until no overlapping occurs
