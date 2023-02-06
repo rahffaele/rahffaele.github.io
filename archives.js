@@ -62,9 +62,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     $("#scifi-ui").hover(function(){
-        $("#scifi-ui").removeClass("hide");
+        $("#scifi-ui-cover").removeClass("hide");
     }, function(){
-        $("#scifi-ui").addClass("hide");
+        $("#scifi-ui-cover").addClass("hide");
         $(this).removeClass("hide");
     });
 });
