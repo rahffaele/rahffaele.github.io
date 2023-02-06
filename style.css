@@ -84,17 +84,6 @@ canvas {
   border-width: 1px;
 }
 
-.archive_card:hover {
-  width: 240px;
-  background-color: transparent;
-  position: absolute;
-  z-index: 1;
-  border-style: solid;
-  border-color: #B6F72E;
-  border-width: 2px;
-}
-
-
 h3{
 	text-align: center;
 	font-family: 'AlbertSans', sans-serif;
