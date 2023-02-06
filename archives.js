@@ -44,18 +44,18 @@ archiveCards.forEach(card => {
     const randomLeft = getRandomNumber(0, window.innerWidth - card.offsetWidth);
     
     // set the generated random values as top and left positions for the card
-    for (var i = 0; i < cards.length; i++) {
-    cards[i].style.left = window.innerWidth + 'px';
-    cards[i].style.top = window.innerHeight + 'px';
+    for (var i = 0; i < archiveCards.length; i++) {
+    archiveCards[i].style.left = window.innerWidth + 'px';
+    archiveCards[i].style.top = window.innerHeight + 'px';
   }
 
   // wait for a short time to let the initial positions take effect
   setTimeout(function() {
     // set the final random positions of the cards
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.left = randomX() + 'px';
-      cards[i].style.top = randomY() + 'px';
-      cards[i].style.opacity = 1;
+    for (var i = 0; i < archiveCards.length; i++) {
+      archiveCards[i].style.left = randomX() + 'px';
+      archiveCards[i].style.top = randomY() + 'px';
+      archiveCards[i].style.opacity = 1;
     }
   }, 100);
     
