@@ -84,6 +84,10 @@ canvas {
   border-width: 1px;
 }
 
+.archive_card:hover {
+  background-color: white;
+
+}
 
 h3{
 	text-align: center;
