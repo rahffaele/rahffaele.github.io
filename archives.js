@@ -65,7 +65,6 @@ $(document).ready(function(){
         $("#scifi-ui-cover").removeClass("hide");
     }, function(){
         $("#scifi-ui-cover").addClass("hide");
-        $(this).removeClass("hide");
     });
 });
 
