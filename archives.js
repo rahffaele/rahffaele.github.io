@@ -51,8 +51,6 @@ archiveCards.forEach(card => {
     overlapping = checkOverlap(card);
   }
 });
-};
-
 $(document).ready(function(){
     $("archive_card").hover(function(){
         $("archive_card").addClass("hide");
@@ -61,6 +59,10 @@ $(document).ready(function(){
         $("archive_card").removeClass("hide");
     });
 });
+
+
+};
+
 
 
   
