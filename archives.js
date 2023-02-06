@@ -1,3 +1,5 @@
+window.onload = function() {
+
 const archiveCards = document.querySelectorAll('.archive_card');
 
 // function to generate a random number between min and max
@@ -49,3 +51,4 @@ archiveCards.forEach(card => {
     overlapping = checkOverlap(card);
   }
 });
+};
