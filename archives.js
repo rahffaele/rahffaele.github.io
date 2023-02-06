@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.arcive_card');
+const cards = document.querySelectorAll('.archive_card');
 
 // function to generate a random number between min and max
 function getRandomNumber(min, max) {
