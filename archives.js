@@ -60,6 +60,15 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#scifi-ui").hover(function(){
+        $("#scifi-ui").removeClass("hide");
+    }, function(){
+        $("#scifi-ui").addClass("hide");
+        $(this).removeClass("hide");
+    });
+});
+
 
 };
 
