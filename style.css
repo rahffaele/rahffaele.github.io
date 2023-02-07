@@ -133,9 +133,9 @@ h3{
 /*---------------------COVER IMAGES -----------------*/
 .cover {
 	position: absolute;
-	max-width: 30%;
+	max-width: 50%;
 	margin-top: 5%;
-	margin-right: 16px;
+	margin-left: 350px;
 	justify-content: center;
 	opacity: 60%;
 }
