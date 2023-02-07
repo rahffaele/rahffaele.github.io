@@ -71,6 +71,13 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#fractals").hover(function(){
+        $("#fractal-cover").removeClass("hide");
+    }, function(){
+        $("#fractal-cover").addClass("hide");
+    });
+});
 
 };
 
