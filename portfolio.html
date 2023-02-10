@@ -58,10 +58,10 @@
 
         if (y + box.offsetHeight > window.innerHeight) {
           velocity = -velocity * 0.4;
-          rotationSpeed = velocity / 10;
+          rotationSpeed = velocity / 10 * Math.random(0.5, 2);
           y = window.innerHeight - box.offsetHeight;
         } else {
-          rotationSpeed = velocity / 5;
+          rotationSpeed = velocity / 5 * Math.random(0.5, 2;
         }
 
         rotation += rotationSpeed;
