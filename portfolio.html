@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      .box {
-        width: 50px;
-        height: 50px;
-        background-color: red;
-        position: absolute;
-        transform-origin: center bottom;
-      }
-    </style>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -22,65 +13,40 @@
 		<a href="../archives.html" class="bc">Archive</a>
 		<a href="../about.html" class="bc">About me</a>
 	</div>
-    <div id="box1" class="box"></div>
-    <div id="box2" class="box"></div>
-    <div id="box3" class="box"></div>
-    <div id="box4" class="box"></div>
   </body>
   <script>
-    const boxes = document.querySelectorAll('.box');
-    const gravity = 0.2;
+    let isDrawing = false;
+let startX, startY, rect;
 
-    boxes.forEach((box, index) => {
-      let x = Math.random() * window.innerWidth;
-      let y = 0;
-      let velocity = 0;
-      let rotation = 0;
-      let rotationSpeed = 0;
+document.addEventListener("mousedown", function(event) {
+  isDrawing = true;
+  startX = event.clientX;
+  startY = event.clientY;
 
-      box.style.left = x + 'px';
+  rect = document.createElement("div");
+  rect.style.position = "absolute";
+  rect.style.left = startX + "px";
+  rect.style.top = startY + "px";
+  rect.style.backgroundColor = "lightgray";
+  document.body.appendChild(rect);
+});
 
-      const update = () => {
-        velocity += gravity;
-        y += velocity;
+document.addEventListener("mouseup", function() {
+  isDrawing = false;
 
-        // Check for collision with other boxes
-        boxes.forEach((otherBox, otherIndex) => {
-          if (otherIndex === index) return;
+  let text = document.createTextNode("Lorem ipsum dolor sit amet");
+  rect.appendChild(text);
+});
 
-          const isColliding = checkCollision(box, otherBox);
-          if (isColliding) {
-            velocity = -velocity;
-          }
-        });
+document.addEventListener("mousemove", function(event) {
+  if (!isDrawing) return;
 
-        box.style.top = y + 'px';
+  let width = event.clientX - startX;
+  let height = event.clientY - startY;
+  rect.style.width = width + "px";
+  rect.style.height = height + "px";
+});
 
-        if (y + box.offsetHeight > window.innerHeight) {
-          velocity = -velocity * 0.4;
-          rotationSpeed = velocity / 10 * Math.random(-2, 2);
-          y = window.innerHeight - box.offsetHeight;
-        } else {
-          rotationSpeed = velocity / 5 * Math.random(-2, 2;
-        }
-
-        rotation += rotationSpeed;
-        box.style.transform = `rotate(${rotation}deg)`;
-
-        requestAnimationFrame(update);
-      };
-
-      update();
-    });
-
-    function checkCollision(a, b) {
-      const aRect = a.getBoundingClientRect();
-      const bRect = b.getBoundingClientRect();
-
-      return !(
-        (aRect.bottom < bRect.top) || (aRect.top > bRect.bottom) || (aRect.right < bRect.left) || (aRect.left > bRect.right)
-      );
-    }
   </script>
 </html>
 
