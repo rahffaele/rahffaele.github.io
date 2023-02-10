@@ -73,8 +73,10 @@ document.addEventListener("mousemove", function(event) {
 
   let width = event.clientX - startX;
   let height = event.clientY - startY;
-  rect.style.width = width + "px";
-  rect.style.height = height + "px";
+  if (width > 15 && height > 15) {
+    rect.style.width = width + "px";
+  	rect.style.height = height + "px";
+  }
 
   let fontSize = 12 + Math.sqrt(width * height) / 10;
   rect.style.fontSize = fontSize + "px";
