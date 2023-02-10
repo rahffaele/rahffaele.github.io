@@ -45,7 +45,8 @@ a:hover {
 	font-family: "Mori", sans-serif;
 	font-size: 3vw;
 	font-weight: regular;
-	color: #989898;
+	color: black;
+	opacity: 70%;
 	z-index: 2;
 }
 
