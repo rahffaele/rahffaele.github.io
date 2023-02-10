@@ -54,9 +54,7 @@ document.addEventListener("mousedown", function(event) {
   rect.style.fontSize = "16px";
   rect.style.fontFamily = fontFamilies
   rect.style.padding = "10px";
-  rect.addEventListener("click", function() {
-    window.open("https://www.google.com");
-  });
+  
   document.body.appendChild(rect);
 });
 
@@ -76,6 +74,10 @@ document.addEventListener("mousemove", function(event) {
   if (width > 15 && height > 15) {
     rect.style.width = width + "px";
   	rect.style.height = height + "px";
+  }
+  else { rect.addEventListener("click", function() {
+    window.open("https://www.google.com");
+  });
   }
 
   let fontSize = 12 + Math.sqrt(width * height) / 10;
