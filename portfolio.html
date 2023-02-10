@@ -49,9 +49,7 @@ document.addEventListener("mousedown", function(event) {
   rect.style.backgroundColor = bgColors[rectCounter % 2];
   rect.style.color = textColors[rectCounter % 2];
   rect.style.cursor = "cross";
-  rect.style.border-style: solid;
-  rect.style.border-color: black;
-  rect.style.border-width: 1 + "px";
+  rect.style.border = "thin solid black";
   rect.style.textAlign = "left";
   rect.style.fontSize = "16px";
   rect.style.fontFamily = fontFamilies
