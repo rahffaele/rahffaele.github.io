@@ -18,7 +18,7 @@
     let isDrawing = false;
 let startX, startY, rect;
 let rectCounter = 0;
-let loremIpsum = [
+let text = [
   "CMIK - A cromatic guide of Milan",
   "Interactive experience map, to map a business' customer experience over time",
   "Sed do eiusmod tempor incididunt",
@@ -26,18 +26,13 @@ let loremIpsum = [
   "Ut enim ad minim veniam",
 ];
 let bgColors = [
-  "lightblue",
-  "lightcoral",
-  "lightgreen",
-  "lightgray",
-  "lightpink",
+  "black",
+  "white",
+  "#A2FD14",
 ];
 let textColors = [
-  "darkblue",
-  "darkred",
-  "darkgreen",
-  "darkgray",
-  "darkpink",
+  "black",
+  "white",
 ];
 let fontFamilies = [
   "Arial",
@@ -74,7 +69,7 @@ document.addEventListener("mousedown", function(event) {
 document.addEventListener("mouseup", function() {
   isDrawing = false;
 
-  let text = document.createTextNode(loremIpsum[rectCounter % 5]);
+  let text = document.createTextNode(text[rectCounter % 5]);
   rect.appendChild(text);
   rectCounter++;
 });
