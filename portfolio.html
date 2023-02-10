@@ -62,7 +62,7 @@ document.addEventListener("mousedown", function(event) {
 document.addEventListener("mouseup", function() {
   isDrawing = false;
 
-  let text = document.createTextNode(text[rectCounter % 5]);
+  let text = document.createTextNode(texts[rectCounter % 5]);
   rect.appendChild(text);
   rectCounter++;
 });
