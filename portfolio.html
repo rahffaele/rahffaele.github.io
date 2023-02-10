@@ -7,6 +7,7 @@
         height: 50px;
         background-color: red;
         position: absolute;
+        transform-origin: center bottom;
       }
     </style>
     <meta charset="utf-8">
@@ -30,7 +31,7 @@
     const boxes = document.querySelectorAll('.box');
     const gravity = 0.1;
 
-    boxes.forEach((box) => {
+    boxes.forEach((box, index) => {
       let x = Math.random() * window.innerWidth;
       let y = 0;
       let velocity = 0;
@@ -42,6 +43,17 @@
       const update = () => {
         velocity += gravity;
         y += velocity;
+
+        // Check for collision with other boxes
+        boxes.forEach((otherBox, otherIndex) => {
+          if (otherIndex === index) return;
+
+          const isColliding = checkCollision(box, otherBox);
+          if (isColliding) {
+            velocity = -velocity;
+          }
+        });
+
         box.style.top = y + 'px';
 
         if (y + box.offsetHeight > window.innerHeight) {
@@ -60,6 +72,15 @@
 
       update();
     });
+
+    function checkCollision(a, b) {
+      const aRect = a.getBoundingClientRect();
+      const bRect = b.getBoundingClientRect();
+
+      return !(
+        (aRect.bottom < bRect.top) || (aRect.top > bRect.bottom) || (aRect.right < bRect.left) || (aRect.left > bRect.right)
+      );
+    }
   </script>
 </html>
-</html>
+
