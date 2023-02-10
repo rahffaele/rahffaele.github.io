@@ -87,6 +87,7 @@ canvas {
 
 .archive_card:hover {
   background-color: white;
+  text-decoration: underline;
 }
 
 h3{
