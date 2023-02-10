@@ -34,6 +34,8 @@
       let x = Math.random() * window.innerWidth;
       let y = 0;
       let velocity = 0;
+      let rotation = 0;
+      let rotationSpeed = 0;
 
       box.style.left = x + 'px';
 
@@ -44,8 +46,14 @@
 
         if (y + box.offsetHeight > window.innerHeight) {
           velocity = -velocity * 0.8;
+          rotationSpeed = velocity / 10;
           y = window.innerHeight - box.offsetHeight;
+        } else {
+          rotationSpeed = velocity / 5;
         }
+
+        rotation += rotationSpeed;
+        box.style.transform = `rotate(${rotation}deg)`;
 
         requestAnimationFrame(update);
       };
@@ -53,4 +61,5 @@
       update();
     });
   </script>
+</html>
 </html>
