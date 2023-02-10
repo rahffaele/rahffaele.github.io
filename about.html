@@ -5,6 +5,16 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
 	<script src="path/to/p5.sound.js"></script>
+	<script type="text/javascript">
+		const text = document.querySelector("#text");
+
+document.addEventListener("mousemove", function(event) {
+  const x = event.clientX;
+  const y = event.clientY;
+
+  text.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 40%, white 40%)`;
+});
+	</script>
 	<!--<script type="text/javascript" src="home_interaction.js"></script>-->
 </head>
 <body>
