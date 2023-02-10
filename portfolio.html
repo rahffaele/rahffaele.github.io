@@ -19,8 +19,8 @@
 let startX, startY, rect;
 let rectCounter = 0;
 let loremIpsum = [
-  "Lorem ipsum dolor sit amet",
-  "Consectetur adipiscing elit",
+  "CMIK - A cromatic guide of Milan",
+  "Interactive experience map, to map a business' customer experience over time",
   "Sed do eiusmod tempor incididunt",
   "Ut labore et dolore magna aliqua",
   "Ut enim ad minim veniam",
@@ -39,6 +39,13 @@ let textColors = [
   "darkgray",
   "darkpink",
 ];
+let fontFamilies = [
+  "Arial",
+  "Times New Roman",
+  "Courier New",
+  "Verdana",
+  "Georgia",
+];
 
 document.addEventListener("mousedown", function(event) {
   if (rectCounter === 5) return;
@@ -54,8 +61,10 @@ document.addEventListener("mousedown", function(event) {
   rect.style.backgroundColor = bgColors[rectCounter % 5];
   rect.style.color = textColors[rectCounter % 5];
   rect.style.cursor = "pointer";
-  rect.style.textAlign = "center";
+  rect.style.textAlign = "left";
   rect.style.fontSize = "16px";
+  rect.style.fontFamily = fontFamilies[rectCounter % 5];
+  rect.style.padding = "10px";
   rect.addEventListener("click", function() {
     window.open("https://www.google.com");
   });
@@ -81,6 +90,7 @@ document.addEventListener("mousemove", function(event) {
   let fontSize = 16 + Math.sqrt(width * height) / 20;
   rect.style.fontSize = fontSize + "px";
 });
+
   </script>
 </html>
 
