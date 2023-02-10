@@ -17,8 +17,18 @@
   <script>
     let isDrawing = false;
 let startX, startY, rect;
+let rectCounter = 0;
+let loremIpsum = [
+  "Lorem ipsum dolor sit amet",
+  "Consectetur adipiscing elit",
+  "Sed do eiusmod tempor incididunt",
+  "Ut labore et dolore magna aliqua",
+  "Ut enim ad minim veniam",
+];
 
 document.addEventListener("mousedown", function(event) {
+  if (rectCounter === 5) return;
+
   isDrawing = true;
   startX = event.clientX;
   startY = event.clientY;
@@ -28,14 +38,21 @@ document.addEventListener("mousedown", function(event) {
   rect.style.left = startX + "px";
   rect.style.top = startY + "px";
   rect.style.backgroundColor = "lightgray";
+  rect.style.cursor = "pointer";
+  rect.style.textAlign = "center";
+  rect.style.fontSize = "16px";
+  rect.addEventListener("click", function() {
+    window.open("https://www.google.com");
+  });
   document.body.appendChild(rect);
 });
 
 document.addEventListener("mouseup", function() {
   isDrawing = false;
 
-  let text = document.createTextNode("Lorem ipsum dolor sit amet");
+  let text = document.createTextNode(loremIpsum[rectCounter % 5]);
   rect.appendChild(text);
+  rectCounter++;
 });
 
 document.addEventListener("mousemove", function(event) {
@@ -45,6 +62,9 @@ document.addEventListener("mousemove", function(event) {
   let height = event.clientY - startY;
   rect.style.width = width + "px";
   rect.style.height = height + "px";
+
+  let fontSize = 16 + Math.sqrt(width * height) / 20;
+  rect.style.fontSize = fontSize + "px";
 });
 
   </script>
