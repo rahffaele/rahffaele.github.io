@@ -57,7 +57,7 @@
         box.style.top = y + 'px';
 
         if (y + box.offsetHeight > window.innerHeight) {
-          velocity = -velocity * 0.8;
+          velocity = -velocity * 0.1;
           rotationSpeed = velocity / 10;
           y = window.innerHeight - box.offsetHeight;
         } else {
