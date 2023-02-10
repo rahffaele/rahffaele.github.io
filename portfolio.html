@@ -25,6 +25,20 @@ let loremIpsum = [
   "Ut labore et dolore magna aliqua",
   "Ut enim ad minim veniam",
 ];
+let bgColors = [
+  "lightblue",
+  "lightcoral",
+  "lightgreen",
+  "lightgray",
+  "lightpink",
+];
+let textColors = [
+  "darkblue",
+  "darkred",
+  "darkgreen",
+  "darkgray",
+  "darkpink",
+];
 
 document.addEventListener("mousedown", function(event) {
   if (rectCounter === 5) return;
@@ -37,7 +51,8 @@ document.addEventListener("mousedown", function(event) {
   rect.style.position = "absolute";
   rect.style.left = startX + "px";
   rect.style.top = startY + "px";
-  rect.style.backgroundColor = "lightgray";
+  rect.style.backgroundColor = bgColors[rectCounter % 5];
+  rect.style.color = textColors[rectCounter % 5];
   rect.style.cursor = "pointer";
   rect.style.textAlign = "center";
   rect.style.fontSize = "16px";
@@ -66,7 +81,6 @@ document.addEventListener("mousemove", function(event) {
   let fontSize = 16 + Math.sqrt(width * height) / 20;
   rect.style.fontSize = fontSize + "px";
 });
-
   </script>
 </html>
 
