@@ -34,13 +34,7 @@ let textColors = [
   "black",
   "white",
 ];
-let fontFamilies = [
-  "Arial",
-  "Times New Roman",
-  "Courier New",
-  "Verdana",
-  "Georgia",
-];
+let fontFamilies = "Mori";
 
 document.addEventListener("mousedown", function(event) {
   if (rectCounter === 5) return;
@@ -58,7 +52,7 @@ document.addEventListener("mousedown", function(event) {
   rect.style.cursor = "pointer";
   rect.style.textAlign = "left";
   rect.style.fontSize = "16px";
-  rect.style.fontFamily = fontFamilies[rectCounter % 5];
+  rect.style.fontFamily = fontFamilies
   rect.style.padding = "10px";
   rect.addEventListener("click", function() {
     window.open("https://www.google.com");
