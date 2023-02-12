@@ -196,6 +196,7 @@ h3{
 	bottom: 8;
 	padding: 8px 16px;
 	margin-top: 8px;
+	text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
