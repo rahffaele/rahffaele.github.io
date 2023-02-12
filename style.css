@@ -150,6 +150,7 @@ h3{
 
 .left-column {
   width: 50%;
+  height: 100%;
   padding: 1rem;
   box-sizing: border-box;
   background-color: grey;
@@ -157,6 +158,7 @@ h3{
 
 .right-column {
   width: 50%;
+  height: 100%;
   padding: 1rem;
   box-sizing: border-box;
   background-color: grey;
