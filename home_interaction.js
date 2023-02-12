@@ -124,12 +124,12 @@ function setup() {
   
   fill(0);
   textFont(Mori);
-  textSize(40);
+  textSize(32);
   textAlign(CENTER, CENTER);
   text("Raffaele Amietta - Designer", displayWidth/2, displayHeight/2-30);
   fill(0);
   textFont(AlbertSans);
-  textSize(25);
+  textSize(16);
   textAlign(CENTER, CENTER);
   text("Click and drag anywhere to draw the menu", displayWidth/2, displayHeight/2+10);
 
@@ -144,7 +144,7 @@ function draw() {
   if (mouseIsPressed && control == 0) {
 
     let d = dist(x, y, mouseX, mouseY);
-    textSize(30);
+    textSize(24);
     let newLetter = voice1.charAt(counter);
     stepSize = textWidth(newLetter);
 
@@ -181,7 +181,7 @@ function draw() {
   }
   if (mouseIsPressed  && control == 1) {
     let d = dist(x, y, mouseX, mouseY);
-    textSize(30);
+    textSize(24);
     let newLetter = voice2.charAt(counter);
     stepSize = textWidth(newLetter);
 
@@ -219,7 +219,7 @@ function draw() {
   
   if (mouseIsPressed && control == 2) {
     let d = dist(x, y, mouseX, mouseY);
-    textSize(30);
+    textSize(24);
     let newLetter = voice3.charAt(counter);
     stepSize = textWidth(newLetter);
 
