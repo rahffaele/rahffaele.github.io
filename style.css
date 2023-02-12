@@ -169,6 +169,32 @@ h3{
 	padding: 16px;
 	background-color: #6865FF;
 	margin: 16px;
+	border-radius: 16px;
+}
+
+.project_title {
+	text-align: left;
+	font-family: 'Mori', sans-serif;
+	color: white;
+}
+
+.project_description {
+	text-align: left;
+	font-family: 'AlbertSans', sans-serif;
+	color: white;
+}
+
+.project_tag {
+	display: inline-block;
+	background-color: white;
+	border-radius: 25px;
+	font-family: "Mori", sans-serif;
+	font-size: 12px;
+	text-align: center;
+	color: black;
+	bottom: 8;
+	padding: 8px 16px;
+	margin-top: 8px;
 }
 
 @media (max-width: 768px) {
