@@ -152,12 +152,14 @@ h3{
   width: 50%;
   padding: 1rem;
   box-sizing: border-box;
+  background-color: grey;
 }
 
 .right-column {
   width: 50%;
   padding: 1rem;
   box-sizing: border-box;
+  background-color: grey;
 }
 
 @media (max-width: 768px) {
