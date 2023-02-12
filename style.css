@@ -165,6 +165,12 @@ h3{
   background-color: grey;
 }
 
+.row {
+	padding: 16px;
+	background-color: #6865FF;
+	margin: 16px;
+}
+
 @media (max-width: 768px) {
   .left-column, .right-column {
     width: 100%;
