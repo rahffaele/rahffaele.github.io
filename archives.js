@@ -16,7 +16,7 @@ function checkOverlap(card) {
   archiveCards.forEach(otherCard => {
     if (card === otherCard) return;
 
-    const cardRect = archiveCard.getBoundingClientRect();
+    const cardRect = archiveCards.getBoundingClientRect();
     const otherCardRect = otherCard.getBoundingClientRect();
 
     overlapping = !(cardRect.right <= otherCardRect.left || 
