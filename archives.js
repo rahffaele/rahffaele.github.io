@@ -10,28 +10,23 @@ function getRandomNumber(min, max) {
 }
 
 // function to check if a card element overlaps with any other card
-function checkOverlap(card) {
+ffunction checkOverlap(card) {
   let overlapping = false;
-  
-  // loop through each card element
-  archiveCards.forEach(otherCard => {
-    // check if the card is the same as the one being passed to the function
+
+  cards.forEach(otherCard => {
     if (card === otherCard) return;
-    
-    // get the bounding rectangles of the card and otherCard
+
     const cardRect = card.getBoundingClientRect();
     const otherCardRect = otherCard.getBoundingClientRect();
-    
-    // check if the two rectangles overlap
-    overlapping = !(cardRect.right < otherCardRect.left || 
-                   cardRect.left > otherCardRect.right || 
-                   cardRect.bottom < otherCardRect.top || 
-                   cardRect.top > otherCardRect.bottom);
-    
-    // if overlapping, stop checking for overlapping with other cards
+
+    overlapping = !(cardRect.right <= otherCardRect.left || 
+                   cardRect.left >= otherCardRect.right || 
+                   cardRect.bottom <= otherCardRect.top || 
+                   cardRect.top >= otherCardRect.bottom);
+
     if (overlapping) return;
   });
-  
+
   return overlapping;
 }
 
