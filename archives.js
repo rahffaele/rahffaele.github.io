@@ -83,12 +83,12 @@ function triggerScrolling() {
 
   if (cursorX > windowWidth - scrollDistance) {
     window.scrollBy(scrollDistance, 0);
-    document.style.cursor = "e-resize"
+    document.document.getElementsByTagName("BODY").style.cursor = "e-resize"
   }
 
   if (cursorY > windowHeight - scrollDistance) {
     window.scrollBy(0, scrollDistance);
-    document.style.cursor = "s-resize"
+    document.document.getElementsByTagName("BODY").style.cursor = "s-resize"
   }
 }
 
