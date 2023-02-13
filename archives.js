@@ -13,10 +13,10 @@ function getRandomNumber(min, max) {
 function checkOverlap(card) {
   let overlapping = false;
 
-  cards.forEach(otherCard => {
+  archiveCards.forEach(otherCard => {
     if (card === otherCard) return;
 
-    const cardRect = card.getBoundingClientRect();
+    const cardRect = archiveCard.getBoundingClientRect();
     const otherCardRect = otherCard.getBoundingClientRect();
 
     overlapping = !(cardRect.right <= otherCardRect.left || 
