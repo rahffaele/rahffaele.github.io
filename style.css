@@ -74,6 +74,10 @@ canvas {
 	margin-top: 32px;
 }
 
+.menu {
+	position: fixed;
+}
+
 /* -------------- ARCHIVES CSS -------------------*/
 
 .archive_card {
