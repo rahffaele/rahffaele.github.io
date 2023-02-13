@@ -289,7 +289,7 @@ function mousePressed() {
 }
 
 function keyReleased() {
-  if (keyCode == DELETE || keyCode == BACKSPACE) background(255);
+  if (keyCode == DELETE || keyCode == BACKSPACE) background("#5767F9");
 }
 
 function keyPressed() {
