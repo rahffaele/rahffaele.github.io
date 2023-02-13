@@ -77,17 +77,6 @@ canvas {
 .menu {
 	position: fixed;
 	margin-top: 0;
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.menu_column {
-  width: 25%;
-  height: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-  background-color: white;
-  margin-top: 5%;
 }
 
 /* -------------- ARCHIVES CSS -------------------*/
