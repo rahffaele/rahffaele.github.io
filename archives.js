@@ -79,6 +79,25 @@ $(document).ready(function(){
     });
 });
 
+function triggerScrolling() {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const cursorX = window.event.clientX;
+  const cursorY = window.event.clientY;
+  const scrollDistance = 50;
+
+  if (cursorX > windowWidth - scrollDistance) {
+    window.scrollBy(scrollDistance, 0);
+  }
+
+  if (cursorY > windowHeight - scrollDistance) {
+    window.scrollBy(0, scrollDistance);
+  }
+}
+
+document.addEventListener("mousemove", triggerScrolling);
+
+
 };
 
 
