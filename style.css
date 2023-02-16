@@ -188,6 +188,7 @@ h3{
   padding: 1rem;
   box-sizing: border-box;
   background-color: white;
+  margin-top: 15%;
 }
 
 .right-column {
@@ -196,12 +197,12 @@ h3{
   padding: 1rem;
   box-sizing: border-box;
   background-color: white;
-  margin-top: 5%;
+  margin-top: 15%;
 }
 
 .row {
 	padding: 16px;
-	background-color: #F1F2F4;
+	background-color: #5767F9;
 	margin: 16px;
 	border-radius: 16px;
 }
