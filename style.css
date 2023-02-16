@@ -28,23 +28,6 @@ p {
 	font-family: 'AlbertSans', sans-serif;
 }
 
-.bc {
-	font-family: "Mori", sans-serif;
-	font-size: 3vw;
-	font-weight: regular;
-	color: white;
-	opacity: 50%;
-	z-index: 2;
-}
-
-.bc_selected {
-	font-family: "Mori", sans-serif;
-	font-size: 3vw;
-	font-weight: regular;
-	color: #5767F9;
-	z-index: 2;
-}
-
 nav {
   position: fixed;
   top: 0;
@@ -83,6 +66,22 @@ a:hover {
 	text-decoration-thickness:  1px;
 }
 
+.bc {
+	font-family: "Mori", sans-serif;
+	font-size: 3vw;
+	font-weight: regular;
+	color: white;
+	opacity: 50%;
+	z-index: 2;
+}
+
+.bc_selected {
+	font-family: "Mori", sans-serif;
+	font-size: 3vw;
+	font-weight: regular;
+	color: #5767F9;
+	z-index: 2;
+}
 
 canvas {
 	margin: auto;
