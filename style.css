@@ -58,7 +58,7 @@ a:hover {
 }
 
 .bc {
-	font-size: 80px;
+	font-size: 2.5vw;
 	font-weight: regular;
 	color: #5767F9;
 	opacity: 50%;
@@ -66,7 +66,7 @@ a:hover {
 }
 
 .bc_selected {
-	font-size: 80px;
+	font-size: 2.5vw;
 	font-weight: regular;
 	color: #5767F9;
 	z-index: 2;
