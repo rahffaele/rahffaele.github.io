@@ -95,8 +95,8 @@ canvas {
 
 .contacts {
 	bottom: 0;
-	margin-top: 32px;
-	background-color: #989898;
+	margin: 32px 0 0 0;
+	background-color: #5767F9;
 }
 
 .menu {
