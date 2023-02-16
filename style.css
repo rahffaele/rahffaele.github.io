@@ -66,16 +66,14 @@ a:hover {
 }
 
 .bc {
-	font-family: "Mori", sans-serif;
 	font-size: 3vw;
 	font-weight: regular;
-	color: white;
+	color: #5767F9;
 	opacity: 50%;
 	z-index: 2;
 }
 
 .bc_selected {
-	font-family: "Mori", sans-serif;
 	font-size: 3vw;
 	font-weight: regular;
 	color: #5767F9;
