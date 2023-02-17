@@ -121,13 +121,13 @@ function setup() {
   x = mouseX;
   y = mouseY;
 
-  background("#5767F9");
-  fill(255);
+  background("#F1F2F4");
+  fill("black");
   textFont(Mori);
   textSize(32);
   textAlign(CENTER, CENTER);
   text("Raffaele Amietta - Designer", displayWidth/2, displayHeight/2-30);
-  fill(255);
+  fill("black");
   textFont(AlbertSans);
   textSize(16);
   textAlign(CENTER, CENTER);
