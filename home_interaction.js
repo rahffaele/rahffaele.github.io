@@ -145,7 +145,7 @@ function draw() {
 
     let d = dist(x, y, mouseX, mouseY);
     textSize(24);
-    fill(255);
+    fill("black");
     let newLetter = voice1.charAt(counter);
     stepSize = textWidth(newLetter);
 
@@ -183,7 +183,7 @@ function draw() {
   if (mouseIsPressed  && control == 1) {
     let d = dist(x, y, mouseX, mouseY);
     textSize(24);
-    fill(255);
+    fill("black");
     let newLetter = voice2.charAt(counter);
     stepSize = textWidth(newLetter);
 
@@ -222,7 +222,7 @@ function draw() {
   if (mouseIsPressed && control == 2) {
     let d = dist(x, y, mouseX, mouseY);
     textSize(24);
-    fill(255);
+    fill("black");
     let newLetter = voice3.charAt(counter);
     stepSize = textWidth(newLetter);
 
