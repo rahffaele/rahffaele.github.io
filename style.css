@@ -16,10 +16,6 @@ body {
 	background-color: white;
 }
 
-p {
-	font-family: 'AlbertSans', sans-serif;
-}
-
 nav {
   position: fixed;
   top: 8px;
