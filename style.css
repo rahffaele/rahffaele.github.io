@@ -69,6 +69,7 @@ a:hover {
 	color: #5767F9;
 	opacity: 50%;
 	z-index: 2;
+	font-family: 'Mori', sans-serif;
 }
 
 .bc_selected {
