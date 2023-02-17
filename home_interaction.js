@@ -135,7 +135,7 @@ function setup() {
 
   textFont(AlbertSans);
   textAlign(LEFT);
-  fill(0);
+  fill("black");
 
 
 }
