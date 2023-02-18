@@ -27,7 +27,8 @@
     // Listen for mouse movement
     document.addEventListener("mousemove", (event) => {
       // Create a new image element
-      const image = images[Math.floor(Math.random() * images.length)];
+      if (clientY > 60) {
+        const image = images[Math.floor(Math.random() * images.length)];
       const newImage = document.createElement("img");
       newImage.src = image.src;
       newImage.style.left = event.clientX + "px";
@@ -49,4 +50,5 @@
       newImage.addEventListener("click", () => {
         window.open(linkUrl, "_blank");
       });
+      }
     });
