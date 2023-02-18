@@ -27,7 +27,7 @@
     // Listen for mouse movement
     document.addEventListener("mousemove", (event) => {
       // Create a new image element
-      if (clientY > 60) {
+      if (event.clientY > 60) {
         const image = images[Math.floor(Math.random() * images.length)];
       const newImage = document.createElement("img");
       newImage.src = image.src;
