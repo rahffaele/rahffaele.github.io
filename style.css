@@ -242,9 +242,14 @@ h3{
 }
 
 @media (max-width: 768px) {
-  .left-column, .right-column {
+  .left-column {
     width: 100%;
   }
+
+  .right-column {
+    display: none;
+  }
+
   #about {
   	margin-top: 15%;
   }
