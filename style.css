@@ -237,7 +237,6 @@ h3{
 
 .p_cover {
 	max-width: 90%;
-	position: fixed;
 }
 
 @media (max-width: 768px) {
