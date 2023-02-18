@@ -1,7 +1,7 @@
     // Define an array of image URLs and link URLs
     const imageUrls = [
-      "../archive_assets/cover_scifi_ui.png",
-      "../archive_assets/fractal1.png",
+      "../archive_assets/orto padova.png",
+      "../archive_assets/cmik.png",
       "../archive_assets/Overview.png"
     ];
 
