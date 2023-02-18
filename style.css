@@ -46,7 +46,7 @@ li:first-child {
 }
 
 li:last-child {
-	margin-right: 8px;
+	margin-right: 16px;
 }
 
 a {
