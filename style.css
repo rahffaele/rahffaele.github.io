@@ -197,6 +197,9 @@ h3{
   background-color: white;
   margin-top: 5%;
   background-color: #F1F2F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row {
@@ -233,7 +236,7 @@ h3{
 
 
 .p_cover {
-	max-width: 50%;
+	max-width: 80%;
 }
 
 @media (max-width: 768px) {
