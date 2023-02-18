@@ -7,7 +7,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $("#fsecond_project").hover(function(){
+    $("#second_project").hover(function(){
         $("#cmik-cover").removeClass("hide");
     }, function(){
         $("#cmik-cover").addClass("hide");
