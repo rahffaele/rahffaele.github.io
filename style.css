@@ -192,6 +192,8 @@ h3{
 .right-column {
   width: 60%;
   height: 100%;
+  position: fixed;
+  margin-left: 40%;
   padding: 1rem;
   box-sizing: border-box;
   background-color: white;
