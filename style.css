@@ -231,6 +231,10 @@ h3{
 	text-transform: uppercase;
 }
 
+
+.p_cover {
+}
+
 @media (max-width: 768px) {
   .left-column, .right-column {
     width: 100%;
