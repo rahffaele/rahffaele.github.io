@@ -13,3 +13,11 @@ $(document).ready(function(){
         $("#cmik-cover").addClass("hide");
     });
 });
+
+$(document).ready(function(){
+    $("#third_project").hover(function(){
+        $("#orto-cover").removeClass("hide");
+    }, function(){
+        $("#orto-cover").addClass("hide");
+    });
+});
