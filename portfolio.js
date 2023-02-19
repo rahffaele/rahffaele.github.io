@@ -28,7 +28,7 @@ $(document).ready(function(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  var firstProject = document.getElementById("first_project");
+  var firstProject = document.getElementById("#first_project");
   firstProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cx-map.html";
   });
