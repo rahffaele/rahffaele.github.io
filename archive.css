@@ -1,5 +1,18 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 
+p {
+  font-family: "Mori", sans-serif;
+}
+
+.archiveimg {
+  max-width: 80%;
+}
+
+.bomb {
+  padding: 24px 0px;
+  border-top: 1px solid #5767F9;
+}
+
 .cell {
   width: 4vw;
   height: 4vw;
@@ -69,6 +82,5 @@
     margin-top: 15%;
   }
 }
-
 
 {}
