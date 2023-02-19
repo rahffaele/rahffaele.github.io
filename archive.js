@@ -36,6 +36,7 @@ function handleCellClick(event) {
   var col = cell.dataset.col;
   if (linkLocations.includes(row + "," + col)) {
     window.location.href = "https://example.com";
+    cell.classList.add("clicked_link");
   } else {
     cell.classList.add("clicked");
   }
