@@ -1,7 +1,7 @@
 .cell {
   width: 20px;
   height: 20px;
-  border: 1px solid black;
+  border: 1px solid #5767F9;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -10,11 +10,11 @@
 }
 
 .hidden {
-  background-color: gray;
+  background-color: #F1F2F4;
   color: gray;
 }
 
 .clicked {
-  background-color: white;
+  background-color: #5767F9;
 }
 
