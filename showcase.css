@@ -97,6 +97,7 @@ h1 {
 	font-family: "Mori", sans-serif;
 	font-size: 4vw;
 	color: #5767F9;
+	margin-bottom: 16px;
 }
 
 h3 {
@@ -105,7 +106,10 @@ h3 {
 	opacity: 50%;
 }
 
-{}
+p {
+  font-family: 'Mori', sans-serif;
+  color: #5767F9;
+}
 
 
 /* responsiveness */
@@ -124,7 +128,7 @@ h3 {
 	font-family: "Mori", sans-serif;
 	font-size: 40px;
 	color: #5767F9;
-	margin-bottom: 16px;
+	margin-bottom: 8px;
  }
 
 
