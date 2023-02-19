@@ -244,6 +244,10 @@ h3{
 	height: auto;
 }
 
+.mobile_alert {
+	display: none;
+}
+
 @media (max-width: 768px) {
   .left-column {
     width: 100%;
@@ -255,6 +259,14 @@ h3{
 
   #about {
   	margin-top: 15%;
+  }
+
+  .mobile_alert {
+	display: block;
+	position: fixed;
+	width: 100%;
+	background-color: #F1F2F4;
+	margin-top: 60px;
   }
 }
 
