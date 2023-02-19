@@ -2,7 +2,9 @@ var boardSize = 10;
 var numLinks = 10;
 var linkLocations = [];
 
-function generateBoard() {
+
+window.onload = function() {
+  function generateBoard() {
   var gameBoard = document.getElementById("gameBoard");
   for (var i = 0; i < boardSize; i++) {
     for (var j = 0; j < boardSize; j++) {
@@ -40,3 +42,4 @@ function handleCellClick(event) {
 }
 
 generateBoard();
+};
