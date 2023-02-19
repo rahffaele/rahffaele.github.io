@@ -12,8 +12,7 @@
 }
 
 .hidden {
-  background-color: #F1F2F4;
-  color: gray;
+  display: none;
 }
 
 .clicked {
