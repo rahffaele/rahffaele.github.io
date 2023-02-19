@@ -53,8 +53,8 @@
 
 @media (max-width: 768px) {
   .cell {
-  width: 9vw;
-  height: 9vw;
+  width: 8vw;
+  height: 8vw;
   }
 
   .left-column {
