@@ -1,8 +1,8 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 
 .cell {
-  width: 20px;
-  height: 20px;
+  width: 4vw;
+  height: 4vw;
   border: 0.5px solid #5767F9;
   display: inline-block;
   text-align: center;
@@ -28,3 +28,9 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .cell {
+  width: 9vw;
+  height: 9vw;
+  }
+}
