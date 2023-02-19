@@ -1,3 +1,21 @@
 #blurred-text {
   filter: blur(5px);
 }
+
+#blurred-text:hover {
+  filter: none;
+}
+
+#blurred-text::before {
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at center, transparent 0, transparent 5px, white 5px);
+  background-position: center;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
