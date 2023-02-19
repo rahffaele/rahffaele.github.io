@@ -18,7 +18,8 @@
   background-color: #5767F9;
 }
 
-.clicked {
+.clicked_link {
   background-color: black;
+  border: 1px solid black;
 }
 
