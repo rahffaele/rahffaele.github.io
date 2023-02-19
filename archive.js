@@ -38,9 +38,29 @@ function handleCellClick(event) {
     //window.location.href = "https://example.com";
     cell.classList.add("clicked_link");
   } else {
+    var adjacentLinkCount = getAdjacentLinkCount(row, col);
+    if (adjacentLinkCount > 0) {
+      cell.innerText = adjacentLinkCount;
+    }
     cell.classList.add("clicked");
   }
 }
 
 generateBoard();
+
+function getAdjacentLinkCount(row, col) {
+  var linkCount = 0;
+  for (var i = -1; i <= 1; i++) {
+    for (var j = -1; j <= 1; j++) {
+      var checkRow = parseInt(row) + i;
+      var checkCol = parseInt(col) + j;
+      if (checkRow >= 0 && checkRow < boardSize && checkCol >= 0 && checkCol < boardSize) {
+        if (linkLocations.includes(checkRow + "," + checkCol)) {
+          linkCount++;
+        }
+      }
+    }
+  }
+  return linkCount;
+}
 };
