@@ -106,3 +106,25 @@ h3 {
 }
 
 {}
+
+
+/* responsiveness */
+
+@media (max-width: 768px) {
+  .left-column {
+    width: 100%;
+    margin-top: 15%;
+  }
+
+  .right-column {
+    display: none;
+  }
+
+  h1 {
+	font-family: "Mori", sans-serif;
+	font-size: 40px;
+	color: #5767F9;
+ }
+
+
+}
