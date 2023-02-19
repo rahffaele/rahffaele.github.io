@@ -240,6 +240,10 @@ h3{
 	height: auto;
 }
 
+#first_project:hover {
+	cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .left-column {
     width: 100%;
@@ -253,6 +257,8 @@ h3{
   	margin-top: 15%;
   }
 }
+
+
 
 
 {}
