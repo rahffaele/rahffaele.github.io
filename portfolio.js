@@ -1,3 +1,5 @@
+//----------- COVER HOVER FUNCTIONS ------------
+
 $(document).ready(function(){
     $("#first_project").hover(function(){
         $("#cxmap-cover").removeClass("hide");
@@ -21,3 +23,10 @@ $(document).ready(function(){
         $("#orto-cover").addClass("hide");
     });
 });
+
+//----------- CLICKABLE DIVS FUNCTIONS ------------
+
+var firstProject = document.getElementById("first_project");
+  firstProject.addEventListener("click", function() {
+    window.location.href = "https://rahffaele.github.io/cx-map.html";
+  });
