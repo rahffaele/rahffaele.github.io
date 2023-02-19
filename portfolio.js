@@ -26,7 +26,10 @@ $(document).ready(function(){
 
 //----------- CLICKABLE DIVS FUNCTIONS ------------
 
-var firstProject = document.getElementById("first_project");
+
+document.addEventListener("DOMContentLoaded", function() {
+  var firstProject = document.getElementById("first_project");
   firstProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cx-map.html";
   });
+});
