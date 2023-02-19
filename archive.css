@@ -1,7 +1,7 @@
 .cell {
   width: 20px;
   height: 20px;
-  border: 1px solid #5767F9;
+  border: 0.5px solid #5767F9;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
