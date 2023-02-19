@@ -1,3 +1,5 @@
+@font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
+
 .cell {
   width: 20px;
   height: 20px;
@@ -21,5 +23,7 @@
 .clicked_link {
   background-color: black;
   border: 1px solid black;
+  color: white;
+  font-family: "Mori", sans-serif;
 }
 
