@@ -35,7 +35,9 @@ function handleCellClick(event) {
   var row = cell.dataset.row;
   var col = cell.dataset.col;
   if (linkLocations.includes(row + "," + col)) {
-    //window.location.href = "https://example.com";
+    var bombNumber = linkLocations.indexOf(row + "," + col) + 1;
+    var bombDiv = document.getElementById("bomb" + bombNumber);
+    bombDiv.classList.remove("hidden");
     cell.classList.add("clicked_link");
   } else {
     var adjacentLinkCount = getAdjacentLinkCount(row, col);
