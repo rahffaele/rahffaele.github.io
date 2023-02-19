@@ -207,6 +207,10 @@ h3{
 	border-top: 1px solid #5767F9;
 }
 
+.row:hover {
+	cursor: pointer;
+}
+
 .project_title {
 	text-align: left;
 	font-family: 'Mori', sans-serif;
@@ -238,10 +242,6 @@ h3{
 .p_cover {
 	width: 100%;
 	height: auto;
-}
-
-#first_project:hover {
-	cursor: pointer;
 }
 
 @media (max-width: 768px) {
