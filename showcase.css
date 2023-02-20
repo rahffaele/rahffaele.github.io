@@ -74,7 +74,7 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.broad-column {
+.title-column {
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
@@ -127,6 +127,11 @@ p {
 /* responsiveness */
 
 @media (max-width: 768px) {
+  .title-column {
+  width: 100%;
+  margin-top: 15%;
+  }
+
   .left-column {
     width: 100%;
   }
