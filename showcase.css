@@ -79,7 +79,7 @@ a:hover {
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
-  background-color: #F1F2F4;
+  background-color: green;
 }
 
 
@@ -88,7 +88,7 @@ a:hover {
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
-  background-color: #F1F2F4;
+  background-color: blue;
 }
 
 .middle-column {
@@ -96,7 +96,7 @@ a:hover {
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
-  background-color: #F1F2F4;
+  background-color: yellow;
 }
 
 
