@@ -55,6 +55,7 @@ p {
   background-color: white;
   margin-top: 5%;
   background-color: #F1F2F4;
+  position: fixed;
 }
 
 .right-column {
@@ -64,6 +65,7 @@ p {
   box-sizing: border-box;
   margin-top: 5%;
   background-color: #F1F2F4;
+  margin-left: 50%;
 }
 
 @media (max-width: 768px) {
