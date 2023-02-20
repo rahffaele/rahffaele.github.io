@@ -84,19 +84,28 @@ a:hover {
 
 
 .left-column {
-  width: 60%;
+  width: 40%;
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
   background-color: #F1F2F4;
 }
 
-.right-column {
+.middle-column {
   width: 40%;
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
   background-color: #F1F2F4;
+}
+
+
+.right-column {
+  width: 20%;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-top: 5%;
+  background-color: red;
 }
 
 h1 {
