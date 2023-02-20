@@ -74,19 +74,25 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.left-column {
-  width: 60%;
-  height: 100%;
+.broad-column {
+  width: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: white;
+  margin-top: 5%;
+  background-color: #F1F2F4;
+}
+
+
+.left-column {
+  width: 60%;
+  padding: 1rem;
+  box-sizing: border-box;
   margin-top: 5%;
   background-color: #F1F2F4;
 }
 
 .right-column {
   width: 40%;
-  height: auto;
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
