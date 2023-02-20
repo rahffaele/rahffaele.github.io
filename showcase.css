@@ -83,22 +83,24 @@ img {
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
-  background-color: green;
 }
 
+.broad-column {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
 .left-column {
   width: 40%;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: blue;
 }
 
 .right-column {
   width: 60%;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: red;
 }
 
 h1 {
