@@ -140,6 +140,12 @@ p {
   color: #5767F9;
 }
 
+sup {
+	font-size: 50%;
+	font-family: 'Mori', sans-serif;
+  	color: black;
+}
+
 /* responsiveness */
 
 @media (max-width: 768px) {
