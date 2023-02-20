@@ -118,6 +118,14 @@ img {
 .list {
 	font-family: "Mori", sans-serif;
 	color: #5767F9;
+
+}
+
+
+.list-element {
+	font-family: "Mori", sans-serif;
+	color: #5767F9;
+	text-align: left;
 }
 
 h1 {
