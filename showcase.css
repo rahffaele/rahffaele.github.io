@@ -118,7 +118,7 @@ img {
 .list {
 	font-family: "Mori", sans-serif;
 	color: #5767F9;
-
+	display: inline-block;
 }
 
 
