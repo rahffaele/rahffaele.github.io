@@ -4,6 +4,12 @@ p {
   font-family: "Mori", sans-serif;
 }
 
+h3 {
+  font-family: "Mori", sans-serif;
+  color: #5767F9;
+  opacity: 50%;
+}
+
 .archiveimg {
   max-width: 60%;
 }
