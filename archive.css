@@ -94,6 +94,9 @@ h3 {
     margin-top: 15%;
     margin-left: 0;
   }
+  .archiveimg {
+  max-width: 100%;
+  }
 }
 
 {}
