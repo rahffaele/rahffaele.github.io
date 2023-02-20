@@ -69,6 +69,10 @@ a:hover {
 	z-index: 2;
 }
 
+img {
+	width: 100%;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -141,3 +145,6 @@ p {
 
 
 }
+
+
+{}
