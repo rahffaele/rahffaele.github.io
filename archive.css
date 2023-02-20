@@ -79,11 +79,13 @@ p {
     margin-top: 15%;
     display: flex;
     justify-content: center;
+    position: relative;
   }
 
   .right-column {
     width: 100%;
     margin-top: 15%;
+    margin.left: 0;
   }
 }
 
