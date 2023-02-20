@@ -115,6 +115,8 @@ img {
   box-sizing: border-box;
 }
 
+.list
+
 h1 {
 	font-family: "Mori", sans-serif;
 	font-size: 4vw;
@@ -137,7 +139,6 @@ p {
   font-family: 'Mori', sans-serif;
   color: #5767F9;
 }
-
 
 /* responsiveness */
 
