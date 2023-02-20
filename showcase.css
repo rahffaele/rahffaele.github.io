@@ -136,6 +136,10 @@ p {
   margin-top: 15%;
   }
 
+  .img-column {
+  width: 100%;
+  }
+
   .left-column {
     width: 100%;
   }
