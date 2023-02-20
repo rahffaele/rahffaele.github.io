@@ -90,16 +90,8 @@ a:hover {
   background-color: blue;
 }
 
-.middle-column {
-  width: 40%;
-  padding: 1rem;
-  box-sizing: border-box;
-  background-color: yellow;
-}
-
-
 .right-column {
-  width: 20%;
+  width: 60%;
   padding: 1rem;
   box-sizing: border-box;
   background-color: red;
@@ -136,13 +128,8 @@ p {
     width: 100%;
   }
 
-  .middle-column {
-    width: 100%;
-  }
-
-
   .right-column {
-    display: none;
+    width: 100%;
   }
 
   h1 {
