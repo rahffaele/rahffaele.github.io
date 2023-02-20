@@ -91,6 +91,12 @@ img {
   box-sizing: border-box;
 }
 
+.fullimg-column-pad {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 .img-column {
   width: 60%;
   padding: 1rem;
