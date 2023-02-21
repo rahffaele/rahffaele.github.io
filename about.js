@@ -6,7 +6,7 @@
     ];
 
     const linkUrls = [
-      "https://www.google.com/",
+      "../orto-botanico-padova.html",
       "../cmik.html",
       "../cx-map.html"
     ];
@@ -48,7 +48,7 @@
       // Add a click listener to the image
       const linkUrl = linkUrls[images.indexOf(image)];
       newImage.addEventListener("click", () => {
-        window.open(linkUrl, "_blank");
+        window.open(linkUrl, "_self");
       });
       }
     });
