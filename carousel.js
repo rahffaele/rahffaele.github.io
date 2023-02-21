@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
 const carousel = document.querySelector('.carousel');
 const container = carousel.querySelector('.carousel-container');
 const items = carousel.querySelectorAll('.carousel-item');
@@ -48,3 +49,4 @@ nextBtn.addEventListener('click', () => {
 });
 
 updateButtons();
+});
