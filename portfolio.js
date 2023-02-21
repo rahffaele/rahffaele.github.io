@@ -33,3 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = "https://rahffaele.github.io/cx-map.html";
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var secondProject = document.getElementById("second_project");
+  firstProject.addEventListener("click", function() {
+    window.location.href = "https://rahffaele.github.io/cmik.html";
+  });
+});
