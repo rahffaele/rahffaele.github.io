@@ -8,7 +8,7 @@
     const linkUrls = [
       "https://www.google.com/",
       "https://www.w3schools.com/",
-      "hhttps://www.linkedin.com/feed/"
+      "../cx-map.html"
     ];
 
     // Define the fading time (in milliseconds)
