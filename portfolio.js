@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   var secondProject = document.getElementById("second_project");
-  firstProject.addEventListener("click", function() {
+  secondProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cmik.html";
   });
 });
