@@ -7,7 +7,7 @@
 
     const linkUrls = [
       "https://www.google.com/",
-      "https://www.w3schools.com/",
+      "../cmik.html",
       "../cx-map.html"
     ];
 
