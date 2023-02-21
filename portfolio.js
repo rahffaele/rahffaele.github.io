@@ -40,3 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = "https://rahffaele.github.io/cmik.html";
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var thirdProject = document.getElementById("third_project");
+  thirdProject.addEventListener("click", function() {
+    window.location.href = "https://rahffaele.github.io/orto-botanico-padova.html";
+  });
+});
