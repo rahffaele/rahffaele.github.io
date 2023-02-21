@@ -132,6 +132,21 @@ img {
 	padding: 8px 0;
 }
 
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  width: 100%;
+  padding: 1rem;
+}
+
 h1 {
 	font-family: "Mori", sans-serif;
 	font-size: 4vw;
