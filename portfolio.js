@@ -28,21 +28,21 @@ $(document).ready(function(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  var firstProject = document.getElementById("first_project");
+  var firstProject = document.getElementById("cxmap-project");
   firstProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cx-map.html";
   });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  var secondProject = document.getElementById("second_project");
+  var secondProject = document.getElementById("orto-project");
   secondProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/orto-botanico-padova.html";
   });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  var thirdProject = document.getElementById("third_project");
+  var thirdProject = document.getElementById("cmik-project");
   thirdProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cmik.html";
   });
