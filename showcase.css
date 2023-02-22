@@ -132,19 +132,24 @@ img {
 	padding: 8px 0;
 }
 
-.carousel {
-  width: 100%;
-  overflow: hidden;
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-.carousel-container {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  width: 100%;
-  padding: 1rem;
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 h1 {
