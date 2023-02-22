@@ -1,9 +1,10 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 
-p {
+.caption {
   font-family: 'Mori', sans-serif;
   font-size: 12px;
   color: #5767F9;
+  max-width: 80%;
 }
 
 h3 {
