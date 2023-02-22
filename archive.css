@@ -76,6 +76,12 @@ h3 {
   margin-left: 50%;
 }
 
+.little-column {
+  width: 20%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 .phantom-column {
   width: 40%;
 }
