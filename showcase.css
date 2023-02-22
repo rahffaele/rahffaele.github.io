@@ -142,7 +142,7 @@ img {
 
 .side-image {
 	display: inline;
-	max-width: 50%;
+	max-width: 40%;
 }
 
 h1 {
@@ -196,7 +196,12 @@ sup {
 
   .little-column {
   width: 100%;
- }
+  }
+  .side-image {
+	display: inline;
+	max-width: 100%;
+	margin-top: 8px;
+  }
 
   h1 {
 	font-family: "Mori", sans-serif;
