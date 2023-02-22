@@ -1,3 +1,17 @@
+@font-face { font-family: AlbertSans; src: url('fonts/AlbertSans-Medium.ttf'); }
+@font-face { font-family: PPHatton-Medium; src: url('fonts/PPHatton-Medium.otf'); }
+@font-face { font-family: PPHatton-UltraLight; src: url('fonts/PPHatton-Ultralight.otf'); }
+@font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+
+@media (max-width:960px) {
+	.bc {
+		font-size: 50px;
+	}
+
+} 
+
 body {
 	background-color: F1F2F4;
 	margin: 0;
