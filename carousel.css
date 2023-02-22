@@ -21,6 +21,13 @@
   }
 }
 
+.pic-ctn {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 15vh;
+}
+
 .pic-ctn > img {
   position: absolute;
   top: 0;
