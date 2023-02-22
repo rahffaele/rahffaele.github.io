@@ -30,7 +30,6 @@
 .pic-ctn > img {
   position: absolute;
   top: 0;
-  left: calc(50% - 100px);
   opacity: 0;
   animation: display 10s infinite;
 }
