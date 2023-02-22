@@ -17,7 +17,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $("#stemmin-project").hover(function(){
+    $("#stemming-project").hover(function(){
         $("#stemming-cover").removeClass("hide");
     }, function(){
         $("#stemming-cover").addClass("hide");
