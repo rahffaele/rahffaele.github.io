@@ -12,7 +12,7 @@
     ];
 
     // Define the fading time (in milliseconds)
-    const fadeTime = 2000;
+    const fadeTime = 3000;
 
     // Create an empty array to hold the image elements
     const images = [];
