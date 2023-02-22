@@ -109,6 +109,10 @@ h3 {
     margin-left: 0;
   }
 
+  .little-column {
+  width: 100%;
+  }
+
   .phantom-column {
     display: none;
   }
