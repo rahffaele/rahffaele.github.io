@@ -36,22 +36,29 @@ $(document).ready(function(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  var firstProject = document.getElementById("cxmap-project");
-  firstProject.addEventListener("click", function() {
+  var cxmapProject = document.getElementById("cxmap-project");
+  cxmapProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cx-map.html";
   });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  var secondProject = document.getElementById("orto-project");
-  secondProject.addEventListener("click", function() {
+  var ortoProject = document.getElementById("orto-project");
+  ortoProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/orto-botanico-padova.html";
   });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  var thirdProject = document.getElementById("cmik-project");
-  thirdProject.addEventListener("click", function() {
+  var stemmingProject = document.getElementById("stemming-project");
+  stemmingProject.addEventListener("click", function() {
+    window.location.href = "https://rahffaele.github.io/orto-botanico-padova.html";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var cmikProject = document.getElementById("cmik-project");
+  cmikProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cmik.html";
   });
 });
