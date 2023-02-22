@@ -1,5 +1,6 @@
 .pic-ctn {
-
+  width: 100vw;
+  height: 200px;
 }
 
 @keyframes display {
