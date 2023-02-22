@@ -75,6 +75,10 @@ h3 {
   margin-left: 50%;
 }
 
+.phantom-column {
+  width: 40%;
+}
+
 @media (max-width: 768px) {
   .cell {
   width: 8vw;
@@ -94,6 +98,11 @@ h3 {
     margin-top: 15%;
     margin-left: 0;
   }
+
+  .phantom-column {
+    display: none;
+  }
+
   .archiveimg {
   max-width: 100%;
   }
