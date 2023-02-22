@@ -22,8 +22,8 @@ h3 {
 }
 
 .cell {
-  width: 4vw;
-  height: 4vw;
+  width: 2vw;
+  height: 2vw;
   border: 0.5px solid #5767F9;
   display: inline-block;
   font-family: "Mori", sans-serif;
