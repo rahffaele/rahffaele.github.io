@@ -21,21 +21,6 @@ canvas {
 
 /* -------------- ARCHIVES CSS -------------------*/
 
-.archive_card {
-  width: 240px;
-  background-color: transparent;
-  position: absolute;
-  z-index: 1;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  transition: 0.3s;
-}
-
-.archive_card:hover {
-  background-color: white;
-  text-decoration: underline;
-}
 
 h3{
 	text-align: center;
@@ -61,16 +46,6 @@ h3{
 	bottom: 8;
 	padding: 8px 16px;
 	margin-top: 8px;
-}
-
-#refresh {
-	font-family: "Mori", sans-serif;
-	font-size: 16px;
-	border-style: solid;
-  	border-color: black;
-  	border-width: 1px;
-  	border-radius: 25px;
-  	padding: 8px 16px;
 }
 
 .hide {
