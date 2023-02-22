@@ -146,7 +146,7 @@ img {
 }
 
 .footer-column {
-  width: 40%;
+  width: 50%;
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -207,6 +207,10 @@ sup {
 	display: inline;
 	max-width: 100%;
 	margin-top: 8px;
+  }
+
+  .footer-column {
+  font-size: 16px;
   }
 
   h1 {
