@@ -119,6 +119,12 @@ img {
   box-sizing: border-box;
 }
 
+.little-column {
+  width: 20%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 .list {
 	font-family: "Mori", sans-serif;
 	color: #5767F9;
