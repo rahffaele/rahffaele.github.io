@@ -140,6 +140,11 @@ img {
 	padding: 8px 0;
 }
 
+.side-image {
+	display: inline;
+	max-width: 50%;
+}
+
 h1 {
 	font-family: "Mori", sans-serif;
 	font-size: 4vw;
