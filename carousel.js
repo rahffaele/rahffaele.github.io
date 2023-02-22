@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
