@@ -80,6 +80,7 @@ h3 {
   width: 20%;
   padding: 1rem;
   box-sizing: border-box;
+  display: inline-block;
 }
 
 .phantom-column {
