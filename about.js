@@ -33,6 +33,7 @@
       newImage.src = image.src;
       newImage.style.left = event.clientX + "px";
       newImage.style.top = event.clientY + "px";
+      newImage.style.width = "30%";
 
       // Add the image to the page
       document.body.appendChild(newImage);
