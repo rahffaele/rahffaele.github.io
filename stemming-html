@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="showcase.css">
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="background-color: #F1F2F4;">
+	<nav>
+  		<ul>
+			<li><a href="../index.html" class="bc">Raffaele Amietta</a></li>
+			<li><a href="../portfolio.html" class="bc_selected">Portfolio</a></li>
+			<li><a href="../archive.html" class="bc">Archive</a></li>
+		</ul>
+  	</nav>
+  	<div class="container">
+  		<div class="title-column">
+  			<h1>Stemming</h1>
+  			<h3>2021</h3>
+  		</div>
+  		<div class="left-column">
+  			<p>Through a project system based on the inspirational stories of various role models, we tried to reach the audience of young kids between the age of 11 and 14 to encourage them to pursue their passions and ambitions free from societal prejudices and sterotypes.</p>
+  			<p>"Stemming" is "to stem" in the progressive tense. "To stem" also means "to originate in or be caused by". The stem is the main body of a flower, that holds and feed the branches of the plant.</p>
+  		</div>
+  		<div class="fullimg-column">
+  			<video width="80%" height="auto" autoplay loop muted>
+  				<source src="../cxmap_assets/dashboard_video.mp4" type="video/mp4">
+  			</video>
+  		</div>
