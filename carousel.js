@@ -1,52 +1,26 @@
-document.addEventListener("DOMContentLoaded", function() {
-const carousel = document.querySelector('.carousel');
-const container = carousel.querySelector('.carousel-container');
-const items = carousel.querySelectorAll('.carousel-item');
+let slideIndex = 1;
+showSlides(slideIndex);
 
-const prevBtn = document.createElement('button');
-prevBtn.classList.add('carousel-btn', 'prev');
-prevBtn.innerText = 'Prev';
-carousel.appendChild(prevBtn);
-
-const nextBtn = document.createElement('button');
-nextBtn.classList.add('carousel-btn', 'next');
-nextBtn.innerText = 'Next';
-carousel.appendChild(nextBtn);
-
-let currentIndex = 0;
-let itemWidth = items[0].offsetWidth;
-let containerWidth = itemWidth * items.length;
-container.style.width = `${containerWidth}px`;
-
-function moveCarousel() {
-  container.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-function updateButtons() {
-  if (currentIndex === 0) {
-    prevBtn.disabled = true;
-  } else {
-    prevBtn.disabled = false;
-  }
-
-  if (currentIndex === items.length - 1) {
-    nextBtn.disabled = true;
-  } else {
-    nextBtn.disabled = false;
-  }
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-prevBtn.addEventListener('click', () => {
-  currentIndex--;
-  moveCarousel();
-  updateButtons();
-});
-
-nextBtn.addEventListener('click', () => {
-  currentIndex++;
-  moveCarousel();
-  updateButtons();
-});
-
-updateButtons();
-});
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
