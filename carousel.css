@@ -1,8 +1,3 @@
-.pic-ctn {
-  width: 100vw;
-  height: 200px;
-}
-
 @keyframes display {
   0% {
     transform: translateX(200px);
@@ -24,13 +19,6 @@
     transform: translateX(-200px);
     opacity: 0;
   }
-}
-
-.pic-ctn {
-  position: relative;
-  width: 100vw;
-  height: 300px;
-  margin-top: 15vh;
 }
 
 .pic-ctn > img {
