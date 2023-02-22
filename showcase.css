@@ -145,6 +145,12 @@ img {
 	max-width: 49%;
 }
 
+.footer-column {
+  width: 40%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 h1 {
 	font-family: "Mori", sans-serif;
 	font-size: 4vw;
