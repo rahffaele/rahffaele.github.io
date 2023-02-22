@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   var stemmingProject = document.getElementById("stemming-project");
   stemmingProject.addEventListener("click", function() {
-    window.location.href = "https://rahffaele.github.io/orto-botanico-padova.html";
+    window.location.href = "https://rahffaele.github.io/stemming.html";
   });
 });
 
