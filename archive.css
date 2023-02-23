@@ -84,6 +84,7 @@ h3 {
   box-sizing: border-box;
   margin-top: 5%;
   position: fixed;
+  background-color: #F1F2F4;
 }
 
 .phantom-column {
@@ -106,7 +107,7 @@ h3 {
 
   .right-column {
     width: 100%;
-    margin-top: 15%;
+    margin-top: 30%;
     margin-left: 0;
   }
 
