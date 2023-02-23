@@ -102,8 +102,8 @@ h3{
 
 .project_tag {
 	display: inline-block;
-	background-color: #5767F9;
-	border-radius: 4px;
+	background-color: #5767F930;
+	border-radius: 8px;
 	font-family: "Mori", sans-serif;
 	font-size: 12px;
 	text-align: center;
