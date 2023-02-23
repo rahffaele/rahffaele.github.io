@@ -32,6 +32,14 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#3dill-project").hover(function(){
+        $("#3d-cover").removeClass("hide");
+    }, function(){
+        $("#3d-cover").addClass("hide");
+    });
+});
+
 //----------- CLICKABLE DIVS FUNCTIONS ------------
 
 
@@ -60,5 +68,12 @@ document.addEventListener("DOMContentLoaded", function() {
   var cmikProject = document.getElementById("cmik-project");
   cmikProject.addEventListener("click", function() {
     window.location.href = "https://rahffaele.github.io/cmik.html";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var tredillProject = document.getElementById("3dill-project");
+  tredillProject.addEventListener("click", function() {
+    window.location.href = "https://rahffaele.github.io/3d-low-poly.html";
   });
 });
