@@ -122,6 +122,11 @@ h3 {
   .archiveimg {
   max-width: 100%;
   }
+
+  .caption {
+    display: none;
+    transition: 0.3s;
+  }
 }
 
 {}
