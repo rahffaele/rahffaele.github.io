@@ -2,7 +2,7 @@
     const imageUrls = [
       "../archive_assets/orto padova.png",
       "../archive_assets/cmik.png",
-      "../archive_assets/Overview.png"
+      "../archive_assets/Overview.png",
       "../stemming_assets/stemming-page1.png"
     ];
 
