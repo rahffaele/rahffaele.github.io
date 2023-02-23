@@ -132,6 +132,9 @@ h3 {
     display: none;
     transition: 0.3s;
   }
+  video {
+    width: 100%;
+  }
 }
 
 {}
