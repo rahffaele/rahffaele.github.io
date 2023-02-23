@@ -1,5 +1,5 @@
 var boardSize = 10;
-var numLinks = 10;
+var numLinks = 11;
 var linkLocations = [];
 
 
