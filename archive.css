@@ -75,15 +75,15 @@ h3 {
   box-sizing: border-box;
   margin-top: 5%;
   background-color: #F1F2F4;
-  margin-left: 50%;
+  margin-left: 30%;
 }
 
 .little-column {
   width: 30%;
   padding: 1rem;
   box-sizing: border-box;
-  display: inline-block;
   margin-top: 5%;
+  position: fixed;
 }
 
 .phantom-column {
