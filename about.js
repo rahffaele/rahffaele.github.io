@@ -9,7 +9,7 @@
     const linkUrls = [
       "../orto-botanico-padova.html",
       "../cmik.html",
-      "../cx-map.html"
+      "../cx-map.html",
       "../stemming.html"
     ];
 
