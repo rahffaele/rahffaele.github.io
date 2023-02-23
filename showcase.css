@@ -73,6 +73,11 @@ img {
 	max-width: 49%;
 }
 
+.gallery-image {
+  display: inline;
+  max-width: auto;
+}
+
 .footer-column {
   width: 50%;
   padding: 1rem;
