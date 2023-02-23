@@ -87,7 +87,7 @@ h3 {
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
-  position: fixed;
+  position: sticky;
   background-color: #F1F2F4;
 }
 
