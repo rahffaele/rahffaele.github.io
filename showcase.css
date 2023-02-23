@@ -146,6 +146,10 @@ sup {
   font-size: 12px;
   }
 
+  .gallery-image {
+  max-width: 25%;
+  }
+
   h1 {
 	font-family: "Mori", sans-serif;
 	font-size: 40px;
