@@ -3,12 +3,14 @@
       "../archive_assets/orto padova.png",
       "../archive_assets/cmik.png",
       "../archive_assets/Overview.png"
+      "../stemming_assets/stemming-page1.png"
     ];
 
     const linkUrls = [
       "../orto-botanico-padova.html",
       "../cmik.html",
       "../cx-map.html"
+      "../stemming.html"
     ];
 
     // Define the fading time (in milliseconds)
