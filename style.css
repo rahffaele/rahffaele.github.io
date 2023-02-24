@@ -56,7 +56,7 @@ h3{
 }
 
 .left-column {
-  width: 40%;
+  width: 50%;
   height: 100%;
   padding: 1rem;
   box-sizing: border-box;
@@ -66,10 +66,10 @@ h3{
 }
 
 .right-column {
-  width: 60%;
+  width: 50%;
   height: auto;
   position: fixed;
-  margin-left: 40%;
+  margin-left: 50%;
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 5%;
