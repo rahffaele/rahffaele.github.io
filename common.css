@@ -84,7 +84,7 @@ a:hover {
 }
 
 .footer {
-  position: fixed;
+  position: sticky;
   width: 100%;
   background-color: #f2f2f2;
   padding: 16px;
