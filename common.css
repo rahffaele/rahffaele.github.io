@@ -24,6 +24,7 @@ nav {
   padding: 16px;
   margin: 0;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 ul {
@@ -48,13 +49,11 @@ li:first-child {
 
 li:last-child {
 	text-align: right;
-	margin-right: 16px;
 }
 
 a {
   display: block;
   text-decoration: none;
-  margin-right: 15px;
   display: inline-block;
   font-family: 'Mori', sans-serif;
   color: #5767F9;
@@ -84,7 +83,7 @@ a:hover {
 }
 
 .footer {
-  position: sticky;
+  position: relative;
   width: 100%;
   background-color: #f2f2f2;
   padding: 16px;
