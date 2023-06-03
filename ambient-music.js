@@ -40,7 +40,7 @@ synth.triggerAttackRelease('C4', 1);
 
 new Tone.Loop(time => {
   synth.triggerAttackRelease('C4', '8n', '+4n');
-}, '1m').start();
+}, '4n').start();
 
 // Tone's Transport needs to be started for any loops to become active
 Tone.Transport.start();
