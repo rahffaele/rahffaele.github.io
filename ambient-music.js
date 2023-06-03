@@ -50,7 +50,7 @@ function makeSynthTwo() {
 
   return new Tone.DuoSynth({
     harmonicity: 4,
-    volume: -30,
+    volume: -20,
     voice0: {
       oscillator: {type: 'sawtooth'},
       envelope,
