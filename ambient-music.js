@@ -136,16 +136,18 @@ new Tone.Loop(time => {
 
   synthThree.triggerAttackRelease('B2', '6:0', '+2:0');
   synthThree.setNote('E2', '4:0', '+2:0');
+  synthThree.setNote('G2', '4:0',);
 
   synthThree.triggerAttackRelease('C2', '4:0', '+2:0');
 }, '32m').start();
 
 new Tone.Loop(time => {
   synthThree.triggerAttackRelease('C2', '6:0', '+0:0:2');
-  synthThree.setNote('E1', '2:0', '+4.0');
+  synthThree.setNote('E1', '2:0', '+2.0');
 
   synthThree.triggerAttackRelease('G1', '6:0', '+2:0');
   synthThree.setNote('B1', '2:0', '+2:0');
+  synthThree.setNote('E1', '2:0', '+2:0');
 
   synthThree.triggerAttackRelease('E2', '6:0', '+1:0');
 }, '34m').start();
