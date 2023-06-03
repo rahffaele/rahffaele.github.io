@@ -108,7 +108,7 @@ new Tone.Loop(time => {
   synthThree.setNote('E2', '+12:0:2');
 
   // Trigger G4 after 23 measures + two 1/4 notes. Hold for a half note.
-  synthTwo.triggerAttackRelease('C2', '0:2', '+23:2');
+  synthThree.triggerAttackRelease('C2', '0:2', '+23:2');
 }, '40m').start();
 
 
