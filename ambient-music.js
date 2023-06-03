@@ -69,10 +69,10 @@ new Tone.Loop(time => {
 
   // Trigger E5 after 19 measures and hold for 2 measures.
   // Switch to G5, A5, G5 after delay of a 1/4 note + two 1/16 notes each.
-  synthOne.triggerAttackRelease('E5', '2:0', '+19:0');
-  synthOne.setNote('G5', '+19:1:2');
-  synthOne.setNote('A5', '+19:3:0');
-  synthOne.setNote('G5', '+19:4:2');
+  synthOne.triggerAttackRelease('E4', '2:0', '+19:0');
+  synthOne.setNote('G4', '+19:1:2');
+  synthOne.setNote('A4', '+19:3:0');
+  synthOne.setNote('G4', '+19:4:2');
 }, '34m').start();
 
 new Tone.Loop(time => {
