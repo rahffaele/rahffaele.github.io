@@ -39,7 +39,7 @@ let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
 let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
 let echo = new Tone.FeedbackDelay('8n', 0.2);
 let delay = new Tone.Delay(8.0);
-let delayFade = new Tone.Gain(0.75);
+let delayFade = new Tone.Gain(0.5);
 
 delay.delayTime.value = 6.0;
 delayFade.gain.value = 0.75;
