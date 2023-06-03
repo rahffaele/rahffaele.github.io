@@ -35,6 +35,9 @@ let synth = new Tone.DuoSynth({
   vibratoAmount: 0.1
   }
 });
+synth.toMaster();
+synth.triggerAttackRelease('C4', 1);
+
 new Tone.Loop(() => {
   synth.triggerAttackRelease('C4', 1);
 }, 2).start();
