@@ -10,7 +10,7 @@ let synth = new Tone.DuoSynth({
     },
     filterEnvelope: {
       baseFrequency: 200,
-      octaves: 0,
+      octaves: 1,
       attack: 0,
       decay: 0,
       release: 1000
