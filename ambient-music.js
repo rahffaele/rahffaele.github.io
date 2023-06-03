@@ -42,6 +42,9 @@ new Tone.Loop(time => {
   synth.triggerAttackRelease('C4', '8n', '+4n');
 }, '1m').start();
 
+
+Tone.Transport.bpm.value = 240;
+
 // Tone's Transport needs to be started for any loops to become active
 Tone.Transport.start();
 }
