@@ -10,8 +10,8 @@ function makeSynth() {
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
-    baseFrequency: 200,
-    octaves: 2,
+    baseFrequency: 100,
+    octaves: 1,
     attack: 0,
     decay: 0,
     release: 1000
