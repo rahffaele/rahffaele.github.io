@@ -44,7 +44,7 @@ new Tone.Loop(time => {
       attack: 0.5,
       release: 4,
       releaseCurve: 'linear'
-    },
+    }
 }, '1m').start();
 
 
