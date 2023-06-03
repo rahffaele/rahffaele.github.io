@@ -46,9 +46,9 @@ echo.toMaster();
 
 new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
-  synthOne.triggerAttackRelease('C4', '1:2', time);
+  synthOne.triggerAttackRelease('C5', '1:2', time);
   // Switch note to D5 after two 1/4 notes without retriggering
-  synthOne.setNote('D4', '+0:2');
+  synthOne.setNote('D5', '+0:2');
    // Trigger E4 after 6 measures and hold for two 1/4 notes.
   synthOne.triggerAttackRelease('E4', '0:2', '+6:0');
 
@@ -57,10 +57,10 @@ new Tone.Loop(time => {
 
   // Trigger E5 after 19 measures and hold for 2 measures.
   // Switch to G5, A5, G5 after delay of a 1/4 note + two 1/16 notes each.
-  synthOne.triggerAttackRelease('E4', '2:0', '+19:0');
-  synthOne.setNote('G4', '+19:1:2');
-  synthOne.setNote('A4', '+19:3:0');
-  synthOne.setNote('G4', '+19:4:2');
+  synthOne.triggerAttackRelease('E5', '2:0', '+19:0');
+  synthOne.setNote('G5', '+19:1:2');
+  synthOne.setNote('A5', '+19:3:0');
+  synthOne.setNote('G5', '+19:4:2');
 }, '34m').start();
 
 new Tone.Loop(time => {
