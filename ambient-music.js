@@ -94,12 +94,12 @@ new Tone.Loop(time => {
 
 new Tone.Loop(time => {
   // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
-  synthTwo.triggerAttackRelease('G2', '1:2', '+5:0');
+  synthTwo.triggerAttackRelease('G2', '1:2', '+7:0');
   // Switch to E4 after one more measure
   synthTwo.setNote('C2', '+6:0');
 
   // Trigger B3 after 11 measures + two 1/4 notes + two 1/16 notes. Hold for one measure
-  synthTwo.triggerAttackRelease('B3', '1m', '+11:2:2');
+  synthTwo.triggerAttackRelease('B3', '1m', '+12:2:2');
   // Switch to G3 after a 1/2 note more
   synthTwo.setNote('E2', '+12:0:2');
 
