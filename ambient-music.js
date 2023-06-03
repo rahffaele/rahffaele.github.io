@@ -39,7 +39,7 @@ synth.toMaster();
 
 
 new Tone.Loop(time => {
-  synth.triggerAttackRelease('C4', '8n', '+4n');
+  synth.triggerAttackRelease('G4', '2n', '+4n');
 }, '1m').start();
 
 
