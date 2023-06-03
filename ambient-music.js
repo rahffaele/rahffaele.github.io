@@ -42,6 +42,7 @@ let delay = new Tone.Delay(6.0);
 let delayFade = new Tone.Gain(0.75);
 
 delay.delayTime.value = 6.0;
+delayFade.gain.value = 0.75;
 
 synthOne.connect(leftPanner);
 synthTwo.connect(rightPanner);
