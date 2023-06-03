@@ -38,17 +38,15 @@ let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
 let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
 let echo = new Tone.FeedbackDelay('16n', 0.5);
 
-let delay = Tone.context.createDelay(6.0); // Borrow the AudioContext from Tone.js
-delay.delayTime.value = 6.0;
-
+let echoTwo = Tone.FeedbackDelay(6, 0.2);
 
 synthOne.connect(leftPanner);
 synthTwo.connect(rightPanner);
 leftPanner.connect(echo);
 rightPanner.connect(echo);
 echo.toMaster();
-echo.connect(delay);
-delay.connect(Tone.context.destination);
+echo.connect(echoTwo);
+echoTwo.toMaster();
 
 new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
