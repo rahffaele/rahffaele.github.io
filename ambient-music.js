@@ -1,38 +1,40 @@
 function play(){
 
-function makeSynth() {
-  let envelope = {
-    attack: 0.1,
-    release: 4,
-    releaseCurve: 'linear'
-  };
-  let filterEnvelope = {
-    baseFrequency: 200,
-    octaves: 2,
-    attack: 0,
-    decay: 0,
-    release: 1000
-  };
-
-  return new Tone.DuoSynth({
-    harmonicity: 1,
-    voice0: {
-      oscillator: {type: 'sawtooth'},
-      envelope,
-      filterEnvelope
+let synth = new Tone.DuoSynth({
+  harmonicity: 12,
+  voice0: {
+    oscillator: {type: 'sawtooth'},
+    envelope: {
+      attack: 0.5,
+      release: 4,
+      releaseCurve: 'linear'
     },
-    voice1: {
-      oscillator: {type: 'sine'},
-      envelope,
-      filterEnvelope
+    filterEnvelope: {
+      baseFrequency: 200,
+      octaves: 1,
+      attack: 0,
+      decay: 0,
+      release: 1000
+    }
+  },
+  voice1: {
+    oscillator: {type: 'sine'},
+    envelope: {
+      attack: 0.5,
+      release: 4,
+      releaseCurve: 'linear'
     },
-    vibratoRate: 0.5,
-    vibratoAmount: 0.1
-  });
-}
-
-let leftSynth = makeSynth();
-let rightSynth = makeSynth();
+    filterEnvelope: {
+      baseFrequency: 150,
+      octaves: 1,
+      attack: 0,
+      decay: 0,
+      release: 1000
+    },
+  vibratoRate: 0.5,
+  vibratoAmount: 0.1
+  }
+});
 synth.toMaster();
 
 
