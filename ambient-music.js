@@ -1,8 +1,3 @@
-function play(){
-
-let leftSynth = makeSynth();
-let rightSynth = makeSynth();
-
 function makeSynth() {
   let envelope = {
     attack: 0.1,
@@ -34,6 +29,9 @@ function makeSynth() {
   });
 }
 
+let leftSynth = makeSynth();
+let rightSynth = makeSynth();
+
 let leftPanner = new Tone.Panner(-0.5).toMaster();
 let rightPanner = new Tone.Panner(0.5).toMaster();
 
@@ -41,18 +39,13 @@ leftSynth.connect(leftPanner);
 rightSynth.connect(rightPanner);
 
 new Tone.Loop(time => {
-    // Trigger C5, and hold for a full note (measure) + two 1/4 notes
   leftSynth.triggerAttackRelease('C5', '1:2', time);
-  // Switch note to D5 after two 1/4 notes without retriggering
   leftSynth.setNote('D5', '+0:2');
-   // Trigger E4 after 6 measures and hold for two 1/4 notes.
+
   leftSynth.triggerAttackRelease('E4', '0:2', '+6:0');
 
-  // Trigger G4 after 11 measures + a two 1/4 notes, and hold for two 1/4 notes.
   leftSynth.triggerAttackRelease('G4', '0:2', '+11:2');
 
-  // Trigger E5 after 19 measures and hold for 2 measures.
-  // Switch to G5, A5, G5 after delay of a 1/4 note + two 1/16 notes each.
   leftSynth.triggerAttackRelease('E5', '2:0', '+19:0');
   leftSynth.setNote('G5', '+19:1:2');
   leftSynth.setNote('A5', '+19:3:0');
@@ -60,7 +53,7 @@ new Tone.Loop(time => {
 }, '34m').start();
 
 new Tone.Loop(time => {
-  // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
+// Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
   rightSynth.triggerAttackRelease('D4', '1:2', '+5:0');
   // Switch to E4 after one more measure
   rightSynth.setNote('E4', '+6:0');
@@ -75,10 +68,3 @@ new Tone.Loop(time => {
 }, '37m').start();
 
 Tone.Transport.start();
-
-Tone.Transport.bpm.value = 120;
-}
-
-
-
-{}
