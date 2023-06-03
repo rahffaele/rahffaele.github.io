@@ -46,6 +46,7 @@ leftPanner.connect(echo);
 rightPanner.connect(echo);
 echo.toMaster();
 echo.connect(echoTwo);
+echoTwo.connect(echoTwo);
 echoTwo.toMaster();
 
 new Tone.Loop(time => {
