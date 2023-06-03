@@ -34,8 +34,8 @@ function makeSynth() {
   });
 }
 
-let leftPanner = new Tone.Panner(-0.5).toMaster();
-let rightPanner = new Tone.Panner(0.5).toMaster();
+let leftPanner = new Tone.Panner(0).toMaster();
+let rightPanner = new Tone.Panner(0).toMaster();
 
 leftSynth.connect(leftPanner);
 rightSynth.connect(rightPanner);
