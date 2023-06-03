@@ -35,9 +35,9 @@ function makeSynthOne() {
 
 function makeSynthTwo() {
   let envelope = {
-    attack: 0.4,
+    attack: 0.5,
     release: 2,
-    decay: 2,
+    decay: 4,
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
