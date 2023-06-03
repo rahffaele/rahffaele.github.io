@@ -17,7 +17,7 @@ let synth = new Tone.DuoSynth({
     }
   },
   voice1: {
-    oscillator: {type: 'sawtooth'},
+    oscillator: {type: 'sine'},
     envelope: {
       attack: 0.1,
       release: 4,
