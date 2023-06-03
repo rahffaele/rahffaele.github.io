@@ -4,7 +4,7 @@ let synth = new Tone.MonoSynth({
   oscillator: {type: 'sawtooth'},
   filterEnvelope: {
     baseFrequency: 200,
-    octaves: 2
+    octaves: 4
   }
 });
 synth.toMaster();
