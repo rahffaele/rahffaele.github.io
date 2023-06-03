@@ -138,7 +138,7 @@ new Tone.Loop(time => {
   synthThree.setNote('E2', '4:0', '+2:0');
 
   synthThree.triggerAttackRelease('C2', '4:0', '+2:0');
-}, '28m').start();
+}, '32m').start();
 
 new Tone.Loop(time => {
   synthThree.triggerAttackRelease('C2', '4:0', '+0:0:2');
@@ -148,7 +148,7 @@ new Tone.Loop(time => {
   synthThree.setNote('B1', '2:0', '+2:0');
 
   synthThree.triggerAttackRelease('E2', '2:0', '+1:0');
-}, '28m').start();
+}, '34m').start();
 
 
 Tone.Transport.start();
