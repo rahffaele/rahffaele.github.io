@@ -41,7 +41,7 @@ function makeSynthTwo() {
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
-    baseFrequency: 600,
+    baseFrequency: 200,
     octaves: 1,
     attack: 0,
     decay: 0,
