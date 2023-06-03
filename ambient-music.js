@@ -132,12 +132,12 @@ new Tone.Loop(time => {
 
 new Tone.Loop(time => {
   synthThree.triggerAttackRelease('G2', '4:0', time);
-  synthThree.setNote('C2', '4:0', '+4.0');
+  synthThree.setNote('C2', '4:0', '+2.0');
 
-  synthThree.triggerAttackRelease('B2', '4:0', '+4:0');
-  synthThree.setNote('E2', '4:0', '+4:0');
+  synthThree.triggerAttackRelease('B2', '4:0', '+2:0');
+  synthThree.setNote('E2', '4:0', '+2:0');
 
-  synthThree.triggerAttackRelease('C2', '4:0', '+4:0');
+  synthThree.triggerAttackRelease('C2', '4:0', '+2:0');
 }, '28m').start();
 
 
