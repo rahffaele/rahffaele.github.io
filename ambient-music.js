@@ -34,8 +34,12 @@ function makeSynth() {
 let synthOne = makeSynth();
 let synthTwo = makeSynth();
 
-synthOne.toMaster();
-synthTwo.toMaster();
+let echo = new Tone.FeedbackDelay('16n', 0.2);
+
+synthOne.connect(echo);
+synthTwo.connect(echo);
+
+echo.toMaster();
 
 new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
