@@ -43,7 +43,7 @@ let echo = new Tone.FeedbackDelay('8n', 0.2);
 let delay = new Tone.Delay(8.0);
 let delayFade = new Tone.Gain(0.5);
 
-let bassVol = new Tone.Volume(-30).toDestination();
+let bassVol = new Tone.Volume(-50).toDestination();
 let bass = new Tone.Oscillator().connect(bassVol).start();
 
 delay.delayTime.value = 8.0;
@@ -97,13 +97,13 @@ new Tone.Loop(time => {
 }, '37m').start();
 
 new Tone.Loop(time => {
-  // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
-  synthThree.triggerAttackRelease('G2', '1:2', '+7:0');
-  // Switch to E4 after one more measure
-  synthThree.setNote('C2', '+6:0');
+  // Trigger G2 after 3 measures and hold for 2 full measure + two 1/4 notes
+  synthThree.triggerAttackRelease('G2', '3:0', '+3:0');
+  // Switch to E4 after 1/2 more measure
+  synthThree.setNote('C2', '3:0', '+3.0');
 
   // Trigger B3 after 11 measures + two 1/4 notes + two 1/16 notes. Hold for one measure
-  synthThree.triggerAttackRelease('B3', '1m', '+12:2:2');
+  synthThree.triggerAttackRelease('B3', '1m', '+6:2:2');
   // Switch to G3 after a 1/2 note more
   synthThree.setNote('E2', '+12:0:2');
 
