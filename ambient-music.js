@@ -34,11 +34,14 @@ function makeSynth() {
 let synthOne = makeSynth();
 let synthTwo = makeSynth();
 
+let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
+let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
 let echo = new Tone.FeedbackDelay('16n', 0.2);
 
-synthOne.connect(echo);
-synthTwo.connect(echo);
-
+synthOne.connect(leftPanner);
+synthTwo.connect(rightPanner);
+leftPanner.connect(echo);
+rightPanner.connect(echo);
 echo.toMaster();
 
 new Tone.Loop(time => {
