@@ -48,6 +48,8 @@ delayFade.gain.value = 0.75;
 
 synthOne.connect(leftPanner);
 synthTwo.connect(rightPanner);
+synthThree.connect(delay);
+
 leftPanner.connect(echo);
 rightPanner.connect(echo);
 
@@ -56,7 +58,6 @@ echo.connect(delay);
 delay.connect(Tone.context.destination);
 delay.connect(delayFade);
 delayFade.connect(delay);
-
 
 new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
