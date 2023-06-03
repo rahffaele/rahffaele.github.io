@@ -143,7 +143,7 @@ new Tone.Loop(time => {
 
 new Tone.Loop(time => {
   synthThree.triggerAttackRelease('C2', '6:0', '+0:0:2');
-  synthThree.setNote('E1', '2:0', '+2.0');
+  synthThree.setNote('E1', '4:0', '+1.0');
 
   synthThree.triggerAttackRelease('G1', '6:0', '+2:0');
   synthThree.setNote('B1', '2:0', '+2:0');
