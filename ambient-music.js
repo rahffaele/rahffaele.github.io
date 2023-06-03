@@ -2,7 +2,7 @@ function play(){
 
 let synth = new Tone.DuoSynth({
   voice0: {
-    oscillator: {type: 'sine'},
+    oscillator: {type: 'sawtooth'},
     envelope: {
       attack: 0.1,
       release: 4,
@@ -17,7 +17,7 @@ let synth = new Tone.DuoSynth({
     }
   },
   voice1: {
-    oscillator: {type: 'sine'},
+    oscillator: {type: 'sawtooth'},
     envelope: {
       attack: 0.1,
       release: 4,
