@@ -36,7 +36,7 @@ let synth = new Tone.DuoSynth({
   }
 });
 synth.toMaster();
-synth.triggerAttackRelease('C4', 1);
+
 
 new Tone.Loop(time => {
   synth.triggerAttackRelease('C4', '8n', '+4n');
