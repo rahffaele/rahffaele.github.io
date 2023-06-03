@@ -38,7 +38,7 @@ let synthTwo = makeSynth();
 let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
 let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
 let echo = new Tone.FeedbackDelay('16n', 0.2);
-let mainEcho = new Tone.FeedbackDelay('6m', 0.2);
+let mainEcho = new Tone.FeedbackDelay(6, 0.2);
 
 synthOne.connect(leftPanner);
 synthTwo.connect(rightPanner);
