@@ -31,8 +31,6 @@ function makeSynth() {
 
 function play(){
 
-
-
 let leftSynth = makeSynth();
 let rightSynth = makeSynth();
 
