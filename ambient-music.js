@@ -40,11 +40,6 @@ synth.toMaster();
 
 new Tone.Loop(time => {
   synth.triggerAttackRelease('G4', '2n', '+4n');
-  envelope: {
-      attack: 0.5,
-      release: 4,
-      releaseCurve: 'linear'
-    }
 }, '1m').start();
 
 
