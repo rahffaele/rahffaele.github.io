@@ -34,11 +34,8 @@ function makeSynth() {
 let synthOne = makeSynth();
 let synthTwo = makeSynth();
 
-let leftPanner = new Tone.Panner(-0.5).toMaster();
-let rightPanner = new Tone.Panner(0.5).toMaster();
-
-synthOne.connect(leftPanner);;
-synthTwo.connect(rightPanner);
+synthOne.toMaster();
+synthTwo.toMaster();
 
 new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
