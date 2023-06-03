@@ -45,7 +45,6 @@ let delayFade = new Tone.Gain(0.5);
 
 let bassVol = new Tone.Volume(-80).toDestination();
 let bass = new Tone.Oscillator().connect(bassVol).start();
-synthThree.volume.value = 2;
 
 delay.delayTime.value = 8.0;
 delayFade.gain.value = 0.75;
