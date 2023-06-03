@@ -33,7 +33,7 @@ let synth = new Tone.DuoSynth({
   }
 });
 synth.toMaster();
-synth.triggerAttackRelease('C4', 1);
+synth.triggerAttackRelease('E4', 1);
 }
 
 {}
