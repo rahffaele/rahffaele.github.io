@@ -44,8 +44,8 @@ let delayFade = Tone.context.createGain();
 delay.delayTime.value = 6.0;
 delayFade.gain.value = 0.75;
 
-leftSynth.connect(leftPanner);
-rightSynth.connect(rightPanner);
+synthOne.connect(leftPanner);
+synthTwo.connect(rightPanner);
 leftPanner.connect(echo);
 rightPanner.connect(echo);
 
