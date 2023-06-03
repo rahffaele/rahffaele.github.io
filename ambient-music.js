@@ -30,7 +30,9 @@ let synth = new Tone.DuoSynth({
       attack: 0,
       decay: 0,
       release: 1000
-    }
+    },
+  vibratoRate: 0.5,
+  vibratoAmount: 0.1
   }
 });
 synth.toMaster();
