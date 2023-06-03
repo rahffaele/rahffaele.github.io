@@ -43,7 +43,7 @@ new Tone.Loop(time => {
 }, '1m').start();
 
 
-Tone.Transport.bpm.value = 240;
+Tone.Transport.bpm.value = 120;
 
 // Tone's Transport needs to be started for any loops to become active
 Tone.Transport.start();
