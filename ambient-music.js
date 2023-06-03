@@ -1,9 +1,9 @@
 function play(){
 
-function makeSynth() {
+function makeSynthOne() {
   let envelope = {
     attack: 0.4,
-    release: 4,
+    release: 2,
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
@@ -32,8 +32,8 @@ function makeSynth() {
   });
 }
 
-let synthOne = makeSynth();
-let synthTwo = makeSynth();
+let synthOne = makeSynthOne();
+let synthTwo = makeSynthOne();
 
 let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
 let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
@@ -89,6 +89,7 @@ new Tone.Loop(time => {
   // Trigger G4 after 23 measures + two 1/4 notes. Hold for a half note.
   synthTwo.triggerAttackRelease('G4', '0:2', '+23:2');
 }, '37m').start();
+
 
 Tone.Transport.start();
 
