@@ -47,6 +47,7 @@ rightPanner.connect(echo);
 
 echo.toMaster();
 echo.connect(mainEcho);
+mainEcho.toMaster();
 
 new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
