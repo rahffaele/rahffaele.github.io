@@ -113,7 +113,7 @@ new Tone.Loop(time => {
   synthOne.setNote('G4', '+19:1:2');
   synthOne.setNote('A4', '+19:3:0');
   synthOne.setNote('G4', '+19:4:2');
-}, '30m').start();
+}, '26m').start();
 
 new Tone.Loop(time => {
   // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
@@ -128,7 +128,7 @@ new Tone.Loop(time => {
 
   // Trigger G4 after 23 measures + two 1/4 notes. Hold for a half note.
   synthTwo.triggerAttackRelease('G4', '0:2', '+23:2');
-}, '32m').start();
+}, '30m').start();
 
 new Tone.Loop(time => {
   synthThree.triggerAttackRelease('G2', '4:0', time);
