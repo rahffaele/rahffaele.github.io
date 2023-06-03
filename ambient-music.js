@@ -4,6 +4,7 @@ function makeSynthOne() {
   let envelope = {
     attack: 0.4,
     release: 2,
+    decay: 2,
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
