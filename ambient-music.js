@@ -100,7 +100,7 @@ new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
   synthOne.triggerAttackRelease('C5', '2:2', time);
   // Switch note to D5 after two 1/4 notes without retriggering
-  synthOne.setNote('D5', '+0:2');
+  synthOne.setNote('D5', '+2:2');
    // Trigger E4 after 6 measures and hold for two 1/4 notes.
   synthOne.triggerAttackRelease('E4', '0:2', '+6:0');
 
