@@ -5,7 +5,7 @@ let synthTwo = makeSynth();
 
 function makeSynth() {
   let envelope = {
-    attack: 0.1,
+    attack: 0.4,
     release: 4,
     releaseCurve: 'linear'
   };
