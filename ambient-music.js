@@ -1,4 +1,4 @@
-function play(){
+
 
 function makeSynth() {
   let envelope = {
@@ -77,7 +77,7 @@ new Tone.Loop(time => {
 Tone.Transport.start();
 
 Tone.Transport.bpm.value = 120;
-}
+
 
 
 
