@@ -41,7 +41,7 @@ let echo = new Tone.FeedbackDelay('8n', 0.2);
 let delay = new Tone.Delay(8.0);
 let delayFade = new Tone.Gain(0.5);
 
-delay.delayTime.value = 6.0;
+delay.delayTime.value = 8.0;
 delayFade.gain.value = 0.75;
 
 synthOne.connect(leftPanner);
