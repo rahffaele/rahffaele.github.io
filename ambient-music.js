@@ -5,7 +5,7 @@ let synth = new Tone.DuoSynth({
   voice0: {
     oscillator: {type: 'sawtooth'},
     envelope: {
-      attack: 0.1,
+      attack: 0.5,
       release: 4,
       releaseCurve: 'linear'
     },
@@ -20,7 +20,7 @@ let synth = new Tone.DuoSynth({
   voice1: {
     oscillator: {type: 'sine'},
     envelope: {
-      attack: 0.1,
+      attack: 0.5,
       release: 4,
       releaseCurve: 'linear'
     },
