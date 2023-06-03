@@ -103,13 +103,13 @@ new Tone.Loop(time => {
   synthThree.setNote('C2', '3:0', '+3.0');
 
   // Trigger B3 after 11 measures + two 1/4 notes + two 1/16 notes. Hold for one measure
-  synthThree.triggerAttackRelease('B3', '1m', '+2:2:2');
+  synthThree.triggerAttackRelease('B3', '4:0', '+2:0');
   // Switch to G3 after a 1/2 note more
   synthThree.setNote('E2', '+3:0:2');
 
   // Trigger G4 after 23 measures + two 1/4 notes. Hold for a half note.
   synthThree.triggerAttackRelease('C2', '0:2', '+23:2');
-}, '40m').start();
+}, '44m').start();
 
 
 Tone.Transport.start();
