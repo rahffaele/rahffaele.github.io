@@ -51,6 +51,7 @@ rightPanner.connect(echo);
 
 echo.toMaster();
 echo.connect(delay);
+delay.connect(Tone.context.destination);
 delay.connect(delayFade);
 delayFade.connect(delay);
 
