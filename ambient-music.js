@@ -1,5 +1,3 @@
-function play(){
-
 function makeSynth() {
   let envelope = {
     attack: 0.1,
@@ -30,6 +28,10 @@ function makeSynth() {
     vibratoAmount: 0.1
   });
 }
+
+function play(){
+
+
 
 let leftSynth = makeSynth();
 let rightSynth = makeSynth();
