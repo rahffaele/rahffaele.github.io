@@ -98,7 +98,7 @@ new Tone.Loop(time => {
 
 new Tone.Loop(time => {
   // Trigger G2 after 3 measures and hold for 2 full measure + two 1/4 notes
-  synthThree.triggerAttackRelease('G2', '2:2', '+3:0');
+  synthThree.triggerAttackRelease('G2', '2:2', time);
   // Switch to E4 after 1/2 more measure
   synthThree.setNote('C2', '3:0', '+3.0');
 
