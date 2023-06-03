@@ -9,8 +9,8 @@ let synth = new Tone.DuoSynth({
       releaseCurve: 'linear'
     },
     filterEnvelope: {
-      baseFrequency: 100,
-      octaves: 1,
+      baseFrequency: 200,
+      octaves: 0,
       attack: 0,
       decay: 0,
       release: 1000
@@ -24,8 +24,8 @@ let synth = new Tone.DuoSynth({
       releaseCurve: 'linear'
     },
     filterEnvelope: {
-      baseFrequency: 150,
-      octaves: 1,
+      baseFrequency: 200,
+      octaves: 0,
       attack: 0,
       decay: 0,
       release: 1000
