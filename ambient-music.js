@@ -44,8 +44,8 @@ delay.delayTime.value = 6.0;
 
 synthOne.connect(leftPanner);
 synthTwo.connect(rightPanner);
-leftPanner.connect(delay);
-rightPanner.connect(delay);
+leftPanner.connect(echo);
+rightPanner.connect(echo);
 
 echo.toMaster();
 echo.connect(delay);
