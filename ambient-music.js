@@ -1,3 +1,8 @@
+function play(){
+
+let leftSynth = makeSynth();
+let rightSynth = makeSynth();
+
 function makeSynth() {
   let envelope = {
     attack: 0.1,
@@ -28,11 +33,6 @@ function makeSynth() {
     vibratoAmount: 0.1
   });
 }
-
-function play(){
-
-let leftSynth = makeSynth();
-let rightSynth = makeSynth();
 
 let leftPanner = new Tone.Panner(-0.5).toMaster();
 let rightPanner = new Tone.Panner(0.5).toMaster();
