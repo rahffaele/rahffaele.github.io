@@ -11,7 +11,8 @@ let synth = new Tone.MonoSynth({
     baseFrequency: 200,
     octaves: 1,
     attack: 0,
-    decay: 0
+    decay: 0,
+    release: 1000
   }
 });
 synth.toMaster();
