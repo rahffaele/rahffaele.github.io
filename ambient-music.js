@@ -33,9 +33,43 @@ function makeSynthOne() {
   });
 }
 
+function makeSynthTwo() {
+  let envelope = {
+    attack: 0.4,
+    release: 2,
+    decay: 2,
+    releaseCurve: 'linear'
+  };
+  let filterEnvelope = {
+    baseFrequency: 100,
+    octaves: 1,
+    attack: 0,
+    decay: 0,
+    release: 1000
+  };
+
+  return new Tone.DuoSynth({
+    harmonicity: 4,
+    volume: -40,
+    voice0: {
+      oscillator: {type: 'sawtooth'},
+      envelope,
+      filterEnvelope
+    },
+    voice1: {
+      oscillator: {type: 'sine'},
+      envelope,
+      filterEnvelope
+    },
+    vibratoRate: 0.5,
+    vibratoAmount: 0.1
+  });
+}
+
 let synthOne = makeSynthOne();
 let synthTwo = makeSynthOne();
-let synthThree = makeSynthOne();
+
+let synthThree = makeSynthTwo();
 
 let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
 let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
