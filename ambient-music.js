@@ -3,73 +3,57 @@ function play(){
 function makeSynthOne() {
   let envelope = {
     attack: 0.4,
-    release: 2,
-    decay: 2,
+    release: 0.5,
+    decay: 0.5,
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
-    baseFrequency: 400,
+    baseFrequency: 300,
     octaves: 1,
-    attack: 0,
-    decay: 0,
+    attack: 2,
+    decay: 3,
     release: 1000
   };
-
-  return new Tone.DuoSynth({
-    harmonicity: 4,
-    volume: -20,
-    voice0: {
-      oscillator: {type: 'sawtooth'},
-      envelope,
-      filterEnvelope
-    },
-    voice1: {
-      oscillator: {type: 'sine'},
-      envelope,
-      filterEnvelope
-    },
-    vibratoRate: 0.5,
-    vibratoAmount: 0.1
-  });
-}
-
-function makeSynthTwo() {
-  let envelope = {
-    attack: 0.5,
-    release: 2,
+  let filterEnvelope1 = {
+    baseFrequency: 500,
+    octaves: -1,
+    attack: 1,
     decay: 4,
-    releaseCurve: 'linear'
+    release: 5
   };
-  let filterEnvelope = {
-    baseFrequency: 200,
-    octaves: 1,
-    attack: 0,
-    decay: 0,
-    release: 1000
-  };
+  let filterEnvelope2 = {
+    baseFrequency: 300,
+    octaves: 3,
+    attack: 1,
+    decay: 4,
+    release: 5
+  }
+
+
 
   return new Tone.DuoSynth({
-    harmonicity: 4,
-    volume: -20,
+    harmonicity: 2,
+    volume: -10,
     voice0: {
       oscillator: {type: 'sawtooth'},
       envelope,
-      filterEnvelope
+      filterEnvelope,
+      filterEnvelope2
     },
     voice1: {
-      oscillator: {type: 'sine'},
+      oscillator: {type: 'triangle'},
       envelope,
+      filterEnvelope1,
       filterEnvelope
     },
-    vibratoRate: 0.9,
+    vibratoRate: 0.3,
     vibratoAmount: 0.1
   });
 }
 
 let synthOne = makeSynthOne();
 let synthTwo = makeSynthOne();
-
-let synthThree = makeSynthTwo();
+let synthThree = makeSynthOne();
 
 let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
 let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
@@ -98,9 +82,9 @@ delayFade.connect(delay);
 
 new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
-  synthOne.triggerAttackRelease('C5', '2:0', time);
+  synthOne.triggerAttackRelease('C5', '1:2', time);
   // Switch note to D5 after two 1/4 notes without retriggering
-  synthOne.setNote('D5', '+2:2');
+  synthOne.setNote('D5', '+0:2');
    // Trigger E4 after 6 measures and hold for two 1/4 notes.
   synthOne.triggerAttackRelease('E4', '0:2', '+6:0');
 
@@ -113,7 +97,7 @@ new Tone.Loop(time => {
   synthOne.setNote('G4', '+19:1:2');
   synthOne.setNote('A4', '+19:3:0');
   synthOne.setNote('G4', '+19:4:2');
-}, '26m').start();
+}, '34m').start();
 
 new Tone.Loop(time => {
   // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
@@ -128,34 +112,27 @@ new Tone.Loop(time => {
 
   // Trigger G4 after 23 measures + two 1/4 notes. Hold for a half note.
   synthTwo.triggerAttackRelease('G4', '0:2', '+23:2');
-}, '30m').start();
+}, '37m').start();
 
 new Tone.Loop(time => {
-  synthThree.triggerAttackRelease('G2', '6:0', '+0:2');
-  synthThree.setNote('C2', '4:0', '+2.0');
+  // Trigger G2 after 3 measures and hold for 2 full measure + two 1/4 notes
+  synthThree.triggerAttackRelease('G2', '2:2', '+3:0');
+  // Switch to E4 after 1/2 more measure
+  synthThree.setNote('C2', '3:0', '+3.0');
 
-  synthThree.triggerAttackRelease('B2', '6:0', '+2:0');
-  synthThree.setNote('E2', '4:0', '+2:0');
-  synthThree.setNote('G2', '4:0',);
+  // Trigger B3 after 11 measures + two 1/4 notes + two 1/16 notes. Hold for one measure
+  synthThree.triggerAttackRelease('B3', '1m', '+2:2:2');
+  // Switch to G3 after a 1/2 note more
+  synthThree.setNote('E2', '+3:0:2');
 
-  synthThree.triggerAttackRelease('C2', '4:0', '+2:0');
-}, '32m').start();
-
-new Tone.Loop(time => {
-  synthThree.triggerAttackRelease('C2', '6:0', '+0:3:2');
-  synthThree.setNote('E1', '4:0', '+1.0');
-
-  synthThree.triggerAttackRelease('G1', '6:0', '+2:0');
-  synthThree.setNote('B1', '2:0', '+2:0');
-  synthThree.setNote('G1', '2:0', '+2:0');
-
-  synthThree.triggerAttackRelease('E2', '6:0', '+1:0');
-}, '34m').start();
+  // Trigger G4 after 23 measures + two 1/4 notes. Hold for a half note.
+  synthThree.triggerAttackRelease('C2', '0:2', '+23:2');
+}, '40m').start();
 
 
 Tone.Transport.start();
 
-Tone.Transport.bpm.value = 60;
+Tone.Transport.bpm.value = 120;
 }
 
 
