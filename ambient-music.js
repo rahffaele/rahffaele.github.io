@@ -18,8 +18,6 @@ async function play(){
     // Calculate the new BPM value based on the wind speed
     const newBPM = ((windSpeed / maxWindSpeed) * (maxBPM - minBPM)) + minBPM;
 
-    // Set the new BPM value
-    Tone.Transport.bpm.value = newBPM;
 
     // Log the wind speed and new BPM value to the console
     console.log('Wind Speed:', windSpeed);
@@ -234,7 +232,7 @@ new Tone.Loop(time => {
 
 Tone.Transport.start();
 
-Tone.Transport.bpm.value = 120;
+Tone.Transport.bpm.value = newBPM;
 }
 
 
