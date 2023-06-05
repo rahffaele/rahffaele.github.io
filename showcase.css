@@ -78,6 +78,10 @@ img {
   max-width: auto;
 }
 
+.grid-image {
+  padding-bottom: 25px;
+}
+
 .footer-column {
   width: 50%;
   padding: 1rem;
