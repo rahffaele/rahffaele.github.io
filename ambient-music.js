@@ -178,14 +178,14 @@ new Tone.Loop(time => {
 }, '32m').start();
 
 new Tone.Loop(time => {
-  synthFour.triggerAttackRelease('C2', '6:0', '+0:3:2');
+  synthFour.triggerAttackRelease('C1', '6:0', '+0:3:2');
   synthFour.setNote('E1', '4:0', '+1.0');
 
   synthFour.triggerAttackRelease('G1', '6:0', '+2:0');
   synthFour.setNote('B1', '2:0', '+2:0');
   synthFour.setNote('G1', '2:0', '+2:0');
 
-  synthFour.triggerAttackRelease('E2', '6:0', '+1:0');
+  synthFour.triggerAttackRelease('E1', '6:0', '+1:0');
 }, '34m').start();
 
 
