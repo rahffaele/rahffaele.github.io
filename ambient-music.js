@@ -201,7 +201,7 @@ new Tone.Loop(time => {
   highMelody.setNote('G7', '4:0',);
 
   highMelody.triggerAttackRelease('C7', '4:0', '+2:0');
-}, '32m').start();
+}, '30m').start();
 
 Tone.Transport.start();
 
