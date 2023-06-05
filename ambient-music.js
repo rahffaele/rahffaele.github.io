@@ -35,7 +35,7 @@ function makeSynthOne() {
     harmonicity: 2,
     volume: -10,
     voice0: {
-      oscillator: {type: 'sine'},
+      oscillator: {type: 'triangle'},
       envelope,
       filterEnvelope,
       filterEnvelope2
