@@ -1,4 +1,4 @@
-function play(){
+async function play(){
 
 function makeSynthOne() {
    let envelope = {
