@@ -2,11 +2,7 @@ async function play(){
 
 	 try {
 
-	 if (loopOne) loopOne.dispose();
-    if (loopTwo) loopTwo.dispose();
-    if (loopThree) loopThree.dispose();
-    if (loopFour) loopFour.dispose();
-    if (loopHighMelody) loopHighMelody.dispose();
+	if (Tone.Loop()) Tone.Loop(.dispose();
 
 	const citySelect = document.getElementById('citySelect');
   	const selectedCity = citySelect.value;
