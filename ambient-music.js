@@ -103,6 +103,7 @@ let synthOne = makeSynthOne();
 let synthTwo = makeSynthOne();
 
 let synthThree = makeSynthTwo();
+let synthFour = makeSynthTwo();
 
 let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
 let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
@@ -175,14 +176,14 @@ new Tone.Loop(time => {
 }, '32m').start();
 
 new Tone.Loop(time => {
-  synthThree.triggerAttackRelease('C2', '6:0', '+0:3:2');
-  synthThree.setNote('E1', '4:0', '+1.0');
+  synthFour.triggerAttackRelease('C2', '6:0', '+0:3:2');
+  synthFour.setNote('E1', '4:0', '+1.0');
 
-  synthThree.triggerAttackRelease('G1', '6:0', '+2:0');
-  synthThree.setNote('B1', '2:0', '+2:0');
-  synthThree.setNote('G1', '2:0', '+2:0');
+  synthFour.triggerAttackRelease('G1', '6:0', '+2:0');
+  synthFour.setNote('B1', '2:0', '+2:0');
+  synthFour.setNote('G1', '2:0', '+2:0');
 
-  synthThree.triggerAttackRelease('E2', '6:0', '+1:0');
+  synthFour.triggerAttackRelease('E2', '6:0', '+1:0');
 }, '34m').start();
 
 
