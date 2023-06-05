@@ -63,6 +63,7 @@ function makeSynthTwo() {
     octaves: 1,
     attack: 2,
     decay: 3,
+    chorus: 5,
     release: 1000
   };
   let filterEnvelope1 = {
