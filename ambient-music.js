@@ -1,34 +1,52 @@
 function play(){
 
 function makeSynthOne() {
-  let envelope = {
+   let envelope = {
     attack: 0.4,
-    release: 2,
-    decay: 2,
+    release: 0.5,
+    decay: 0.5,
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
-    baseFrequency: 400,
+    baseFrequency: 300,
     octaves: 1,
-    attack: 0,
-    decay: 0,
+    attack: 2,
+    decay: 3,
     release: 1000
   };
+  let filterEnvelope1 = {
+    baseFrequency: 500,
+    octaves: -1,
+    attack: 1,
+    decay: 4,
+    release: 5
+  };
+  let filterEnvelope2 = {
+    baseFrequency: 300,
+    octaves: 3,
+    attack: 1,
+    decay: 4,
+    release: 5
+  }
+
+
 
   return new Tone.DuoSynth({
-    harmonicity: 4,
-    volume: -20,
+    harmonicity: 2,
+    volume: -10,
     voice0: {
-      oscillator: {type: 'triangle'},
+      oscillator: {type: 'sawtooth'},
       envelope,
-      filterEnvelope
+      filterEnvelope,
+      filterEnvelope2
     },
     voice1: {
-      oscillator: {type: 'sine'},
+      oscillator: {type: 'triangle'},
       envelope,
+      filterEnvelope1,
       filterEnvelope
     },
-    vibratoRate: 0.5,
+    vibratoRate: 0.3,
     vibratoAmount: 0.1
   });
 }
