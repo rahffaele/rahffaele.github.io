@@ -175,7 +175,7 @@ delay.connect(Tone.context.destination);
 delay.connect(delayFade);
 delayFade.connect(delay);
 
-new Tone.Loop(time => {
+let loopOne = new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
   synthOne.triggerAttackRelease('C5', '2:0', time);
   // Switch note to D5 after two 1/4 notes without retriggering
@@ -194,7 +194,7 @@ new Tone.Loop(time => {
   synthOne.setNote('G4', '+19:4:2');
 }, '26m').start();
 
-new Tone.Loop(time => {
+let loopTwo = new Tone.Loop(time => {
   // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
   synthTwo.triggerAttackRelease('D4', '1:2', '+5:0');
   // Switch to E4 after one more measure
@@ -209,7 +209,7 @@ new Tone.Loop(time => {
   synthTwo.triggerAttackRelease('G4', '0:2', '+23:2');
 }, '30m').start();
 
-new Tone.Loop(time => {
+let loopThree = new Tone.Loop(time => {
   synthThree.triggerAttackRelease('G2', '6:0', '+0:2');
   synthThree.setNote('C2', '4:0', '+2.0');
 
@@ -220,7 +220,7 @@ new Tone.Loop(time => {
   synthThree.triggerAttackRelease('C2', '4:0', '+2:0');
 }, '32m').start();
 
-new Tone.Loop(time => {
+let loopFour = new Tone.Loop(time => {
   synthFour.triggerAttackRelease('C2', '6:0', '+0:3:2');
   synthFour.setNote('E1', '4:0', '+1.0');
 
@@ -232,7 +232,7 @@ new Tone.Loop(time => {
 }, '34m').start();
 
 
-new Tone.Loop(time => {
+let loopHighMelody = new Tone.Loop(time => {
   highMelody.triggerAttackRelease('E7', '6:0', '+0:2');
   highMelody.setNote('C7', '4:0', '+2.0');
 
