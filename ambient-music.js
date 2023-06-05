@@ -1,7 +1,7 @@
 async function play(){
 
 	 try {
-    const apiKey = 'b1dfe8775712a9e84c24c94c7e8018ef';
+    const apiKey = '49a5b64679cabaa392cc7fe6b5826a92';
     const city = 'London';
 
     const response = await axios.get(
