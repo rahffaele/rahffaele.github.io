@@ -1,8 +1,12 @@
 async function play(){
 
 	 try {
+
+	const citySelect = document.getElementById('citySelect');
+  	const selectedCity = citySelect.value;
+
     const apiKey = '49a5b64679cabaa392cc7fe6b5826a92';
-    const city = 'London';
+    const city = selectedCity;
 
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=49a5b64679cabaa392cc7fe6b5826a92&units=metric`
