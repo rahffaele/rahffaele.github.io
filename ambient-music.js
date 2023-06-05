@@ -189,6 +189,17 @@ new Tone.Loop(time => {
 }, '34m').start();
 
 
+new Tone.Loop(time => {
+  synthThree.triggerAttackRelease('E7', '6:0', '+0:2');
+  synthThree.setNote('C7', '4:0', '+2.0');
+
+  synthThree.triggerAttackRelease('B7', '6:0', '+2:0');
+  synthThree.setNote('E7', '4:0', '+2:0');
+  synthThree.setNote('G7', '4:0',);
+
+  synthThree.triggerAttackRelease('C7', '4:0', '+2:0');
+}, '32m').start();
+
 Tone.Transport.start();
 
 Tone.Transport.bpm.value = 120;
