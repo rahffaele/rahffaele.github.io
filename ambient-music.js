@@ -5,7 +5,7 @@ async function play(){
     const city = 'London';
 
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat={45.4654219}&lon={9.1859243}&appid={49a5b64679cabaa392cc7fe6b5826a92}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=45.4654219&lon=9.1859243&appid=49a5b64679cabaa392cc7fe6b5826a92`
     );
 
     } catch (error) {
