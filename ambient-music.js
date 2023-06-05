@@ -1,6 +1,5 @@
 async function play(){
 
-	let playing = true;
 
 	 try {
 
@@ -239,19 +238,6 @@ let loopHighMelody = new Tone.Loop(time => {
   highMelody.triggerAttackRelease('C7', '4:0', '+2:0');
 }, '30m').start();
 
-
-if (playing) {
-	playing = false;
-}
-
-if (!playing) {
-playing = true;
-if (loopOne) loopOne.dispose();
-if (loopTwo) loopTwo.dispose();
-if (loopThree) loopThree.dispose();
-if (loopFour) loopFour.dispose();
-if (loopHighMelody) loopHighMelody.dispose();
-}
 
 Tone.Transport.start();
 
