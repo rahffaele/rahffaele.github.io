@@ -52,7 +52,7 @@ function makeSynthTwo() {
     harmonicity: 4,
     volume: -20,
     voice0: {
-      oscillator: {type: 'sawtooth'},
+      oscillator: {type: 'triangle'},
       envelope,
       filterEnvelope
     },
