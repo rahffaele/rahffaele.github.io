@@ -119,7 +119,9 @@ sup {
 
 .sticky-title {
   position: sticky;
-  top: 60px;
+  top: 50px;
+  backdrop-filter: blur(5px);
+  background-color: #F1F2F450;
 }
 
 
