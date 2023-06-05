@@ -2,7 +2,7 @@ async function play(){
 
 	 try {
 
-	if (Tone.Loop()) Tone.Loop(.dispose();
+	if (Tone.Loop()) Tone.Loop().dispose();
 
 	const citySelect = document.getElementById('citySelect');
   	const selectedCity = citySelect.value;
