@@ -245,7 +245,8 @@ if (playing) {
 }
 
 if (!playing) {
-	if (loopOne) loopOne.dispose();
+playing = true;
+if (loopOne) loopOne.dispose();
 if (loopTwo) loopTwo.dispose();
 if (loopThree) loopThree.dispose();
 if (loopFour) loopFour.dispose();
