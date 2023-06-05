@@ -14,7 +14,7 @@ async function play(){
 
     console.log(response.data); //control
 
-    const { temp, humidity} = response.data.main;
+    const {temp, humidity} = response.data.main;
     const windSpeed = response.data.wind.speed;
     const maxWindSpeed = 20; // Define the maximum wind speed you want to map to the BPM range
     const minBPM = 60; // Define the minimum BPM
