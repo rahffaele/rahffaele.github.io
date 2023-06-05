@@ -61,7 +61,7 @@ function makeSynthTwo() {
       envelope,
       filterEnvelope
     },
-    vibratoRate: 0.9,
+    vibratoRate: 0.4,
     vibratoAmount: 0.1
   });
 }
