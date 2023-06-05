@@ -117,6 +117,12 @@ sup {
   	color: black;
 }
 
+.sticky-title {
+  position: sticky;
+  top: 60px;
+}
+
+
 /* responsiveness */
 
 @media (max-width: 768px) {
