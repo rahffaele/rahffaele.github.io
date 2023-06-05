@@ -8,7 +8,22 @@ async function play(){
       `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=49a5b64679cabaa392cc7fe6b5826a92&units=metric`
     );
 
-    console.log(response.data); // Log the response data to the console
+    console.log(response.data); //control
+
+    const windSpeed = response.data.wind.speed;
+    const maxWindSpeed = 20; // Define the maximum wind speed you want to map to the BPM range
+    const minBPM = 60; // Define the minimum BPM
+    const maxBPM = 180; // Define the maximum BPM
+
+    // Calculate the new BPM value based on the wind speed
+    const newBPM = ((windSpeed / maxWindSpeed) * (maxBPM - minBPM)) + minBPM;
+
+    // Set the new BPM value
+    Tone.Transport.bpm.value = newBPM;
+
+    // Log the wind speed and new BPM value to the console
+    console.log('Wind Speed:', windSpeed);
+    console.log('New BPM:', newBPM);
 
     } catch (error) {
     console.error('Error fetching weather data:', error);
