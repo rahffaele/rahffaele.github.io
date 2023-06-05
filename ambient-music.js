@@ -155,7 +155,7 @@ new Tone.Loop(time => {
 
 Tone.Transport.start();
 
-Tone.Transport.bpm.value = 60;
+Tone.Transport.bpm.value = 120;
 }
 
 
