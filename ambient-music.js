@@ -2,7 +2,7 @@ async function play(){
 
 	 try {
     const apiKey = 'b1dfe8775712a9e84c24c94c7e8018ef';
-    const city = 'Milan';
+    const city = 'London';
 
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
