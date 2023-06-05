@@ -111,16 +111,17 @@ let echo = new Tone.FeedbackDelay('8n', 0.2);
 let delay = new Tone.Delay(8.0);
 let delayFade = new Tone.Gain(0.5);
 
-let bassVol = new Tone.Volume(-80).toDestination();
-let bass = new Tone.Oscillator().connect(bassVol).start();
+//let bassVol = new Tone.Volume(-80).toDestination();
+//let bass = new Tone.Oscillator().connect(bassVol).start();
 
 delay.delayTime.value = 8.0;
 delayFade.gain.value = 0.75;
 
 synthOne.connect(leftPanner);
 synthTwo.connect(rightPanner);
-synthThree.toMaster();
-synthFour.toMaster();
+
+synthThree.connect(echo);
+synthFour.connect(echo);
 
 leftPanner.connect(echo);
 rightPanner.connect(echo);
