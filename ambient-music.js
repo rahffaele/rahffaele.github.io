@@ -10,7 +10,8 @@ async function play(){
 
     console.log(response.data); //control
 
-    const { temp, humidity, windSpeed} = response.data.main;
+    const { temp, humidity} = response.data.main;
+    const windSpeed = response.data.wind.speed;
     const maxWindSpeed = 20; // Define the maximum wind speed you want to map to the BPM range
     const minBPM = 60; // Define the minimum BPM
     const maxBPM = 180; // Define the maximum BPM
@@ -18,11 +19,12 @@ async function play(){
     // Calculate the new BPM value based on the wind speed
     const newBPM = ((windSpeed / maxWindSpeed) * (maxBPM - minBPM)) + minBPM;
 
-    Tone.Transport.bpm.value = newBPM*240;
+    Tone.Transport.bpm.value = newBPM;
 
     // Log the wind speed and new BPM value to the console
     console.log('Wind Speed:', windSpeed);
     console.log('New BPM:', newBPM);
+    console.log('temp', temp);
 
     } catch (error) {
     console.error('Error fetching weather data:', error);
