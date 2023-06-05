@@ -1,12 +1,12 @@
 async function play(){
 
-	 try {
-
 	if (loopOne) loopOne.dispose();
 if (loopTwo) loopTwo.dispose();
 if (loopThree) loopThree.dispose();
 if (loopFour) loopFour.dispose();
 if (loopHighMelody) loopHighMelody.dispose();
+
+	 try {
 
 	const citySelect = document.getElementById('citySelect');
   	const selectedCity = citySelect.value;
