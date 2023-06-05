@@ -1,6 +1,5 @@
 async function play(){
 
-
 	 try {
 
 	const citySelect = document.getElementById('citySelect');
@@ -243,7 +242,6 @@ Tone.Transport.start();
 
 //Tone.Transport.bpm.value = 120;
 }
-
 
 
 {}
