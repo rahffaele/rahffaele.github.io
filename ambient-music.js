@@ -59,12 +59,26 @@ function makeSynthTwo() {
     releaseCurve: 'linear'
   };
   let filterEnvelope = {
-    baseFrequency: 400,
+    baseFrequency: 300,
     octaves: 1,
-    attack: 0,
-    decay: 0,
+    attack: 2,
+    decay: 3,
     release: 1000
   };
+  let filterEnvelope1 = {
+    baseFrequency: 500,
+    octaves: -1,
+    attack: 1,
+    decay: 4,
+    release: 5
+  };
+  let filterEnvelope2 = {
+    baseFrequency: 300,
+    octaves: 3,
+    attack: 1,
+    decay: 4,
+    release: 5
+  }
 
   return new Tone.DuoSynth({
     harmonicity: 4,
