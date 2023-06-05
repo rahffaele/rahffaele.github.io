@@ -103,7 +103,7 @@ delayFade.gain.value = 0.75;
 
 synthOne.connect(leftPanner);
 synthTwo.connect(rightPanner);
-synthThree.connect(delay);
+synthThree.toMaster();
 
 leftPanner.connect(echo);
 rightPanner.connect(echo);
