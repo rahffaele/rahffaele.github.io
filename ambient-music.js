@@ -8,6 +8,10 @@ async function play(){
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
     );
 
+    } catch (error) {
+    console.error('Error fetching weather data:', error);
+  }
+
 function makeSynthOne() {
    let envelope = {
     attack: 0.4,
