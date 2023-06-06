@@ -1,4 +1,4 @@
-let isPlaying = false;
+let isPlaying = true;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
