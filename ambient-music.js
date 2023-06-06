@@ -27,6 +27,7 @@ async function play() {
     } else {
         const button = document.getElementById("startStop");
         button.textContent = "Pause";
+        button.click();
         isPlaying = true;
 
         try {
