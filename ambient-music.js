@@ -23,12 +23,12 @@ async function play() {
         highMelody.dispose();
 
         const button = document.getElementById("startStop");
-        button.textContent = "Pause";
-        isPlaying = true;
-    } else {
-        const button = document.getElementById("startStop");
         button.textContent = "Play";
         isPlaying = false;
+    } else {
+        const button = document.getElementById("startStop");
+        button.textContent = "Pause";
+        isPlaying = true;
 
         try {
             const citySelect = document.getElementById("citySelect");
