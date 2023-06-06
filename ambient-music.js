@@ -16,14 +16,14 @@ async function play(){
 
 	try {
 
-	const citySelect = document.getElementById('citySelect');
-  	const selectedCity = citySelect.value;
+		const citySelect = document.getElementById('citySelect');
+  		const selectedCity = citySelect.value;
 
-    const apiKey = '49a5b64679cabaa392cc7fe6b5826a92';
-    const city = selectedCity;
+    	const apiKey = '49a5b64679cabaa392cc7fe6b5826a92';
+    	const city = selectedCity;
 
-    const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=49a5b64679cabaa392cc7fe6b5826a92&units=metric`
+    	const response = await axios.get(
+      	`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=49a5b64679cabaa392cc7fe6b5826a92&units=metric`
     );
 
     console.log(response.data); //control
@@ -49,54 +49,52 @@ async function play(){
   }
 
 function makeSynthOne() {
-   let envelope = {
-    attack: 0.4,
-    release: 0.5,
-    decay: 0.5,
-    releaseCurve: 'linear'
-  };
-  let filterEnvelope = {
-    baseFrequency: 300,
-    octaves: 1,
-    attack: 2,
-    decay: 3,
-    release: 1000
-  };
-  let filterEnvelope1 = {
-    baseFrequency: 500,
-    octaves: -1,
-    attack: 1,
-    decay: 4,
-    release: 5
-  };
-  let filterEnvelope2 = {
-    baseFrequency: 300,
-    octaves: 3,
-    attack: 1,
-    decay: 4,
-    release: 5
-  }
+   	let envelope = {
+    	attack: 0.4,
+    	release: 0.5,
+    	decay: 0.5,
+    	releaseCurve: 'linear'
+  	};
+  	let filterEnvelope = {
+    	baseFrequency: 300,
+    	octaves: 1,
+    	attack: 2,
+    	decay: 3,
+    	release: 1000
+  	};
+  	let filterEnvelope1 = {
+    	baseFrequency: 500,
+    	octaves: -1,
+    	attack: 1,
+    	decay: 4,
+    	release: 5
+  	};
+  	let filterEnvelope2 = {
+    	baseFrequency: 300,
+    	octaves: 3,
+    	attack: 1,
+    	decay: 4,
+    	release: 5
+  	}
 
-
-
-  return new Tone.DuoSynth({
-    harmonicity: 2,
-    volume: -10,
-    voice0: {
-      oscillator: {type: 'sawtooth'},
-      envelope,
-      filterEnvelope,
-      filterEnvelope2
+  	return new Tone.DuoSynth({
+    	harmonicity: 2,
+    	volume: -10,
+    	voice0: {
+      	oscillator: {type: 'sawtooth'},
+      	envelope,
+      	filterEnvelope,
+      	filterEnvelope2
     },
     voice1: {
-      oscillator: {type: 'triangle'},
-      envelope,
-      filterEnvelope1,
-      filterEnvelope
+      	oscillator: {type: 'triangle'},
+      	envelope,
+      	filterEnvelope1,
+      	filterEnvelope
     },
     vibratoRate: 0.3,
     vibratoAmount: 0.1
-  });
+  	});
 }
 
 function makeSynthTwo() {
