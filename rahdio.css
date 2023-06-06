@@ -4,6 +4,13 @@
     height: 100vh;
 }
 
+#night-filter {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
 #rahdio-logo {
     max-width: 25%;
     height: auto;

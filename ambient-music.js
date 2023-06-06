@@ -471,3 +471,19 @@ function calculatePollColor(usaqi) {
         return `rgb(${r}, ${g}, ${b})`;
     }
 }
+
+function calculateOverlayOpacity() {
+  const now = new Date();
+  const hours = now.getHours();
+  let opacity;
+
+  if (hours >= 0 && hours < 12) {
+    // From midnight to noon: opacity decreases from 70% to 1%
+    opacity = (1 - 0.01) * (12 - hours) / 12 + 0.01;
+  } else {
+    // From noon to midnight: opacity increases from 1% to 70%
+    opacity = (0.01 - 0.7) * (24 - hours) / 12 + 0.7;
+  }
+
+  return opacity;
+}
