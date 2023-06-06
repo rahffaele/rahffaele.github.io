@@ -65,7 +65,7 @@ async function play() {
     try {
     	const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA";
 			const responseTomTom = await axios.get(
-        		`https://api.tomtom.com/map/1/tile/basic/main/10/4/8.pbf?key=${apiKeyTomTom}`
+        		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=52.41072,4.84239`
       		);
 		console.log(responseTomTom.data); // Control
 		} catch (error) {
