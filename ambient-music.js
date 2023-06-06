@@ -1,5 +1,6 @@
 let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
+let synthOne, synthTwo, synthThree, synthFour, highMelody;
 
 async function play() {
   if (isPlaying) {
@@ -10,6 +11,12 @@ async function play() {
     loopTwo.stop();
     loopThree.stop();
     loopFour.stop();
+    loopHighMelody.stop();
+    synthOne.dispose();
+    synthTwo.dispose();
+    synthThree.dispose();
+    synthFour.dispose();
+    highMelody.dispose();
 
     isPlaying = false;
   } else {
@@ -142,12 +149,12 @@ async function play() {
       });
     }
 
-    let synthOne = makeSynthOne();
-    let synthTwo = makeSynthOne();
+    synthOne = makeSynthOne();
+    synthTwo = makeSynthOne();
 
-    let synthThree = makeSynthTwo();
-    let synthFour = makeSynthTwo();
-    let highMelody = makeSynthTwo();
+    synthThree = makeSynthTwo();
+    synthFour = makeSynthTwo();
+    highMelody = makeSynthTwo();
 
     let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
     let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
