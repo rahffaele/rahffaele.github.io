@@ -127,8 +127,8 @@ async function play() {
       	const city = selectedCity;
 
       	const response = await axios.get(
-        	//`http://api.airvisual.com/v2/city?city=${cityName}&state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
-        	`http://api.airvisual.com/v2/cities?state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
+        	`http://api.airvisual.com/v2/city?city=${cityName}&state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
+        	//`http://api.airvisual.com/v2/cities?state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
         	//`http://api.airvisual.com/v2/states?country=${cityCountry}&key=${apiKeyAir}`,
       	);
 
@@ -171,7 +171,7 @@ async function play() {
             cityLat = 52.5200;
             cityLon = 13.4050;
             break;
-          case 'Sao Paulo':
+          case 'São Paulo':
             cityLat = -23.5505;
             cityLon = -46.6333;
             break;
