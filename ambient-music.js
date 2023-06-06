@@ -3,6 +3,13 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
+const response = await axios.get(
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+            );
+
+            console.log(response.data); // Control
+
+            const { temp, humidity } = response.data.main;
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
 tempColor = calculateTempColor(temp);
