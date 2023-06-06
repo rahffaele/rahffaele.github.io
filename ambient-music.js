@@ -2,6 +2,7 @@ let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
+let localTime = getLocalTime();
 
 async function play() {
     if (isPlaying) {
@@ -470,5 +471,40 @@ function calculatePollColor(usaqi) {
         );
         return `rgb(${r}, ${g}, ${b})`;
     }
+}
+
+function getLocalTime() {
+  var citySelect = document.getElementById("citySelect");
+  var selectedCity = citySelect.value;
+
+  var timezones = {
+    Milan: "Europe/Rome",
+    "New York": "America/New_York",
+    Paris: "Europe/Paris",
+    Rome: "Europe/Rome",
+    London: "Europe/London",
+    Berlin: "Europe/Berlin",
+    "São Paulo": "America/Sao_Paulo",
+    Palermo: "Europe/Rome"
+  };
+
+  var timezone = timezones[selectedCity];
+
+  if (timezone) {
+    var currentTime = new Date().toLocaleString("en-US", {
+      timeZone: timezone,
+      hour12: true,
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric"
+    });
+
+    console.log("Local time in " + selectedCity + ": " + currentTime);
+    // Alternatively, display the time in an HTML element
+    // var timeDisplay = document.getElementById("timeDisplay");
+    // timeDisplay.textContent = "Local time in " + selectedCity + ": " + currentTime;
+  } else {
+    console.log("Invalid city selection");
+  }
 }
 
