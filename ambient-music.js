@@ -1,4 +1,4 @@
-let isPlaying;
+let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
@@ -28,7 +28,7 @@ async function play() {
     } else {
         const button = document.getElementById("startStop");
         button.textContent = "Pause";
-        isPlaying = true;
+        
 
         try {
             const citySelect = document.getElementById("citySelect");
