@@ -4,6 +4,8 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
 window.addEventListener('load', play);
+var button = document.getElementById('startStop');
+button.click();
 
 
 async function play() {
@@ -28,7 +30,7 @@ async function play() {
     } else {
         const button = document.getElementById("startStop");
         button.textContent = "Pause";
-        
+        isPlaying = true;
 
         try {
             const citySelect = document.getElementById("citySelect");
