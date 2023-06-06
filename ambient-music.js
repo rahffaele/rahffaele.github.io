@@ -3,7 +3,8 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-
+window.addEventListener('load', play);
+document.getElementById('startStop').addEventListener('click', play);
 
 async function play() {
     if (isPlaying) {
@@ -474,5 +475,3 @@ function calculatePollColor(usaqi) {
     }
 }
 
-window.addEventListener('load', play());
-document.getElementById('startStop').addEventListener('click', play());
