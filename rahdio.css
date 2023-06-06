@@ -5,8 +5,14 @@ body {
 }
 
 #rahdio-logo {
-    max-width: 20%;
+    max-width: 25%;
     height: auto;
+}
+
+@media (max-width: 768px) {
+  #rahdio-logo {
+    max-width: 35%;
+  }
 }
 
 {}
