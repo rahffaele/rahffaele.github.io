@@ -1,10 +1,3 @@
-const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA"
-
-const responseTomTom = await axios.get(
-        `https://api.tomtom.com/map/1/tile/basic/main/10/4/8.pbf?key=${apiKeyTomTom}&view={view}&language={language}`
-      );
-console.log(responseTomTom.data); // Control
-
 let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
@@ -36,17 +29,23 @@ async function play() {
     isPlaying = false;
 
     try {
-      const citySelect = document.getElementById('citySelect');
-      const selectedCity = citySelect.value;
+      	const citySelect = document.getElementById('citySelect');
+      	const selectedCity = citySelect.value;
 
-      const apiKey = '49a5b64679cabaa392cc7fe6b5826a92';
-      const city = selectedCity;
+      	const apiKey = '49a5b64679cabaa392cc7fe6b5826a92';
+      	const city = selectedCity;
 
-      const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-      );
+      	const response = await axios.get(
+        	`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+      	);
 
-      console.log(response.data); // Control
+      	console.log(response.data); // Control
+
+      	const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA"
+		const responseTomTom = await axios.get(
+        	`https://api.tomtom.com/map/1/tile/basic/main/10/4/8.pbf?key=${apiKeyTomTom}&view={view}&language={language}`
+      	);
+		console.log(responseTomTom.data); // Control
 
       const { temp, humidity } = response.data.main;
       const windSpeed = response.data.wind.speed;
