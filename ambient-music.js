@@ -3,8 +3,7 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
- 	const nightFilter = document.getElementById("night-filter");
-  	nightFilter.style.opacity = calculateOverlayOpacity();
+
 
 async function play() {
     if (isPlaying) {
@@ -420,6 +419,9 @@ async function play() {
 
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
+
+  	 	const nightFilter = document.getElementById("night-filter");
+  	nightFilter.style.opacity = calculateOverlayOpacity();
 
     //Tone.Transport.bpm.value = 120;
 }
