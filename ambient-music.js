@@ -70,7 +70,7 @@ async function play() {
       		);
 		console.log(responseTomTom.data); // Control
 		//const { temp, humidity } = response.data.main;
-		const { currentSpeed, CurrentTravelTime } = response.data.main;
+		const { currentSpeed, CurrentTravelTime } = response.data.flowSegmentData;
 		console.log("currentSpeed", currentSpeed);
 		} catch (error) {
       		console.error('Error fetching traffic data:', error);
