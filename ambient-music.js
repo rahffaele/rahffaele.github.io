@@ -1,6 +1,7 @@
 let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
+let tempColor, pollColor;
 
 async function play() {
     if (isPlaying) {
@@ -51,7 +52,7 @@ async function play() {
 
             // Calculate the new BPM value based on the wind speed
             const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
-            const tempColor = calculateTempColor(temp);
+            tempColor = calculateTempColor(temp);
             console.log("color temp:", tempColor);
 
             Tone.Transport.bpm.value = newBPM;
@@ -131,7 +132,7 @@ async function play() {
             );
 
             const usaqi = response.data.data.current.pollution.aqius;
-            const pollColor = calculatePollColor(usaqi);
+            pollColor = calculatePollColor(usaqi);
 
             console.log("Poll color:", pollColor);
             console.log(response.data);
