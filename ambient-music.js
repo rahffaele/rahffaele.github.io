@@ -5,7 +5,7 @@ let tempColor, pollColor;
 
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
-tempColor = calculateTempColor(temp);
+
 
 async function play() {
     if (isPlaying) {
