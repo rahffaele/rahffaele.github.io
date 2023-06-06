@@ -442,7 +442,7 @@ function calculateTempColor(temp) {
                 tempColorStart[1]
         );
         const b = Math.round(
-            ((35 - temp) * (tempColorStart2] - tempColorEnd[2])) / 35 +
+            ((35 - temp) * (tempColorStart[2] - tempColorEnd[2])) / 35 +
                 tempColorStart[2]
         );
         return `rgb(${r}, ${g}, ${b})`;
