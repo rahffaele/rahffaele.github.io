@@ -1,8 +1,14 @@
-let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
+let let isPlaying = false;
 
 async function play(){
+	if (isPlaying) {
+    	// Stop the music if it's already playing
+    	Tone.Transport.stop();
+    	Tone.Transport.cancel();
+    	isPlaying = false;
+ 	} else {
 
-	 try {
+	try {
 
 	const citySelect = document.getElementById('citySelect');
   	const selectedCity = citySelect.value;
@@ -171,7 +177,7 @@ delay.connect(Tone.context.destination);
 delay.connect(delayFade);
 delayFade.connect(delay);
 
-loopOne = new Tone.Loop(time => {
+let loopOne = new Tone.Loop(time => {
     // Trigger C5, and hold for a full note (measure) + two 1/4 notes
   synthOne.triggerAttackRelease('C5', '2:0', time);
   // Switch note to D5 after two 1/4 notes without retriggering
@@ -190,7 +196,7 @@ loopOne = new Tone.Loop(time => {
   synthOne.setNote('G4', '+19:4:2');
 }, '26m').start();
 
-loopTwo = new Tone.Loop(time => {
+let loopTwo = new Tone.Loop(time => {
   // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
   synthTwo.triggerAttackRelease('D4', '1:2', '+5:0');
   // Switch to E4 after one more measure
@@ -205,7 +211,7 @@ loopTwo = new Tone.Loop(time => {
   synthTwo.triggerAttackRelease('G4', '0:2', '+23:2');
 }, '30m').start();
 
-loopThree = new Tone.Loop(time => {
+let loopThree = new Tone.Loop(time => {
   synthThree.triggerAttackRelease('G2', '6:0', '+0:2');
   synthThree.setNote('C2', '4:0', '+2.0');
 
@@ -216,7 +222,7 @@ loopThree = new Tone.Loop(time => {
   synthThree.triggerAttackRelease('C2', '4:0', '+2:0');
 }, '32m').start();
 
-loopFour = new Tone.Loop(time => {
+let loopFour = new Tone.Loop(time => {
   synthFour.triggerAttackRelease('C2', '6:0', '+0:3:2');
   synthFour.setNote('E1', '4:0', '+1.0');
 
