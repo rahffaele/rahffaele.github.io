@@ -22,8 +22,7 @@ async function openingGradient(){
     const defaultBackground = document.getElementById("bg");
   	defaultBackground.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
-}
-	openingGradient();
+}openingGradient();
 
 
 async function play() {
