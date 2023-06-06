@@ -4,9 +4,6 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
 window.addEventListener('load', play);
-var buttonAuto = document.getElementById('startStop');
-buttonAuto.click();
-
 
 async function play() {
     if (isPlaying) {
@@ -450,6 +447,10 @@ function calculateTempColor(temp) {
         return `rgb(${r}, ${g}, ${b})`;
     }
 }
+
+var buttonAuto = document.getElementById('startStop');
+buttonAuto.click();
+
 
 // Function to calculate the color based on usaqi value
 function calculatePollColor(usaqi) {
