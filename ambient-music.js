@@ -2,6 +2,41 @@ let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 
+let normalizedTemp, normalizedUsaqi;
+
+function calculateGradientColors(temp, usaqi) {
+  // Define the minimum and maximum values for temp and usaqi
+  const minTemp = -10;
+  const maxTemp = 40;
+  const minUsaqi = 0;
+  const maxUsaqi = 500;
+
+  // Define the color range for temp (from blue to red)
+  const tempColorRange = {
+    from: [0, 0, 255],   // Blue
+    to: [255, 0, 0]      // Red
+  };
+
+  // Define the color range for usaqi (from green to purple)
+  const usaqiColorRange = {
+    from: [0, 255, 0],   // Green
+    to: [128, 0, 128]    // Purple
+  };
+
+  // Calculate the interpolated colors for temp and usaqi
+  
+  const pollColor = interpolateColor(usaqiColorRange.from, usaqiColorRange.to, normalizedUsaqi);
+
+  return [tempColor, pollColor];
+}
+
+function interpolateColor(colorFrom, colorTo, t) {
+  const r = Math.round((1 - t) * colorFrom[0] + t * colorTo[0]);
+  const g = Math.round((1 - t) * colorFrom[1] + t * colorTo[1]);
+  const b = Math.round((1 - t) * colorFrom[2] + t * colorTo[2]);
+  return `rgb(${r},${g},${b})`;
+}
+
 async function play() {
     if (isPlaying) {
         // Stop the music if it's already playing
@@ -50,9 +85,11 @@ async function play() {
             const minBPM = 60; // Define the minimum BPM
             const maxBPM = 180; // Define the maximum BPM
 
+            normalizedTemp = (temp - minTemp) / (maxTemp - minTemp);
+            const tempColor = interpolateColor(tempColorRange.from, tempColorRange.to, normalizedTemp);
+
             // Calculate the new BPM value based on the wind speed
-            const newBPM =
-                (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
+            const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
 
             Tone.Transport.bpm.value = newBPM;
 
@@ -132,6 +169,8 @@ async function play() {
             );
 
             const usaqi = response.data.data.current.pollution.aqius;
+            normalizedUsaqi = (usaqi - minUsaqi) / (maxUsaqi - minUsaqi);
+            const pollColor = interpolateColor(usaqiColorRange.from, usaqiColorRange.to, normalizedUsaqi);
 
             console.log(response.data);
             console.log("Aqi US:", usaqi);
