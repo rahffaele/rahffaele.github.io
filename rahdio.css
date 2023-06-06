@@ -1,8 +1,6 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 
-#bg {
-    height: 100vh;
-}
+
 
 #rahdio-logo {
     max-width: 25%;
