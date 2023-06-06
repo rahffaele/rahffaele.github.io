@@ -75,10 +75,12 @@ async function play() {
       	const citySelect = document.getElementById('citySelect');
       	const selectedCity = citySelect.value;
 
-      	let cityState, cityCountry; 
+      	let cityName, cityState, cityCountry; 
+      	cityName = selectedCity,
 
       	switch (selectedCity) {
           case 'Milan':
+          	cityName = "Milano"
             cityState = "Lombardy";
             cityCountry= "Italy";
             break;
@@ -119,8 +121,8 @@ async function play() {
       	const city = selectedCity;
 
       	const response = await axios.get(
-        	//`http://api.airvisual.com/v2/city?city=${city}&state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
-        	`http://api.airvisual.com/v2/cities?state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
+        	`http://api.airvisual.com/v2/city?city=${city}&state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
+        	//`http://api.airvisual.com/v2/cities?state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
         	//`http://api.airvisual.com/v2/states?country=${cityCountry}&key=${apiKeyAir}`,
       	);
 
