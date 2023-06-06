@@ -19,8 +19,8 @@ async function openingGradient(){
     pollColor = calculatePollColor(usaqi);
     tempColor = calculateTempColor(temp);
 
-    const background = document.getElementById("bg");
-  	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
+    const defaultBackground = document.getElementById("bg");
+  	defaultBackground.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
 }
 	openingGradient();
