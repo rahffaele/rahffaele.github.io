@@ -4,12 +4,13 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 
 let normalizedTemp, normalizedUsaqi;
 
+// Define the minimum and maximum values for temp and usaqi
+const minTemp = -10;
+const maxTemp = 40;
+const minUsaqi = 0;
+const maxUsaqi = 500;
+
 function calculateGradientColors(temp, usaqi) {
-  // Define the minimum and maximum values for temp and usaqi
-  const minTemp = -10;
-  const maxTemp = 40;
-  const minUsaqi = 0;
-  const maxUsaqi = 500;
 
   // Define the color range for temp (from blue to red)
   const tempColorRange = {
