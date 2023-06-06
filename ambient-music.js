@@ -40,8 +40,8 @@ const highTempColor = [0, 37, 114];
 const lowPollColor = [79, 147, 186];
 const highPollColor = [185, 185, 185];
 
-const tempColor = mapValueToColor(value, lowValue, highValue, lowTempColor, highTempColor);
-const pollColor = mapValueToColor(value, lowValue, highValue, lowPollColor, highPollColor);
+const tempColor = mapValueToColor(temp, lowValue, highValue, lowTempColor, highTempColor);
+const pollColor = mapValueToColor(usaqi, lowValue, highValue, lowPollColor, highPollColor);
 
 console.log('Temperature Color:', tempColor);
 console.log('Pollution Color:', pollColor);
