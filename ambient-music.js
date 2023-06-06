@@ -69,7 +69,7 @@ async function play() {
       		);
 		console.log(responseTomTom.data); // Control
 		} catch (error) {
-      		console.error('Error fetching weather data:', error);
+      		console.error('Error fetching traffic data:', error);
     	}
 
     function makeSynthOne() {
