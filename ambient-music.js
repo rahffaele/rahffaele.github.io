@@ -5,7 +5,7 @@ let tempColor, pollColor;
 
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
-
+tempColor = calculateTempColor(temp);
 
 async function play() {
     if (isPlaying) {
@@ -136,6 +136,7 @@ async function play() {
             );
 
             const usaqi = response.data.data.current.pollution.aqius;
+            pollColor = calculatePollColor(usaqi);
 
             console.log("Poll color:", pollColor);
             console.log(response.data);
@@ -417,6 +418,9 @@ async function play() {
         Tone.Transport.start();
         isPlaying = true;
     }
+
+    const background = document.getElementById("bg");
+  	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
     //Tone.Transport.bpm.value = 120;
 }
