@@ -24,11 +24,8 @@ async function openingGradient(){
 
   	openingGradientControl = 1;
 }
-
-let openingGradientControl = 0;
-if (openingGradientControl == 0) {
 	openingGradient();
-}
+
 
 async function play() {
     if (isPlaying) {
