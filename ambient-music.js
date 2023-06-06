@@ -211,40 +211,6 @@ async function play() {
             console.error("Error fetching traffic data:", error);
         }
 
- 
-  // Calculate the color for temp gradient
-  let tempColor = "";
-  if (temp <= 0) {
-    tempColor = "rgb(83, 97, 125)";
-  } else if (temp >= 35) {
-    tempColor = "rgb(0, 37, 114)";
-  } else {
-    const r = Math.round((35 - temp) * (83 / 35));
-    const g = Math.round((35 - temp) * (97 / 35));
-    const b = Math.round((35 - temp) * (125 / 35));
-    tempColor = `rgb(${r}, ${g}, ${b})`;
-  }
-
-  // Calculate the color for usaqi gradient
-  let pollColor = "";
-  if (usaqi <= 0) {
-    pollColor = "rgb(79, 147, 186)";
-  } else if (usaqi >= 450) {
-    pollColor = "rgb(185, 185, 185)";
-  } else {
-    const r = Math.round((450 - usaqi) * (79 / 450));
-    const g = Math.round((450 - usaqi) * (147 / 450));
-    const b = Math.round((450 - usaqi) * (186 / 450));
-    pollColor = `rgb(${r}, ${g}, ${b})`;
-  }
-
-  // Update the background color using a linear gradient
-  const background = document.getElementsByTagName("body");
-  background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
-
-  // ...
-
-
         function makeSynthOne() {
             let envelope = {
                 attack: 0.4,
