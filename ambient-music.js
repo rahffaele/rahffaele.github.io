@@ -26,6 +26,7 @@ async function play() {
         button.textContent = "Pause";
         isPlaying = false;
 
+        //weather API
         try {
             const citySelect = document.getElementById("citySelect");
             const selectedCity = citySelect.value;
@@ -68,6 +69,7 @@ async function play() {
             console.error("Error fetching weather data:", error);
         }
 
+        //pollution API
         try {
             const citySelect = document.getElementById("citySelect");
             const selectedCity = citySelect.value;
@@ -137,6 +139,7 @@ async function play() {
             console.error("Error fetching air pollution data:", error);
         }
 
+        //Traffic API
         try {
             const citySelect = document.getElementById("citySelect");
             const selectedCity = citySelect.value;
