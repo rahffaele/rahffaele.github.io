@@ -3,7 +3,10 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-window.addEventListener('load', play);
+window.onload = function() {
+  var button = document.getElementById('startStop');
+  button.click();
+};
 
 async function play() {
     if (isPlaying) {
