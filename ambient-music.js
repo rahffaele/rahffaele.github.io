@@ -414,6 +414,9 @@ async function play() {
         isPlaying = true;
     }
 
+    const background = document.getElementByTagName("body");
+  	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
+
     //Tone.Transport.bpm.value = 120;
 }
 
