@@ -2,6 +2,8 @@ let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
+let currentTime;
+let city;
 
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
@@ -35,7 +37,8 @@ async function play() {
             const selectedCity = citySelect.value;
 
             const apiKey = "49a5b64679cabaa392cc7fe6b5826a92";
-            const city = selectedCity;
+            city = selectedCity;
+            currentTime = await getCurrentTime(city);
 
             const response = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
@@ -475,9 +478,17 @@ function calculatePollColor(usaqi) {
     }
 }
 
-function calculateOverlayOpacity() {
-  const now = new Date();
-  const hours = now.getHours();
+async function getCurrentTime(city) {
+  const response = await axios.get(
+    `https://worldtimeapi.org/api/timezone/Europe/${city}`
+  );
+
+  const currentTime = new Date(response.data.datetime);
+  return currentTime;
+}
+
+function calculateOverlayOpacity(currentTime) {
+  const hours = currentTime.getHours();
   let opacity;
 
   if (hours >= 0 && hours < 12) {
