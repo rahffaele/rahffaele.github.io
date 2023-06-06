@@ -92,7 +92,7 @@ async function play() {
             break;
           case 'Rome':
             cityState = "Latium";
-            cityCountry = "Ialy";
+            cityCountry = "Italy";
             break;
           case 'London':
             cityState = "England";
