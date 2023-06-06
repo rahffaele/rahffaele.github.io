@@ -3,13 +3,15 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-async function peningGradient(){
+async function openingGradient(){
 	const apiKey = "49a5b64679cabaa392cc7fe6b5826a92";
     const response =  await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKey}&units=metric`
     );
     console.log(response.data);
 }
+
+openingGradient();
 
 async function play() {
     if (isPlaying) {
