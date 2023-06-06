@@ -160,6 +160,9 @@ async function play() {
 		// Output the extracted values
 		console.log('Current Speed:', currentSpeed);
 		console.log('Current Travel Time:', currentTravelTime);
+		console.log('Latitude', cityLat);
+		console.log('City', selectedCity);
+		console.log('Longitude', cityLon);
 		} catch (error) {
       		console.error('Error fetching traffic data:', error);
     	}
