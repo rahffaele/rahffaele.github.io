@@ -12,7 +12,68 @@ function lerpColor(startColor, endColor, t) {
   return lerpedRGB;
 }
 
-try {
+function mapValueToColor(value, lowValue, highValue, lowColor, highColor) {
+  if (temp <= lowValue) {
+    return lowColor;
+  } else if (temp >= highValue) {
+    return highColor;
+  } else {
+    const t = (temp - lowValue) / (highValue - lowValue); // Normalize the value to the range [0, 1]
+    return lerpColor(lowColor, highColor, t);
+  }
+
+  if (usaqi <= lowValue) {
+    return lowColor;
+  } else if (usaqi >= highValue) {
+    return highColor;
+  } else {
+    const t = (usaqi - lowValue) / (highValue - lowValue); // Normalize the value to the range [0, 1]
+    return lerpColor(lowColor, highColor, t);
+  }
+}
+
+// Example usage
+const lowValue = 0;
+const highValue = 35;
+const lowTempColor = [83, 97, 125];
+const highTempColor = [0, 37, 114];
+const lowPollColor = [79, 147, 186];
+const highPollColor = [185, 185, 185];
+
+const tempColor = mapValueToColor(value, lowValue, highValue, lowTempColor, highTempColor);
+const pollColor = mapValueToColor(value, lowValue, highValue, lowPollColor, highPollColor);
+
+console.log('Temperature Color:', tempColor);
+console.log('Pollution Color:', pollColor);
+
+
+async function play() {
+  if (isPlaying) {
+    // Stop the music if it's already playing
+    Tone.Transport.stop();
+    Tone.Transport.cancel();
+    loopOne.stop();
+    loopTwo.stop();
+    loopThree.stop();
+    loopFour.stop();
+    loopHighMelody.stop();
+    synthOne.dispose();
+    synthTwo.dispose();
+    synthThree.dispose();
+    synthFour.dispose();
+    highMelody.dispose();
+
+    const button = document.getElementById('startStop');
+    button.textContent = "Play"
+    isPlaying = false;
+
+  } else {
+
+  	const button = document.getElementById('startStop');
+    button.textContent = "Pause"
+    isPlaying = false;
+
+    try {
       	const citySelect = document.getElementById('citySelect');
       	const selectedCity = citySelect.value;
 
@@ -199,69 +260,6 @@ try {
 		} catch (error) {
       		console.error('Error fetching traffic data:', error);
     	}
-
-function mapValueToColor(value, lowValue, highValue, lowColor, highColor) {
-  if (temp <= lowValue) {
-    return lowColor;
-  } else if (temp >= highValue) {
-    return highColor;
-  } else {
-    const t = (temp - lowValue) / (highValue - lowValue); // Normalize the value to the range [0, 1]
-    return lerpColor(lowColor, highColor, t);
-  }
-
-  if (usaqi <= lowValue) {
-    return lowColor;
-  } else if (usaqi >= highValue) {
-    return highColor;
-  } else {
-    const t = (usaqi - lowValue) / (highValue - lowValue); // Normalize the value to the range [0, 1]
-    return lerpColor(lowColor, highColor, t);
-  }
-}
-
-// Example usage
-const lowValue = 0;
-const highValue = 35;
-const lowTempColor = [83, 97, 125];
-const highTempColor = [0, 37, 114];
-const lowPollColor = [79, 147, 186];
-const highPollColor = [185, 185, 185];
-
-const tempColor = mapValueToColor(value, lowValue, highValue, lowTempColor, highTempColor);
-const pollColor = mapValueToColor(value, lowValue, highValue, lowPollColor, highPollColor);
-
-console.log('Temperature Color:', tempColor);
-console.log('Pollution Color:', pollColor);
-
-
-async function play() {
-  if (isPlaying) {
-    // Stop the music if it's already playing
-    Tone.Transport.stop();
-    Tone.Transport.cancel();
-    loopOne.stop();
-    loopTwo.stop();
-    loopThree.stop();
-    loopFour.stop();
-    loopHighMelody.stop();
-    synthOne.dispose();
-    synthTwo.dispose();
-    synthThree.dispose();
-    synthFour.dispose();
-    highMelody.dispose();
-
-    const button = document.getElementById('startStop');
-    button.textContent = "Play"
-    isPlaying = false;
-
-  } else {
-
-  	const button = document.getElementById('startStop');
-    button.textContent = "Pause"
-    isPlaying = false;
-
-    
 
     function makeSynthOne() {
       let envelope = {
