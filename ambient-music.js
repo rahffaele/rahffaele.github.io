@@ -4,15 +4,30 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
 async function openingGradient(){
-	const apiKey = "49a5b64679cabaa392cc7fe6b5826a92";
-    const response =  await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKey}&units=metric`
+	const apiKeyGradTemp = "49a5b64679cabaa392cc7fe6b5826a92";
+    const weatherGrad =  await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyGradTemp}&units=metric`
     );
-    console.log(response.data);
-    const { temp, humidity } = response.data.main;
+    const temp = weatherGrad.data.main;
+
+    const pollGrad = await axios.get(
+        `https://api.airvisual.com/v2/city?city=${cityName}&state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`
+    );
+    const usaqi = pollGrad.data.data.current.pollution.aqius;
+
+    pollColor = calculatePollColor(usaqi);
+    tempColor = calculateTempColor(temp);
+
+    const background = document.getElementById("bg");
+  	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
+
+  	openingGradientControl = 1;
 }
 
-openingGradient();
+let openingGradientControl = 0;
+if (openingGradientControl == 0) {
+	openingGradient();
+}
 
 async function play() {
     if (isPlaying) {
