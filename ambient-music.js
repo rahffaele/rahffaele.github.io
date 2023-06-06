@@ -132,7 +132,7 @@ async function play() {
         	//`http://api.airvisual.com/v2/states?country=${cityCountry}&key=${apiKeyAir}`,
       	);
 
-      	const usaqi = response.data.current.pollution.aqius;
+      	//const usaqi = response.data.current.pollution.aqius;
 
       	console.log(response.data);
       	console.log("Aqi US:", usaqi);
