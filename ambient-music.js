@@ -12,7 +12,7 @@ async function openingGradient(){
 
     const apiKeyGradPoll = "01e58321-b850-416a-bcd7-d0e68fb05398";
     const pollGrad = await axios.get(
-        `https://api.airvisual.com/v2/city?city=Milan&state=Lombardy&country=Italy&key=${apiKeyGradPoll}`
+        `https://api.airvisual.com/v2/city?city=Milano&state=Lombardy&country=Italy&key=${apiKeyGradPoll}`
     );
     const usaqi = pollGrad.data.data.current.pollution.aqius;
 
