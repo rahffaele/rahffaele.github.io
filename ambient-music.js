@@ -3,15 +3,6 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-const citySelect = document.getElementById("citySelect");
-
-            const apiKey = "49a5b64679cabaa392cc7fe6b5826a92";
-
-            const response =  axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKey}&units=metric`
-            );
-
-            const { temp, humidity } = response.data.main;
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
 tempColor = calculateTempColor(temp);
