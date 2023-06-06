@@ -104,6 +104,49 @@ async function play() {
     }
 
     try {
+      	const citySelect = document.getElementById('citySelect');
+      	const selectedCity = citySelect.value;
+
+      	const apiKeyAir = '01e58321-b850-416a-bcd7-d0e68fb05398';
+      	const city = selectedCity;
+
+      	const response = await axios.get(
+        	`https://api.airvisual.com/v2/nearest_city?key=${apiKeyAir}`
+      	);
+
+      	console.log(response.data); // Control
+
+      	
+
+      const { temp, humidity } = response.data.main;
+      const mainWeather  = response.data.weather[0].main;
+      const descriptionWeather  = response.data.weather[0].description;
+      const sunrise = response.data.sys.sunrise;
+      const sunset = response.data.sys.sunset;
+      const windSpeed = response.data.wind.speed;
+      const maxWindSpeed = 20; // Define the maximum wind speed you want to map to the BPM range
+      const minBPM = 60; // Define the minimum BPM
+      const maxBPM = 180; // Define the maximum BPM
+
+      // Calculate the new BPM value based on the wind speed
+      const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
+
+      Tone.Transport.bpm.value = newBPM;
+
+      // Log the wind speed and new BPM value to the console
+      console.log('Wind Speed:', windSpeed);
+      console.log('New BPM:', newBPM);
+      console.log('temp', temp);
+      console.log('humidity', humidity);
+      console.log('weather:', mainWeather);
+      console.log('weather description:', descriptionWeather);
+      console.log('sunrise:', sunrise);
+      console.log('sunset:', sunset);
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+    }
+
+    try {
 
     	const citySelect = document.getElementById('citySelect');
       	const selectedCity = citySelect.value;
