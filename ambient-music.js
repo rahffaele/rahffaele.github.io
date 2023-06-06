@@ -418,6 +418,9 @@ async function play() {
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
+  	const nightFilter = document.getElementById("night-filter");
+  	background.style.opacity = calculateOverlayOpacity();
+
     //Tone.Transport.bpm.value = 120;
 }
 
