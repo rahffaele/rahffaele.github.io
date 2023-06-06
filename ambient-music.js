@@ -95,7 +95,7 @@ async function play() {
             cityCountry = "Ialy";
             break;
           case 'London':
-            cityState = 51.5074;
+            cityState = "England";
             cityCountry = "UK";
             break;
           case 'Berlin':
@@ -103,7 +103,7 @@ async function play() {
             cityCountry = "Germany";
             break;
           case 'São Paulo':
-            cityState = -23.5505;
+            cityState = "Sao Paulo";
             cityCountry = "Brazil";
             break;
           case 'Palermo':
@@ -162,7 +162,7 @@ async function play() {
             cityLat = 52.5200;
             cityLon = 13.4050;
             break;
-          case 'São Paulo':
+          case 'Sao Paulo':
             cityLat = -23.5505;
             cityLon = -46.6333;
             break;
