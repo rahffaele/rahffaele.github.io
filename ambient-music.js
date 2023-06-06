@@ -246,14 +246,14 @@ loopHighMelody = new Tone.Loop(time => {
   highMelody.triggerAttackRelease('C7', '4:0', '+2:0');
 }, '30m').start();
 
-
-Tone.Transport.start();
-
 	if (loopOne) loopOne.stop();
     if (loopTwo) loopTwo.stop();
     if (loopThree) loopThree.stop();
     if (loopFour) loopFour.stop();
     if (loopHighMelody) loopHighMelody.stop();
+Tone.Transport.start();
+
+
 
 //Tone.Transport.bpm.value = 120;
 }
