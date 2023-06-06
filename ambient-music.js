@@ -111,7 +111,7 @@ async function play() {
       	const city = selectedCity;
 
       	const response = await axios.get(
-        	`https://api.airvisual.com/v2/nearest_city?key=${apiKeyAir}`
+        	`http://api.airvisual.com/v2/city?city=Los Angeles&state=California&country=USA&key=${apiKeyAir}`
       	);
 
       	console.log(response.data); // Control
