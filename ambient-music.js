@@ -448,12 +448,6 @@ function calculateTempColor(temp) {
     }
 }
 
- document.addEventListener('DOMContentLoaded', function() {
-    var buttonAuto = document.getElementById('startStop');
-    buttonAuto.click();
-  });
-
-
 // Function to calculate the color based on usaqi value
 function calculatePollColor(usaqi) {
     const pollColorStart = [79, 147, 186]; // RGB color for usaqi value 0 or less
