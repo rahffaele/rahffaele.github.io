@@ -50,8 +50,9 @@ async function play() {
             const maxBPM = 180; // Define the maximum BPM
 
             // Calculate the new BPM value based on the wind speed
-            const newBPM =
-                (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
+            const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
+            const tempColor = calculateTempColor(temp);
+            console.log("color temp:", tempColor);
 
             Tone.Transport.bpm.value = newBPM;
 
@@ -130,7 +131,9 @@ async function play() {
             );
 
             const usaqi = response.data.data.current.pollution.aqius;
+            const pollColor = calculatePollColor(usaqi);
 
+            console.log("Poll color:", pollColor);
             console.log(response.data);
             console.log("Aqi US:", usaqi);
         } catch (error) {
@@ -412,4 +415,55 @@ async function play() {
     }
 
     //Tone.Transport.bpm.value = 120;
+}
+
+function calculateTempColor(temp) {
+    const tempColorStart = [83, 97, 125]; // RGB color for temp value 0 or less
+    const tempColorEnd = [0, 37, 114]; // RGB color for temp value 35 or higher
+
+    if (temp <= 0) {
+        return `rgb(${tempColorStart[0]}, ${tempColorStart[1]}, ${tempColorStart[2]})`;
+    } else if (temp >= 35) {
+        return `rgb(${tempColorEnd[0]}, ${tempColorEnd[1]}, ${tempColorEnd[2]})`;
+    } else {
+        const r = Math.round(
+            ((35 - temp) * (tempColorEnd[0] - tempColorStart[0])) / 35 +
+                tempColorStart[0]
+        );
+        const g = Math.round(
+            ((35 - temp) * (tempColorEnd[1] - tempColorStart[1])) / 35 +
+                tempColorStart[1]
+        );
+        const b = Math.round(
+            ((35 - temp) * (tempColorEnd[2] - tempColorStart[2])) / 35 +
+                tempColorStart[2]
+        );
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+}
+
+// Function to calculate the color based on usaqi value
+function calculatePollColor(usaqi) {
+    const pollColorStart = [79, 147, 186]; // RGB color for usaqi value 0 or less
+    const pollColorEnd = [185, 185, 185]; // RGB color for usaqi value 450 or higher
+
+    if (usaqi <= 0) {
+        return `rgb(${pollColorStart[0]}, ${pollColorStart[1]}, ${pollColorStart[2]})`;
+    } else if (usaqi >= 450) {
+        return `rgb(${pollColorEnd[0]}, ${pollColorEnd[1]}, ${pollColorEnd[2]})`;
+    } else {
+        const r = Math.round(
+            ((450 - usaqi) * (pollColorEnd[0] - pollColorStart[0])) / 450 +
+                pollColorStart[0]
+        );
+        const g = Math.round(
+            ((450 - usaqi) * (pollColorEnd[1] - pollColorStart[1])) / 450 +
+                pollColorStart[1]
+        );
+        const b = Math.round(
+            ((450 - usaqi) * (pollColorEnd[2] - pollColorStart[2])) / 450 +
+                pollColorStart[2]
+        );
+        return `rgb(${r}, ${g}, ${b})`;
+    }
 }
