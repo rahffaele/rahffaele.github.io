@@ -2,13 +2,14 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 
 async function play(){
 
-	 try {
-	 if (loopOne) loopOne.stop();
+	if (loopOne) loopOne.stop();
     if (loopTwo) loopTwo.stop();
     if (loopThree) loopThree.stop();
     if (loopFour) loopFour.stop();
     if (loopHighMelody) loopHighMelody.stop();
 
+
+	 try {
 
 	const citySelect = document.getElementById('citySelect');
   	const selectedCity = citySelect.value;
