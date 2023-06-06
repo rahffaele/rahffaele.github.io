@@ -81,68 +81,68 @@ function makeSynthOne() {
     	harmonicity: 2,
     	volume: -10,
     	voice0: {
-      	oscillator: {type: 'sawtooth'},
-      	envelope,
-      	filterEnvelope,
-      	filterEnvelope2
-    },
-    voice1: {
-      	oscillator: {type: 'triangle'},
-      	envelope,
-      	filterEnvelope1,
-      	filterEnvelope
-    },
-    vibratoRate: 0.3,
-    vibratoAmount: 0.1
+      		oscillator: {type: 'sawtooth'},
+      		envelope,
+      		filterEnvelope,
+      		filterEnvelope2
+    	},
+    	voice1: {
+      		oscillator: {type: 'triangle'},
+      		envelope,
+      		filterEnvelope1,
+      		filterEnvelope
+    	},
+    	vibratoRate: 0.3,
+    	vibratoAmount: 0.1
   	});
 }
 
 function makeSynthTwo() {
-  let envelope = {
-    attack: 0.5,
-    release: 2,
-    decay: 4,
-    releaseCurve: 'linear'
-  };
-  let filterEnvelope = {
-    baseFrequency: 300,
-    octaves: 1,
-    attack: 2,
-    decay: 3,
-    chorus: 5,
-    release: 1000
-  };
-  let filterEnvelope1 = {
-    baseFrequency: 500,
-    octaves: -1,
-    attack: 1,
-    decay: 4,
-    release: 5
-  };
-  let filterEnvelope2 = {
-    baseFrequency: 300,
-    octaves: 3,
-    attack: 1,
-    decay: 4,
-    release: 5
-  }
+  	let envelope = {
+    	attack: 0.5,
+    	release: 2,
+    	decay: 4,
+    	releaseCurve: 'linear'
+  	};
+  	let filterEnvelope = {
+    	baseFrequency: 300,
+    	octaves: 1,
+    	attack: 2,
+    	decay: 3,
+    	chorus: 5,
+    	release: 1000
+  	};
+  	let filterEnvelope1 = {
+    	baseFrequency: 500,
+    	octaves: -1,
+    	attack: 1,
+    	decay: 4,
+    	release: 5
+  	};
+  	let filterEnvelope2 = {
+    	baseFrequency: 300,
+    	octaves: 3,
+    	attack: 1,
+    	decay: 4,
+    	release: 5
+  	}
 
-  return new Tone.DuoSynth({
-    harmonicity: 4,
-    volume: -20,
-    voice0: {
-      oscillator: {type: 'sine'},
-      envelope,
-      filterEnvelope
-    },
-    voice1: {
-      oscillator: {type: 'sine'},
-      envelope,
-      filterEnvelope
-    },
-    vibratoRate: 0.4,
-    vibratoAmount: 0.1
-  });
+  	return new Tone.DuoSynth({
+    	harmonicity: 4,
+    	volume: -20,
+    	voice0: {
+      		oscillator: {type: 'sine'},
+      		envelope,
+      		filterEnvelope
+    	},
+    	voice1: {
+      		oscillator: {type: 'sine'},
+      		envelope,
+      		filterEnvelope
+    	},
+    	vibratoRate: 0.4,
+    	vibratoAmount: 0.1
+  	});
 }
 
 let synthOne = makeSynthOne();
@@ -252,7 +252,6 @@ loopHighMelody = new Tone.Loop(time => {
 
 Tone.Transport.start();
 isPlaying = true;
-
 
 //Tone.Transport.bpm.value = 120;
 }
