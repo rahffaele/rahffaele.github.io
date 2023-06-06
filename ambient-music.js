@@ -79,20 +79,20 @@ async function play() {
 
       	switch (selectedCity) {
           case 'Milan':
-            cityState = 45.4776;
+            cityState = "Lombardy";
             cityCountry= "Italy";
             break;
           case 'New York':
-            cityState = 40.7549;
-            cityCountry = -73.9840;
+            cityState = "New York";
+            cityCountry = "USA";
             break;
           case 'Paris':
             cityState = 48.8566;
-            cityCountry = 2.3522;
+            cityCountry = "France";
             break;
           case 'Rome':
-            cityState = 41.9028;
-            cityCountry = 12.4964;
+            cityState = "Lazio";
+            cityCountry = "Ialy";
             break;
           case 'London':
             cityState = 51.5074;
