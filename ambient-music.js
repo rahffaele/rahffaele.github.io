@@ -85,6 +85,7 @@ async function play() {
 
       // Calculate the new BPM value based on the wind speed
       const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
+      const tempColor = calculateGradientColors(temp);
 
       Tone.Transport.bpm.value = newBPM;
 
@@ -163,6 +164,7 @@ async function play() {
       	);
 
       	const usaqi = response.data.data.current.pollution.aqius;
+      	const pollColor = calculateGradientColors(usaqi);
 
       	console.log(response.data);
       	console.log("Aqi US:", usaqi);
@@ -245,8 +247,6 @@ async function play() {
 		} catch (error) {
       		console.error('Error fetching traffic data:', error);
     	}
-
-    	const [tempColor, pollColor] = calculateGradientColors(temp, usaqi);
 
     function makeSynthOne() {
       let envelope = {
