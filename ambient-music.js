@@ -448,8 +448,10 @@ function calculateTempColor(temp) {
     }
 }
 
-var buttonAuto = document.getElementById('startStop');
-buttonAuto.click();
+ document.addEventListener('DOMContentLoaded', function() {
+    var buttonAuto = document.getElementById('startStop');
+    buttonAuto.click();
+  });
 
 
 // Function to calculate the color based on usaqi value
