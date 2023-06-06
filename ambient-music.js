@@ -18,6 +18,8 @@ async function play() {
     synthFour.dispose();
     highMelody.dispose();
 
+    const button = document.getElementById('startStop');
+    button.appendText("Stop")
     isPlaying = false;
   } else {
     try {
