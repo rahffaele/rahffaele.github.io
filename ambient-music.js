@@ -3,28 +3,6 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-async function openingGradient(){
-	const apiKeyGradTemp = "49a5b64679cabaa392cc7fe6b5826a92";
-    const weatherGrad =  await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyGradTemp}&units=metric`
-    );
-    const temp = weatherGrad.data.main;
-
-    const apiKeyGradPoll = "01e58321-b850-416a-bcd7-d0e68fb05398";
-    const pollGrad = await axios.get(
-        `https://api.airvisual.com/v2/city?city=Milano&state=Lombardy&country=Italy&key=${apiKeyGradPoll}`
-    );
-    const usaqi = pollGrad.data.data.current.pollution.aqius;
-
-    pollColor = calculatePollColor(usaqi);
-    tempColor = calculateTempColor(temp);
-
-    const defaultBackground = document.getElementById("bg");
-  	defaultBackground.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
-
-}openingGradient();
-
-
 async function play() {
     if (isPlaying) {
         // Stop the music if it's already playing
