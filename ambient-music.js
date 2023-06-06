@@ -91,12 +91,12 @@ async function play() {
             cityCountry = "France";
             break;
           case 'Rome':
-            cityState = "Lazio";
+            cityState = "Latium";
             cityCountry = "Ialy";
             break;
           case 'London':
             cityState = 51.5074;
-            cityCountry = -0.1278;
+            cityCountry = "UK";
             break;
           case 'Berlin':
             cityState = "Berlin";
