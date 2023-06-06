@@ -2,7 +2,7 @@ let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 
-const temp, usaqi;
+let temp, usaqi;
 
 function lerpColor(startColor, endColor, t) {
   // Perform linear interpolation for each RGB channel
