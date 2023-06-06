@@ -3,6 +3,9 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
+const background = document.getElementById("bg");
+background.style.background = `linear-gradient(to bottom, red, blue)`;
+
 async function play() {
     if (isPlaying) {
         // Stop the music if it's already playing
