@@ -75,6 +75,46 @@ async function play() {
       	const citySelect = document.getElementById('citySelect');
       	const selectedCity = citySelect.value;
 
+      	let cityState, cityCountry; 
+
+      	switch (selectedCity) {
+          case 'Milan':
+            cityState = 45.4776;
+            cityCountry= "Italy";
+            break;
+          case 'New York':
+            cityState = 40.7549;
+            cityCountry = -73.9840;
+            break;
+          case 'Paris':
+            cityState = 48.8566;
+            cityCountry = 2.3522;
+            break;
+          case 'Rome':
+            cityState = 41.9028;
+            cityCountry = 12.4964;
+            break;
+          case 'London':
+            cityState = 51.5074;
+            cityCountry = -0.1278;
+            break;
+          case 'Berlin':
+            cityState = "Berlin";
+            cityCountry = "Germany";
+            break;
+          case 'São Paulo':
+            cityState = -23.5505;
+            cityCountry = "Brazil";
+            break;
+          case 'Palermo':
+            cityState = 38.1157;
+            cityCountry = "Italy";
+            break;
+          default:
+            console.log('Invalid city selection');
+            return;
+        }
+
       	const apiKeyAir = '01e58321-b850-416a-bcd7-d0e68fb05398';
       	const city = selectedCity;
 
@@ -82,45 +122,6 @@ async function play() {
         	//`http://api.airvisual.com/v2/city?city=${city}&state=${cityState}&${cityCountry}=USA&key=${apiKeyAir}`,
         	`http://api.airvisual.com/v2/states?country=Germany&key=${apiKeyAir}`,
       	);
-      	let cityState, cityCountry; 
-
-      	/*switch (selectedCity) {
-          case 'Milan':
-            cityState = 45.4776;
-            cityLon = 9.2088;
-            break;
-          case 'New York':
-            cityLat = 40.7549;
-            cityLon = -73.9840;
-            break;
-          case 'Paris':
-            cityLat = 48.8566;
-            cityLon = 2.3522;
-            break;
-          case 'Rome':
-            cityLat = 41.9028;
-            cityLon = 12.4964;
-            break;
-          case 'London':
-            cityLat = 51.5074;
-            cityLon = -0.1278;
-            break;
-          case 'Berlin':
-            cityLat = 52.5200;
-            cityLon = 13.4050;
-            break;
-          case 'São Paulo':
-            cityLat = -23.5505;
-            cityLon = -46.6333;
-            break;
-          case 'Palermo':
-            cityLat = 38.1157;
-            cityLon = 13.3613;
-            break;
-          default:
-            console.log('Invalid city selection');
-            return;
-        }*/
 
       	console.log(response.data); // Control
 
