@@ -68,7 +68,7 @@ async function play() {
         		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=9.2079162,45.473702`
       		);
 		console.log(responseTomTom.data); // Control
-		const { temp, humidity } = response.data.main;
+		//const { temp, humidity } = response.data.main;
 		} catch (error) {
       		console.error('Error fetching traffic data:', error);
     	}
