@@ -4,7 +4,7 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
 const nightFilter = document.getElementById("night-filter");
-nightFilter.style.opacity = calculateOverlayOpacity();
+  	nightFilter.style.opacity = calculateOverlayOpacity();
 
 async function play() {
     if (isPlaying) {
