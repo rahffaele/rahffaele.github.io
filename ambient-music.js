@@ -114,7 +114,7 @@ async function play() {
             cityCountry = "Brazil";
             break;
           case 'Palermo':
-          	cityName = "Palermo";
+          	cityName = "Marinella";
             cityState = "Sicily";
             cityCountry = "Italy";
             break;
