@@ -63,7 +63,7 @@ async function play() {
     }
 
     try {
-    	const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA"
+    	const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA";
 			const responseTomTom = await axios.get(
         		`https://api.tomtom.com/map/1/tile/basic/main/10/4/8.pbf?key=${apiKeyTomTom}&language=en-US`
       		);
