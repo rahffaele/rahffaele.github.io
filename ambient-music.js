@@ -23,11 +23,11 @@ async function play() {
         highMelody.dispose();
 
         const button = document.getElementById("startStop");
-        button.textContent = "Play";
+        button.textContent = "Pause";
         isPlaying = false;
     } else {
         const button = document.getElementById("startStop");
-        button.textContent = "Pause";
+        button.textContent = "Play";
         isPlaying = true;
 
         try {
