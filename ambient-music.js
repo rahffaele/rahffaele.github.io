@@ -2,8 +2,37 @@ let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 
+//Milan traffic
 const milanLat = 45.4776;
 const milanLon = 9.2088;
+
+//New York traffic
+const newYorkLat = 40.7549;
+const newYorkLon = -73.9840;
+
+//Paris traffic
+const parisLat = 48.8566;
+const parisLon = 2.3522;
+
+//Rome traffic
+const romeLat = 41.9028;
+const romeLon = 12.4964;
+
+//London traffic
+const londonLat = 51.5074;
+const londonLon = -0.1278;
+
+//Berlin traffic
+const berlinLat = 52.5200;
+const berlinLon = 13.4050;
+
+//San Paolo traffic
+const saoPauloLat = -23.5505;
+const saoPauloLon = -46.6333;
+
+//Palermo traffic
+const palermoLat = 38.1157;
+const palermoLon = 13.3613;
 
 async function play() {
   if (isPlaying) {
