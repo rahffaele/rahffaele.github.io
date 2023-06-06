@@ -96,10 +96,55 @@ async function play() {
     }
 
     try {
+
+    	const citySelect = document.getElementById('citySelect');
+      	const selectedCity = citySelect.value;
+
     	const apiKeyTomTom = "kkAyqHVBG9Haepu1D3JZBnXmy016m8QP";
-			const responseTomTom = await axios.get(
-        		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=${milanLat},${milanLon}`
-      		);
+		const responseTomTom = await axios.get(
+        	`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=${milanLat},${milanLon}`
+      	);
+
+      	let cityLat, cityLon;
+
+        // Assign the correct coordinates based on the selected city
+        switch (selectedCity) {
+          case 'Milan':
+            cityLat = 45.4776;
+            cityLon = 9.2088;
+            break;
+          case 'New York':
+            cityLat = 40.7549;
+            cityLon = -73.9840;
+            break;
+          case 'Paris':
+            cityLat = 48.8566;
+            cityLon = 2.3522;
+            break;
+          case 'Rome':
+            cityLat = 41.9028;
+            cityLon = 12.4964;
+            break;
+          case 'London':
+            cityLat = 51.5074;
+            cityLon = -0.1278;
+            break;
+          case 'Berlin':
+            cityLat = 52.5200;
+            cityLon = 13.4050;
+            break;
+          case 'São Paulo':
+            cityLat = -23.5505;
+            cityLon = -46.6333;
+            break;
+          case 'Palermo':
+            cityLat = 38.1157;
+            cityLon = 13.3613;
+            break;
+          default:
+            console.log('Invalid city selection');
+            return;
+        }
 		const xmlString = responseTomTom.data;
 
 		// Create a new DOMParser instance
