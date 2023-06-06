@@ -15,7 +15,7 @@ async function gradient(){
     const temp = response.data.main;
     console.log("temp default:", temp)
     tempColorDefault = calculateTempColor(temp);
-}
+}gradient();
 
 async function play() {
     if (isPlaying) {
