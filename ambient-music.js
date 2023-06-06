@@ -65,7 +65,7 @@ async function play() {
     try {
     	const apiKeyTomTom = "kkAyqHVBG9Haepu1D3JZBnXmy016m8QP";
 			const responseTomTom = await axios.get(
-        		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=9.20791,45.47370`
+        		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=52.41072,4.84239`
       		);
 		console.log(responseTomTom.data); // Control
 		//const { temp, humidity } = response.data.main;
