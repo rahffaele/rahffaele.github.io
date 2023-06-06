@@ -3,10 +3,13 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-window.onload = function() {
-  var button = document.getElementById('startStop');
-  button.click();
-};
+function peningGradient(){
+	const apiKey = "49a5b64679cabaa392cc7fe6b5826a92";
+    const response =  axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKey}&units=metric`
+    );
+    console.log(response.data);
+}
 
 async function play() {
     if (isPlaying) {
