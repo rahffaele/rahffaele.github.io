@@ -434,15 +434,15 @@ function calculateTempColor(temp) {
         return `rgb(${tempColorEnd[0]}, ${tempColorEnd[1]}, ${tempColorEnd[2]})`;
     } else {
         const r = Math.round(
-            ((35 - temp) * (tempColorEnd[0] - tempColorStart[0])) / 35 +
+            ((35 - temp) * (-tempColorEnd[0] + tempColorStart[0])) / 35 +
                 tempColorStart[0]
         );
         const g = Math.round(
-            ((35 - temp) * (tempColorEnd[1] - tempColorStart[1])) / 35 +
+            ((35 - temp) * (-tempColorEnd[1] + tempColorStart[1])) / 35 +
                 tempColorStart[1]
         );
         const b = Math.round(
-            ((35 - temp) * (tempColorEnd[2] - tempColorStart[2])) / 35 +
+            ((35 - temp) * (-tempColorEnd[2] + tempColorStart[2])) / 35 +
                 tempColorStart[2]
         );
         return `rgb(${r}, ${g}, ${b})`;
