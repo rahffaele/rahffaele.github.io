@@ -41,11 +41,7 @@ async function play() {
 
       	console.log(response.data); // Control
 
-      	const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA"
-		const responseTomTom = await axios.get(
-        	`https://api.tomtom.com/map/1/tile/basic/main/10/4/8.pbf?key=${apiKeyTomTom}&view={view}&language={language}`
-      	);
-		console.log(responseTomTom.data); // Control
+      	
 
       const { temp, humidity } = response.data.main;
       const windSpeed = response.data.wind.speed;
@@ -66,6 +62,16 @@ async function play() {
       console.error('Error fetching weather data:', error);
     }
 
+    try {
+    	const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA"
+			const responseTomTom = await axios.get(
+        		`https://api.tomtom.com/map/1/tile/basic/main/10/4/8.pbf?key=${apiKeyTomTom}&view={view}&language={language}`
+      		);
+		console.log(responseTomTom.data); // Control
+		} catch (error) {
+      		console.error('Error fetching weather data:', error);
+    	}
+    	
     function makeSynthOne() {
       let envelope = {
         attack: 0.4,
