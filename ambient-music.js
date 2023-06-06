@@ -5,6 +5,11 @@ async function play(){
     	// Stop the music if it's already playing
     	Tone.Transport.stop();
     	Tone.Transport.cancel();
+    	loopOne.stop();
+    	loopTwo.stop();
+    	loopThree.stop();
+    	loopFour.stop();
+
     	isPlaying = false;
  	} else {
 
