@@ -77,6 +77,7 @@ async function play() {
 
       const { temp, humidity } = response.data.main;
       const { weather } = response.data.weather.main[0];
+      const sunrise = response.data.sys.sunrise;
       const windSpeed = response.data.wind.speed;
       const maxWindSpeed = 20; // Define the maximum wind speed you want to map to the BPM range
       const minBPM = 60; // Define the minimum BPM
@@ -93,6 +94,7 @@ async function play() {
       console.log('temp', temp);
       console.log('humidity', humidity);
       console.log('weather:', weather);
+      console.log('sunrise:', sunrise);
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
