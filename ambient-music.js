@@ -76,7 +76,7 @@ async function play() {
       	
 
       const { temp, humidity } = response.data.main;
-      //const { weather } = response.data.weather.main[0];
+      const weather  = response.data.weather[0].main;
       const sunrise = response.data.sys.sunrise;
       const sunset = response.data.sys.sunset;
       const windSpeed = response.data.wind.speed;
@@ -94,7 +94,7 @@ async function play() {
       console.log('New BPM:', newBPM);
       console.log('temp', temp);
       console.log('humidity', humidity);
-      //console.log('weather:', weather);
+      console.log('weather:', weather);
       console.log('sunrise:', sunrise);
       console.log('sunset:', sunset);
     } catch (error) {
