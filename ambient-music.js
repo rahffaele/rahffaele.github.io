@@ -9,6 +9,7 @@ async function openingGradient(){
         `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKey}&units=metric`
     );
     console.log(response.data);
+    const { temp, humidity } = response.data.main;
 }
 
 openingGradient();
