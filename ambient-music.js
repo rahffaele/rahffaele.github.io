@@ -1,4 +1,4 @@
-let let isPlaying = false;
+let isPlaying = false;
 
 async function play(){
 	if (isPlaying) {
