@@ -6,7 +6,7 @@ async function play(){
     	Tone.Transport.stop();
     	Tone.Transport.cancel();
     	isPlaying = false;
- 	} else 
+ 	} else {
 
 	try {
 
@@ -252,6 +252,8 @@ isPlaying = true;
 
 //Tone.Transport.bpm.value = 120;
 }
+}
+
 
 
 
