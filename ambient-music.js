@@ -135,7 +135,7 @@ async function play() {
       	const usaqi = response.data.current.pollution.aqius;
 
       	console.log(response.data);
-      	console.log("Aqi US:" usaqi);
+      	console.log("Aqi US:", usaqi);
 
 
     } catch (error) {
