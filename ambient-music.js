@@ -117,7 +117,7 @@ async function play() {
       	console.log(response.data); // Control
 
     } catch (error) {
-      console.error('Error fetching weather data:', error);
+      console.error('Error fetching air pollution data:', error);
     }
 
     try {
