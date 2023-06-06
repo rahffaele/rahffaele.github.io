@@ -134,7 +134,7 @@ async function play() {
 
     	const apiKeyTomTom = "kkAyqHVBG9Haepu1D3JZBnXmy016m8QP";
 		const responseTomTom = await axios.get(
-        	`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=${milanLat},${milanLon}`
+        	`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=${cityLat},${cityLon}`
       	);
 
       	let cityLat, cityLon;
