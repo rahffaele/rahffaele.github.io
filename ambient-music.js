@@ -68,10 +68,21 @@ async function play() {
 			const responseTomTom = await axios.get(
         		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=52.41072,4.84239`
       		);
-		console.log(responseTomTom.data); // Control
-		//const { temp, humidity } = response.data.main;
-		const { currentSpeed, CurrentTravelTime } = response.data.flowSegmentData;
-		console.log("currentSpeed", currentSpeed);
+		const xmlString = responseTomTom.data;
+
+		// Create a new DOMParser instance
+		const parser = new DOMParser();
+
+		// Parse the XML string
+		const xmlDoc = parser.parseFromString(xmlString, 'application/xml');
+
+		// Extract the values of currentSpeed and currentTravelTime
+		const currentSpeed = xmlDoc.querySelector('currentSpeed').textContent;
+		const currentTravelTime = xmlDoc.querySelector('currentTravelTime').textContent;
+
+		// Output the extracted values
+		console.log('Current Speed:', currentSpeed);
+		console.log('Current Travel Time:', currentTravelTime);
 		} catch (error) {
       		console.error('Error fetching traffic data:', error);
     	}
