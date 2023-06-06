@@ -76,39 +76,45 @@ async function play() {
       	const selectedCity = citySelect.value;
 
       	let cityName, cityState, cityCountry; 
-      	cityName = selectedCity,
 
       	switch (selectedCity) {
           case 'Milan':
-          	cityName = "Milano"
+          	cityName = "Milano";
             cityState = "Lombardy";
             cityCountry= "Italy";
             break;
           case 'New York':
+          	cityName = "New York";
             cityState = "New York";
             cityCountry = "USA";
             break;
           case 'Paris':
+          	cityName = "Paris";
             cityState = "Ile-de-France";
             cityCountry = "France";
             break;
           case 'Rome':
+          	cityName = "Rome";
             cityState = "Latium";
             cityCountry = "Italy";
             break;
           case 'London':
+          	cityName = "London";
             cityState = "England";
             cityCountry = "UK";
             break;
           case 'Berlin':
+          	cityName = "Berlin";
             cityState = "Berlin";
             cityCountry = "Germany";
             break;
           case 'São Paulo':
+          	cityName = "Sao Paulo";
             cityState = "Sao Paulo";
             cityCountry = "Brazil";
             break;
           case 'Palermo':
+          	cityName = "Palermo";
             cityState = "Sicily";
             cityCountry = "Italy";
             break;
@@ -121,7 +127,7 @@ async function play() {
       	const city = selectedCity;
 
       	const response = await axios.get(
-        	`http://api.airvisual.com/v2/city?city=${city}&state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
+        	`http://api.airvisual.com/v2/city?city=${cityName}&state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
         	//`http://api.airvisual.com/v2/cities?state=${cityState}&country=${cityCountry}&key=${apiKeyAir}`,
         	//`http://api.airvisual.com/v2/states?country=${cityCountry}&key=${apiKeyAir}`,
       	);
