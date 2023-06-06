@@ -2,6 +2,36 @@ let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 
+function calculateGradientColors(temp, usaqi) {
+  // Define the minimum and maximum values for temp and usaqi
+  const minTemp = -10;
+  const maxTemp = 40;
+  const minUsaqi = 0;
+  const maxUsaqi = 500;
+
+  // Calculate the normalized values for temp and usaqi
+  const normalizedTemp = (temp - minTemp) / (maxTemp - minTemp);
+  const normalizedUsaqi = (usaqi - minUsaqi) / (maxUsaqi - minUsaqi);
+
+  // Define the color range for temp (from blue to red)
+  const tempColorRange = {
+    from: [0, 0, 255],   // Blue
+    to: [255, 0, 0]      // Red
+  };
+
+  // Define the color range for usaqi (from green to purple)
+  const usaqiColorRange = {
+    from: [0, 255, 0],   // Green
+    to: [128, 0, 128]    // Purple
+  };
+
+  // Calculate the interpolated colors for temp and usaqi
+  const tempColor = interpolateColor(tempColorRange.from, tempColorRange.to, normalizedTemp);
+  const pollColor = interpolateColor(usaqiColorRange.from, usaqiColorRange.to, normalizedUsaqi);
+
+  return [tempColor, pollColor];
+}
+
 async function play() {
   if (isPlaying) {
     // Stop the music if it's already playing
@@ -215,6 +245,8 @@ async function play() {
 		} catch (error) {
       		console.error('Error fetching traffic data:', error);
     	}
+
+    	const [tempColor, pollColor] = calculateGradientColors(temp, usaqi);
 
     function makeSynthOne() {
       let envelope = {
