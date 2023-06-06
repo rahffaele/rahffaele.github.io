@@ -2,6 +2,9 @@ let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 
+const milanLat = 45.4776;
+const milanLon = 9.2088;
+
 async function play() {
   if (isPlaying) {
     // Stop the music if it's already playing
@@ -66,7 +69,7 @@ async function play() {
     try {
     	const apiKeyTomTom = "kkAyqHVBG9Haepu1D3JZBnXmy016m8QP";
 			const responseTomTom = await axios.get(
-        		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=45.4776,9.2088`
+        		`https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/xml?key=${apiKeyTomTom}&point=${milanLat},${milanLon}`
       		);
 		const xmlString = responseTomTom.data;
 
