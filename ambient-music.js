@@ -4,11 +4,11 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
 window.addEventListener('load', play);
-var button = document.getElementById('startStop');
-button.click();
 
 
 async function play() {
+	var button = document.getElementById('startStop');
+button.click();
     if (isPlaying) {
         // Stop the music if it's already playing
         Tone.Transport.stop();
