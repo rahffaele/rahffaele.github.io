@@ -5,7 +5,7 @@ let tempColor, pollColor;
 
 window.onload = play();
 
- function play() {
+async function play() {
     if (isPlaying) {
         // Stop the music if it's already playing
         Tone.Transport.stop();
