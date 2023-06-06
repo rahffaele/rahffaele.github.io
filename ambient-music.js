@@ -3,6 +3,8 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
+window.onload = play();
+
 async function play() {
     if (isPlaying) {
         // Stop the music if it's already playing
