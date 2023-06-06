@@ -9,6 +9,12 @@ async function play(){
     if (loopFour) loopFour.stop();
     if (loopHighMelody) loopHighMelody.stop();
 
+    loopOne.start();
+    loopTwo.start();
+    loopThree.start();
+    loopFour.start();
+    loopHighMelody.start();
+
 	const citySelect = document.getElementById('citySelect');
   	const selectedCity = citySelect.value;
 
