@@ -87,7 +87,7 @@ async function play() {
             cityCountry = "USA";
             break;
           case 'Paris':
-            cityState = 48.8566;
+            cityState = "Ile-de-France";
             cityCountry = "France";
             break;
           case 'Rome':
