@@ -6,10 +6,6 @@ let tempColor, pollColor;
 window.onload = function() {
   var button = document.getElementById('startStop');
   button.click();
-  
-  setTimeout(function() {
-    button.click();
-  }, 200); // Delay in milliseconds
 };
 
 async function play() {
