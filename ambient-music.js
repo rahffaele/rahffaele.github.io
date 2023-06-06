@@ -415,7 +415,7 @@ async function play() {
         }, "30m").start();
 
         Tone.Transport.start();
-        isPlaying = true;
+        //isPlaying = true;
     }
 
     const background = document.getElementById("bg");
