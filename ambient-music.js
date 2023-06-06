@@ -5,7 +5,8 @@ let tempColor, pollColor;
 
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
-
+tempColor = calculateTempColor(temp);
+pollColor = calculatePollColor(usaqi);
 const background = document.getElementById("bg");
 background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
@@ -58,7 +59,7 @@ async function play() {
 
             // Calculate the new BPM value based on the wind speed
             const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
-            tempColor = calculateTempColor(temp);
+            
             console.log("color temp:", tempColor);
 
             Tone.Transport.bpm.value = newBPM;
@@ -138,7 +139,6 @@ async function play() {
             );
 
             const usaqi = response.data.data.current.pollution.aqius;
-            pollColor = calculatePollColor(usaqi);
 
             console.log("Poll color:", pollColor);
             console.log(response.data);
