@@ -3,6 +3,19 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
+const citySelect = document.getElementById("citySelect");
+const selectedCity = citySelect.value;
+const city = selectedCity;
+
+async function getCurrentTime(city) {
+  const response = await axios.get(
+    `https://worldtimeapi.org/api/timezone/Europe/${city}`
+  );
+
+  const currentTime = new Date(response.data.datetime);
+  return currentTime;
+}
+
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
 
@@ -475,9 +488,8 @@ function calculatePollColor(usaqi) {
     }
 }
 
-function calculateOverlayOpacity() {
-  const now = new Date();
-  const hours = now.getHours();
+function calculateOverlayOpacity(currentTime) {
+  const hours = currentTime.getHours();
   let opacity;
 
   if (hours >= 0 && hours < 12) {
