@@ -1,7 +1,7 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 
-body {
-  background-image: url("../rahdio/assets/milan-bg.png");
+#bg {
+    height: 100vh;
 }
 
 #rahdio-logo {
