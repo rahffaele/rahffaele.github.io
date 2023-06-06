@@ -58,6 +58,7 @@ async function play() {
       console.log('Wind Speed:', windSpeed);
       console.log('New BPM:', newBPM);
       console.log('temp', temp);
+      console.log('humidity', humidity);
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
