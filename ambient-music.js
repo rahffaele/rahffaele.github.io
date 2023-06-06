@@ -451,21 +451,21 @@ function calculatePollColor(usaqi) {
     const pollColorStart = [79, 147, 186]; // RGB color for usaqi value 0 or less
     const pollColorEnd = [185, 185, 185]; // RGB color for usaqi value 450 or higher
 
-    if (usaqi <= 0) {
+    if (usaqi <= 50) {
         return `rgb(${pollColorStart[0]}, ${pollColorStart[1]}, ${pollColorStart[2]})`;
-    } else if (usaqi >= 450) {
+    } else if (usaqi >= 300) {
         return `rgb(${pollColorEnd[0]}, ${pollColorEnd[1]}, ${pollColorEnd[2]})`;
     } else {
         const r = Math.round(
-            ((450 - usaqi) * (pollColorEnd[0] - pollColorStart[0])) / 450 +
+            ((300 - usaqi) * (pollColorEnd[0] - pollColorStart[0])) / 300 +
                 pollColorStart[0]
         );
         const g = Math.round(
-            ((450 - usaqi) * (pollColorEnd[1] - pollColorStart[1])) / 450 +
+            ((300 - usaqi) * (pollColorEnd[1] - pollColorStart[1])) / 300 +
                 pollColorStart[1]
         );
         const b = Math.round(
-            ((450 - usaqi) * (pollColorEnd[2] - pollColorStart[2])) / 450 +
+            ((300 - usaqi) * (pollColorEnd[2] - pollColorStart[2])) / 300 +
                 pollColorStart[2]
         );
         return `rgb(${r}, ${g}, ${b})`;
