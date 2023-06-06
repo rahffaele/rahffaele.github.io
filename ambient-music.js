@@ -483,7 +483,7 @@ async function getCurrentTime(city) {
     `https://worldtimeapi.org/api/timezone/Europe/${city}`
   );
 
-  const currentTime = new Date(response.data.datetime);
+  currentTime = new Date(response.data.datetime);
   return currentTime;
 }
 
