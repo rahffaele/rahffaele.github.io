@@ -6,6 +6,9 @@ let tempColor, pollColor;
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
 
+const background = document.getElementById("bg");
+background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
+
 async function play() {
     if (isPlaying) {
         // Stop the music if it's already playing
@@ -417,9 +420,6 @@ async function play() {
         Tone.Transport.start();
         isPlaying = true;
     }
-
-    const background = document.getElementById("bg");
-  	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
     //Tone.Transport.bpm.value = 120;
 }
