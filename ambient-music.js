@@ -5,10 +5,7 @@ let tempColor, pollColor;
 
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
-tempColor = calculateTempColor(temp);
-pollColor = calculatePollColor(usaqi);
-const background = document.getElementById("bg");
-background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
+
 
 async function play() {
     if (isPlaying) {
