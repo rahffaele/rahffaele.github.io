@@ -6,7 +6,6 @@ let tempColor, pollColor;
 const nightFilter = document.getElementById("night-filter");
 nightFilter.style.opacity = calculateOverlayOpacity();
 
-
 async function play() {
     if (isPlaying) {
         // Stop the music if it's already playing
@@ -56,7 +55,7 @@ async function play() {
 
             // Calculate the new BPM value based on the wind speed
             const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
-            
+            tempColor = calculateTempColor(temp);
             console.log("color temp:", tempColor);
 
             Tone.Transport.bpm.value = newBPM;
