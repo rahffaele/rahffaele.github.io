@@ -19,9 +19,14 @@ async function play() {
     highMelody.dispose();
 
     const button = document.getElementById('startStop');
-    button.textContent = "Stop"
+    button.textContent = "Play"
     isPlaying = false;
   } else {
+
+  	const button = document.getElementById('startStop');
+    button.textContent = "Pause"
+    isPlaying = false;
+
     try {
       const citySelect = document.getElementById('citySelect');
       const selectedCity = citySelect.value;
