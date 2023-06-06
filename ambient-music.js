@@ -252,6 +252,7 @@ isPlaying = true;
 
 //Tone.Transport.bpm.value = 120;
 }
+}
 
 
 {}
