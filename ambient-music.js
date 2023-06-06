@@ -20,6 +20,7 @@ async function play() {
 
     const button = document.getElementById('startStop');
     button.appendText("Stop")
+    button.rebuild();
     isPlaying = false;
   } else {
     try {
