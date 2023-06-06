@@ -415,6 +415,40 @@ async function play() {
         Tone.Transport.start();
         isPlaying = true;
     }
+    function getLocalTime() {
+  var citySelect = document.getElementById("citySelect");
+  var selectedCity = citySelect.value;
+
+  var timezones = {
+    Milan: "Europe/Rome",
+    "New York": "America/New_York",
+    Paris: "Europe/Paris",
+    Rome: "Europe/Rome",
+    London: "Europe/London",
+    Berlin: "Europe/Berlin",
+    "São Paulo": "America/Sao_Paulo",
+    Palermo: "Europe/Rome"
+  };
+
+  var timezone = timezones[selectedCity];
+
+  if (timezone) {
+    var currentTime = new Date().toLocaleString("en-US", {
+      timeZone: timezone,
+      hour12: true,
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric"
+    });
+
+    console.log("Local time in " + selectedCity + ": " + currentTime);
+    // Alternatively, display the time in an HTML element
+    // var timeDisplay = document.getElementById("timeDisplay");
+    // timeDisplay.textContent = "Local time in " + selectedCity + ": " + currentTime;
+  } else {
+    console.log("Invalid city selection");
+  }
+}
 
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
@@ -473,38 +507,5 @@ function calculatePollColor(usaqi) {
     }
 }
 
-function getLocalTime() {
-  var citySelect = document.getElementById("citySelect");
-  var selectedCity = citySelect.value;
 
-  var timezones = {
-    Milan: "Europe/Rome",
-    "New York": "America/New_York",
-    Paris: "Europe/Paris",
-    Rome: "Europe/Rome",
-    London: "Europe/London",
-    Berlin: "Europe/Berlin",
-    "São Paulo": "America/Sao_Paulo",
-    Palermo: "Europe/Rome"
-  };
-
-  var timezone = timezones[selectedCity];
-
-  if (timezone) {
-    var currentTime = new Date().toLocaleString("en-US", {
-      timeZone: timezone,
-      hour12: true,
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric"
-    });
-
-    console.log("Local time in " + selectedCity + ": " + currentTime);
-    // Alternatively, display the time in an HTML element
-    // var timeDisplay = document.getElementById("timeDisplay");
-    // timeDisplay.textContent = "Local time in " + selectedCity + ": " + currentTime;
-  } else {
-    console.log("Invalid city selection");
-  }
-}
 
