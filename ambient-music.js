@@ -211,7 +211,7 @@ async function play() {
             console.error("Error fetching traffic data:", error);
         }
 
-
+ 
   // Calculate the color for temp gradient
   let tempColor = "";
   if (temp <= 0) {
@@ -243,7 +243,7 @@ async function play() {
   background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
   // ...
-}
+
 
         function makeSynthOne() {
             let envelope = {
