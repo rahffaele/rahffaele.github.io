@@ -247,7 +247,7 @@ loopHighMelody = new Tone.Loop(time => {
 
 
 Tone.Transport.start();
-
+isPlaying = true;
 
 
 //Tone.Transport.bpm.value = 120;
