@@ -22,7 +22,6 @@ async function openingGradient(){
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
-  	openingGradientControl = 1;
 }
 	openingGradient();
 
