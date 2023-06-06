@@ -4,8 +4,7 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
 window.onload = function() {
-  var button = document.getElementById('startStop');
-  button.click();
+  
 };
 
 async function play() {
@@ -33,7 +32,8 @@ async function play() {
         isPlaying = true;
 
         try {
-            const citySelect = document.getElementById("citySelect");
+        	function weather() {
+  				const citySelect = document.getElementById("citySelect");
             const selectedCity = citySelect.value;
 
             const apiKey = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -74,6 +74,8 @@ async function play() {
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
+			};
+            
 
         try {
             const citySelect = document.getElementById("citySelect");
