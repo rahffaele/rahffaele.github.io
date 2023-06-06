@@ -1,4 +1,4 @@
-let isPlaying = false;
+let isPlaying;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
@@ -415,7 +415,7 @@ async function play() {
         }, "30m").start();
 
         Tone.Transport.start();
-        //isPlaying = true;
+        isPlaying = true;
     }
 
     const background = document.getElementById("bg");
