@@ -120,7 +120,7 @@ async function play() {
 
       	const response = await axios.get(
         	`http://api.airvisual.com/v2/city?city=${city}&state=${cityState}&${cityCountry}=USA&key=${apiKeyAir}`,
-        	`http://api.airvisual.com/v2/states?country=Germany&key=${apiKeyAir}`,
+        	//`http://api.airvisual.com/v2/states?country=Germany&key=${apiKeyAir}`,
       	);
 
       	console.log(response.data); // Control
