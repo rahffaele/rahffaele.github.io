@@ -1,3 +1,12 @@
+@font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
+
 body {
   background-image: url("../rahdio/assets/milan-bg.png");
 }
+
+#rahdio-logo {
+    max-width: 30%;
+    height: auto;
+}
+
+{}
