@@ -418,13 +418,11 @@ async function play() {
         isPlaying = true;
     }
 
-    
+    const background = document.getElementById("bg");
+  	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
     //Tone.Transport.bpm.value = 120;
 }
-
-const background = document.getElementById("bg");
-  	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
 function calculateTempColor(temp) {
     const tempColorStart = [83, 97, 125]; // RGB color for temp value 0 or less
