@@ -3,9 +3,7 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-window.onload = function() {
-  
-};
+window.onload = weather();
 
 async function play() {
     if (isPlaying) {
@@ -32,7 +30,7 @@ async function play() {
         isPlaying = true;
 
         try {
-        	function weather() {
+        	async function weather() {
   				const citySelect = document.getElementById("citySelect");
             const selectedCity = citySelect.value;
 
