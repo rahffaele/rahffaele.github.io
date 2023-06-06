@@ -3,7 +3,9 @@ let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 
-window.onload = weather();
+window.onload = function() {
+  
+};
 
 async function play() {
     if (isPlaying) {
@@ -28,10 +30,9 @@ async function play() {
         const button = document.getElementById("startStop");
         button.textContent = "Pause";
         isPlaying = true;
-
+        
         try {
-        	async function weather() {
-  				const citySelect = document.getElementById("citySelect");
+            const citySelect = document.getElementById("citySelect");
             const selectedCity = citySelect.value;
 
             const apiKey = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -72,8 +73,6 @@ async function play() {
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
-			};
-            
 
         try {
             const citySelect = document.getElementById("citySelect");
