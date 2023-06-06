@@ -7,7 +7,7 @@ window.addEventListener('load', play);
 
 
 async function play() {
-    if (!isPlaying) {
+    if (isPlaying) {
         // Stop the music if it's already playing
         Tone.Transport.stop();
         Tone.Transport.cancel();
