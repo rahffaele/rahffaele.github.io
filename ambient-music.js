@@ -415,13 +415,13 @@ async function play() {
         }, "30m").start();
 
         Tone.Transport.start();
-        isPlaying = true;
     }
 
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
     //Tone.Transport.bpm.value = 120;
+            isPlaying = true;
 }
 
 function calculateTempColor(temp) {
