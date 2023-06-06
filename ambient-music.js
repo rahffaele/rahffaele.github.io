@@ -211,8 +211,6 @@ async function play() {
             console.error("Error fetching traffic data:", error);
         }
 
-        async function play() {
-  // ...
 
   // Calculate the color for temp gradient
   let tempColor = "";
