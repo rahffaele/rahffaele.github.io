@@ -490,6 +490,7 @@ async function getCurrentTime(city) {
 function calculateOverlayOpacity(currentTime) {
   const hours = currentTime.getHours();
   let opacity;
+  console.log(currentTime);
 
   if (hours >= 0 && hours < 12) {
     // From midnight to noon: opacity decreases from 70% to 1%
