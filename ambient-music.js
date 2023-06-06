@@ -1,3 +1,10 @@
+const apiKeyTomTom = "RP964APHqo03cYONTkMwNI5DNGFtQNEA"
+
+const responseTomTom = await axios.get(
+        `https://api.tomtom.com/map/1/tile/basic/main/10/4/8.pbf?key=${apiKeyTomTom}&view={view}&language={language}`
+      );
+console.log(responseTomTom.data); // Control
+
 let isPlaying = false;
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
@@ -21,7 +28,7 @@ async function play() {
     const button = document.getElementById('startStop');
     button.textContent = "Play"
     isPlaying = false;
-    
+
   } else {
 
   	const button = document.getElementById('startStop');
