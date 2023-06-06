@@ -17,7 +17,16 @@ async function play() {
         // Stop the music if it's already playing
         Tone.Transport.stop();
         Tone.Transport.cancel();
-        
+        loopOne.stop();
+        loopTwo.stop();
+        loopThree.stop();
+        loopFour.stop();
+        loopHighMelody.stop();
+        synthOne.dispose();
+        synthTwo.dispose();
+        synthThree.dispose();
+        synthFour.dispose();
+        highMelody.dispose();
 
         const button = document.getElementById("startStop");
         button.textContent = "Play";
