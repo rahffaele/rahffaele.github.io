@@ -249,6 +249,12 @@ loopHighMelody = new Tone.Loop(time => {
 
 Tone.Transport.start();
 
+	if (loopOne) loopOne.stop();
+    if (loopTwo) loopTwo.stop();
+    if (loopThree) loopThree.stop();
+    if (loopFour) loopFour.stop();
+    if (loopHighMelody) loopHighMelody.stop();
+
 //Tone.Transport.bpm.value = 120;
 }
 
