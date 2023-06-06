@@ -24,11 +24,11 @@ async function play() {
 
         const button = document.getElementById("startStop");
         button.textContent = "Pause";
-        isPlaying = false;
+        isPlaying = true;
     } else {
         const button = document.getElementById("startStop");
         button.textContent = "Play";
-        isPlaying = true;
+        isPlaying = false;
 
         try {
             const citySelect = document.getElementById("citySelect");
