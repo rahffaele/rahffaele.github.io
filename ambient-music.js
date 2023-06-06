@@ -246,11 +246,7 @@ loopHighMelody = new Tone.Loop(time => {
   highMelody.triggerAttackRelease('C7', '4:0', '+2:0');
 }, '30m').start();
 
-	if (loopOne) loopOne.stop();
-    if (loopTwo) loopTwo.stop();
-    if (loopThree) loopThree.stop();
-    if (loopFour) loopFour.stop();
-    if (loopHighMelody) loopHighMelody.stop();
+
 Tone.Transport.start();
 
 
