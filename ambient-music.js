@@ -473,5 +473,6 @@ function calculatePollColor(usaqi) {
         );
         return `rgb(${r}, ${g}, ${b})`;
     }
+    play();
 }
 
