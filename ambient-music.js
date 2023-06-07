@@ -12,7 +12,7 @@ async function gradient(){
     const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyTemp}&units=metric`
     );
-    const temp = response.data.main;
+    const temp = response.data.main.temp;
     console.log(response.data); 
     console.log("temp default:", temp)
     tempColorDefault = calculateTempColor(temp);
