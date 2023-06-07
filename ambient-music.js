@@ -15,7 +15,7 @@ async function firstUi(){
     const descriptionWeather = responseWeahter.data.weather[0].description;
     const windSpeed = responseWeahter.data.wind.speed;
 
-    const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
+    const apiKeyAir = "566bead0-8093-4d5f-91f6-cb17d494ce1c";
     const responsePoll = await axios.get(
         `https://api.airvisual.com/v2/city?city=Milano&state=Lombardy&country=Italy&key=${apiKeyAir}`
     );
@@ -38,26 +38,36 @@ async function firstUi(){
 	var songTitle = document.getElementById('songTitle');
 	songTitle.textContent = descriptionWeather + " in Milan";
 
-	var airQualText = document.getElementById('airQualText');
-	airQualText.textContent = usaqi;
+	var airWidgetValue = document.getElementById('airQualText');
+	airWidgetValue.textContent = usaqi;
 
 	var colorAirWidget;
+	var pollDescription;
 	if (usaqi<50) {
 		colorAirWidget = "#25D08F";
+		pollDescription = "Air quality is good";
 	} else if (usaqi<100) {
 		colorAirWidget = "#D0BF25";
+		pollDescription = "Air quality is acceptable";
 	} else if (usaqi<150) {
 		colorAirWidget = "#ED7531";
+		pollDescription = "Sensitive groups may experience health effects";
 	} else if (usaqi<200) {
 		colorAirWidget = "#ED3131";
+		pollDescription = "General public may experience health effects";
 	} else if (usaqi<300) {
 		colorAirWidget = "#9E57F9";
+		pollDescription = "Health alert for everyone";
 	} else {
 		colorAirWidget = "#000000";
+		pollDescription = "Emergency conditions for everyone's health";
 	}
 
-	var airQualColor = document.getElementById('air-widget');
-	airQualColor.style.backgroundColor = colorAirWidget;
+	var airWidget = document.getElementById('air-widget');
+	airWidget.style.backgroundColor = colorAirWidget;
+
+	var airWidgetDescription = document.getElementById('airWidgetDescription');
+	airWidgetDescription.textContent = pollDescription;
 
 }firstUi();
 
@@ -155,7 +165,7 @@ async function play() {
             console.log("sunrise:", sunrise);
             console.log("sunset:", sunset);
 
-            updateUi(temp, city, descriptionWeather, windSpeed);
+            updateUiWeather(temp, city, descriptionWeather, windSpeed);
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
@@ -212,7 +222,7 @@ async function play() {
                     return;
             }
 
-            const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
+            const apiKeyAir = "566bead0-8093-4d5f-91f6-cb17d494ce1c";
             const city = selectedCity;
 
             const response = await axios.get(
@@ -228,7 +238,7 @@ async function play() {
             console.log(response.data);
             console.log("Aqi US:", usaqi);
 
-            updateUi(usaqi);
+            updateUiPollution(usaqi);
         } catch (error) {
             console.error("Error fetching air pollution data:", error);
         }
@@ -510,7 +520,7 @@ async function play() {
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
-  	function updateUi(temp, city, descriptionWeather, windSpeed){
+  	function updateUiWeather(temp, city, descriptionWeather, windSpeed){
   		var temperatureParagraph = document.getElementById('tempText');
 		temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
 
@@ -525,31 +535,37 @@ async function play() {
 
 		var songTitle = document.getElementById('songTitle');
 		songTitle.textContent = descriptionWeather + " in " +  city;
-
-		var airQualText = document.getElementById('airQualText');
-			airQualText.textContent = usaqi;
 	}
 
-	function updateUi(usaqi){
+	function updateUiPollution(usaqi){
 		var colorAirWidget;
+		var pollDescription;
 		if (usaqi<50) {
 			colorAirWidget = "#25D08F";
+			pollDescription = "Air quality is good";
 		} else if (usaqi<100) {
 			colorAirWidget = "#D0BF25";
+			pollDescription = "Air quality is acceptable";
 		} else if (usaqi<150) {
 			colorAirWidget = "#ED7531";
+			pollDescription = "Sensitive groups may experience health effects";
 		} else if (usaqi<200) {
 			colorAirWidget = "#ED3131";
+			pollDescription = "General public may experience health effects";
 		} else if (usaqi<300) {
 			colorAirWidget = "#9E57F9";
+			pollDescription = "Health alert for everyone";
 		} else {
 			colorAirWidget = "#000000";
+			pollDescription = "Emergency conditions for everyone's health";
 		}
 
-		var airQualColor = document.getElementById('air-widget');
-		airQualColor.style.backgroundColor = colorAirWidget;
-		var airQualText = document.getElementById('airQualText');
-		airQualText.textContent = usaqi;
+		var airWidget= document.getElementById('air-widget');
+		airWidget.style.backgroundColor = colorAirWidget;
+		var airWidgetValue = document.getElementById('airQualText');
+		airWidgetValue.textContent = usaqi;
+		var airWidgetDescription = document.getElementById('airWidgetDescription');
+		airWidgetDescription.textContent = pollDescription;
   	}
 
     //Tone.Transport.bpm.value = 120;
