@@ -4,19 +4,18 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
 
-const background = document.getElementById("bg");
-background.style.background = `linear-gradient(to bottom, red, blue)`;
-
 async function gradient(){
 	const apiKeyTemp = "49a5b64679cabaa392cc7fe6b5826a92";
     const response = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyTemp}&units=metric`
     );
     const temp = response.data.main.temp;
-    console.log(response.data); 
     console.log("temp default:", temp)
     tempColorDefault = calculateTempColor(temp);
 }gradient();
+
+const background = document.getElementById("bg");
+background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, blue)`;
 
 async function play() {
     if (isPlaying) {
