@@ -13,11 +13,17 @@ async function gradient(){
     console.log("temp default:", temp)
     tempColorDefault = calculateTempColor(temp);
 
+    const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
+    const response = await axios.get(
+        `https://api.airvisual.com/v2/city?city=Milanp&state=Lombardy&country=Italy&key=${apiKeyAir}`
+    );
+
+    const usaqi = response.data.data.current.pollution.aqius;
+    pollColorDefault = calculatePollColor(usaqi);
+
     const background = document.getElementById("bg");
-background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, blue)`;
+	background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, ${pollColorDefault})`;
 }gradient();
-
-
 
 async function play() {
     if (isPlaying) {
