@@ -15,7 +15,7 @@ async function gradient(){
 
     const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
     const responsePoll = await axios.get(
-        `https://api.airvisual.com/v2/city?city=Milanp&state=Lombardy&country=Italy&key=${apiKeyAir}`
+        `https://api.airvisual.com/v2/city?city=Milano&state=Lombardy&country=Italy&key=${apiKeyAir}`
     );
 
     const usaqi = responsePoll.data.data.current.pollution.aqius;
