@@ -28,6 +28,21 @@ h1 {
   font-size: 48pt;
 }
 
+h2 {
+  font-family: Mori;
+  color: white;
+  margin-top: 16px;
+  font-size: 24pt;
+}
+
+h3 {
+  font-family: Mori;
+  color: white;
+  margin: 0;
+  font-size: 16pt;
+  opacity: 60%;
+}
+
 p {
   font-family: Offbit;
 
@@ -40,6 +55,10 @@ p {
   border-radius: 16px;
   padding: 16px;
   margin: 24px 0px 24px 0px;
+}
+
+.rahdio-widget {
+  background-color: #5767F9;
 }
 
 .transparent {
