@@ -22,9 +22,15 @@ async function gradient(){
 
     const background = document.getElementById("bg");
 	background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, ${pollColorDefault})`;
+
+	var temperatureParagraph = document.getElementById('tempText');
+
+	// Set the text content of the paragraph with the temperature variable
+	temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
 }gradient();
 
 async function play() {
+
     if (isPlaying) {
         // Stop the music if it's already playing
         Tone.Transport.stop();
@@ -87,6 +93,8 @@ async function play() {
             console.log("weather description:", descriptionWeather);
             console.log("sunrise:", sunrise);
             console.log("sunset:", sunset);
+
+            updateUi(temp, city);
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
@@ -438,6 +446,17 @@ async function play() {
 
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
+
+  	function updateUi(temp, city){
+  		var temperatureParagraph = document.getElementById('tempText');
+		// Set the text content of the paragraph with the temperature variable
+		temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
+
+		var cityTitle = document.getElementById('cityTitle');
+
+		// Set the text content of the paragraph with the temperature variable
+		cityTitle.textContent = city;
+  	}
 
     //Tone.Transport.bpm.value = 120;
 }
