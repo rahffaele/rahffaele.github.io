@@ -27,20 +27,19 @@ async function firstUi(){
 	background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, ${pollColorDefault})`;
 
 	var temperatureParagraph = document.getElementById('tempText');
-	// Set the text content of the paragraph with the temperature variable
 	temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
 
 	var weatherDescription = document.getElementById('weatherDescription');
-	// Set the text content of the paragraph with the temperature variable
 	weatherDescription.textContent = descriptionWeather;
 
 	var windText = document.getElementById('windText');
-	// Set the text content of the paragraph with the temperature variable
 	windText.textContent = "Wind speed: " + windSpeed + " m/s";
 
 	var songTitle = document.getElementById('songTitle');
-	// Set the text content of the paragraph with the temperature variable
 	songTitle.textContent = descriptionWeather + " in Milan";
+
+	var airQualText = document.getElementById('airQualText');
+	airQualText.textContent = usaqi;
 
 }firstUi();
 
