@@ -32,6 +32,7 @@ h2 {
   font-family: Mori;
   color: white;
   margin-top: 8px;
+  margin-bottom: 8px;
   font-size: 24pt;
 }
 
@@ -45,23 +46,28 @@ h3 {
 
 p {
   font-family: Offbit;
-
   margin: 0;
   font-size: 14pt;
 }
 
+
+label {
+  font-family: Offbit;
+  margin: 0;
+  font-size: 14pt;
+  color: white;
+  vertical-align: middle;
+}
+
 span {
     display: inline-block;
-    background-color: #FFFFFF60;
-    opacity: 60%;
+
     border-radius: 8px;
     font-family: "Offbit", sans-serif;
-    font-size: 12px;
-    text-align: center;
+    font-size: 14px;
+    text-align: left;
     color: white;
-    bottom: 8;
-    padding: 8px 16px;
-    margin-top: 8px;
+    margin-bottom: 24px;
     text-transform: uppercase;
 }
 
@@ -72,9 +78,36 @@ span {
   margin: 24px 0px 24px 0px;
 }
 
+button {
+  font-family: Mori;
+  background-color: #5767F9;
+  margin: 0;
+  font-size: 12pt;
+  padding: 4px 16px;
+  color: white;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+select {
+  font-family: Mori;
+  background-color: #FFFFFF60;
+  margin: 0 4px;
+  font-size: 12pt;
+  padding: 4px 4px;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  max-width: 50%;
+  vertical-align: middle;
+}
+
 .rahdio-widget {
   background-color: #5767F9;
   margin: 0;
+  margin-top: 16px;
 }
 
 .transparent {

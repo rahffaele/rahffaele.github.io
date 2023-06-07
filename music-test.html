@@ -19,36 +19,37 @@
   </div>
   <div class="container">
     <div class="column col-4">
-    <div class="widget">
-      <h1 id="cityTitle">Milan</h1>
-      <p id="tempText"></p>
-      <p id="weatherDescription"></p>
-      <p id="windText"></p>
+      <div class="widget">
+        <h1 id="cityTitle">Milan</h1>
+        <p id="tempText"></p>
+        <p id="weatherDescription"></p>
+        <p id="windText"></p>
+      </div>
+
+      <div class="widget transparent">
+        <h3>Now playing</h3>
+        <h2 id="songTitle"></h2>
+        <span>wed 7 june -</span>
+        <span>15:27</span>
+        <div>
+          <label for="citySelect">Select a city:</label>
+          <select id="citySelect">
+            <option value="Milan">Milan</option>
+            <option value="New York">New York</option>
+            <option value="Paris">Paris</option>
+            <option value="Rome">Rome</option>
+            <option value="London">London</option>
+            <option value="Berlin">Berlin</option>
+            <option value="São Paulo">São Paulo</option>
+            <option value="Palermo">Palermo</option>
+          </select>
+          <button onclick="play(); getTime()" id="startStop">Play</button>
+        </div>
+      </div>
     </div>
 
-    <div>
-    <label for="citySelect">Select a city:</label>
-    <select id="citySelect">
-      <option value="Milan">Milan</option>
-      <option value="New York">New York</option>
-      <option value="Paris">Paris</option>
-      <option value="Rome">Rome</option>
-      <option value="London">London</option>
-      <option value="Berlin">Berlin</option>
-      <option value="São Paulo">São Paulo</option>
-      <option value="Palermo">Palermo</option>
-    </select>
-    <button onclick="play(); getTime()" id="startStop">Play</button>
-  </div>
-  </div>
-
     <div class="column col-4">
-      <div class="widget transparent">
-          <h3>Now playing</h3>
-          <h2 id="songTitle"></h2>
-          <span>aggaa</span>
-          <span>aggaa</span>
-      </div>
+      
     </div>
   </div>
  
