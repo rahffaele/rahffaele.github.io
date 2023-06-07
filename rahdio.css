@@ -75,6 +75,15 @@ span {
     text-transform: uppercase;
 }
 
+a {
+  font-family: Mori;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: line-through;
+}
 
 .menu {
   text-align: right;
