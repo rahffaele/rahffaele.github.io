@@ -25,10 +25,11 @@ body {
     height: auto;
 }
 
-h3, h2, h1 {
+h1 {
   font-family: Mori;
   color: black;
   margin: 0;
+  font-size: 32pt;
 }
 
 .widget {
@@ -77,6 +78,10 @@ h3, h2, h1 {
 }
 
 @media (max-device-width: 480px) {
+  h1 {
+    font-size: 64pt;
+  }
+
   #rahdio-logo {
     max-width: 35%;
   }
