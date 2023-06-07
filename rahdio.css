@@ -1,6 +1,10 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 @font-face { font-family: Offbit; src: url('fonts/OffBitTrial-Regular.otf'); } 
 
+body {
+  padding: 24px;
+}
+
 #bg {
     height: 100vh;
 }
