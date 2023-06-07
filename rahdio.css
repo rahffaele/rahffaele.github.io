@@ -198,6 +198,10 @@ div.transparent > h1, div.transparent > p{
   .col-4 {
   width: 100%;
   }
+  .menu {
+  text-align: left;
+  padding: 4px 0;
+  }
 }
 
 {}
