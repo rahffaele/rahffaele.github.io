@@ -21,6 +21,11 @@
     height: auto;
 }
 
+h3, h2, h1 {
+  font-family: Mori;
+  color: black;
+}
+
 .widget {
   background-color: white;
   border-radius: 16px;
