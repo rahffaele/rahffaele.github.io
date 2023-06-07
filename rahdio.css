@@ -186,7 +186,7 @@ div.transparent > h1, div.transparent > p{
 
 @media (max-device-width: 480px) {
   h1 {
-    font-size: 64pt;
+    font-size: 56pt;
   }
 
   #rahdio-logo {
