@@ -75,6 +75,11 @@ span {
     text-transform: uppercase;
 }
 
+
+.menu {
+  text-align: right;
+}
+
 .widget {
   background-color: white;
   border-radius: 16px;
