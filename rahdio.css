@@ -114,6 +114,10 @@ select {
   background-color: #FFFFFF60;
 }
 
+.invisible {
+  background-color: #FFFFFF00;
+}
+
 div.transparent > h1, div.transparent > p{
   color: white;
 }
