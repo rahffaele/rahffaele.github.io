@@ -32,6 +32,13 @@ h1 {
   font-size: 32pt;
 }
 
+p {
+  font-family: Offbit;
+  color: black;
+  margin: 0;
+  font-size: 16pt;
+}
+
 .widget {
   background-color: white;
   border-radius: 16px;
