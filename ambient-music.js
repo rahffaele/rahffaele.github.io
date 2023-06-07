@@ -41,6 +41,24 @@ async function firstUi(){
 	var airQualText = document.getElementById('airQualText');
 	airQualText.textContent = usaqi;
 
+	var colorAirWidget;
+	if (usaqi<50) {
+		colorAirWidget = "#25D08F";
+	} else if (usaqi<100) {
+		colorAirWidget = "#D0BF25";
+	} else if (usaqi<150) {
+		colorAirWidget = "#ED7531";
+	} else if (usaqi<200) {
+		colorAirWidget = "#ED3131";
+	} else if (usaqi<300) {
+		colorAirWidget = "#9E57F9";
+	} else {
+		colorAirWidget = "#000000";
+	}
+
+	var airQualColor = document.getElementById('air-widget');
+	airQualColor.style.backgroundColor = colorAirWidget;
+
 }firstUi();
 
 window.addEventListener("load", (event) => {
@@ -209,6 +227,8 @@ async function play() {
             console.log("Poll color:", pollColor);
             console.log(response.data);
             console.log("Aqi US:", usaqi);
+
+            updateUi(usaqi);
         } catch (error) {
             console.error("Error fetching air pollution data:", error);
         }
@@ -505,6 +525,31 @@ async function play() {
 
 		var songTitle = document.getElementById('songTitle');
 		songTitle.textContent = descriptionWeather + " in " +  city;
+
+		var airQualText = document.getElementById('airQualText');
+			airQualText.textContent = usaqi;
+	}
+
+	function updateUi(usaqi){
+		var colorAirWidget;
+		if (usaqi<50) {
+			colorAirWidget = "#25D08F";
+		} else if (usaqi<100) {
+			colorAirWidget = "#D0BF25";
+		} else if (usaqi<150) {
+			colorAirWidget = "#ED7531";
+		} else if (usaqi<200) {
+			colorAirWidget = "#ED3131";
+		} else if (usaqi<300) {
+			colorAirWidget = "#9E57F9";
+		} else {
+			colorAirWidget = "#000000";
+		}
+
+		var airQualColor = document.getElementById('air-widget');
+		airQualColor.style.backgroundColor = colorAirWidget;
+		var airQualText = document.getElementById('airQualText');
+		airQualText.textContent = usaqi;
   	}
 
     //Tone.Transport.bpm.value = 120;
