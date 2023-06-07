@@ -21,6 +21,10 @@
     height: auto;
 }
 
+#top-content {
+    margin-top: 24px;
+}
+
 h1 {
   font-family: Mori;
   color: black;
