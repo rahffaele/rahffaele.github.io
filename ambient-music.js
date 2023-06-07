@@ -44,7 +44,9 @@ async function firstUi(){
 
 }firstUi();
 
-
+window.addEventListener("load", (event) => {
+  getTime();
+});
 
 function getTime() {
   const citySelect = document.getElementById("citySelect");
