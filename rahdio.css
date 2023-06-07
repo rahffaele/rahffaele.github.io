@@ -30,7 +30,7 @@ h1 {
 
 p {
   font-family: Offbit;
-  color: black;
+
   margin: 0;
   font-size: 14pt;
 }
@@ -43,7 +43,11 @@ p {
 }
 
 .transparent {
-  opacity: 20%;
+  background-color: #FFFFFF60;
+}
+
+div.transparent > h1, div.transparent > p{
+  color: white;
 }
 
 
