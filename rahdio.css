@@ -23,6 +23,7 @@
 .widget {
   background-color: white;
   border-radius: 16px;
+  padding: 16px;
 }
 
 .transparent {
