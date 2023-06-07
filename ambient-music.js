@@ -13,6 +13,7 @@ async function firstUi(){
     tempColorDefault = calculateTempColor(temp);
 
     const descriptionWeather = responseWeahter.data.weather[0].description;
+    const windSpeed = responseWeahter.data.wind.speed;
 
     const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
     const responsePoll = await axios.get(
@@ -32,6 +33,10 @@ async function firstUi(){
 	var weatherDescription = document.getElementById('weatherDescription');
 	// Set the text content of the paragraph with the temperature variable
 	weatherDescription.textContent = descriptionWeather;
+
+	var windText = document.getElementById('windText');
+	// Set the text content of the paragraph with the temperature variable
+	windText.textContent = "Wind speed: " + windSpeed + " m/s";
 
 }firstUi();
 
