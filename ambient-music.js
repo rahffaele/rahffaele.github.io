@@ -12,10 +12,12 @@ async function gradient(){
     const temp = response.data.main.temp;
     console.log("temp default:", temp)
     tempColorDefault = calculateTempColor(temp);
+
+    const background = document.getElementById("bg");
+background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, blue)`;
 }gradient();
 
-const background = document.getElementById("bg");
-background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, blue)`;
+
 
 async function play() {
     if (isPlaying) {
