@@ -10,7 +10,6 @@ async function gradient(){
         `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyTemp}&units=metric`
     );
     const temp = responseTemp.data.main.temp;
-    console.log("temp default:", temp)
     tempColorDefault = calculateTempColor(temp);
 
     const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
