@@ -51,7 +51,7 @@
   width: 30%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 480px) {
   #rahdio-logo {
     max-width: 35%;
   }
