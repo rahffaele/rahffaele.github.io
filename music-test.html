@@ -14,6 +14,15 @@
 
   <link rel="stylesheet" type="text/css" href="rahdio.css">
   <img src="../rahdio/assets/rahdio-logo.svg" id="rahdio-logo">
+
+  <div class="column col-6">
+    <div class="widget">
+      <h1 id="cityTitle">Milan</h1>
+      <p id="tempText">Temperature: </p>
+      <p id="weatherDescription"></p>
+    </div>
+  </div>
+
   <div>
     <label for="citySelect">Select a city:</label>
     <select id="citySelect">
@@ -27,14 +36,6 @@
       <option value="Palermo">Palermo</option>
     </select>
     <button onclick="play()" id="startStop">Play</button>
-  </div>
-
-  <div class="column col-6">
-    <div class="widget">
-      <h1 id="cityTitle">Milan</h1>
-      <p id="tempText">Temperature: </p>
-      <p id="weatherDescription"></p>
-    </div>
   </div>
 
 </body>
