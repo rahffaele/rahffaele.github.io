@@ -474,6 +474,9 @@ async function play() {
 
 		var windText = document.getElementById('windText');
 		windText.textContent = "Wind speed: " + windSpeed + " m/s";
+
+		var songTitle = document.getElementById('songTitle');
+		songTitle.textContent = descriptionWeather + " in " +  city;
   	}
 
     //Tone.Transport.bpm.value = 120;
