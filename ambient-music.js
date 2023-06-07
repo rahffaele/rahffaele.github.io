@@ -38,6 +38,10 @@ async function firstUi(){
 	// Set the text content of the paragraph with the temperature variable
 	windText.textContent = "Wind speed: " + windSpeed + " m/s";
 
+	var songTitle = document.getElementById('songTitle');
+	// Set the text content of the paragraph with the temperature variable
+	songTitle.textContent = descriptionWeather + " in Milan";
+
 }firstUi();
 
 async function play() {

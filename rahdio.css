@@ -31,7 +31,7 @@ h1 {
 h2 {
   font-family: Mori;
   color: white;
-  margin-top: 16px;
+  margin-top: 8px;
   font-size: 24pt;
 }
 
@@ -50,6 +50,21 @@ p {
   font-size: 14pt;
 }
 
+span {
+    display: inline-block;
+    background-color: #FFFFFF60;
+    opacity: 60%;
+    border-radius: 8px;
+    font-family: "Offbit", sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    bottom: 8;
+    padding: 8px 16px;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
 .widget {
   background-color: white;
   border-radius: 16px;
@@ -59,6 +74,7 @@ p {
 
 .rahdio-widget {
   background-color: #5767F9;
+  margin: 0;
 }
 
 .transparent {
