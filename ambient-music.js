@@ -105,7 +105,7 @@ async function play() {
             console.log("sunrise:", sunrise);
             console.log("sunset:", sunset);
 
-            updateUi(temp, city, descriptionWeather);
+            updateUi(temp, city, descriptionWeather, windSpeed);
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
@@ -458,7 +458,7 @@ async function play() {
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
-  	function updateUi(temp, city, descriptionWeather){
+  	function updateUi(temp, city, descriptionWeather, windSpeed){
   		var temperatureParagraph = document.getElementById('tempText');
 		temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
 
@@ -467,6 +467,9 @@ async function play() {
 
 		var descriptionWeatherText = document.getElementById('weatherDescription');
 		descriptionWeatherText.textContent = descriptionWeather;
+
+		var windText = document.getElementById('windText');
+		windText.textContent = "Wind speed: " + windSpeed + " m/s";
   	}
 
     //Tone.Transport.bpm.value = 120;

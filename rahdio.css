@@ -1,10 +1,6 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 @font-face { font-family: Offbit; src: url('fonts/OffBitTrial-Regular.otf'); } 
 
-body {
-  padding: 24px;
-}
-
 #bg {
     height: 100vh;
 }
@@ -29,7 +25,7 @@ h1 {
   font-family: Mori;
   color: black;
   margin: 0;
-  font-size: 40pt;
+  font-size: 48pt;
 }
 
 p {
@@ -58,6 +54,7 @@ p {
 
 .column {
   box-sizing: border-box;
+  padding: 24px;
 }
 
 .col-img {
