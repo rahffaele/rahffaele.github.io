@@ -20,6 +20,16 @@
     height: auto;
 }
 
+.widget {
+  background-color: white;
+  border-radius: 16px;
+}
+
+.transparent {
+  opacity: 20%;
+}
+
+
 .container {
   display: flex;
   flex-wrap: wrap;
