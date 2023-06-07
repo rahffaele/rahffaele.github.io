@@ -66,10 +66,11 @@
   .column {
     width: 100%;
   }
+  .col-4 {
+  width: 100%;
+}
 
-  .right-column {
-    width: 100%;
-  }
+
 }
 
 {}
