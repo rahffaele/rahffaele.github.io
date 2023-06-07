@@ -44,6 +44,33 @@ async function firstUi(){
 
 }firstUi();
 
+
+
+function getTime() {
+  const citySelect = document.getElementById("citySelect");
+  const selectedCity = citySelect.value;
+
+  const cityTimezones = {
+    Milan: "Europe/Rome",
+    "New York": "America/New_York",
+    Paris: "Europe/Paris",
+    Rome: "Europe/Rome",
+    London: "Europe/London",
+    Berlin: "Europe/Berlin",
+    "São Paulo": "America/Sao_Paulo",
+    Palermo: "Europe/Rome"
+  };
+  
+  const timezone = cityTimezones[selectedCity];  
+  const currentTime = new Date();
+
+  const options = { timeZone: timezone, weekday: 'short', day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric' };
+  const formattedDateTime = currentTime.toLocaleString("en-US", options);
+  
+  const dateTimeSpan = document.getElementById("dateTimeSpan");
+  dateTimeSpan.textContent = formattedDateTime;
+}
+
 async function play() {
 
     if (isPlaying) {
