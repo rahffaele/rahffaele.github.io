@@ -6,19 +6,19 @@ let tempColorDefault, pollColorDefault;
 
 async function gradient(){
 	const apiKeyTemp = "49a5b64679cabaa392cc7fe6b5826a92";
-    const response = await axios.get(
+    const responseTemp = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyTemp}&units=metric`
     );
-    const temp = response.data.main.temp;
+    const temp = responseTemp.data.main.temp;
     console.log("temp default:", temp)
     tempColorDefault = calculateTempColor(temp);
 
     const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
-    const response = await axios.get(
+    const responsePoll = await axios.get(
         `https://api.airvisual.com/v2/city?city=Milanp&state=Lombardy&country=Italy&key=${apiKeyAir}`
     );
 
-    const usaqi = response.data.data.current.pollution.aqius;
+    const usaqi = responsePoll.data.data.current.pollution.aqius;
     pollColorDefault = calculatePollColor(usaqi);
 
     const background = document.getElementById("bg");
