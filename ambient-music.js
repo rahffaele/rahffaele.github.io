@@ -4,13 +4,15 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
 
-async function gradient(){
-	const apiKeyTemp = "49a5b64679cabaa392cc7fe6b5826a92";
-    const responseTemp = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyTemp}&units=metric`
+async function firstUi(){
+	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
+    const responseWeahter = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyWeather}&units=metric`
     );
-    const temp = responseTemp.data.main.temp;
+    const temp = responseWeahter.data.main.temp;
     tempColorDefault = calculateTempColor(temp);
+
+    const descriptionWeather = responseWeahter.data.weather[0].description;
 
     const apiKeyAir = "01e58321-b850-416a-bcd7-d0e68fb05398";
     const responsePoll = await axios.get(
@@ -24,10 +26,14 @@ async function gradient(){
 	background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, ${pollColorDefault})`;
 
 	var temperatureParagraph = document.getElementById('tempText');
-
 	// Set the text content of the paragraph with the temperature variable
 	temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
-}gradient();
+
+	var weatherDescription = document.getElementById('weatherDescription');
+	// Set the text content of the paragraph with the temperature variable
+	weatherDescription.textContent = descriptionWeather;
+
+}firstUi();
 
 async function play() {
 
@@ -94,7 +100,7 @@ async function play() {
             console.log("sunrise:", sunrise);
             console.log("sunset:", sunset);
 
-            updateUi(temp, city);
+            updateUi(temp, city, descriptionWeather);
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
@@ -447,15 +453,15 @@ async function play() {
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
-  	function updateUi(temp, city){
+  	function updateUi(temp, city, descriptionWeather){
   		var temperatureParagraph = document.getElementById('tempText');
-		// Set the text content of the paragraph with the temperature variable
 		temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
 
 		var cityTitle = document.getElementById('cityTitle');
-
-		// Set the text content of the paragraph with the temperature variable
 		cityTitle.textContent = city;
+
+		var descriptionWeatherText = document.getElementById('weatherDescription');
+		descriptionWeatherText.textContent = descriptionWeather;
   	}
 
     //Tone.Transport.bpm.value = 120;
