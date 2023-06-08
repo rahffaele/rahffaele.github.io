@@ -23,7 +23,7 @@
 
 #top-content {
     margin-top: 24px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .inline {
@@ -101,7 +101,7 @@ a:hover {
   background-color: white;
   border-radius: 16px;
   padding: 16px;
-  margin: 24px 0px 24px 0px;
+  margin: 16px 0px 16px 0px;
 }
 
 button {
