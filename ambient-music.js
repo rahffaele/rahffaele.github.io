@@ -294,14 +294,8 @@ async function play() {
             );
 
             const xmlString = responseTomTom.data;
-
-            // Create a new DOMParser instance
             const parser = new DOMParser();
-
-            // Parse the XML string
             const xmlDoc = parser.parseFromString(xmlString, "application/xml");
-
-            // Extract the values of currentSpeed and currentTravelTime
             const currentSpeed = xmlDoc.querySelector("currentSpeed")
                 .textContent;
             const currentTravelTime = xmlDoc.querySelector("currentTravelTime")
