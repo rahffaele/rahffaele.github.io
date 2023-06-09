@@ -4,6 +4,8 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
 
+var nightFilter;
+
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
     const responseWeahter = await axios.get(
@@ -93,12 +95,49 @@ function getTime() {
   const timezone = cityTimezones[selectedCity];  
   const currentTime = new Date();
 
-  const options = { timeZone: timezone, weekday: 'short', day: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric' };
+  const options = { timeZone: timezone, weekday: 'short', day: 'numeric', month: 'long', hour: 'numeric', hour12: false, minute: 'numeric' };
   const formattedDateTime = currentTime.toLocaleString("en-US", options);
   
   const dateTimeSpan = document.getElementById("dateTimeSpan");
   dateTimeSpan.textContent = formattedDateTime;
+
+  console.log(formattedDateTime); // Check the value of formattedDateTime
+  console.log(selectedCity); // Check the value of selectedCity
+  console.log(timezone); // Check the value of timezone
+  let hourValue = extractHourValue(formattedDateTime);
+  console.log("HEY", hourValue);
+
+  const nightOpacity = nightFilter();
+
+  function extractHourValue(dateTimeString) {
+    const hourRegex = /(\d+):/;
+    const matches = hourRegex.exec(dateTimeString);
+    if (matches && matches.length > 1) {
+      return parseInt(matches[1]);
+    }
+    throw new Error('Failed to extract hour value from formattedDateTime');
+  }
+
+  function nightFilter() {
+    console.log("hour value:", hourValue);
+    let nightOpacityValue;
+    if (hourValue >= 12 && hourValue <= 18) {
+      nightOpacityValue = 1 + (hourValue - 12) * (19 / 6);
+    } else if (hourValue >= 19 && hourValue <= 24) {
+      nightOpacityValue = 20 + (hourValue - 19) * (50 / 5);
+    } else if (hourValue >= 1 && hourValue <= 6) {
+      nightOpacityValue = 70 - (hourValue - 1) * (50 / 5);
+    } else if (hourValue >= 7 && hourValue <= 11) {
+      nightOpacityValue = 20 - (hourValue - 7) * (19 / 4);
+    }
+    console.log("nightOpacityValue:", nightOpacityValue);
+    return Math.round(nightOpacityValue); // Optional: Round the value to the nearest whole number
+  }
+
+  const nightFilterElement = document.getElementById("night-filter");
+  nightFilterElement.style.opacity = nightOpacity + "%"; 
 }
+
 
 async function play() {
 
