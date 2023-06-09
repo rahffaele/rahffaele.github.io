@@ -574,7 +574,6 @@ async function play() {
 function calculateTempColor(temp) {
     const tempColorStart = [83, 97, 125]; // RGB color for temp value 0 or less
     const tempColorEnd = [0, 37, 114]; // RGB color for temp value 35 or higher
-
     if (temp <= 0) {
         return `rgb(${tempColorStart[0]}, ${tempColorStart[1]}, ${tempColorStart[2]})`;
     } else if (temp >= 35) {
@@ -582,7 +581,7 @@ function calculateTempColor(temp) {
     } else {
         const r = Math.round(
             ((35 - temp) * (tempColorEnd[0] - tempColorStart[0])) / 35 +
-                tempColorStart[0]
+                tempColorEnd[0]
         );
         const g = Math.round(
             ((35 - temp) * (tempColorEnd[1] - tempColorStart[1])) / 35 +
@@ -592,7 +591,7 @@ function calculateTempColor(temp) {
             ((35 - temp) * (tempColorEnd[2] - tempColorStart[2])) / 35 +
                 tempColorStart[2]
         );
-        return `rgb(${r}, ${g}, ${b})`;
+        return `rgb(${r} , ${g}, ${b})`;
     }
 }
 
