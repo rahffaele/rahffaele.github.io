@@ -4,8 +4,6 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
 
-var nightFilter;
-
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
     const responseWeahter = await axios.get(
@@ -105,7 +103,6 @@ function getTime() {
   console.log(selectedCity); // Check the value of selectedCity
   console.log(timezone); // Check the value of timezone
   let hourValue = extractHourValue(formattedDateTime);
-  console.log("HEY", hourValue);
 
   const nightOpacity = nightFilter();
 

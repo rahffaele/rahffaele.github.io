@@ -138,7 +138,7 @@ select {
 }
 
 .transparent {
-  background: linear-gradient(to bottom, #FFFFFF20, #FFFFFF15);
+  background: linear-gradient(to bottom, #FFFFFF25, #FFFFFF15);
 }
 
 .invisible {
