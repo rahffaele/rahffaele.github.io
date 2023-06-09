@@ -4,7 +4,7 @@ let synthOne, synthTwo, synthThree, synthFour, highMelody;
 let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
 
-async function firstUi(){
+async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
     const responseWeahter = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=Milan&appid=${apiKeyWeather}&units=metric`
@@ -69,7 +69,7 @@ async function firstUi(){
 	var airWidgetDescription = document.getElementById('airWidgetDescription');
 	airWidgetDescription.textContent = pollDescription;
 
-}firstUi();
+}callApi()
 
 window.addEventListener("load", (event) => {
   getTime();
