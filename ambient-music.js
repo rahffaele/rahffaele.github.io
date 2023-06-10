@@ -1,8 +1,13 @@
 let isPlaying = false;
+
+//music variables
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
+//background color variables
 let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
+//weather variables
+var mainWeather;
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -13,6 +18,7 @@ async function callApi(){
     tempColorDefault = calculateTempColor(temp);
 
     const descriptionWeather = responseWeahter.data.weather[0].description;
+    console.log("weather description:", descriptionWeather);
     const windSpeed = responseWeahter.data.wind.speed;
 
     const apiKeyAir = "566bead0-8093-4d5f-91f6-cb17d494ce1c";
@@ -175,7 +181,7 @@ async function play() {
             console.log(response.data); // Control
 
             const { temp, humidity } = response.data.main;
-            const mainWeather = response.data.weather[0].main;
+            mainWeather = response.data.weather[0].main;
             const descriptionWeather = response.data.weather[0].description;
             const sunrise = response.data.sys.sunrise;
             const sunset = response.data.sys.sunset;
@@ -345,104 +351,90 @@ async function play() {
             console.log("Current Travel Time:", currentTravelTime);
         } catch (error) {
             console.error("Error fetching traffic data:", error);
-        }
+    }
+        
+    let baseFrequencyVar, octavesVar, attackVar, decayVar, chorusVar, releaseVar;
 
-        function makeSynthOne() {
-            let envelope = {
-                attack: 0.4,
-                release: 0.5,
-                decay: 0.5,
-                releaseCurve: "linear",
-            };
-            let filterEnvelope = {
-                baseFrequency: 300,
-                octaves: 1,
-                attack: 2,
-                decay: 3,
-                release: 1000,
-            };
-            let filterEnvelope1 = {
-                baseFrequency: 500,
-                octaves: -1,
-                attack: 1,
-                decay: 4,
-                release: 5,
-            };
-            let filterEnvelope2 = {
-                baseFrequency: 300,
-                octaves: 3,
-                attack: 1,
-                decay: 4,
-                release: 5,
-            };
+    switch (mainWeather) {
+        case "Clear":
+        	baseFrequencyVar = 1;
+        	octavesVar = 1;
+        	attackVar = 1;
+        	decayVar = 1;
+        	chorusVar = 1;
+        	releaseVar = 1;
+        	console.log("Default filter built")
+    		break;
+    	case "Clouds":
+        	baseFrequencyVar = 1050;
+        	octavesVar = -4;
+        	attackVar = 2;
+        	decayVar = 3;
+        	chorusVar = 5;
+        	releaseVar = 1000;
+        	console.log("filterClouds built")
+    		break;
+    	case "Snow":
+        	baseFrequencyVar = 200;
+        	octavesVar = -4;
+        	attackVar = 2;
+        	decayVar = 3;
+        	chorusVar = 5;
+        	releaseVar = 1000;
+        	console.log("filterSnow built")
+    		break;
+    	default:
+        	console.log("Invalid weather description");
+        	return;
+    }
 
-            return new Tone.DuoSynth({
-                harmonicity: 2,
-                volume: -10,
-                voice0: {
-                    oscillator: { type: "sawtooth" },
-                    envelope,
-                    filterEnvelope,
-                    filterEnvelope2,
-                },
-                voice1: {
-                    oscillator: { type: "triangle" },
-                    envelope,
-                    filterEnvelope1,
-                    filterEnvelope,
-                },
-                vibratoRate: 0.3,
-                vibratoAmount: 0.1,
-            });
-        }
+    function makeSynthOne() {
+      let envelope = {
+        attack: 0.4,
+        release: 0.5,
+        decay: 0.5,
+        releaseCurve: 'linear',
+      };
+      let filterClouds = {
+        baseFrequency: 200,
+        octaves: -4,
+        attack: 2,
+        decay: 3,
+        release: 1000,
+      };
 
-        function makeSynthTwo() {
-            let envelope = {
-                attack: 0.5,
-                release: 2,
-                decay: 4,
-                releaseCurve: "linear",
-            };
-            let filterEnvelope = {
-                baseFrequency: 300,
-                octaves: 1,
-                attack: 2,
-                decay: 3,
-                chorus: 5,
-                release: 1000,
-            };
-            let filterEnvelope1 = {
-                baseFrequency: 500,
-                octaves: -1,
-                attack: 1,
-                decay: 4,
-                release: 5,
-            };
-            let filterEnvelope2 = {
-                baseFrequency: 300,
-                octaves: 3,
-                attack: 1,
-                decay: 4,
-                release: 5,
-            };
+      return new Tone.DuoSynth({
+        harmonicity: 2,
+        volume: -10,
+        voice0: {
+          oscillator: { type: 'sawtooth' },
+          envelope,
+          filterClouds
+        },
+        voice1: {
+          oscillator: { type: 'triangle' },
+          envelope,
+          filterClouds
+        },
+        vibratoRate: 0.3,
+        vibratoAmount: 0.1,
+      });
+    }
 
-            return new Tone.DuoSynth({
-                harmonicity: 4,
-                volume: -20,
-                voice0: {
-                    oscillator: { type: "sine" },
-                    envelope,
-                    filterEnvelope,
-                },
-                voice1: {
-                    oscillator: { type: "sine" },
-                    envelope,
-                    filterEnvelope,
-                },
-                vibratoRate: 0.4,
-                vibratoAmount: 0.1,
-            });
-        }
+    function makeSynthTwo() {
+      let envelope = {
+        attack: 0.5,
+        release: 2,
+        decay: 4,
+        releaseCurve: 'linear',
+      };
+      return new Tone.PluckSynth({
+  		attackNoise: 1,
+  		dampening: 3000,
+  		resonance: 0.9
+		});
+    }
+
 
         synthOne = makeSynthOne();
         synthTwo = makeSynthOne();
@@ -513,32 +505,32 @@ async function play() {
 
         loopThree = new Tone.Loop((time) => {
             synthThree.triggerAttackRelease("G2", "6:0", "+0:2");
-            synthThree.setNote("C2", "4:0", "+2.0");
+            synthThree.triggerAttackRelease("C2", "4:0", "+2.0");
 
             synthThree.triggerAttackRelease("B2", "6:0", "+2:0");
-            synthThree.setNote("E2", "4:0", "+2:0");
-            synthThree.setNote("G2", "4:0");
+            synthThree.triggerAttackRelease("E2", "4:0", "+2:0");
+            synthThree.triggerAttackRelease("G2", "4:0");
             synthThree.triggerAttackRelease("C2", "4:0", "+2:0");
         }, "32m").start();
 
         loopFour = new Tone.Loop((time) => {
             synthFour.triggerAttackRelease("C2", "6:0", "+0:3:2");
-            synthFour.setNote("E1", "4:0", "+1.0");
+            synthFour.triggerAttackRelease("E1", "4:0", "+1.0");
 
             synthFour.triggerAttackRelease("G2", "6:0", "+2:0");
-            synthFour.setNote("B2", "2:0", "+2:0");
-            synthFour.setNote("G2", "2:0", "+2:0");
+            synthFour.triggerAttackRelease("B2", "2:0", "+2:0");
+            synthFour.triggerAttackRelease("G2", "2:0", "+2:0");
 
             synthFour.triggerAttackRelease("E2", "6:0", "+1:0");
         }, "34m").start();
 
         loopHighMelody = new Tone.Loop((time) => {
             highMelody.triggerAttackRelease("E7", "6:0", "+0:2");
-            highMelody.setNote("C7", "4:0", "+2.0");
+            highMelody.triggerAttackRelease("C7", "4:0", "+2.0");
 
             highMelody.triggerAttackRelease("B7", "6:0", "+2:0");
-            highMelody.setNote("E7", "4:0", "+2:0");
-            highMelody.setNote("G7", "4:0");
+            highMelody.triggerAttackRelease("E7", "4:0", "+2:0");
+            highMelody.triggerAttackRelease("G7", "4:0");
 
             highMelody.triggerAttackRelease("C7", "4:0", "+2:0");
         }, "30m").start();
