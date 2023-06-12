@@ -119,13 +119,12 @@ button {
   background-color: #5767F9;
   margin: 0;
   font-size: 12pt;
-  padding: 4px 16px;
+  padding: 6px 16px 4px 16px;
   color: white;
   border-radius: 16px;
   border: none;
   text-align: center;
   vertical-align: middle;
-  width: 30%;
 }
 
 select {
@@ -162,8 +161,6 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
-
-
 .air-widget {
   margin: 0;
   margin-top: 16px;
@@ -181,6 +178,9 @@ div.transparent > h1, div.transparent > p{
   color: white;
 }
 
+.master-title {
+  padding: 24px 0 24px 0;
+}
 
 .container {
   display: flex;
