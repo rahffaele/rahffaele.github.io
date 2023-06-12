@@ -148,12 +148,12 @@ async function play() {
         // Stop the music if it's already playing
         Tone.Transport.stop();
         Tone.Transport.cancel();
-        loopOne.stop();
-        loopTwo.stop();
-        loopThree.stop();
-        loopFour.stop();
-        loopHighMelody.stop();
-        synthOne.dispose();
+        //loopOne.stop();
+        //loopTwo.stop();
+        //loopThree.stop();
+        //loopFour.stop();
+        //loopHighMelody.stop();
+        //synthOne.dispose();
         synthTwo.dispose();
         synthThree.dispose();
         synthFour.dispose();
@@ -353,57 +353,6 @@ async function play() {
             console.error("Error fetching traffic data:", error);
     }
         
-    let filterEnvelope = {
-        baseFrequencyVar: null,
-        octavesVar: null,
-        attackVar: null,
-        decayVar: null,
-        chorusVar: null,
-        releaseVar: null
-    };
-
-    switch (mainWeather) {
-    case "Clear":
-            baseFrequencyVar = null;
-            octavesVar = null;
-            attackVar = null;
-            decayVar = null;
-            chorusVar = null;
-            releaseVar = null;
-            console.log("filterClouds built")
-            break;
-    	case "Clouds":
-        	baseFrequencyVar = 200;
-        	octavesVar = -4;
-        	attackVar = 2;
-        	decayVar = 3;
-        	chorusVar = 5;
-        	releaseVar = 1000;
-        	console.log("filterClouds built")
-    		break;
-    	case "Snow":
-        	baseFrequencyVar = 200;
-        	octavesVar = -4;
-        	attackVar = 2;
-        	decayVar = 3;
-        	chorusVar = 5;
-        	releaseVar = 1000;
-        	console.log("filterSnow built")
-    		break;
-        case "Rain":
-            baseFrequencyVar = 1050;
-            octavesVar = 4;
-            attackVar = 2;
-            decayVar = 3;
-            chorusVar = 5;
-            releaseVar = 1000;
-            console.log("filterRain built")
-            break;
-    	default:
-        	console.log("Invalid weather description");
-        	return;
-    }
-
     function makeSynthOne() {
             let envelope = {
                 attack: 0.4,
@@ -658,6 +607,7 @@ async function play() {
 
     //Tone.Transport.bpm.value = 120;
 }
+
 
 function calculateTempColor(temp) {
     const tempColorStart = [83, 97, 125]; // RGB color for temp value 0 or less

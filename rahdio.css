@@ -15,7 +15,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 1005;
+    width: 100%;
     background-color: black;
     margin: 0;
     z-index: -1;
@@ -216,6 +216,10 @@ div.transparent > h1, div.transparent > p{
 
 .col-6 {
   width: 20%;
+}
+
+#city-select-label {
+  font-size: 24px;
 }
 
 @media (max-device-width: 480px) {
