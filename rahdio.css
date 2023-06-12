@@ -139,8 +139,20 @@ input[type="range"] {
     border-radius: 6px;
     outline: none;
     appearance: none;
-    margin: 4px 0 4px 0;
+    margin: 4px 0 8px 0;
+    Thumb Radius: 2px;
 }
+
+#myRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+
+
 
 .air-widget {
   margin: 0;
