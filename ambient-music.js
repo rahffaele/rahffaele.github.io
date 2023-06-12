@@ -33,13 +33,16 @@ async function callApi(){
 	background.style.background = `linear-gradient(to bottom, ${tempColorDefault}, ${pollColorDefault})`;
 
 	var temperatureParagraph = document.getElementById('tempText');
-	temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
+	temperatureParagraph.textContent = 'Temperature: ' + temp + "°C";
 
-	var weatherDescription = document.getElementById('weatherDescription');
-	weatherDescription.textContent = descriptionWeather;
+	//var weatherDescription = document.getElementById('weatherDescription');
+	//weatherDescription.textContent = descriptionWeather;
+
+    var humidityDescription = document.getElementById('humidity');
+    humidityDescription.textContent = "Humidity: " + humidity;
 
 	var windText = document.getElementById('windText');
-	windText.textContent = "Wind speed: " + windSpeed + " m/s";
+	windText.textContent = "Wind speed: " + windSpeed + "m/s";
 
 	var songTitle = document.getElementById('songTitle');
 	songTitle.textContent = descriptionWeather + " in Milan";
