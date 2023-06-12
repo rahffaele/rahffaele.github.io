@@ -42,7 +42,7 @@
         <h2 id="songTitle"></h2>
         <span id="dateTimeSpan"></span>
         <div>
-          <label for="citySelect" id="city-select-label">Select a city:</label>
+          <label for="citySelect" ><h3>Select a city:</h3></label>
           <select id="citySelect">
             <option value="Milan">Milan</option>
             <option value="New York">New York</option>
@@ -56,19 +56,19 @@
           <button onclick="play(); getTime()" id="startStop">Play</button>
         </div>
       </div>
+    </div>
+
+    <div class="column col-4">
+      <div class="widget invisible widg-map">
+        <h3>Traffic heatmap</h3>
+        <iframe width='100%' height='200px' src="https://api.mapbox.com/styles/v1/raffamietta/clisxtlz6004801qygx350wpw/draft.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#10/45.466/9.186" title="traffic heatmap" style="border:none; border-radius: 16px; margin-top: 16px"></iframe>
+      </div> 
       <div class="widget air-widget" id="air-widget">
         <h3>Air quality</h3>
         <h1 id="airQualText" class="inline">46</h1>
         <span class="inline">US AQI</span>
         <p style="color: white" id="airWidgetDescription"></p>
-      </div>
-    </div>
-
-    <div class="column col-4">
-      <div class="widget transparent widg-map">
-        <h2>Traffic status</h2>
-        <iframe width='100%' height='300px' src="https://api.mapbox.com/styles/v1/raffamietta/clisxtlz6004801qygx350wpw/draft.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#10/45.466/9.186" title="traffic heatmap" style="border:none;"></iframe>
-      </div>      
+      </div>     
     </div>
 
     <div class="col-6"></div>
@@ -89,8 +89,8 @@
         <input type="range" id="synthThreeVolumeSlider" min="-60" max="0" value="-30" step="1">
         <label for="highMelodyVolumeSlider">Traffic</label>
         <input type="range" id="highMelodyVolumeSlider" min="-60" max="0" value="-50" step="1">
-        <h3 class="master-title">Wind based BPM</h3>
-        <button onclick="" id="">Filter on</button>
+        <h3 class="master-title">Other filters</h3>
+        <button onclick="" class="switch">Wind speed BPM</button>
       </div>
     </div>
   </div>

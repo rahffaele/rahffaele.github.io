@@ -111,7 +111,7 @@ a:hover {
 }
 
 .widg-map {
-  padding: 16px;
+  padding: 16px 0 0;
 }
 
 button {
@@ -119,13 +119,16 @@ button {
   background-color: #5767F9;
   margin: 0;
   font-size: 12pt;
-  padding: 6px 16px 4px 16px;
+  padding: 6px 12px 4px 12px;
   color: white;
   border-radius: 16px;
   border: none;
   text-align: center;
   vertical-align: middle;
-  width: 96px;
+}
+
+.switch {
+  border-radius: 4px;
 }
 
 select {
