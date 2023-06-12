@@ -105,6 +105,10 @@ a:hover {
   margin: 16px 0px 16px 0px;
 }
 
+.widg-map {
+  padding: 16px;
+}
+
 button {
   font-family: Mori;
   background-color: #5767F9;
