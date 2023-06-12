@@ -10,7 +10,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
   <script src="https://unpkg.com/tone@^14.8.26"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js"></script>
   <script src="ambient-music.js"></script>
+  <script src="../rahdio/map-script.js"></script>
 
   <link rel="stylesheet" type="text/css" href="rahdio.css">
 
@@ -82,6 +84,10 @@
         <label for="highMelodyVolumeSlider">Harmonization</label>
         <input type="range" id="highMelodyVolumeSlider" min="-60" max="0" value="-50" step="1">
       </div>
+    </div>
+
+    <div class="column col-2">
+      <div id="map"></div>
     </div>
   </div>
  
