@@ -2,7 +2,7 @@
 @font-face { font-family: Offbit; src: url('fonts/OffBitTrial-Regular.otf'); } 
 
 #bg {
-    height: 100vh;
+    height: 100%;
 }
 
 #night-filter {
@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 1005;
     background-color: black;
     margin: 0;
     z-index: -1;
