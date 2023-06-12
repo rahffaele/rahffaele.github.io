@@ -1,6 +1,11 @@
 @font-face { font-family: Mori; src: url('fonts/PPMori-Regular.otf'); } 
 @font-face { font-family: Offbit; src: url('fonts/OffBitTrial-Regular.otf'); } 
 
+
+body {
+    margin: 0 12px 0 12px;
+}
+
 #bg {
     height: 100vh;
 }
@@ -184,7 +189,7 @@ div.transparent > h1, div.transparent > p{
 
 .column {
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: 0 12px 0 12px;
 }
 
 .col-img {
