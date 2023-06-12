@@ -17,6 +17,8 @@ async function callApi(){
     const temp = responseWeahter.data.main.temp;
     tempColorDefault = calculateTempColor(temp);
 
+    const humidity = responseWeahter.data.main.humidity;
+
     const descriptionWeather = responseWeahter.data.weather[0].description;
     console.log("weather description:", descriptionWeather);
     const windSpeed = responseWeahter.data.wind.speed;
@@ -39,7 +41,7 @@ async function callApi(){
 	//weatherDescription.textContent = descriptionWeather;
 
     var humidityDescription = document.getElementById('humidity');
-    humidityDescription.textContent = "Humidity: " + humidity;
+    humidityDescription.textContent = "Humidity: " + humidity+"g.m-3";
 
 	var windText = document.getElementById('windText');
 	windText.textContent = "Wind speed: " + windSpeed + "m/s";
