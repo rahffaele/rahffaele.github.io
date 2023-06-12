@@ -143,7 +143,7 @@ input[type="range"] {
     Thumb Radius: 2px;
 }
 
-#myRange::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 16px;
