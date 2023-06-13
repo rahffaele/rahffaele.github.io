@@ -488,16 +488,7 @@ async function play() {
         delay.connect(Tone.context.destination);
         delay.connect(delayFade);
         delayFade.connect(delay);
-
-        const waveform = new Tone.Waveform({
-            canvas: document.getElementById("waveformCanvas"),
-            width: window.innerWidth,
-            height: 24,
-            color: "white"
-        });
-
-        echo.connect(waveform);
-
+        
         loopOne = new Tone.Loop((time) => {
             // Trigger C5, and hold for a full note (measure) + two 1/4 notes
             synthOne.triggerAttackRelease("C5", "2:0", time);
