@@ -151,15 +151,15 @@ input[type="range"] {
     border-radius: 6px;
     outline: none;
     appearance: none;
-    margin: 4px 0 8px 0;
+    margin: 4px 0 16px 0;
     Thumb Radius: 2px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 24px;
   background-color: #FFFFFF;
   cursor: pointer;
