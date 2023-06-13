@@ -212,7 +212,7 @@ async function play() {
             console.log("sunrise:", sunrise);
             console.log("sunset:", sunset);
 
-            updateUiWeather(temp, city, descriptionWeather, windSpeed);
+            updateUiWeather(temp, city, humidity, windSpeed, descriptionWeather);
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
@@ -489,6 +489,15 @@ async function play() {
         delay.connect(delayFade);
         delayFade.connect(delay);
 
+        const waveform = new Tone.Waveform({
+            canvas: document.getElementById("waveformCanvas"),
+            width: window.innerWidth,
+            height: 24,
+            color: "white"
+        });
+
+        echo.connect(waveform);
+
         loopOne = new Tone.Loop((time) => {
             // Trigger C5, and hold for a full note (measure) + two 1/4 notes
             synthOne.triggerAttackRelease("C5", "2:0", time);
@@ -562,18 +571,18 @@ async function play() {
     const background = document.getElementById("bg");
   	background.style.background = `linear-gradient(to bottom, ${tempColor}, ${pollColor})`;
 
-  	function updateUiWeather(temp, city, descriptionWeather, windSpeed){
+  	function updateUiWeather(temp, city, humidity, windSpeed, descriptionWeather){
   		var temperatureParagraph = document.getElementById('tempText');
-		temperatureParagraph.textContent = 'Temperature: ' + temp + " °C";
+		temperatureParagraph.textContent = 'Temperature: ' + temp + "°C";
 
 		var cityTitle = document.getElementById('cityTitle');
 		cityTitle.textContent = city;
 
-		var descriptionWeatherText = document.getElementById('weatherDescription');
-		descriptionWeatherText.textContent = descriptionWeather;
+		var humidityDescription = document.getElementById('humidity');
+		humidityDescription.textContent = "Humidity: " + humidity+"g.m-3";
 
 		var windText = document.getElementById('windText');
-		windText.textContent = "Wind speed: " + windSpeed + " m/s";
+		windText.textContent = "Wind speed: " + windSpeed + "m/s";
 
 		var songTitle = document.getElementById('songTitle');
 		songTitle.textContent = descriptionWeather + " in " +  city;
