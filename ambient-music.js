@@ -8,6 +8,7 @@ let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
 //weather variables
 var mainWeather;
+let wave;
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -147,7 +148,7 @@ function getTime() {
 }
 
 
-async function play() {
+async function musicStart() {
 
     if (isPlaying) {
         // Stop the music if it's already playing
@@ -488,7 +489,11 @@ async function play() {
         delay.connect(Tone.context.destination);
         delay.connect(delayFade);
         delayFade.connect(delay);
-        
+
+        wave = new Tone.Waveform();
+        synthOne.connect(wave);
+
+
         loopOne = new Tone.Loop((time) => {
             // Trigger C5, and hold for a full note (measure) + two 1/4 notes
             synthOne.triggerAttackRelease("C5", "2:0", time);
