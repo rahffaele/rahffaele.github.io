@@ -165,12 +165,16 @@ async function musicStart() {
         synthFour.dispose();
         highMelody.dispose();
 
-        const button = document.getElementById("startStop");
-        button.textContent = "Play";
-        isPlaying = false;
+        //const button = document.getElementById("startStop");
+        //button.textContent = "Play";
+        //isPlaying = false;
+        const playerIcon = document.getElementById("player-icon");
+        playerIcon.src = "../rahdio/assets/music-icons/play.svg"
     } else {
-        const button = document.getElementById("startStop");
-        button.textContent = "Stop";
+        //const button = document.getElementById("startStop");
+        //button.textContent = "Stop";
+        const playerIcon = document.getElementById("player-icon");
+        playerIcon.src = "../rahdio/assets/music-icons/stop.svg"
         isPlaying = true;
 
         try {
