@@ -260,13 +260,19 @@ select {
   left: 24px;
   background-color: white;
   color: black;
-  padding: 16px 12px 14px 12px;
+  padding: 16px 12px 14px 16px;
   border-radius: 32px;
+  display: flex;
+  align-items: center;
 }
 
 #changeViewBtn {
   color: black;
   background-color: transparent;
+}
+
+#eye {
+    align-content: center;
 }
 
 
