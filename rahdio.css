@@ -239,7 +239,7 @@ select {
 
 #player-icon {
     padding: ;
-    margin-top: 8px;
+    margin-top: 8px 6px 6px 8px;
 }
 
 #player {
