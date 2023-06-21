@@ -172,6 +172,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .transparent {
   background: linear-gradient(to bottom, #FFFFFF25, #FFFFFF15);
+  border: 1px solid #FFFFFF25;
 }
 
 .invisible {
