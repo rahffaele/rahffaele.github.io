@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
 
 </head>
 <body id="bg">
   <div id="night-filter"></div>
-  <button id="view-switch"><img src="../rahdio/assets/generic-icons/eye-open.svg">Complete view</button>
+  <button id="view-switch"><img src="../rahdio/assets/generic-icons/eye-open.svg" id="eye-icon" onclick="changeView();">Complete view</button>
+  <script src="change-view.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
   <script src="https://unpkg.com/tone@^14.8.26"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -62,11 +64,11 @@
     </div>
 
     <div class="column col-4">
-      <div class="widget invisible widg-map">
+      <div class="widget invisible widg-map" class="complete-view-widg">
         <h3 style="padding-left: 16px;">Traffic heatmap</h3>
         <iframe width='100%' height='300px' src="https://api.mapbox.com/styles/v1/raffamietta/clisxtlz6004801qygx350wpw/draft.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#10/45.466/9.186" title="traffic heatmap" style="border:none; border-radius:16px; margin-top: 16px"></iframe>
       </div> 
-      <div class="widget air-widget" id="air-widget">
+      <div class="widget air-widget" id="air-widget" class="complete-view-widg">
         <h3>Air quality</h3>
         <h1 id="airQualText" class="inline">46</h1>
         <span class="inline">US AQI</span>

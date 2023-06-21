@@ -249,6 +249,10 @@ select {
   margin-top: 16px;
 }
 
+.hide {
+  display: none;
+}
+
 #view-switch {
   position: fixed;
   bottom: 16px;

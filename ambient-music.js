@@ -174,6 +174,7 @@ async function musicStart() {
     } else {
         //const button = document.getElementById("startStop");
         //button.textContent = "Stop";
+
         const playerIcon = document.getElementById("player-icon");
         playerIcon.src = "../rahdio/assets/music-icons/pause.svg"
         playerIcon.style.padding = "8px 7px 6px 7px"
