@@ -271,11 +271,6 @@ select {
   background-color: transparent;
 }
 
-#eye {
-    align-content: center;
-}
-
-
 @media (max-device-width: 480px) {
   #bg {
     height: 100%;
