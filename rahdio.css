@@ -237,6 +237,11 @@ select {
   -moz-appearance: none; /* Hide the default arrow for Firefox */
 }
 
+#player-icon {
+    padding: ;
+    margin-top: 8px;
+}
+
 #player {
   margin-top: 16px;
 }
