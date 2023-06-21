@@ -7,17 +7,14 @@ const eyeIcon = document.getElementById("eye-icon");
     if (simpleView) {
         simpleView = false;
         eyeIcon.src = "../rahdio/assets/generic-icons/eye-open.svg";
-
-        for (let i = 0; i < completeViewWidgts.length; i++) {
-            completeViewWidgts[i].classList.remove("hide");
-        }
+        document.getElementById("traffic-widget").style.display = "inherit";
+        document.getElementById("air-widget").style.display = "inherit";
+    
     } else {
         simpleView = true;
         eyeIcon.src = "../rahdio/assets/generic-icons/eye-off.svg";
-
-        for (let i = 0; i < completeViewWidgts.length; i++) {
-            completeViewWidgts[i].classList.add("hide");
-        }
+        document.getElementById("traffic-widget").style.display = "none";
+        document.getElementById("air-widget").style.display = "none";
     }
 }
 

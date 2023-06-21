@@ -255,8 +255,8 @@ select {
 
 #view-switch {
   position: fixed;
-  bottom: 16px;
-  left: 16px;
+  bottom: 24px;
+  left: 24px;
   background-color: white;
   color: black;
   padding: 16px 12px 14px 12px;
