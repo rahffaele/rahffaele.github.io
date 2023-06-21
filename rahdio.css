@@ -234,6 +234,7 @@ select {
   padding: 11px 8px 9px 16px;
   
   width: 60%;
+  height: 100%;
   appearance: none; /* Hide the default arrow */
   -webkit-appearance: none; /* Hide the default arrow for Safari */
   -moz-appearance: none; /* Hide the default arrow for Firefox */
@@ -245,7 +246,7 @@ select {
 
 #dateTimeSpan {
     background-color: #FFFFFF60;
-    padding: 4px 8px 2px 8px;
+    padding: 4px 12px 2px 12px;
     border-radius: 16px;
     margin-top: 8px;
 }
@@ -255,6 +256,15 @@ select {
   display: flex;
   align-items: center;
   vertical-align: middle;
+  padding: 24px 0;
+  height: 48px;
+}
+
+#startStop {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  height: 100%;
 }
 
 .hide {
