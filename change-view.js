@@ -6,14 +6,14 @@ const eyeIcon = document.getElementById("eye-icon");
 
     if (simpleView) {
         simpleView = false;
-        eyeIcon.src = "../rahdio/assets/generic-icons/eye-open.svg";
+        eyeIcon.src = "../rahdio/assets/generic-icons/eye-off.svg";
         document.getElementById("traffic-widget").style.display = "inherit";
         document.getElementById("air-widget").style.display = "inherit";
         document.getElementById("caption-widg").style.display = "inherit";
 
     } else {
         simpleView = true;
-        eyeIcon.src = "../rahdio/assets/generic-icons/eye-off.svg";
+        eyeIcon.src = "../rahdio/assets/generic-icons/eye-open.svg";
         document.getElementById("traffic-widget").style.display = "none";
         document.getElementById("air-widget").style.display = "none";
         document.getElementById("caption-widg").style.display = "none";
