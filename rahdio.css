@@ -230,8 +230,9 @@ div.transparent > h1, div.transparent > p{
 select {
   border-radius: 16px;
   padding: 6px 8px 4px 16px;
-  background-color: #FFFFFF60;
- width: 100%;
+  background-color: transparent;
+  border: 1px solid white;
+  width: 100%;
   appearance: none; /* Hide the default arrow */
   -webkit-appearance: none; /* Hide the default arrow for Safari */
   -moz-appearance: none; /* Hide the default arrow for Firefox */
