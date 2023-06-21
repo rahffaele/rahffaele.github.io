@@ -262,6 +262,11 @@ select {
   padding: 16px 12px 14px 12px;
 }
 
+#eye-icon {
+  vertical-align: middle;
+  margin-right: 8px
+}
+
 @media (max-device-width: 480px) {
   #bg {
     height: 100%;
