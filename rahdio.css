@@ -223,6 +223,10 @@ div.transparent > h1, div.transparent > p{
   width: 20%;
 }
 
+.col-12 {
+  width: 10%;
+}
+
 #city-select-label {
   font-size: 24px;
 }
