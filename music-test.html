@@ -9,7 +9,10 @@
 </head>
 <body id="bg">
   <div id="night-filter"></div>
-  <button id="view-switch"><img src="../rahdio/assets/generic-icons/eye-open.svg" id="eye-icon" onclick="changeView();">Complete view</button>
+  <div id="view-switch">
+    <img src="../rahdio/assets/generic-icons/eye-open.svg" id="eye-icon" onclick="changeView();">
+    <button onclick="changeView();" id="changeViewBtn">Complete view</button>
+  </div>
   <script src="change-view.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>

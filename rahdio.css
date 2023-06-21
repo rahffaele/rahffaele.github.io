@@ -260,12 +260,14 @@ select {
   background-color: white;
   color: black;
   padding: 16px 12px 14px 12px;
+  border-radius: 32px;
 }
 
-#eye-icon {
-  vertical-align: middle;
-  margin-right: 8px
+#changeViewBtn {
+  color: black;
+  background-color: transparent;
 }
+
 
 @media (max-device-width: 480px) {
   #bg {
