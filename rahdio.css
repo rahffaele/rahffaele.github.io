@@ -245,10 +245,9 @@ select {
 }
 
 #dateTimeSpan {
-    background-color: #FFFFFF60;
-    padding: 4px 12px 2px 12px;
-    border-radius: 16px;
-    margin-top: 8px;
+    background-color: #00000030;
+    padding: 4px 8px 2px 8px;
+    border-radius: 4px;
 }
 
 #player {
