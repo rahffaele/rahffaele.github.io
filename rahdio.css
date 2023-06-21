@@ -158,9 +158,9 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .transparent {
-  background: linear-gradient(to bottom, #FFFFFF25, #FFFFFF15);
+  background: linear-gradient(to bottom, #FFFFFF15, #FFFFFF30);
   border: 1px solid #FFFFFF25;
-  box-shadow: 0px 1px 1px 1px #00000020;
+  box-shadow: 0px 1px 1px 1px #00000030;
 }
 
 .invisible {
@@ -246,6 +246,8 @@ select {
 #dateTimeSpan {
     background-color: #FFFFFF60;
     padding: 4px 8px 2px 8px;
+    border-radius: 16px;
+    margin-top: 8px;
 }
 
 #player {
