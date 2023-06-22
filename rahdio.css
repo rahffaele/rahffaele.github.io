@@ -263,6 +263,7 @@ select {
   align-items: center;
   vertical-align: middle;
   height: 100%;
+  margin-left: 8px;
 }
 
 .hide {
