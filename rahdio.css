@@ -226,7 +226,7 @@ select {
   border: none;
   margin: 6px 4px 6px 0;
   font-size: 14pt;
-  color: white;
+  color: #FFFFFF80;
   
   vertical-align: middle;
   width: 60%;
@@ -280,7 +280,22 @@ select {
   border-radius: 32px;
   display: flex;
   align-items: center;
+    transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
+
+#view-switch:hover {
+  background-color: #ededed;
+  transform: scale(1.05);
+}
+
+#view-switch:active {
+  background-color: #ededed;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  transform: scale(0.98);
+}
+
 
 #changeViewBtn {
   color: black;
