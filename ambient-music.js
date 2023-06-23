@@ -12,7 +12,7 @@ let wave;
 
 let clearBass = ["C2", "C2", "F2", "G2"];
 let clearMidOne = ["E3", "G3", "B3"];
-let clearMidTwo = ["A3", "C3", "E3"];
+let clearMidTwo = ["A3", "C4", "E4"];
 let clearMidThree = ["B3", "D3"];
 let clearMid = [clearMidOne, clearMidTwo, clearMidThree];
 let clearTreble = ['C5', 'D5', 'E5', 'G5', 'A5', 'C6'];
