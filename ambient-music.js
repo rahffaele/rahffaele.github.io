@@ -192,16 +192,11 @@ async function musicStart() {
         mid.dispose();
         treble.dispose();
 
-        //const button = document.getElementById("startStop");
-        //button.textContent = "Play";
         isPlaying = false;
         const playerIcon = document.getElementById("player-icon");
         playerIcon.src = "../rahdio/assets/music-icons/play.svg"
         playerIcon.style.padding = "8px 4px 8px 8px"
     } else {
-        //const button = document.getElementById("startStop");
-        //button.textContent = "Stop";
-
         const playerIcon = document.getElementById("player-icon");
         playerIcon.src = "../rahdio/assets/music-icons/pause.svg"
         playerIcon.style.padding = "8px 6px 8px 6px"
