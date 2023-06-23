@@ -10,6 +10,10 @@ let tempColorDefault, pollColorDefault;
 var mainWeather;
 let wave;
 
+let clearBass = ["C2", "F2", "G2"];
+let clearMid;
+let clearTreble;
+
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
     const responseWeahter = await axios.get(
@@ -467,7 +471,7 @@ async function musicStart() {
         synthOne = makeSynthOne();
         synthTwo = makeSynthOne();
 
-        synthThree = makeSynthTwo();
+        bass = makeSynthTwo();
         synthFour = makeSynthTwo();
         highMelody = makeSynthTwo();
 
@@ -483,7 +487,7 @@ async function musicStart() {
         synthOne.connect(leftPanner);
         synthTwo.connect(rightPanner);
 
-        synthThree.connect(echo);
+        bass.connect(echo);
         synthFour.connect(echo);
 
         highMelody.connect(echo);
@@ -536,13 +540,13 @@ async function musicStart() {
         }, "30m").start();
 
         loopThree = new Tone.Loop((time) => {
-            synthThree.triggerAttackRelease("G2", "6:0", "+0");
-            synthThree.triggerAttackRelease("C2", "4:0", "+4.0");
+            bass.triggerAttackRelease("G2", "6:0", "+0");
+            bass.triggerAttackRelease("C2", "4:0", "+4.0");
 
-            synthThree.triggerAttackRelease("B2", "6:0", "+6:0");
-            synthThree.triggerAttackRelease("E2", "4:0", "+10:0");
-            synthThree.triggerAttackRelease("G2", "4:0", "+12:0");
-            synthThree.triggerAttackRelease("C2", "4:0", "+16:0");
+            bass.triggerAttackRelease("B2", "6:0", "+6:0");
+            bass.triggerAttackRelease("E2", "4:0", "+10:0");
+            bass.triggerAttackRelease("G2", "4:0", "+12:0");
+            bass.triggerAttackRelease("C2", "4:0", "+16:0");
         }, "32m").start();
 
         loopFour = new Tone.Loop((time) => {
