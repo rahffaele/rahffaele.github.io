@@ -188,6 +188,7 @@ async function musicStart() {
         bassLoop.stop();
         midLoop.stop();
         trebleLoop.stop();
+        trebleLoopTwo.stop();
         bass.dispose();
         mid.dispose();
         treble.dispose();
@@ -420,7 +421,7 @@ async function musicStart() {
 
             return new Tone.DuoSynth({
                 harmonicity: 2,
-                volume: -30,
+                volume: -20,
                 voice0: {
                     oscillator: { type: "sawtooth" },
                     envelope,
@@ -470,7 +471,7 @@ async function musicStart() {
 
             return new Tone.DuoSynth({
                 harmonicity: 4,
-                volume: -20,
+                volume: -30,
                 voice0: {
                     oscillator: { type: "sine" },
                     envelope,
@@ -553,7 +554,7 @@ async function musicStart() {
         let delay = new Tone.Delay(3.0);
         let delayFade = new Tone.Gain(0.5);
 
-        delay.delayTime.value = 2.0;
+        delay.delayTime.value = 1.0;
         delayFade.gain.value = 0.75;
 
         bass.connect(leftPanner);
@@ -586,8 +587,21 @@ async function musicStart() {
         trebleLoop = new Tone.Loop((time) => {
             var randomIndex = Math.floor(Math.random() * noteTreble.length);
             var note = noteTreble[randomIndex];
-            treble.triggerAttackRelease(note, "2:0", "+0");
+
+            var duration = Math.random() * 3.5 + 0.5; // Random duration between 0.5 and 4
+            var waitTime = Math.random() * 3.5;
+            treble.triggerAttackRelease(note, Tone.Time(duration).toSeconds(), "+0:2");
             console.log("treble note:", note);
+        }, "2m").start();
+
+        trebleLoopTwo = new Tone.Loop((time) => {
+            var randomIndex = Math.floor(Math.random() * noteTreble.length);
+            var note = noteTreble[randomIndex];
+
+            var duration = Math.random() * 3.5 + 0.5; // Random duration between 0.5 and 4
+            var waitTime = Math.random() * 3.5;
+            treble.triggerAttackRelease(note, Tone.Time(duration).toSeconds(), "+0:2");
+            console.log("treble note 2:", note);
         }, "2m").start();
 
 
