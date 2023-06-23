@@ -12,7 +12,7 @@ let wave;
 
 let clearBass = ["C2", "F2", "G2"];
 let clearMid;
-let clearTreble;
+let clearTreble = ['C5', 'D5', 'E5', 'G5', 'A5', 'C6'];
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
