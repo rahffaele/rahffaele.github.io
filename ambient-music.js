@@ -549,7 +549,7 @@ async function musicStart() {
         
 
         bass = makeSynthTwo();
-        mid = makeSynthTwo();
+        mid = makeSynthOne();
         treble = makeSynthOne();
 
         let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
