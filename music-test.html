@@ -61,6 +61,14 @@
             <option value="São Paulo">São Paulo</option>
             <option value="Palermo">Palermo</option>
           </select>
+          <script>
+          const citySelect = document.getElementById('citySelect');
+          citySelect.addEventListener('change', function() {
+            if (citySelect.value !== '') {
+              musicStart();
+            }
+          });
+          </script>
           <button onclick="musicStart(); getTime()" id="startStop"><img id="player-icon"src="../rahdio/assets/music-icons/play.svg"></button>
         </div>
       </div>
