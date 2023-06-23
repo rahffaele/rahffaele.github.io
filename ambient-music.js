@@ -10,9 +10,34 @@ let tempColorDefault, pollColorDefault;
 var mainWeather;
 let wave;
 
-let clearBass = ["C2", "F2", "G2"];
-let clearMid;
+let clearBass = ["C2", "C2", "F2", "G2"];
+let clearMidOne = ["E3", "G3", "B3"];
+let clearMidTwo = ["A3", "C3", "E3"];
+let clearMidThree = ["B3", "D3"];
+let clearMid = [clearMidOne, clearMidTwo, clearMidThree];
 let clearTreble = ['C5', 'D5', 'E5', 'G5', 'A5', 'C6'];
+
+
+let cloudBass = ["A2", "G2", "C2", "F2"];
+let cloudMidOne = ["C3", "E3", "G3"];
+let cloudMidTwo = ["Bb3", "D3", "F3"];
+let cloudMidThree = ["E3", "G3"];
+let cloudMidFour = ["A3", "C4", "E4"];
+let cloudMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
+let cloudTreble = ['A4', 'C5', 'D5', 'E5', 'G5', 'A5'];
+
+let rainBass = ["D2", "G2", "D3", "A2"];
+let rainMidOne = ["F3", "A3"];
+let rainMidTwo = ["Bb3", "D3"];
+let rainMidThree = ["A3", "F3"];
+let rainMidFour = ["C#3", "E4", "G4"];
+let rainMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
+let rainTreble = ['D5', 'F5', 'G5', 'A5', 'C#6', 'D6'];
+
+
+let noteBass;
+let noteMid;
+let noteTreble;
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -158,16 +183,12 @@ async function musicStart() {
         // Stop the music if it's already playing
         Tone.Transport.stop();
         Tone.Transport.cancel();
-        loopOne.stop();
-        loopTwo.stop();
-        loopThree.stop();
-        loopFour.stop();
-        loopHighMelody.stop();
-        synthOne.dispose();
-        synthTwo.dispose();
-        synthThree.dispose();
-        synthFour.dispose();
-        highMelody.dispose();
+        bassLoop.stop();
+        midLoop.stop();
+        trebleLoop.stop();
+        bass.dispose();
+        mid.dispose();
+        treble.dispose();
 
         //const button = document.getElementById("startStop");
         //button.textContent = "Play";
@@ -225,6 +246,7 @@ async function musicStart() {
             console.log("sunset:", sunset);
 
             updateUiWeather(temp, city, humidity, windSpeed, descriptionWeather);
+            weatherNote(mainWeather);
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
@@ -401,7 +423,7 @@ async function musicStart() {
 
             return new Tone.DuoSynth({
                 harmonicity: 2,
-                volume: -10,
+                volume: -30,
                 voice0: {
                     oscillator: { type: "sawtooth" },
                     envelope,
@@ -427,8 +449,8 @@ async function musicStart() {
                 releaseCurve: "linear",
             };
             let filterEnvelope = {
-                baseFrequency: 300,
-                octaves: 1,
+                baseFrequency: 200,
+                octaves: -2,
                 attack: 2,
                 decay: 3,
                 chorus: 5,
@@ -467,30 +489,82 @@ async function musicStart() {
             });
         }
 
+        function weatherNote(mainWeather) {
+           switch (mainWeather) {
+                case "Clear":
+                    noteBass = clearBass;
+                    noteMid = clearMid;
+                    noteTreble = clearTreble;
+                    break;
+                case "Clouds":
+                case "Drizzle":
+                    noteBass = cloudBass;
+                    noteMid = cloudMid;
+                    noteTreble = cloudTreble;
+                    break;
+                case "Rain":
+                    noteBass = rainBass;
+                    noteMid = rainMid;
+                    noteTreble = rainTreble;
+                    break;
+                case "Snow":
+                    noteBass = snowBass;
+                    noteMid = snowMid;
+                    noteTreble = snowTreble;
+                    break;
+                case "Thunderstorm":
+                case "Tornado":
+                case "Squall":
+                    noteBass = stormBass;
+                    noteMid = stormMid;
+                    noteTreble = stormTreble;
+                    break;
+                case "Mist":
+                case "Haze":
+                case "Fog":    
+                    noteBass = stormBass;
+                    noteMid = stormMid;
+                    noteTreble = stormTreble;
+                    break;
+                case "Smoke":
+                case "Sand":
+                case "Dust":
+                case "Ash":
+                    noteBass = stormBass;
+                    noteMid = stormMid;
+                    noteTreble = stormTreble;
+                    break;
+                default:
+                    console.log("Invalid mainWeather selection");
+                    return;
+            }
+        }
 
-        synthOne = makeSynthOne();
-        synthTwo = makeSynthOne();
+        console.log(noteBass);
+        console.log(noteMid);
+        console.log(noteTreble);
+
+        
 
         bass = makeSynthTwo();
-        synthFour = makeSynthTwo();
-        highMelody = makeSynthTwo();
+        mid = makeSynthTwo();
+        treble = makeSynthOne();
 
         let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
         let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
         let echo = new Tone.FeedbackDelay("8n", 0.2);
-        let delay = new Tone.Delay(8.0);
+        let delay = new Tone.Delay(3.0);
         let delayFade = new Tone.Gain(0.5);
 
-        delay.delayTime.value = 8.0;
+        delay.delayTime.value = 2.0;
         delayFade.gain.value = 0.75;
 
-        synthOne.connect(leftPanner);
-        synthTwo.connect(rightPanner);
+        bass.connect(leftPanner);
+        mid.connect(rightPanner);
 
         bass.connect(echo);
-        synthFour.connect(echo);
-
-        highMelody.connect(echo);
+        mid.connect(echo);
+        treble.connect(echo);
 
         leftPanner.connect(echo);
         rightPanner.connect(echo);
@@ -501,75 +575,24 @@ async function musicStart() {
         delay.connect(delayFade);
         delayFade.connect(delay);
 
-        wave = new Tone.Waveform();
-        synthOne.connect(wave);
+        bassLoop = new Tone.Loop((time) => {
+            bass.triggerAttackRelease(noteBass[0], "4:0", "+0");
+            bass.triggerAttackRelease(noteBass[1], "4:0", "+4");
+            bass.setNote(noteBass[2], "4:0", "+${time} + 8n");
+            bass.setNote(noteBass[3], "4:0", "+${time} +12:0");
+        }, "12m").start();
 
+        midLoop = new Tone.Sequence((time, chord) => {
+            mid.triggerAttackRelease(chord, "8:0", time);
+        }, noteMid, "12m").start();
 
-        loopOne = new Tone.Loop((time) => {
-            // Trigger C5, and hold for a full note (measure) + two 1/4 notes
-            synthOne.triggerAttackRelease("C5", "2:0", time);
-            // Switch note to D5 after two 1/4 notes without retriggering
-            synthOne.setNote("D5", "+2:2");
-            // Trigger E4 after 6 measures and hold for two 1/4 notes.
-            synthOne.triggerAttackRelease("E4", "0:2", "+6:0");
+        trebleLoop = new Tone.Loop((time) => {
+            var randomIndex = Math.floor(Math.random() * noteTreble.length);
+            var note = noteTreble[randomIndex];
+            treble.triggerAttackRelease(note, "2:0", "+0");
+            console.log("treble note:", note);
+        }, "2m").start();
 
-            // Trigger G4 after 11 measures + a two 1/4 notes, and hold for two 1/4 notes.
-            synthOne.triggerAttackRelease("G4", "0:2", "+11:2");
-
-            // Trigger E5 after 19 measures and hold for 2 measures.
-            // Switch to G5, A5, G5 after delay of a 1/4 note + two 1/16 notes each.
-            synthOne.triggerAttackRelease("E4", "2:0", "+19:0");
-            synthOne.setNote("G4", "+19:1:2");
-            synthOne.setNote("A4", "+19:3:0");
-            synthOne.setNote("G4", "+19:4:2");
-        }, "26m").start();
-
-        loopTwo = new Tone.Loop((time) => {
-            // Trigger D4 after 5 measures and hold for 1 full measure + two 1/4 notes
-            synthTwo.triggerAttackRelease("D4", "1:2", "+5:0");
-            // Switch to E4 after one more measure
-            synthTwo.setNote("E4", "+6:0");
-
-            // Trigger B3 after 11 measures + two 1/4 notes + two 1/16 notes. Hold for one measure
-            synthTwo.triggerAttackRelease("B3", "1m", "+11:2:2");
-            // Switch to G3 after a 1/2 note more
-            synthTwo.setNote("G3", "+12:0:2");
-
-            // Trigger G4 after 23 measures + two 1/4 notes. Hold for a half note.
-            synthTwo.triggerAttackRelease("G4", "0:2", "+23:2");
-        }, "30m").start();
-
-        loopThree = new Tone.Loop((time) => {
-            bass.triggerAttackRelease("G2", "6:0", "+0");
-            bass.triggerAttackRelease("C2", "4:0", "+4.0");
-
-            bass.triggerAttackRelease("B2", "6:0", "+6:0");
-            bass.triggerAttackRelease("E2", "4:0", "+10:0");
-            bass.triggerAttackRelease("G2", "4:0", "+12:0");
-            bass.triggerAttackRelease("C2", "4:0", "+16:0");
-        }, "32m").start();
-
-        loopFour = new Tone.Loop((time) => {
-            synthFour.triggerAttackRelease("C2", "6:0", "+1:2");
-            synthFour.triggerAttackRelease("E1", "4:0", "+2:2");
-
-            synthFour.triggerAttackRelease("G2", "6:0", "+8:2");
-            synthFour.triggerAttackRelease("B2", "2:0", "+16:2");
-            synthFour.triggerAttackRelease("G2", "2:0", "+18:0");
-
-            synthFour.triggerAttackRelease("E2", "6:0", "+18:2:0");
-        }, "34m").start();
-
-        loopHighMelody = new Tone.Loop((time) => {
-            highMelody.triggerAttackRelease("E7", "6:0", "+0");
-            highMelody.triggerAttackRelease("C7", "4:0", "+4.0");
-
-            highMelody.triggerAttackRelease("B7", "6:0", "+8");
-            highMelody.triggerAttackRelease("E7", "4:0", "+12:0");
-            highMelody.triggerAttackRelease("G7", "4:0", "+16:0");
-
-            highMelody.triggerAttackRelease("C7", "4:0", "+18:0");
-        }, "30m").start();
 
         Tone.Transport.start();
         isPlaying = true;
