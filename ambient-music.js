@@ -23,7 +23,7 @@ let cloudMidTwo = ["Bb3", "D3", "F3"];
 let cloudMidThree = ["E3", "G3"];
 let cloudMidFour = ["A3", "C4", "E4"];
 let cloudMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
-let cloudTreble = ['A4', 'C5', 'D5', 'E5', 'G5', 'A5'];
+let cloudTreble = ['A3', 'C4', 'D4', 'E4', 'G4', 'A4'];
 
 let rainBass = ["D2", "G2", "D3", "A2"];
 let rainMidOne = ["F3", "A3"];
