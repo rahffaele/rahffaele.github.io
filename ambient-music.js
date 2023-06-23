@@ -8,7 +8,6 @@ let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
 //weather variables
 var mainWeather;
-let wave;
 
 let clearBass = ["C2", "C2", "F2", "G2"];
 let clearMidOne = ["E3", "G3", "B3"];
@@ -34,10 +33,13 @@ let rainMidFour = ["C#3", "E4", "G4"];
 let rainMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
 let rainTreble = ['D5', 'F5', 'G5', 'A5', 'C#6', 'D6'];
 
-
 let noteBass;
 let noteMid;
 let noteTreble;
+
+let filterClear;
+let filterClouds;
+let filterRain;
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
