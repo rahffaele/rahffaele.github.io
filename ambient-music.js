@@ -221,20 +221,11 @@ async function musicStart() {
             const sunrise = response.data.sys.sunrise;
             const sunset = response.data.sys.sunset;
             const windSpeed = response.data.wind.speed;
-            const maxWindSpeed = 20; // Define the maximum wind speed you want to map to the BPM range
-            const minBPM = 60; // Define the minimum BPM
-            const maxBPM = 180; // Define the maximum BPM
 
-            // Calculate the new BPM value based on the wind speed
-            const newBPM = (windSpeed / maxWindSpeed) * (maxBPM - minBPM) + minBPM;
             tempColor = calculateTempColor(temp);
             console.log("color temp:", tempColor);
 
-            Tone.Transport.bpm.value = newBPM;
-
-            // Log the wind speed and new BPM value to the console
             console.log("Wind Speed:", windSpeed);
-            console.log("New BPM:", newBPM);
             console.log("temp", temp);
             console.log("humidity", humidity);
             console.log("weather:", mainWeather);
@@ -541,8 +532,6 @@ async function musicStart() {
         console.log(noteMid);
         console.log(noteTreble);
 
-        
-
         bass = makeSynthTwo();
         mid = makeSynthOne();
         treble = makeSynthOne();
@@ -645,8 +634,6 @@ async function musicStart() {
 		var airWidgetDescription = document.getElementById('airWidgetDescription');
 		airWidgetDescription.textContent = pollDescription;
   	}
-
-    //Tone.Transport.bpm.value = 120;
 }
 
 
