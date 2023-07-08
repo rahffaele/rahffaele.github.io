@@ -118,7 +118,7 @@ a:hover {
 button {
   font-family: Mori;
   background-color: #5767F9;
-  margin: 0;
+  margin: 8px;
   font-size: 12pt;
   padding: 6px 12px 4px 12px;
   color: white;
@@ -127,6 +127,19 @@ button {
   text-align: center;
   vertical-align: middle;
 }
+
+button:hover {
+  background-color: #3B48ED;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+
+button:active {
+  background-color: #5767F9;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+
 
 .switch {
   border-radius: 4px;
