@@ -235,6 +235,58 @@ async function musicStart() {
 
             updateUiWeather(temp, city, humidity, windSpeed, descriptionWeather);
             weatherNote(mainWeather);
+
+            const weatherIcon = document.getElementById("weather-icon");
+
+            const iconBasePath = "../rahdio/assets/weather-icons/";
+            let iconFileName;
+
+            switch (mainWeather) {
+                case "Clear":
+                    iconFileName = "sun.svg";
+                    console.log("Icon: sun.svg");
+                    break;
+                case "Clouds":
+                    iconFileName = "cloudy.svg";
+                    console.log("Icon: cloudy.svg");
+                    break;
+                case "Drizzle":
+                    iconFileName = "cloud-drizzle.svg";
+                    console.log("Icon: cloud-drizzle.svg");
+                    break;
+                case "Rain":
+                    iconFileName = "cloud-rain.svg";
+                    console.log("Icon: cloud-rain.svg");
+                    break;
+                case "Snow":
+                    iconFileName = "snowflake.svg";
+                    console.log("Icon: snowflake.svg");
+                    break;
+                case "Thunderstorm":
+                case "Tornado":
+                case "Squall":
+                    iconFileName = "cloud-lightning.svg";
+                    console.log("Icon: cloud-lightning.svg");
+                    break;
+                case "Mist":
+                case "Haze":
+                case "Fog":
+                    iconFileName = "cloud-fog.svg";
+                    console.log("Icon: cloud-fog.svg");
+                    break;
+                case "Smoke":
+                case "Sand":
+                case "Dust":
+                case "Ash":
+                    iconFileName = "dust.svg";
+                    console.log("Icon: dust.svg");
+                    break;
+                default:
+                    console.log("Invalid mainWeather selection for icon");
+                    return;
+            }
+
+            weatherIcon.src = iconBasePath + iconFileName;
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
