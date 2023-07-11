@@ -201,6 +201,7 @@ async function musicStart() {
         playerIcon.src = "../rahdio/assets/music-icons/pause.svg"
         playerIcon.style.padding = "8px 6px 8px 6px"
         isPlaying = true;
+        getTime();
 
         try {
             const citySelect = document.getElementById("citySelect");
