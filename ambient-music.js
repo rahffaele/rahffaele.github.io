@@ -10,10 +10,10 @@ let tempColorDefault, pollColorDefault;
 var mainWeather;
 
 let clearBass = ["C2", "C2", "F2", "G2"];
-let clearMidOne = ["E3", "G3", "B3"];
-let clearMidTwo = ["A3", "C4", "E4"];
-let clearMidThree = ["B3", "D3"];
-let clearMid = [clearMidOne, clearMidTwo, clearMidThree];
+let clearMidOne = ["E3", "E3", "A3", "B3"];
+let clearMidTwo = ["G3", "G3", "C4", "D4"];
+let clearMidThree = ["B3", "B3", "E4", "G3"];
+//let clearMid = [clearMidOne, clearMidTwo, clearMidThree];
 let clearTreble = ['C5', 'D5', 'E5', 'G5', 'A5', 'C6'];
 
 
@@ -534,7 +534,10 @@ async function musicStart() {
            switch (mainWeather) {
                 case "Clear":
                     noteBass = clearBass;
-                    noteMid = clearMid;
+                    noteMidOne = clearMidOne;
+                    noteMidTwo = clearMidTwo;
+                    noteMidThree = clearMidThree;
+                    //noteMid = clearMid;
                     noteTreble = clearTreble;
                     break;
                 case "Clouds":
@@ -614,14 +617,18 @@ async function musicStart() {
         delay.connect(delayFade);
         delayFade.connect(delay);
 
-        bassLoop = new Tone.Loop((time) => {
-            bass.triggerAttackRelease(noteBass[0], "4:0", "+0");
-            bass.triggerAttackRelease(noteBass[1], "4:0", "+4");
-            bass.setNote(noteBass[2], "4:0", "+${time} + 8n");
-            bass.setNote(noteBass[3], "4:0", "+${time} +12:0");
-        }, "12m").start();
+        /*bassLoop = new Tone.Loop((time) => {
+        bass.triggerAttackRelease(noteBass[index], noteDuration, time);
+        index = (index + 1) % noteBass.length;
+        }, loopDuration).start();*/
 
-        midLoop = new Tone.Sequence((time, chord) => {
+
+        /*midLoopThree = new Tone.Loop((time) => {
+        mid.triggerAttackRelease(noteMidThree[index], noteDuration, time);
+        index = (index + 1) % noteMidThree.length;
+        }, loopDuration).start();
+
+        /*midLoop = new Tone.Sequence((time, chord) => {
             mid.triggerAttackRelease(chord, "8:0", time);
         }, noteMid, "12m").start();
 
@@ -630,7 +637,7 @@ async function musicStart() {
             var note = noteTreble[randomIndex];
             treble.triggerAttackRelease(note, "2:0", "+0");
             console.log("treble note:", note);
-        }, "2m").start();
+        }, "2m").start();*/
 
 
         Tone.Transport.start();
