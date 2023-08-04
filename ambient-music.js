@@ -20,7 +20,7 @@ let clearTreble = ['C5', 'D5', 'E5', 'G5', 'A5', 'C6'];
 let cloudBass = ["A2", "G2", "C2", "F2"];
 let cloudMidOne = ["C3", "E3", "G3"];
 let cloudMidTwo = ["Bb3", "D3", "F3"];
-let cloudMidThree = ["E3", "G3"];
+let cloudMidThree = ["E3", "G3", "G3"];
 let cloudMidFour = ["A3", "C4", "E4"];
 let cloudMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
 let cloudTreble = ['A3', 'C4', 'D4', 'E4', 'G4', 'A4'];
@@ -34,7 +34,9 @@ let rainMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
 let rainTreble = ['D5', 'F5', 'G5', 'A5', 'C#6', 'D6'];
 
 let noteBass;
-let noteMid;
+let noteMidOne;
+let noteMidTwo;
+let noteMidThree;
 let noteTreble;
 
 let filterClear;
@@ -186,11 +188,15 @@ async function musicStart() {
         Tone.Transport.stop();
         Tone.Transport.cancel();
         bassLoop.stop();
-        midLoop.stop();
-        trebleLoop.stop();
-        bass.dispose();
-        mid.dispose();
-        treble.dispose();
+        midLoopOne.stop();
+        midLoopTwo.stop();
+        midLoopThree.stop();
+        //trebleLoop.stop();
+        bassLoop.dispose();
+        midLoopOne.dispose();
+        midLoopTwo.stop();
+        midLoopThree.stop();
+        //trebleLoop.dispose();
 
         isPlaying = false;
         const playerIcon = document.getElementById("player-icon");
@@ -514,7 +520,7 @@ async function musicStart() {
 
             return new Tone.DuoSynth({
                 harmonicity: 4,
-                volume: -20,
+                volume: -10,
                 voice0: {
                     oscillator: { type: "sine" },
                     envelope,
@@ -543,7 +549,9 @@ async function musicStart() {
                 case "Clouds":
                 case "Drizzle":
                     noteBass = cloudBass;
-                    noteMid = cloudMid;
+                    noteMidOne = cloudMidOne;
+                    noteMidTwo = cloudMidTwo;
+                    noteMidThree = cloudMidThree;
                     noteTreble = cloudTreble;
                     break;
                 case "Rain":
@@ -585,42 +593,80 @@ async function musicStart() {
         }
 
         console.log(noteBass);
-        console.log(noteMid);
+        console.log(noteMidOne);
+        console.log(noteMidTwo);
+        console.log(noteMidThree);
         console.log(noteTreble);
 
         bass = makeSynthTwo();
-        mid = makeSynthOne();
+        midOne = makeSynthOne();
+        midTwo = makeSynthOne();
+        midThree = makeSynthOne();
         treble = makeSynthOne();
 
         let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
         let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
         let echo = new Tone.FeedbackDelay("8n", 0.2);
-        let delay = new Tone.Delay(3.0);
+        let delay = new Tone.Delay(1.0);
         let delayFade = new Tone.Gain(0.5);
 
-        delay.delayTime.value = 2.0;
+        delay.delayTime.value = 1.0;
         delayFade.gain.value = 0.75;
 
         bass.connect(leftPanner);
-        mid.connect(rightPanner);
+        //mid.connect(rightPanner);
 
-        bass.connect(echo);
-        mid.connect(echo);
-        treble.connect(echo);
+        //bass.connect(echo);
+        //mid.connect(echo);
+        //treble.connect(echo);
 
-        leftPanner.connect(echo);
-        rightPanner.connect(echo);
+        //leftPanner.connect(echo);
+        //rightPanner.connect(echo);
 
-        echo.toMaster();
-        echo.connect(delay);
-        delay.connect(Tone.context.destination);
-        delay.connect(delayFade);
-        delayFade.connect(delay);
+        //echo.toMaster();
+        //echo.connect(delay);
+        //delay.connect(Tone.context.destination);
+        //delay.connect(delayFade);
+        //delayFade.connect(delay);
 
-        /*bassLoop = new Tone.Loop((time) => {
-        bass.triggerAttackRelease(noteBass[index], noteDuration, time);
+        bass.toMaster();
+        midOne.toMaster();
+        midTwo.toMaster();
+        midThree.toMaster();
+
+        const noteDurationBass = "1m";
+        const noteDuration = "4n";
+         // Adjust this value as needed
+        const timeInterval = "1m";
+        let index = 0;
+
+        bassLoop = new Tone.Loop((time) => {
         index = (index + 1) % noteBass.length;
-        }, loopDuration).start();*/
+        bass.triggerAttackRelease(noteBass[index], noteDuration, time);
+        
+        bassLoop.interval = timeInterval;
+        }, noteDurationBass).start();
+
+        midLoopOne = new Tone.Loop((time) => {
+        index = (index + 1) % noteMidOne.length;
+        midOne.triggerAttackRelease(noteMidOne[index], noteDuration, time);
+        
+        midLoopOne.interval = "4n";
+        }, "1m").start();
+
+        midLoopTwo = new Tone.Loop((time) => {
+        index = (index + 1) % noteMidTwo.length;
+        midTwo.triggerAttackRelease(noteMidTwo[index], noteDuration, time);
+        
+        midLoopTwo.interval = "3n";
+        }, "1m").start();
+
+        midLoopThree = new Tone.Loop((time) => {
+        index = (index + 1) % noteMidThree.length;
+        midThree.triggerAttackRelease(noteMidThree[index], noteDuration, time);
+        
+        midLoopThree.interval = "2n";
+        }, "1m").start();
 
 
         /*midLoopThree = new Tone.Loop((time) => {
