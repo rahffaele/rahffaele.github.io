@@ -478,7 +478,7 @@ async function musicStart() {
                     filterEnvelope2,
                 },
                 voice1: {
-                    oscillator: { type: "triangle" },
+                    oscillator: { type: "sine" },
                     envelope,
                     filterEnvelope1,
                     filterEnvelope,
@@ -634,9 +634,9 @@ async function musicStart() {
         midTwo.toMaster();
         midThree.toMaster();
 
-        const noteDuration = "1m";
+        const noteDuration = "6m";
          // Adjust this value as needed
-        const timeInterval = "2m";
+        const timeInterval = "8m";
         let index = 0;
 
         bassLoop = new Tone.Loop((time) => {
@@ -653,19 +653,19 @@ async function musicStart() {
         midLoopOne.interval = "4n";
         }, "1.5m").start();*/
 
-        midLoopTwo = new Tone.Loop((time) => {
+        /*midLoopTwo = new Tone.Loop((time) => {
         index = (index + 1) % noteMidTwo.length;
-        midTwo.triggerAttackRelease(noteMidTwo[index], "1.5m", time);
+        midTwo.triggerAttackRelease(noteMidTwo[index], "3m", time);
         
-        midLoopTwo.interval = "3n";
-        }, "1.5m").start();
+        midLoopTwo.interval = "4m";
+        }, "4m").start();*/
 
-        midLoopThree = new Tone.Loop((time) => {
+        /*midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
         midThree.triggerAttackRelease(noteMidThree[index], "1m", time);
         
-        midLoopThree.interval = "1m";
-        }, "1m").start();
+        midLoopThree.interval = "3m";
+        }, "1m").start();*/
 
         /*
 
