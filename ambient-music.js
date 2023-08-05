@@ -470,9 +470,9 @@ async function musicStart() {
 
             return new Tone.DuoSynth({
                 harmonicity: 2,
-                volume: -30,
+                volume: -20,
                 voice0: {
-                    oscillator: { type: "sawtooth" },
+                    oscillator: { type: "triangle" },
                     envelope,
                     filterEnvelope,
                     filterEnvelope2,
@@ -634,10 +634,9 @@ async function musicStart() {
         midTwo.toMaster();
         midThree.toMaster();
 
-        const noteDurationBass = "1m";
-        const noteDuration = "4n";
+        const noteDuration = "1m";
          // Adjust this value as needed
-        const timeInterval = "1m";
+        const timeInterval = "2m";
         let index = 0;
 
         bassLoop = new Tone.Loop((time) => {
@@ -645,38 +644,30 @@ async function musicStart() {
         bass.triggerAttackRelease(noteBass[index], noteDuration, time);
         
         bassLoop.interval = timeInterval;
-        }, noteDurationBass).start();
+        }, noteDuration).start();
 
-        midLoopOne = new Tone.Loop((time) => {
+        /*midLoopOne = new Tone.Loop((time) => {
         index = (index + 1) % noteMidOne.length;
-        midOne.triggerAttackRelease(noteMidOne[index], noteDuration, time);
+        midOne.triggerAttackRelease(noteMidOne[index], "4n", time);
         
         midLoopOne.interval = "4n";
-        }, "1m").start();
+        }, "1.5m").start();*/
 
         midLoopTwo = new Tone.Loop((time) => {
         index = (index + 1) % noteMidTwo.length;
-        midTwo.triggerAttackRelease(noteMidTwo[index], noteDuration, time);
+        midTwo.triggerAttackRelease(noteMidTwo[index], "1.5m", time);
         
         midLoopTwo.interval = "3n";
-        }, "1m").start();
+        }, "1.5m").start();
 
         midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
-        midThree.triggerAttackRelease(noteMidThree[index], noteDuration, time);
+        midThree.triggerAttackRelease(noteMidThree[index], "1m", time);
         
-        midLoopThree.interval = "2n";
+        midLoopThree.interval = "1m";
         }, "1m").start();
 
-
-        /*midLoopThree = new Tone.Loop((time) => {
-        mid.triggerAttackRelease(noteMidThree[index], noteDuration, time);
-        index = (index + 1) % noteMidThree.length;
-        }, loopDuration).start();
-
-        /*midLoop = new Tone.Sequence((time, chord) => {
-            mid.triggerAttackRelease(chord, "8:0", time);
-        }, noteMid, "12m").start();
+        /*
 
         trebleLoop = new Tone.Loop((time) => {
             var randomIndex = Math.floor(Math.random() * noteTreble.length);
