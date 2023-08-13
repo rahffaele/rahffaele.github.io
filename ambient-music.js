@@ -644,7 +644,14 @@ async function musicStart() {
         let delay = new Tone.Delay(1.0);
         let delayFade = new Tone.Gain(0.5);
 
-        delay.delayTime.value = 1.0;
+
+        const delayEffectInput = document.getElementById("delayEffect");
+
+        // Add an event listener to the input element
+        delayEffectInput.addEventListener("input", function() {
+        // Update the delayTime value based on the input value
+        delay.delayTime.value = parseFloat(delayEffectInput.value);
+        });
         delayFade.gain.value = 0.75;
 
         //bass.connect(leftPanner);

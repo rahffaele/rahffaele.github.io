@@ -7,7 +7,7 @@ body {
 }
 
 #bg {
-    height: 120vh;
+    height: 140vh;
 }
 
 #night-filter {
@@ -100,6 +100,12 @@ a:hover {
   text-decoration: line-through;
 }
 
+hr {
+  color: white;
+  opacity: 0%;
+  margin: 16px 0 16px 0;
+}
+
 .menu {
   text-align: right;
 }
@@ -118,7 +124,7 @@ a:hover {
 button {
   font-family: Mori;
   background-color: #5767F9;
-  margin: 8px;
+  margin: 8px 8px 8px 0;
   font-size: 12pt;
   padding: 6px 12px 4px 12px;
   color: white;
