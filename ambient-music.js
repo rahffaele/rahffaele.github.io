@@ -267,20 +267,17 @@ async function musicStart() {
                     birdsTrack.classList.remove("disabled-button");
                     birdsTrack.classList.add("general-button");
 
+                    let isPlaying = false;
                     birdsTrack.addEventListener("click", function() {    
-                        let isPlaying = false;
-                        
-                        playPauseButton.addEventListener("click", function() {
                           if (isPlaying) {
-                            myAudio.pause();
-                            playPauseButton.textContent = "Play";
+                            birdsTrackAudio.pause();
+                            
                           } else {
-                            myAudio.play();
-                            playPauseButton.textContent = "Pause";
+                            birdsTrackAudio.play();
+                            
                           }
                           
                           isPlaying = !isPlaying;
-                        });
                     alert("Button was clicked!");
                     });
                     break;
