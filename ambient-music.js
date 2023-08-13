@@ -31,7 +31,7 @@ let rainMidTwo = ["Bb3", "D3"];
 let rainMidThree = ["A3", "F3"];
 let rainMidFour = ["C#3", "E4", "G4"];
 let rainMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
-let rainTreble = ['D5', 'F5', 'G5', 'A5', 'C#6', 'D6'];
+let rainTreble = ['D4', 'F4', 'G4', 'A4', 'C#5', 'D5'];
 
 let noteBass;
 let noteMidOne;
@@ -520,7 +520,7 @@ async function musicStart() {
 
             return new Tone.DuoSynth({
                 harmonicity: 4,
-                volume: -35,
+                volume: -25,
                 voice0: {
                     oscillator: { type: "sine" },
                     envelope,
@@ -556,12 +556,16 @@ async function musicStart() {
                     break;
                 case "Rain":
                     noteBass = rainBass;
-                    noteMid = rainMid;
+                    noteMidOne = rainMidOne;
+                    noteMidTwo = rainMidTwo;
+                    noteMidThree = rainMidThree;
                     noteTreble = rainTreble;
                     break;
                 case "Snow":
                     noteBass = snowBass;
-                    noteMid = snowMid;
+                    noteMidOne = snowMidOne;
+                    noteMidTwo = snowMidTwo;
+                    noteMidThree = snowMidThree;
                     noteTreble = snowTreble;
                     break;
                 case "Thunderstorm":
@@ -651,16 +655,16 @@ async function musicStart() {
 
         midLoopOne = new Tone.Loop((time) => {
         index = (index + 1) % noteMidOne.length;
-        midOne.triggerAttackRelease(noteMidOne[index], "2m", time);
+        midOne.triggerAttackRelease(noteMidOne[index], "1m", time);
         
-        midLoopOne.interval = "2m";
+        midLoopOne.interval = "1m";
         }, "3m").start();
 
         midLoopTwo = new Tone.Loop((time) => {
         index = (index + 1) % noteMidTwo.length;
-        midTwo.triggerAttackRelease(noteMidTwo[index], "4m", time);
+        midTwo.triggerAttackRelease(noteMidTwo[index], "2m", time);
         
-        midLoopTwo.interval = "4m";
+        midLoopTwo.interval = "2m";
         }, "12m").start();
 
         /*midLoopThree = new Tone.Loop((time) => {
