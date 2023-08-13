@@ -48,6 +48,8 @@ const birdsTrack = document.getElementById("birds-track");
 const trafficTrack = document.getElementById("traffic-track");
 const thunderTrack = document.getElementById("thunder-track");
 
+const birdsTrackAudio = document.getElementById("birds-track-file");
+
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
     const responseWeahter = await axios.get(
@@ -265,8 +267,20 @@ async function musicStart() {
                     birdsTrack.classList.remove("disabled-button");
                     birdsTrack.classList.add("general-button");
 
-                    birdsTrack.addEventListener("click", function() {
-                    // Code to execute when the button is clicked
+                    birdsTrack.addEventListener("click", function() {    
+                        let isPlaying = false;
+                        
+                        playPauseButton.addEventListener("click", function() {
+                          if (isPlaying) {
+                            myAudio.pause();
+                            playPauseButton.textContent = "Play";
+                          } else {
+                            myAudio.play();
+                            playPauseButton.textContent = "Pause";
+                          }
+                          
+                          isPlaying = !isPlaying;
+                        });
                     alert("Button was clicked!");
                     });
                     break;
