@@ -268,17 +268,17 @@ async function musicStart() {
                     birdsTrack.classList.add("general-button");
 
                     let isPlaying = false;
+                    birdsTrack.disabled=false;
                     birdsTrack.addEventListener("click", function() {    
                           if (isPlaying) {
                             birdsTrackAudio.pause();
-                            
+                            birdsTrack.classList.remove("clicked-button");
                           } else {
                             birdsTrackAudio.play();
-                            
+                            birdsTrack.classList.add("clicked-button");
                           }
                           
                           isPlaying = !isPlaying;
-                    alert("Button was clicked!");
                     });
                     break;
                 case "Clouds":
@@ -291,6 +291,10 @@ async function musicStart() {
                     thunderTrack.classList.add("disabled-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
                     break;
                 case "Drizzle":
                     iconFileName = "cloud-drizzle.svg";
@@ -302,6 +306,10 @@ async function musicStart() {
                     rainTrack.classList.add("general-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
                     break;
                 case "Rain":
                     iconFileName = "cloud-rain.svg";
@@ -313,6 +321,10 @@ async function musicStart() {
                     rainTrack.classList.add("general-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
                     break;
                 case "Snow":
                     iconFileName = "snowflake.svg";
@@ -324,6 +336,10 @@ async function musicStart() {
                     rainTrack.classList.add("disabled-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
                     break;
                 case "Thunderstorm":
                 case "Tornado":
@@ -336,6 +352,10 @@ async function musicStart() {
                     rainTrack.classList.add("disabled-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
                     break;
                 case "Mist":
                 case "Haze":
@@ -349,6 +369,10 @@ async function musicStart() {
                     rainTrack.classList.add("disabled-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
                     break;
                 case "Smoke":
                 case "Sand":
@@ -363,6 +387,10 @@ async function musicStart() {
                     rainTrack.classList.add("disabled-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
                     break;
                 default:
                     console.log("Invalid mainWeather selection for icon");

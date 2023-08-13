@@ -173,6 +173,32 @@ button:active {
   vertical-align: middle;
 }
 
+.clicked-button {
+  font-family: Mori;
+  background-color: white;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: black;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.clicked-button:hover {
+  font-family: Mori;
+  background-color: #E6E6E6;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: black;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .switch {
   border-radius: 4px;
 }
