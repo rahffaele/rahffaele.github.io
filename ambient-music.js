@@ -43,6 +43,7 @@ let filterClear;
 let filterClouds;
 let filterRain;
 
+
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
     const responseWeahter = await axios.get(
@@ -608,6 +609,35 @@ async function musicStart() {
         midThree = makeSynthTwo();
         treble = makeSynthOne();
 
+        const trebleSlider = document.getElementById('trebleSlider');
+        const trebleVolume = treble.volume; // Get the Tone.Volume object associated with the synth's volume
+
+        // Add an event listener to the treble slider
+        trebleSlider.addEventListener('input', function () {
+            const trebleVolumeValue = parseFloat(this.value);
+            trebleVolume.value = trebleVolumeValue;
+        });
+
+        const harmonySlider = document.getElementById('harmonySlider');
+        const harmonyOneVolume = midOne.volume; // Get the Tone.Volume object associated with the synth's volume
+        const harmonyTwoVolume = midTwo.volume;
+
+        // Add an event listener to the treble slider
+        harmonySlider.addEventListener('input', function () {
+            const harmonyVolumeValue = parseFloat(this.value);
+            harmonyOneVolume.value = harmonyVolumeValue;
+            harmonyTwoVolume.value = harmonyVolumeValue;
+        });
+
+        const bassSlider = document.getElementById('bassSlider');
+        const bassVolume = bass.volume; // Get the Tone.Volume object associated with the synth's volume
+
+        // Add an event listener to the treble slider
+        bassSlider.addEventListener('input', function () {
+            const bassVolumeValue = parseFloat(this.value);
+            bassVolume.value = bassVolumeValue;
+        });
+
         let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
         let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
         let echo = new Tone.FeedbackDelay("8n", 0.2);
@@ -617,13 +647,16 @@ async function musicStart() {
         delay.delayTime.value = 1.0;
         delayFade.gain.value = 0.75;
 
-        bass.connect(leftPanner);
+        //bass.connect(leftPanner);
         //mid.connect(rightPanner);
+
+        
 
         bass.connect(echo);
         midOne.connect(echo);
         midTwo.connect(echo);
         midThree.connect(echo);
+
         treble.connect(echo);
 
         //leftPanner.connect(echo);
@@ -641,6 +674,8 @@ async function musicStart() {
         //midThree.toMaster();
         //treble.toMaster();
 
+       
+
         const noteDuration = "6m";
          // Adjust this value as needed
         const timeInterval = "8m";
@@ -648,10 +683,10 @@ async function musicStart() {
 
         bassLoop = new Tone.Loop((time) => {
         index = (index + 1) % noteBass.length;
-        bass.triggerAttackRelease(noteBass[index], noteDuration, time);
+        bass.triggerAttackRelease(noteBass[index], "6m", time);
         
-        bassLoop.interval = timeInterval;
-        }, noteDuration).start();
+        bassLoop.interval = "2m";
+        }, "1m").start();
 
         midLoopOne = new Tone.Loop((time) => {
         index = (index + 1) % noteMidOne.length;
@@ -681,7 +716,7 @@ async function musicStart() {
             var note = noteTreble[randomIndex];
             treble.triggerAttackRelease(note, "1m", "+0");
             console.log("treble note:", note);
-        }, "3m").start();
+        }, "4m").start();
 
 
         Tone.Transport.start();
