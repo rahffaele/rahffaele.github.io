@@ -683,10 +683,10 @@ async function musicStart() {
 
         bassLoop = new Tone.Loop((time) => {
         index = (index + 1) % noteBass.length;
-        bass.triggerAttackRelease(noteBass[index], "6m", time);
+        bass.triggerAttackRelease(noteBass[index], noteDuration, time);
         
-        bassLoop.interval = "2m";
-        }, "1m").start();
+        bassLoop.interval = timeInterval;
+        }, noteDuration).start();
 
         midLoopOne = new Tone.Loop((time) => {
         index = (index + 1) % noteMidOne.length;
