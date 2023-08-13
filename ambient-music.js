@@ -191,12 +191,12 @@ async function musicStart() {
         midLoopOne.stop();
         midLoopTwo.stop();
         midLoopThree.stop();
-        //trebleLoop.stop();
+        trebleLoop.stop();
         bassLoop.dispose();
         midLoopOne.dispose();
         midLoopTwo.stop();
         midLoopThree.stop();
-        //trebleLoop.dispose();
+        trebleLoop.dispose();
 
         isPlaying = false;
         const playerIcon = document.getElementById("player-icon");
@@ -616,23 +616,26 @@ async function musicStart() {
         bass.connect(leftPanner);
         //mid.connect(rightPanner);
 
-        //bass.connect(echo);
-        //mid.connect(echo);
-        //treble.connect(echo);
+        bass.connect(echo);
+        midOne.connect(echo);
+        midTwo.connect(echo);
+        midThree.connect(echo);
+        treble.connect(echo);
 
         //leftPanner.connect(echo);
         //rightPanner.connect(echo);
 
-        //echo.toMaster();
-        //echo.connect(delay);
-        //delay.connect(Tone.context.destination);
-        //delay.connect(delayFade);
-        //delayFade.connect(delay);
+        echo.toMaster();
+        echo.connect(delay);
+        delay.connect(Tone.context.destination);
+        delay.connect(delayFade);
+        delayFade.connect(delay);
 
-        bass.toMaster();
-        midOne.toMaster();
-        midTwo.toMaster();
-        midThree.toMaster();
+        //bass.toMaster();
+        //midOne.toMaster();
+        //midTwo.toMaster();
+        //midThree.toMaster();
+        //treble.toMaster();
 
         const noteDuration = "6m";
          // Adjust this value as needed
@@ -646,35 +649,35 @@ async function musicStart() {
         bassLoop.interval = timeInterval;
         }, noteDuration).start();
 
-        /*midLoopOne = new Tone.Loop((time) => {
+        midLoopOne = new Tone.Loop((time) => {
         index = (index + 1) % noteMidOne.length;
-        midOne.triggerAttackRelease(noteMidOne[index], "4n", time);
+        midOne.triggerAttackRelease(noteMidOne[index], "2m", time);
         
-        midLoopOne.interval = "4n";
-        }, "1.5m").start();*/
+        midLoopOne.interval = "2m";
+        }, "3m").start();
 
         /*midLoopTwo = new Tone.Loop((time) => {
         index = (index + 1) % noteMidTwo.length;
         midTwo.triggerAttackRelease(noteMidTwo[index], "3m", time);
         
         midLoopTwo.interval = "4m";
-        }, "4m").start();*/
+        }, "4m").start();
 
-        /*midLoopThree = new Tone.Loop((time) => {
+        midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
         midThree.triggerAttackRelease(noteMidThree[index], "1m", time);
         
         midLoopThree.interval = "3m";
         }, "1m").start();*/
 
-        /*
+        
 
         trebleLoop = new Tone.Loop((time) => {
             var randomIndex = Math.floor(Math.random() * noteTreble.length);
             var note = noteTreble[randomIndex];
-            treble.triggerAttackRelease(note, "2:0", "+0");
+            treble.triggerAttackRelease(note, "1m", "+0");
             console.log("treble note:", note);
-        }, "2m").start();*/
+        }, "3m").start();
 
 
         Tone.Transport.start();
