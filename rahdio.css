@@ -146,6 +146,32 @@ button:active {
   -webkit-transition: all 0.25s;
 }
 
+.disabled-button {
+  font-family: Mori;
+  background-color: #5767F9;
+  opacity: 50%;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: white;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.disabled-button:hover {
+  font-family: Mori;
+  background-color: #5767F9;
+  opacity: 50%;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: white;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
 
 .switch {
   border-radius: 4px;

@@ -43,6 +43,10 @@ let filterClear;
 let filterClouds;
 let filterRain;
 
+const rainTrack = document.getElementById("rain-track");
+const birdsTrack = document.getElementById("birds-track");
+const trafficTrack = document.getElementById("traffic-track");
+const thunderTrack = document.getElementById("thunder-track");
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -253,34 +257,87 @@ async function musicStart() {
                 case "Clear":
                     iconFileName = "sun.svg";
                     console.log("Icon: sun.svg");
+
+                    rainTrack.classList.remove("general-button");
+                    rainTrack.classList.add("disabled-button");
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    birdsTrack.classList.remove("disabled-button");
+                    birdsTrack.classList.add("general-button");
+
+                    birdsTrack.addEventListener("click", function() {
+                    // Code to execute when the button is clicked
+                    alert("Button was clicked!");
+                    });
                     break;
                 case "Clouds":
                     iconFileName = "cloudy.svg";
                     console.log("Icon: cloudy.svg");
+
+                    rainTrack.classList.remove("general-button");
+                    rainTrack.classList.add("disabled-button");
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
                     break;
                 case "Drizzle":
                     iconFileName = "cloud-drizzle.svg";
                     console.log("Icon: cloud-drizzle.svg");
+
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    rainTrack.classList.remove("disabled-button");
+                    rainTrack.classList.add("general-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
                     break;
                 case "Rain":
                     iconFileName = "cloud-rain.svg";
                     console.log("Icon: cloud-rain.svg");
+
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    rainTrack.classList.remove("disabled-button");
+                    rainTrack.classList.add("general-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
                     break;
                 case "Snow":
                     iconFileName = "snowflake.svg";
                     console.log("Icon: snowflake.svg");
+
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    rainTrack.classList.remove("general-button");
+                    rainTrack.classList.add("disabled-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
                     break;
                 case "Thunderstorm":
                 case "Tornado":
                 case "Squall":
                     iconFileName = "cloud-lightning.svg";
                     console.log("Icon: cloud-lightning.svg");
+                    thunderTrack.classList.remove("disabled-button");
+                    thunderTrack.classList.add("general-button");
+                    rainTrack.classList.remove("general-button");
+                    rainTrack.classList.add("disabled-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
                     break;
                 case "Mist":
                 case "Haze":
                 case "Fog":
                     iconFileName = "cloud-fog.svg";
                     console.log("Icon: cloud-fog.svg");
+
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    rainTrack.classList.remove("general-button");
+                    rainTrack.classList.add("disabled-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
                     break;
                 case "Smoke":
                 case "Sand":
@@ -288,6 +345,13 @@ async function musicStart() {
                 case "Ash":
                     iconFileName = "dust.svg";
                     console.log("Icon: dust.svg");
+
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    rainTrack.classList.remove("general-button");
+                    rainTrack.classList.add("disabled-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
                     break;
                 default:
                     console.log("Invalid mainWeather selection for icon");
