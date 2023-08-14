@@ -44,19 +44,29 @@ let filterClouds;
 let filterRain;
 
 const rainTrack = document.getElementById("rain-track");
+let rainTrackAudio = document.getElementById("rain-track-file");
+rainTrackAudio.volume = 0.2;
+rainTrackAudio.addEventListener("ended", function() {
+  rainTrackAudio.currentTime = 0; // Reset the playback time to the beginning
+  rainTrackAudio.play(); // Start playing again
+});
 
 const birdsTrack = document.getElementById("birds-track");
-let birdsTrackFile = document.getElementById("birds-track-file");
-birdsTrackFile.volume = 0.2;
-birdsTrackFile.addEventListener("ended", function() {
-  birdsTrackFile.currentTime = 0; // Reset the playback time to the beginning
-  birdsTrackFile.play(); // Start playing again
+let birdsTrackAudio = document.getElementById("birds-track-file");
+birdsTrackAudio.volume = 0.1;
+birdsTrackAudio.addEventListener("ended", function() {
+  birdsTrackAudio.currentTime = 0; // Reset the playback time to the beginning
+  birdsTrackAudio.play(); // Start playing again
 });
 
 const trafficTrack = document.getElementById("traffic-track");
 const thunderTrack = document.getElementById("thunder-track");
-
-const birdsTrackAudio = document.getElementById("birds-track-file");
+let thunderstormTrackAudio = document.getElementById("thunderstorm-track-file");
+thunderstormTrackAudio.volume = 0.1;
+thunderstormTrackAudio.addEventListener("ended", function() {
+  thunderstormTrackAudio.currentTime = 0; // Reset the playback time to the beginning
+  thunderstormTrackAudio.play(); // Start playing again
+});
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -288,11 +298,16 @@ async function musicStart() {
                           
                           isPlaying = !isPlaying;
                     });
+
+                    rainTrackAudio.pause();
+                    rainTrack.classList.remove("clicked-button");
+                    rainTrack.disabled=true;
                     break;
                 case "Clouds":
                     iconFileName = "cloudy.svg";
                     console.log("Icon: cloudy.svg");
 
+                    rainTrack.classList.remove("general-button");
                     rainTrack.classList.remove("general-button");
                     rainTrack.classList.add("disabled-button");
                     thunderTrack.classList.remove("general-button");
@@ -303,6 +318,10 @@ async function musicStart() {
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
+
+                    rainTrackAudio.pause();
+                    rainTrack.classList.remove("clicked-button");
+                    rainTrack.disabled=true;
                     break;
                 case "Drizzle":
                     iconFileName = "cloud-drizzle.svg";
@@ -333,6 +352,20 @@ async function musicStart() {
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
+                    let isRainPlaying = false;
+                    rainTrack.disabled=false;
+                    rainTrack.addEventListener("click", function() {    
+                          if (isRainPlaying) {
+                            rainTrackAudio.pause();
+                            rainTrack.classList.remove("clicked-button");
+                          } else {
+                            rainTrackAudio.play();
+                            rainTrack.classList.add("clicked-button");
+                          }
+                          
+                          isRainPlaying = !isRainPlaying;
+                    });
+                    break;
                     break;
                 case "Snow":
                     iconFileName = "snowflake.svg";
@@ -348,6 +381,10 @@ async function musicStart() {
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
+
+                    rainTrackAudio.pause();
+                    rainTrack.classList.remove("clicked-button");
+                    rainTrack.disabled=true;
                     break;
                 case "Thunderstorm":
                 case "Tornado":
@@ -364,6 +401,10 @@ async function musicStart() {
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
+
+                    rainTrackAudio.pause();
+                    rainTrack.classList.remove("clicked-button");
+                    rainTrack.disabled=true;
                     break;
                 case "Mist":
                 case "Haze":
@@ -381,6 +422,10 @@ async function musicStart() {
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
+
+                    rainTrackAudio.pause();
+                    rainTrack.classList.remove("clicked-button");
+                    rainTrack.disabled=true;
                     break;
                 case "Smoke":
                 case "Sand":
@@ -399,6 +444,10 @@ async function musicStart() {
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
+                    
+                    rainTrackAudio.pause();
+                    rainTrack.classList.remove("clicked-button");
+                    rainTrack.disabled=true;
                     break;
                 default:
                     console.log("Invalid mainWeather selection for icon");
