@@ -45,6 +45,7 @@ let filterRain;
 
 const rainTrack = document.getElementById("rain-track");
 const birdsTrack = document.getElementById("birds-track");
+birdsTrack.volume = 0;
 const trafficTrack = document.getElementById("traffic-track");
 const thunderTrack = document.getElementById("thunder-track");
 
