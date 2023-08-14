@@ -44,8 +44,15 @@ let filterClouds;
 let filterRain;
 
 const rainTrack = document.getElementById("rain-track");
+
 const birdsTrack = document.getElementById("birds-track");
-birdsTrack.volume = 0;
+let birdsTrackFile = document.getElementById("birds-track-file");
+birdsTrackFile.volume = 0.2;
+birdsTrackFile.addEventListener("ended", function() {
+  birdsTrackFile.currentTime = 0; // Reset the playback time to the beginning
+  birdsTrackFile.play(); // Start playing again
+});
+
 const trafficTrack = document.getElementById("traffic-track");
 const thunderTrack = document.getElementById("thunder-track");
 
