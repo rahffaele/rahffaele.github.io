@@ -342,10 +342,10 @@ async function musicStart() {
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
 
-                    let isRainPlaying = false;
+                    let isDrizzlePlaying = false;
                     rainTrack.disabled=false;
                     rainTrack.addEventListener("click", function() {    
-                          if (isRainPlaying) {
+                          if (isDrizzlePlaying) {
                             rainTrackAudio.pause();
                             rainTrack.classList.remove("clicked-button");
                           } else {
@@ -353,7 +353,7 @@ async function musicStart() {
                             rainTrack.classList.add("clicked-button");
                           }
                           
-                          isRainPlaying = !isRainPlaying;
+                          isDrizzlePlaying = !isDrizzlePlaying;
                     });
 
                     birdsTrackAudio.pause();
@@ -445,7 +445,7 @@ async function musicStart() {
                             thunderTrack.classList.add("clicked-button");
                           }
                           
-                          isRainPlaying = !isRainPlaying;
+                          isThunderPlaying = !isThunderPlaying;
                     });
 
                     birdsTrackAudio.pause();
