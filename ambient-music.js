@@ -302,6 +302,10 @@ async function musicStart() {
                     rainTrackAudio.pause();
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
+
+                    thunderTrackAudio.pause();
+                    thunderTrack.classList.remove("clicked-button");
+                    thunderTrack.disabled=true;
                     break;
                 case "Clouds":
                     iconFileName = "cloudy.svg";
@@ -322,6 +326,10 @@ async function musicStart() {
                     rainTrackAudio.pause();
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
+
+                    thunderTrackAudio.pause();
+                    thunderTrack.classList.remove("clicked-button");
+                    thunderTrack.disabled=true;
                     break;
                 case "Drizzle":
                     iconFileName = "cloud-drizzle.svg";
@@ -334,24 +342,6 @@ async function musicStart() {
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
 
-                    birdsTrackAudio.pause();
-                    birdsTrack.classList.remove("clicked-button");
-                    birdsTrack.disabled = true;
-                    break;
-                case "Rain":
-                    iconFileName = "cloud-rain.svg";
-                    console.log("Icon: cloud-rain.svg");
-
-                    thunderTrack.classList.remove("general-button");
-                    thunderTrack.classList.add("disabled-button");
-                    rainTrack.classList.remove("disabled-button");
-                    rainTrack.classList.add("general-button");
-                    birdsTrack.classList.remove("general-button");
-                    birdsTrack.classList.add("disabled-button");
-
-                    birdsTrackAudio.pause();
-                    birdsTrack.classList.remove("clicked-button");
-                    birdsTrack.disabled = true;
                     let isRainPlaying = false;
                     rainTrack.disabled=false;
                     rainTrack.addEventListener("click", function() {    
@@ -365,6 +355,48 @@ async function musicStart() {
                           
                           isRainPlaying = !isRainPlaying;
                     });
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
+
+                    thunderTrackAudio.pause();
+                    thunderTrack.classList.remove("clicked-button");
+                    thunderTrack.disabled=true;
+                    break;
+                case "Rain":
+                    iconFileName = "cloud-rain.svg";
+                    console.log("Icon: cloud-rain.svg");
+
+                    thunderTrack.classList.remove("general-button");
+                    thunderTrack.classList.add("disabled-button");
+                    rainTrack.classList.remove("disabled-button");
+                    rainTrack.classList.add("general-button");
+                    birdsTrack.classList.remove("general-button");
+                    birdsTrack.classList.add("disabled-button");
+
+                    let isRainPlaying = false;
+                    rainTrack.disabled=false;
+                    rainTrack.addEventListener("click", function() {    
+                          if (isRainPlaying) {
+                            rainTrackAudio.pause();
+                            rainTrack.classList.remove("clicked-button");
+                          } else {
+                            rainTrackAudio.play();
+                            rainTrack.classList.add("clicked-button");
+                          }
+                          
+                          isRainPlaying = !isRainPlaying;
+                    });
+
+
+                    birdsTrackAudio.pause();
+                    birdsTrack.classList.remove("clicked-button");
+                    birdsTrack.disabled = true;
+
+                    thunderTrackAudio.pause();
+                    thunderTrack.classList.remove("clicked-button");
+                    thunderTrack.disabled=true;
                     break;
                     break;
                 case "Snow":
@@ -385,6 +417,10 @@ async function musicStart() {
                     rainTrackAudio.pause();
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
+
+                    thunderTrackAudio.pause();
+                    thunderTrack.classList.remove("clicked-button");
+                    thunderTrack.disabled=true;
                     break;
                 case "Thunderstorm":
                 case "Tornado":
@@ -397,6 +433,20 @@ async function musicStart() {
                     rainTrack.classList.add("disabled-button");
                     birdsTrack.classList.remove("general-button");
                     birdsTrack.classList.add("disabled-button");
+
+                    let isThunderPlaying = false;
+                    thunderTrack.disabled=false;
+                    thunderTrack.addEventListener("click", function() {    
+                          if (isRainPlaying) {
+                            thunderTrackAudio.pause();
+                            thunderTrack.classList.remove("clicked-button");
+                          } else {
+                            thunderTrackAudio.play();
+                            thunderTrack.classList.add("clicked-button");
+                          }
+                          
+                          isRainPlaying = !isRainPlaying;
+                    });
 
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
@@ -426,6 +476,10 @@ async function musicStart() {
                     rainTrackAudio.pause();
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
+
+                    thunderTrackAudio.pause();
+                    thunderTrack.classList.remove("clicked-button");
+                    thunderTrack.disabled=true;
                     break;
                 case "Smoke":
                 case "Sand":
@@ -444,10 +498,14 @@ async function musicStart() {
                     birdsTrackAudio.pause();
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
-                    
+
                     rainTrackAudio.pause();
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
+
+                    thunderTrackAudio.pause();
+                    thunderTrack.classList.remove("clicked-button");
+                    thunderTrack.disabled=true;
                     break;
                 default:
                     console.log("Invalid mainWeather selection for icon");
