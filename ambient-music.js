@@ -711,7 +711,7 @@ async function musicStart() {
                     filterEnvelope1,
                     filterEnvelope,
                 },
-                vibratoRate: 0.3,
+                vibratoRate: 0.4,
                 vibratoAmount: 0.1,
             });
         }
@@ -750,12 +750,12 @@ async function musicStart() {
                 harmonicity: 4,
                 volume: -25,
                 voice0: {
-                    oscillator: { type: "sine" },
+                    oscillator: { type: "sawtooth" },
                     envelope,
                     filterEnvelope,
                 },
                 voice1: {
-                    oscillator: { type: "sine" },
+                    oscillator: { type: "square" },
                     envelope,
                     filterEnvelope,
                 },
