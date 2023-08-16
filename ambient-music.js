@@ -826,6 +826,7 @@ async function musicStart() {
         midTwo = makeSynthTwo();
         midThree = makeSynthTwo();
         treble = makeSynthOne();
+        trebleTwo = makeSynthOne();
 
         const trebleSlider = document.getElementById('trebleSlider');
         const trebleVolume = treble.volume; // Get the Tone.Volume object associated with the synth's volume
@@ -883,9 +884,10 @@ async function musicStart() {
         midThree.connect(echo);
 
         treble.connect(echo);
+        trebleTwo.connect(rightPanner);
 
         //leftPanner.connect(echo);
-        //rightPanner.connect(echo);
+        rightPanner.connect(echo);
 
         echo.toMaster();
         echo.connect(delay);
@@ -917,7 +919,7 @@ async function musicStart() {
         index = (index + 1) % noteMidOne.length;
         midOne.triggerAttackRelease(noteMidOne[index], "1m", time);
         
-        midLoopOne.interval = "1m";
+        midLoopOne.interval = "3m";
         }, "3m").start();
 
         midLoopTwo = new Tone.Loop((time) => {
@@ -929,9 +931,9 @@ async function musicStart() {
 
         midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
-        midThree.triggerAttackRelease(noteMidThree[index], "6m", "+5");
+        midThree.triggerAttackRelease(noteMidThree[index], "3m", "+5");
         
-        midLoopThree.interval = "3m";
+        midLoopThree.interval = "1m";
         }, "20m").start();
 
         
