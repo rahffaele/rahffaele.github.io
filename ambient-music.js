@@ -637,7 +637,7 @@ async function musicStart() {
                 case "Palermo":
                     cityLat = 38.1157;
                     cityLon = 13.3613;
-                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#12.01/38.11769/13.35235";
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#11.01/38.11769/13.35235";
                     break;
                 default:
                     console.log("Invalid city selection");
