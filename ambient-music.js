@@ -303,7 +303,7 @@ async function musicStart() {
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
 
-                    thunderTrackAudio.pause();
+                    thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
                     break;
@@ -327,7 +327,7 @@ async function musicStart() {
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
 
-                    thunderTrackAudio.pause();
+                    thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
                     break;
@@ -360,7 +360,7 @@ async function musicStart() {
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
 
-                    thunderTrackAudio.pause();
+                    thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
                     break;
@@ -394,7 +394,7 @@ async function musicStart() {
                     birdsTrack.classList.remove("clicked-button");
                     birdsTrack.disabled = true;
 
-                    thunderTrackAudio.pause();
+                    thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
                     break;
@@ -418,7 +418,7 @@ async function musicStart() {
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
 
-                    thunderTrackAudio.pause();
+                    thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
                     break;
@@ -438,10 +438,10 @@ async function musicStart() {
                     thunderTrack.disabled=false;
                     thunderTrack.addEventListener("click", function() {    
                           if (isRainPlaying) {
-                            thunderTrackAudio.pause();
+                            thunderstormTrackAudio.pause();
                             thunderTrack.classList.remove("clicked-button");
                           } else {
-                            thunderTrackAudio.play();
+                            thunderstormTrackAudio.play();
                             thunderTrack.classList.add("clicked-button");
                           }
                           
@@ -477,7 +477,7 @@ async function musicStart() {
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
 
-                    thunderTrackAudio.pause();
+                    thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
                     break;
@@ -503,7 +503,7 @@ async function musicStart() {
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
 
-                    thunderTrackAudio.pause();
+                    thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
                     break;
@@ -922,26 +922,26 @@ async function musicStart() {
 
         midLoopTwo = new Tone.Loop((time) => {
         index = (index + 1) % noteMidTwo.length;
-        midTwo.triggerAttackRelease(noteMidTwo[index], "2m", time);
+        midTwo.triggerAttackRelease(noteMidTwo[index], "2m", "+3");
         
         midLoopTwo.interval = "2m";
         }, "12m").start();
 
-        /*midLoopThree = new Tone.Loop((time) => {
+        midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
-        midThree.triggerAttackRelease(noteMidThree[index], "6m", time);
+        midThree.triggerAttackRelease(noteMidThree[index], "6m", "+5");
         
         midLoopThree.interval = "7m";
-        }, "20m").start();*/
+        }, "20m").start();
 
         
 
         trebleLoop = new Tone.Loop((time) => {
             var randomIndex = Math.floor(Math.random() * noteTreble.length);
             var note = noteTreble[randomIndex];
-            treble.triggerAttackRelease(note, "1m", "+0");
+            treble.triggerAttackRelease(note, "1m", "+1m");
             console.log("treble note:", note);
-        }, "4m").start();
+        }, "6m").start();
 
 
         Tone.Transport.start();
