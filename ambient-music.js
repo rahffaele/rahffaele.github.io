@@ -595,40 +595,49 @@ async function musicStart() {
             const selectedCity = citySelect.value;
 
             let cityLat, cityLon;
+            const mapFrame = document.getElementById("traffic-map");;
 
             // Assign the correct coordinates based on the selected city
             switch (selectedCity) {
                 case "Milan":
                     cityLat = 45.4776;
                     cityLon = 9.2088;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clisxtlz6004801qygx350wpw/draft.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#10/45.466/9.186";
                     break;
                 case "New York":
                     cityLat = 40.7549;
                     cityLon = -73.984;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9ej7500ze01piaklp1zrl.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#9.81/40.7042/-73.9861";
                     break;
                 case "Paris":
                     cityLat = 48.8566;
                     cityLon = 2.3522;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#11.33/48.8588/2.347";
                     break;
                 case "Rome":
                     cityLat = 41.9028;
                     cityLon = 12.4964;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#9.43/41.8939/12.5318";
                     break;
                 case "London":
                     cityLat = 51.5074;
                     cityLon = -0.1278;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#10.05/51.5261/-0.1058";
                     break;
                 case "Berlin":
                     cityLat = 52.52;
                     cityLon = 13.405;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#10.09/52.5209/13.3914";
                     break;
                 case "São Paulo":
                     cityLat = -23.5505;
                     cityLon = -46.6333;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#9.2/-23.7115/-46.5281";
                     break;
                 case "Palermo":
                     cityLat = 38.1157;
                     cityLon = 13.3613;
+                    mapFrame.src = "https://api.mapbox.com/styles/v1/raffamietta/clle9goj4011901pbepyb1kid.html?title=false&access_token=pk.eyJ1IjoicmFmZmFtaWV0dGEiLCJhIjoiY2tvOHNzNHRsMGF6dTJwcW00NWpyZjV3aSJ9.U9556Jd38UOT_R4q6gzNTQ&zoomwheel=false#12.01/38.11769/13.35235";
                     break;
                 default:
                     console.log("Invalid city selection");
