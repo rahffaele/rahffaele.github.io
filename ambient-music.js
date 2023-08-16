@@ -931,7 +931,7 @@ async function musicStart() {
         index = (index + 1) % noteMidThree.length;
         midThree.triggerAttackRelease(noteMidThree[index], "6m", "+5");
         
-        midLoopThree.interval = "7m";
+        midLoopThree.interval = "3m";
         }, "20m").start();
 
         
