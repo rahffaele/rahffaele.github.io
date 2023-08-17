@@ -953,14 +953,14 @@ async function musicStart() {
         midTwo.triggerAttackRelease(noteMidTwo[index], "2m", "+3");
         
         midLoopTwo.interval = "2m";
-        }, "12m").start();
+        }, "9m").start();
 
         midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
         midThree.triggerAttackRelease(noteMidThree[index], "3m", "+8");
         
         midLoopThree.interval = "1m";
-        }, "20m").start();
+        }, "16m").start();
 
         
 
