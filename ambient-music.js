@@ -33,6 +33,14 @@ let rainMidFour = ["C#3", "E4", "G4"];
 let rainMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
 let rainTreble = ['D4', 'F4', 'G4', 'A4', 'C#5', 'D5'];
 
+let snowBass = ["E2", "C3", "G2", "F2"];
+let snowMidOne = ["G3", "B3", "D3"];
+let snowMidTwo = ["Bb3", "D3"];
+let snowMidThree = ["A3", "F3"];
+let snowMidFour = ["C#3", "E4", "G4"];
+let snowMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
+let snowTreble = ['D4', 'F4', 'G4', 'A4', 'C#5', 'D5'];
+
 let noteBass;
 let noteMidOne;
 let noteMidTwo;
