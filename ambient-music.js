@@ -68,6 +68,8 @@ thunderstormTrackAudio.addEventListener("ended", function() {
   thunderstormTrackAudio.play(); // Start playing again
 });
 
+let lowPassFilter;
+
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
     const responseWeahter = await axios.get(
@@ -306,6 +308,8 @@ async function musicStart() {
                     thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
+
+                    lowPassFilter = 300;
                     break;
                 case "Clouds":
                     iconFileName = "cloudy.svg";
@@ -330,6 +334,8 @@ async function musicStart() {
                     thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
+
+                    lowPassFilter = 1050;
                     break;
                 case "Drizzle":
                     iconFileName = "cloud-drizzle.svg";
@@ -363,6 +369,8 @@ async function musicStart() {
                     thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
+
+                    lowPassFilter = 800;
                     break;
                 case "Rain":
                     iconFileName = "cloud-rain.svg";
@@ -397,6 +405,8 @@ async function musicStart() {
                     thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
+
+                    lowPassFilter = 650;
                     break;
                     break;
                 case "Snow":
@@ -421,6 +431,8 @@ async function musicStart() {
                     thunderstormTrackAudio.pause();
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
+
+                    lowPassFilter = 200;
                     break;
                 case "Thunderstorm":
                 case "Tornado":
@@ -455,6 +467,8 @@ async function musicStart() {
                     rainTrackAudio.pause();
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
+
+                    lowPassFilter = 400;
                     break;
                 case "Mist":
                 case "Haze":
@@ -724,7 +738,7 @@ async function musicStart() {
                 releaseCurve: "linear",
             };
             let filterEnvelope = {
-                baseFrequency: 200,
+                baseFrequency: lowPassFilter,
                 octaves: -2,
                 attack: 2,
                 decay: 3,
