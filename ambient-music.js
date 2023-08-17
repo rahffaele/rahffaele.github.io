@@ -988,8 +988,8 @@ async function musicStart() {
         async function setBPMAsync() {
             try {
                 const windSpeedValue = await getWindSpeedValueAsync();
-                Tone.Transport.bpm.value = Math.floor(120 / windSpeedValue);
-                console.log("new BPM:", Math.floor(120 / windSpeedValue));
+                Tone.Transport.bpm.value = Math.floor(120 * windSpeedValue);
+                console.log("new BPM:", Math.floor(120 * windSpeedValue));
             } catch (error) {
                 console.error(error);
             }
