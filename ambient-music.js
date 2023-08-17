@@ -45,7 +45,7 @@ let filterRain;
 
 const rainTrack = document.getElementById("rain-track");
 let rainTrackAudio = document.getElementById("rain-track-file");
-rainTrackAudio.volume = 0.2;
+rainTrackAudio.volume = 0.4;
 rainTrackAudio.addEventListener("ended", function() {
   rainTrackAudio.currentTime = 0; // Reset the playback time to the beginning
   rainTrackAudio.play(); // Start playing again
@@ -742,7 +742,7 @@ async function musicStart() {
                 octaves: -2,
                 attack: 2,
                 decay: 3,
-                chorus: 5,
+                chorus: 1,
                 release: 1000,
             };
             let filterEnvelope1 = {
