@@ -269,6 +269,9 @@ async function musicStart() {
 
             updateUiWeather(temp, city, humidity, windSpeed, descriptionWeather);
             weatherNote(mainWeather);
+            function getWindSpeed() {
+                return windSpeed;
+            }
 
             const weatherIcon = document.getElementById("weather-icon");
 
@@ -968,6 +971,31 @@ async function musicStart() {
             console.log("treble note:", note);
         }, "6m").start();
 
+        var windSpeedValue = getWindSpeed();
+
+        async function getWindSpeedValueAsync() {
+            return new Promise((resolve, reject) => {
+                const windSpeedValue = getWindSpeed();
+        
+                if (windSpeedValue !== null) {
+                    resolve(windSpeedValue);
+                } else {
+                    reject("Wind speed value is null");
+                }
+            });
+        }
+        
+        async function setBPMAsync() {
+            try {
+                const windSpeedValue = await getWindSpeedValueAsync();
+                Tone.Transport.bpm.value = Math.floor(120 / windSpeedValue);
+                console.log("new BPM:", Math.floor(120 / windSpeedValue));
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        setBPMAsync();
 
         Tone.Transport.start();
         isPlaying = true;
