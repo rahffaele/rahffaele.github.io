@@ -957,7 +957,7 @@ async function musicStart() {
 
         midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
-        midThree.triggerAttackRelease(noteMidThree[index], "3m", "+5");
+        midThree.triggerAttackRelease(noteMidThree[index], "3m", "+8");
         
         midLoopThree.interval = "1m";
         }, "20m").start();
