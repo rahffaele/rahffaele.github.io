@@ -231,6 +231,7 @@ async function musicStart() {
         bassLoop.stop();
         midLoopOne.stop();
         midLoopTwo.stop();
+        autoFilter.stop()
         //midLoopThree.stop();
         trebleLoop.stop();
         bassLoop.dispose();
@@ -238,6 +239,7 @@ async function musicStart() {
         midLoopTwo.stop();
         //midLoopThree.stop();
         trebleLoop.dispose();
+        autoFilter.dispose()
 
         isPlaying = false;
         const playerIcon = document.getElementById("player-icon");
