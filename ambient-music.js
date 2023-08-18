@@ -703,6 +703,20 @@ async function musicStart() {
                 .textContent;
             const currentTravelTime = xmlDoc.querySelector("currentTravelTime")
                 .textContent;
+            function mapSpeedToInteger() {
+              const minSpeed = 1;
+              const maxSpeed = 30;
+              const newRangeMin = 2;
+              const newRangeMax = 12;
+            
+              const newMappedValue = Math.round(
+                ((currentSpeed - minSpeed) * (newRangeMin - newRangeMax)) / (maxSpeed - minSpeed) + newRangeMax
+              );
+
+              return Math.min(Math.max(newMappedValue, newRangeMin), newRangeMax);
+            }
+
+
 
             // Output the extracted values
             console.log("City:", selectedCity);
@@ -1007,16 +1021,36 @@ async function musicStart() {
         midLoopThree.interval = "1m";
         }, "16m").start();
 
+        (async () => {
+          try {
+            async function getTrafficSpeedValueAsync() {
+              return new Promise((resolve, reject) => {
+                const trafficSpeedValue = mapSpeedToInteger();
         
+                if (trafficSpeedValue !== null) {
+                  resolve(trafficSpeedValue);
+                } else {
+                  reject("Wind speed value is null");
+                }
+              });
+            }
+        
+            const trafficSpeedValue = await getTrafficSpeedValueAsync(); // Await the promise
+            let loopDuration = `${trafficSpeedValue+2}m`;
+        
+            trebleLoop = new Tone.Loop((time) => {
+              var randomIndex = Math.floor(Math.random() * noteTreble.length);
+              var note = noteTreble[randomIndex];
+              treble.triggerAttackRelease(note, "1m", time);
+              console.log("treble note:", note);
+            }, loopDuration).start();
+        
+            console.log("Loop treble duration:", loopDuration);
+          } catch (error) {
+            console.error(error);
+          }
+        })();
 
-        trebleLoop = new Tone.Loop((time) => {
-            var randomIndex = Math.floor(Math.random() * noteTreble.length);
-            var note = noteTreble[randomIndex];
-            treble.triggerAttackRelease(note, "1m", time);
-            console.log("treble note:", note);
-        }, "4m").start();
-
-        //var windSpeedValue = getWindSpeed();
 
         async function getWindSpeedValueAsync() {
             return new Promise((resolve, reject) => {
@@ -1033,6 +1067,7 @@ async function musicStart() {
         async function setBPMAsync() {
             try {
                 const windSpeedValue = await getWindSpeedValueAsync();
+                //const trafficSpeedValue = await getTrafficValueAsync();
                 Tone.Transport.bpm.value = Math.floor(60 * windSpeedValue);
                 console.log("new BPM:", Math.floor(60 * windSpeedValue));
             } catch (error) {
