@@ -10,36 +10,40 @@ let tempColorDefault, pollColorDefault;
 var mainWeather;
 
 let clearBass = ["C2", "C2", "F2", "G2"];
-let clearMidOne = ["E3", "E3", "A3", "B3"];
-let clearMidTwo = ["G3", "G3", "C4", "D4"];
-let clearMidThree = ["B3", "B3", "E4", "G3"];
+let clearMidOne = ["E3", "B3", "G3", "E3", "F3", "A3", "B3", "D4"];
+let clearMidTwo = ["E3", "C4", "G3", "D4"];
+let clearMidThree = ["B3", "E4", "G3"];
 //let clearMid = [clearMidOne, clearMidTwo, clearMidThree];
 let clearTreble = ['C5', 'D5', 'E5', 'G5', 'A5', 'C6'];
 
 
 let cloudBass = ["A2", "G2", "C2", "F2"];
-let cloudMidOne = ["C3", "E3", "G3"];
-let cloudMidTwo = ["Bb3", "D3", "F3"];
-let cloudMidThree = ["E3", "G3", "G3"];
-let cloudMidFour = ["A3", "C4", "E4"];
-let cloudMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
+let cloudMidOne = ["C3", "E3", "G3", "Bb3", "G3", "C4", "A3", "C4"];
+let cloudMidTwo = ["A3", "C4", "Bb3", "A3"];
+let cloudMidThree = ["E3", "F3", "D4"];
+//let cloudMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
 let cloudTreble = ['A3', 'C4', 'D4', 'E4', 'G4', 'A4'];
 
 let rainBass = ["D2", "G2", "D3", "A2"];
-let rainMidOne = ["F3", "A3"];
-let rainMidTwo = ["Bb3", "D3"];
-let rainMidThree = ["A3", "F3"];
-let rainMidFour = ["C#3", "E4", "G4"];
-let rainMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
-let rainTreble = ['D4', 'F4', 'G4', 'A4', 'C#5', 'D5'];
+let rainMidOne = ["A3", "C4", "Bb3", "G3", "F3", "D3", "C#3", "E3"];
+let rainMidTwo = ["C4", "A3", "F3", "A3"];
+let rainMidThree = ["A3", "E4", "D4"];
+//let rainMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
+let rainTreble = ['D4', 'F4', 'G4', 'A4', 'Bb4', 'D5'];
 
 let snowBass = ["E2", "C3", "G2", "F2"];
-let snowMidOne = ["G3", "B3", "D3"];
-let snowMidTwo = ["Bb3", "D3"];
-let snowMidThree = ["A3", "F3"];
-let snowMidFour = ["C#3", "E4", "G4"];
-let snowMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
-let snowTreble = ['D4', 'F4', 'G4', 'A4', 'C#5', 'D5'];
+let snowMidOne = ["B3", "D4", "G3", "A3", "D4", "A3", "C4", "E4"];
+let snowMidTwo = ["G3", "D4", "B3", "A3"];
+let snowMidThree = ["D4", "C4", "A3"];
+//let snowMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
+let snowTreble = ['C5', 'D5', 'E5', 'G5', 'A5', 'B5', "C6"];
+
+let thunderBass = ["A2", "G2", "F2", "E2"];
+let thunderMidOne = ["C4", "G3", "B3", "D4", "C4", "A3", "G#3", "B3"];
+let thunderMidTwo = ["E3", "B3", "C4", "B3"];
+let thunderMidThree = ["C4", "D4", "E4"];
+//let snowMid = [cloudMidOne, cloudMidTwo, cloudMidThree, cloudMidFour];
+let thunderTreble = ['A4', 'C5', 'D5', 'E5', 'F5', 'A5', "B5", "C6"];
 
 let noteBass;
 let noteMidOne;
@@ -77,6 +81,8 @@ thunderstormTrackAudio.addEventListener("ended", function() {
 });
 
 let lowPassFilter;
+let releaseFilter;
+let noiseVolume;
 
 async function callApi(){
 	const apiKeyWeather = "49a5b64679cabaa392cc7fe6b5826a92";
@@ -267,6 +273,12 @@ async function musicStart() {
             tempColor = calculateTempColor(temp);
             console.log("color temp:", tempColor);
 
+            let roundedTemp = Math.min(Math.max(temp, -20), 40);
+            let minReleaseFilter = 5;
+            let maxReleaseFilter = 20;
+            releaseFilter = minReleaseFilter + ((maxReleaseFilter - minReleaseFilter) / (40 - (-20))) * (roundedTemp - (-20));
+            releaseFilter = Math.max(minReleaseFilter, Math.min(maxReleaseFilter, releaseFilter));
+
             console.log("Wind Speed:", windSpeed);
             console.log("temp", temp);
             console.log("humidity", humidity);
@@ -274,6 +286,7 @@ async function musicStart() {
             console.log("weather description:", descriptionWeather);
             console.log("sunrise:", sunrise);
             console.log("sunset:", sunset);
+            console.log("releaseFilter:", releaseFilter);
 
             updateUiWeather(temp, city, humidity, windSpeed, descriptionWeather);
             weatherNote(mainWeather);
@@ -320,7 +333,7 @@ async function musicStart() {
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
 
-                    lowPassFilter = 300;
+                    lowPassFilter = 2000;
                     break;
                 case "Clouds":
                     iconFileName = "cloudy.svg";
@@ -346,7 +359,7 @@ async function musicStart() {
                     thunderTrack.classList.remove("clicked-button");
                     thunderTrack.disabled=true;
 
-                    lowPassFilter = 1050;
+                    lowPassFilter = 500;
                     break;
                 case "Drizzle":
                     iconFileName = "cloud-drizzle.svg";
@@ -479,7 +492,7 @@ async function musicStart() {
                     rainTrack.classList.remove("clicked-button");
                     rainTrack.disabled=true;
 
-                    lowPassFilter = 400;
+                    lowPassFilter = 1050;
                     break;
                 case "Mist":
                 case "Haze":
@@ -606,6 +619,15 @@ async function musicStart() {
             const usaqi = response.data.data.current.pollution.aqius;
             pollColor = calculatePollColor(usaqi);
 
+            let roundedUsaqi = Math.min(Math.max(usaqi, 0), 200);
+
+            let minNoiseVolume = -45;
+            let maxNoiseVolume = -30;
+            
+            noiseVolume = minNoiseVolume + ((maxNoiseVolume - minNoiseVolume) / (200 - 0)) * (roundedUsaqi - 0);
+            
+            noiseVolume = Math.max(minNoiseVolume, Math.min(maxNoiseVolume, noiseVolume));
+
             console.log("Poll color:", pollColor);
             console.log(response.data);
             console.log("Aqi US:", usaqi);
@@ -695,30 +717,30 @@ async function musicStart() {
     function makeSynthOne() {
             let envelope = {
                 attack: 0.4,
-                release: 0.5,
+                release: releaseFilter,
                 decay: 0.5,
                 releaseCurve: "linear",
             };
             let filterEnvelope = {
-                baseFrequency: 300,
+                baseFrequency: lowPassFilter,
                 octaves: 1,
                 attack: 2,
                 decay: 3,
-                release: 1000,
+                release: releaseFilter,
             };
             let filterEnvelope1 = {
                 baseFrequency: 500,
                 octaves: -1,
                 attack: 1,
                 decay: 4,
-                release: 5,
+                release: releaseFilter,
             };
             let filterEnvelope2 = {
                 baseFrequency: 300,
                 octaves: 3,
                 attack: 1,
                 decay: 4,
-                release: 5,
+                release: releaseFilter,
             };
 
             return new Tone.DuoSynth({
@@ -744,7 +766,7 @@ async function musicStart() {
         function makeSynthTwo() {
             let envelope = {
                 attack: 0.5,
-                release: 2,
+                release: releaseFilter,
                 decay: 4,
                 releaseCurve: "linear",
             };
@@ -754,21 +776,21 @@ async function musicStart() {
                 attack: 2,
                 decay: 3,
                 chorus: 5,
-                release: 1000,
+                release: releaseFilter,
             };
             let filterEnvelope1 = {
                 baseFrequency: 500,
                 octaves: -1,
                 attack: 1,
                 decay: 4,
-                release: 5,
+                release: releaseFilter,
             };
             let filterEnvelope2 = {
                 baseFrequency: 300,
                 octaves: 3,
                 attack: 1,
                 decay: 4,
-                release: 5,
+                release: releaseFilter,
             };
 
             return new Tone.DuoSynth({
@@ -800,7 +822,6 @@ async function musicStart() {
                     noteTreble = clearTreble;
                     break;
                 case "Clouds":
-                case "Drizzle":
                     noteBass = cloudBass;
                     noteMidOne = cloudMidOne;
                     noteMidTwo = cloudMidTwo;
@@ -808,6 +829,7 @@ async function musicStart() {
                     noteTreble = cloudTreble;
                     break;
                 case "Rain":
+                case "Drizzle":
                     noteBass = rainBass;
                     noteMidOne = rainMidOne;
                     noteMidTwo = rainMidTwo;
@@ -824,24 +846,30 @@ async function musicStart() {
                 case "Thunderstorm":
                 case "Tornado":
                 case "Squall":
-                    noteBass = stormBass;
-                    noteMid = stormMid;
-                    noteTreble = stormTreble;
+                    noteBass = thunderBass;
+                    noteMidOne = thunderMidOne;
+                    noteMidTwo = thunderMidTwo;
+                    noteMidThree = thunderMidThree;
+                    noteTreble = thunderTreble;
                     break;
                 case "Mist":
                 case "Haze":
                 case "Fog":    
-                    noteBass = stormBass;
-                    noteMid = stormMid;
-                    noteTreble = stormTreble;
+                    noteBass = cloudBass;
+                    noteMidOne = cloudMidOne;
+                    noteMidTwo = cloudMidTwo;
+                    noteMidThree = cloudMidThree;
+                    noteTreble = cloudTreble;
                     break;
                 case "Smoke":
                 case "Sand":
                 case "Dust":
                 case "Ash":
-                    noteBass = stormBass;
-                    noteMid = stormMid;
-                    noteTreble = stormTreble;
+                    noteBass = snowBass;
+                    noteMidOne = snowMidOne;
+                    noteMidTwo = snowMidTwo;
+                    noteMidThree = snowMidThree;
+                    noteTreble = snowTreble;
                     break;
                 default:
                     console.log("Invalid mainWeather selection");
@@ -855,12 +883,11 @@ async function musicStart() {
         console.log(noteMidThree);
         console.log(noteTreble);
 
-        bass = makeSynthTwo();
+        bass = makeSynthOne();
         midOne = makeSynthTwo();
         midTwo = makeSynthTwo();
         midThree = makeSynthTwo();
         treble = makeSynthOne();
-        trebleTwo = makeSynthOne();
 
         const trebleSlider = document.getElementById('trebleSlider');
         const trebleVolume = treble.volume; // Get the Tone.Volume object associated with the synth's volume
@@ -897,7 +924,6 @@ async function musicStart() {
         let delay = new Tone.Delay(1.0);
         let delayFade = new Tone.Gain(0.5);
 
-
         const delayEffectInput = document.getElementById("delayEffect");
 
         // Add an event listener to the input element
@@ -910,15 +936,13 @@ async function musicStart() {
         //bass.connect(leftPanner);
         //mid.connect(rightPanner);
 
-        
-
         bass.connect(echo);
+
         midOne.connect(echo);
         midTwo.connect(echo);
         midThree.connect(echo);
 
         treble.connect(echo);
-        trebleTwo.connect(rightPanner);
 
         //leftPanner.connect(echo);
         rightPanner.connect(echo);
@@ -935,7 +959,20 @@ async function musicStart() {
         //midThree.toMaster();
         //treble.toMaster();
 
-       
+        const noise = new Tone.Noise("pink").start();
+        // make an autofilter to shape the noise
+        const autoFilter = new Tone.AutoFilter({
+            frequency: "1000m",
+            baseFrequency: 200,
+            octaves: 8,
+            attack: 20
+        }).toDestination();
+        // connect the noise
+        noise.volume.value = noiseVolume;
+        console.log("Air poll volume:", noiseVolume);
+        noise.connect(autoFilter);
+        // start the autofilter LFO
+        autoFilter.start();
 
         const noteDuration = "6m";
          // Adjust this value as needed
@@ -958,14 +995,14 @@ async function musicStart() {
 
         midLoopTwo = new Tone.Loop((time) => {
         index = (index + 1) % noteMidTwo.length;
-        midTwo.triggerAttackRelease(noteMidTwo[index], "2m", "+3");
+        midTwo.triggerAttackRelease(noteMidTwo[index], "2m", "+3m");
         
         midLoopTwo.interval = "2m";
         }, "9m").start();
 
         midLoopThree = new Tone.Loop((time) => {
         index = (index + 1) % noteMidThree.length;
-        midThree.triggerAttackRelease(noteMidThree[index], "3m", "+8");
+        midThree.triggerAttackRelease(noteMidThree[index], "3m", "+2m");
         
         midLoopThree.interval = "1m";
         }, "16m").start();
@@ -975,11 +1012,11 @@ async function musicStart() {
         trebleLoop = new Tone.Loop((time) => {
             var randomIndex = Math.floor(Math.random() * noteTreble.length);
             var note = noteTreble[randomIndex];
-            treble.triggerAttackRelease(note, "1m", "+1m");
+            treble.triggerAttackRelease(note, "1m", time);
             console.log("treble note:", note);
-        }, "6m").start();
+        }, "4m").start();
 
-        var windSpeedValue = getWindSpeed();
+        //var windSpeedValue = getWindSpeed();
 
         async function getWindSpeedValueAsync() {
             return new Promise((resolve, reject) => {
