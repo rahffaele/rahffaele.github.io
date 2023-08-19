@@ -245,6 +245,7 @@ async function musicStart() {
         midLoopTwo.stop();
         //midLoopThree.stop();
         trebleLoop.dispose();
+        noiseVolume = -60;
 
         isPlaying = false;
         const playerIcon = document.getElementById("player-icon");
