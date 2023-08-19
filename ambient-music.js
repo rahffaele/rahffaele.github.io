@@ -3,6 +3,11 @@ let isPlaying = false;
 //music variables
 let loopOne, loopTwo, loopThree, loopFour, loopHighMelody;
 let synthOne, synthTwo, synthThree, synthFour, highMelody;
+
+let echo;
+let delay;
+let noise;
+let autoFilter;
 //background color variables
 let tempColor, pollColor;
 let tempColorDefault, pollColorDefault;
@@ -232,21 +237,39 @@ function getTime() {
 async function musicStart() {
 
     if (isPlaying) {
-        // Stop the music if it's already playing
-        Tone.Transport.stop();
-        Tone.Transport.cancel();
-        bassLoop.stop();
-        midLoopOne.stop();
-        midLoopTwo.stop();
-        //midLoopThree.stop();
-        trebleLoop.stop();
         bassLoop.dispose();
         midLoopOne.dispose();
-        midLoopTwo.stop();
-        //midLoopThree.stop();
+        midLoopTwo.dispose();
+        //midLoopThree.dispose(); // Dispose once is enough
         trebleLoop.dispose();
-        noiseVolume = -60;
+    
+        // Stop the synthesizers
+        bass.triggerRelease();
+        midOne.triggerRelease();
+        midTwo.triggerRelease();
+        midThree.triggerRelease();
+        treble.triggerRelease();
 
+        // Stop the noise and autoFilter
+        //noise.stop();
+        //autoFilter.stop();
+        //autoFilter.dispose();
+        echo.dispose(); // Stop the echo effect
+        delay.dispose();
+        noise.stop();
+        autoFilter.stop();
+        autoFilter.dispose();
+
+        // Reset the volumes to their initial values
+        //trebleVolume.value = initialTrebleVolume;
+        //harmonyOneVolume.value = initialHarmonyVolume;
+        //harmonyTwoVolume.value = initialHarmonyVolume;
+        //bassVolume.value = initialBassVolume;
+
+        // Stop the transport and cancel scheduled events
+        Tone.Transport.stop();
+        Tone.Transport.cancel();
+    
         isPlaying = false;
         const playerIcon = document.getElementById("player-icon");
         playerIcon.src = "../rahdio/assets/music-icons/play.svg"
@@ -964,8 +987,8 @@ async function musicStart() {
 
         let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
         let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
-        let echo = new Tone.FeedbackDelay("8n", 0.2);
-        let delay = new Tone.Delay(1.0);
+        echo = new Tone.FeedbackDelay("8n", 0.2);
+        delay = new Tone.Delay(1.0);
         let delayFade = new Tone.Gain(0.5);
 
         const delayEffectInput = document.getElementById("delayEffect");
@@ -1003,9 +1026,9 @@ async function musicStart() {
         //midThree.toMaster();
         //treble.toMaster();
 
-        const noise = new Tone.Noise("pink").start();
+        noise = new Tone.Noise("pink").start();
         // make an autofilter to shape the noise
-        const autoFilter = new Tone.AutoFilter({
+        autoFilter = new Tone.AutoFilter({
             frequency: "1000m",
             baseFrequency: 200,
             octaves: 8,
