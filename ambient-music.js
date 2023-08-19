@@ -957,33 +957,36 @@ async function musicStart() {
         treble = makeSynthOne();
 
         const trebleSlider = document.getElementById('trebleSlider');
-        const trebleVolume = treble.volume; // Get the Tone.Volume object associated with the synth's volume
+        function updateTrebleVolume() {
+            const trebleVolumeValue = parseFloat(trebleSlider.value);
+            treble.volume.value = trebleVolumeValue; // Set the volume of the treble control
+        }
+        
+        // Call the update function initially and then every 100 milliseconds (adjust as needed)
+        updateTrebleVolume();
+        setInterval(updateTrebleVolume, 100);
 
-        // Add an event listener to the treble slider
-        trebleSlider.addEventListener('input', function () {
-            const trebleVolumeValue = parseFloat(this.value);
-            trebleVolume.value = trebleVolumeValue;
-        });
-
-        const harmonySlider = document.getElementById('harmonySlider');
-        const harmonyOneVolume = midOne.volume; // Get the Tone.Volume object associated with the synth's volume
-        const harmonyTwoVolume = midTwo.volume;
-
-        // Add an event listener to the treble slider
-        harmonySlider.addEventListener('input', function () {
-            const harmonyVolumeValue = parseFloat(this.value);
-            harmonyOneVolume.value = harmonyVolumeValue;
-            harmonyTwoVolume.value = harmonyVolumeValue;
-        });
+        const midSlider = document.getElementById('harmonySlider');
+        function updateMidVolume() {
+            const midVolumeValue = parseFloat(midSlider.value);
+            midOne.volume.value = midVolumeValue; // Set the volume of the treble control
+            midTwo.volume.value = midVolumeValue;
+            midThree.volume.value = midVolumeValue;
+        }
+        
+        // Call the update function initially and then every 100 milliseconds (adjust as needed)
+        updateMidVolume();
+        setInterval(updateMidVolume, 100);
 
         const bassSlider = document.getElementById('bassSlider');
-        const bassVolume = bass.volume; // Get the Tone.Volume object associated with the synth's volume
-
-        // Add an event listener to the treble slider
-        bassSlider.addEventListener('input', function () {
-            const bassVolumeValue = parseFloat(this.value);
-            bassVolume.value = bassVolumeValue;
-        });
+        function updateBassVolume() {
+            const bassVolumeValue = parseFloat(bassSlider.value);
+            bass.volume.value = bassVolumeValue; // Set the volume of the treble control
+        }
+        
+        // Call the update function initially and then every 100 milliseconds (adjust as needed)
+        updateBassVolume();
+        setInterval(updateBassVolume, 100);
 
         let leftPanner = new Tone.Panner(-0.5); // No longer connected to master!
         let rightPanner = new Tone.Panner(0.5); // No longer connected to master!
@@ -992,13 +995,15 @@ async function musicStart() {
         let delayFade = new Tone.Gain(0.5);
 
         const delayEffectInput = document.getElementById("delayEffect");
-
-        // Add an event listener to the input element
-        delayEffectInput.addEventListener("input", function() {
-        // Update the delayTime value based on the input value
-        delay.delayTime.value = parseFloat(delayEffectInput.value);
-        });
         delayFade.gain.value = 0.75;
+        function updateDelayEffect() {
+            const delayVolumeValue = parseFloat(delayEffectInput.value);
+            delay.delayTime.value = delayVolumeValue; // Set the volume of the treble control
+        }
+        
+        // Call the update function initially and then every 100 milliseconds (adjust as needed)
+        updateDelayEffect();
+        setInterval(updateDelayEffect, 100);
 
         //bass.connect(leftPanner);
         //mid.connect(rightPanner);
