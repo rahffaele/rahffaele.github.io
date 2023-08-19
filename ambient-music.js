@@ -71,13 +71,20 @@ birdsTrackAudio.addEventListener("ended", function() {
   birdsTrackAudio.play(); // Start playing again
 });
 
-const trafficTrack = document.getElementById("traffic-track");
 const thunderTrack = document.getElementById("thunder-track");
 let thunderstormTrackAudio = document.getElementById("thunderstorm-track-file");
 thunderstormTrackAudio.volume = 0.1;
 thunderstormTrackAudio.addEventListener("ended", function() {
   thunderstormTrackAudio.currentTime = 0; // Reset the playback time to the beginning
   thunderstormTrackAudio.play(); // Start playing again
+});
+
+const trafficTrack = document.getElementById("traffic-track");
+let trafficTrackAudio = document.getElementById("traffic-track-file");
+trafficTrackAudio.volume = 0.6;
+trafficTrackAudio.addEventListener("ended", function() {
+  trafficTrackAudio.currentTime = 0; // Reset the playback time to the beginning
+  trafficTrackAudio.play(); // Start playing again
 });
 
 let lowPassFilter;
@@ -231,7 +238,6 @@ async function musicStart() {
         bassLoop.stop();
         midLoopOne.stop();
         midLoopTwo.stop();
-        autoFilter.stop()
         //midLoopThree.stop();
         trebleLoop.stop();
         bassLoop.dispose();
@@ -239,7 +245,6 @@ async function musicStart() {
         midLoopTwo.stop();
         //midLoopThree.stop();
         trebleLoop.dispose();
-        autoFilter.dispose()
 
         isPlaying = false;
         const playerIcon = document.getElementById("player-icon");
@@ -718,7 +723,29 @@ async function musicStart() {
               return Math.min(Math.max(newMappedValue, newRangeMin), newRangeMax);
             }
 
-
+            
+            let isPlaying = false;
+            if (currentSpeed < 15) {
+                    trafficTrack.disabled=false;
+                    trafficTrack.classList.remove("disabled-button");
+                    trafficTrack.classList.remove("general-button");
+                    trafficTrack.addEventListener("click", function() {    
+                          if (isPlaying) {
+                            trafficTrackAudio.pause();
+                            trafficTrack.classList.remove("clicked-button");
+                          } else {
+                            trafficTrackAudio.play();
+                            trafficTrack.classList.add("clicked-button");
+                          }
+                          
+                          isPlaying = !isPlaying;
+                    });
+            }else{
+                trafficTrack.disabled=true;
+                trafficTrack.classList.add("disabled-button");
+                trafficTrack.classList.remove("clicked-button");
+                trafficTrackAudio.pause();
+            }
 
             // Output the extracted values
             console.log("City:", selectedCity);
