@@ -3,7 +3,8 @@
       "../archive_assets/orto padova.png",
       "../archive_assets/cmik.png",
       "../archive_assets/Overview.png",
-      "../stemming_assets/stemming-page1.png"
+      "../stemming_assets/stemming-page1.png",
+      "../archive_assets/rahdio-cover.png"
     ];
 
     const linkUrls = [
@@ -11,6 +12,7 @@
       "../cmik.html",
       "../cx-map.html",
       "../stemming.html"
+      "../rahdio-project.html"
     ];
 
     // Define the fading time (in milliseconds)
