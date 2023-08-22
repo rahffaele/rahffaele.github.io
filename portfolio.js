@@ -1,4 +1,11 @@
 //----------- COVER HOVER FUNCTIONS ------------
+$(document).ready(function(){
+    $("#rahdio-project").hover(function(){
+        $("#rahdio-cover").removeClass("hide");
+    }, function(){
+        $("#rahdio-cover").addClass("hide");
+    });
+});
 
 $(document).ready(function(){
     $("#cxmap-project").hover(function(){
@@ -42,6 +49,13 @@ $(document).ready(function(){
 
 //----------- CLICKABLE DIVS FUNCTIONS ------------
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  var cxmapProject = document.getElementById("rahdio-project");
+  cxmapProject.addEventListener("click", function() {
+    window.location.href = "https://rahffaele.github.io/rahdio-project.html";
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   var cxmapProject = document.getElementById("cxmap-project");

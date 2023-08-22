@@ -120,6 +120,84 @@ h3{
 	height: auto;
 }
 
+button {
+  font-family: Mori;
+  background-color: #5767F9;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: white;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button:hover {
+  background-color: #3B48ED;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+
+button:active {
+  background-color: #5767F9;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+
+.disabled-button {
+  font-family: Mori;
+  background-color: #5767F9;
+  opacity: 50%;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: white;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.disabled-button:hover {
+  font-family: Mori;
+  background-color: #5767F9;
+  opacity: 50%;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: white;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.clicked-button {
+  font-family: Mori;
+  background-color: white;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: black;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.clicked-button:hover {
+  font-family: Mori;
+  background-color: #E6E6E6;
+  margin: 8px 8px 8px 0;
+  font-size: 12pt;
+  padding: 6px 12px 4px 12px;
+  color: black;
+  border-radius: 16px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
 @media (max-width: 768px) {
   .left-column {
     width: 100%;
