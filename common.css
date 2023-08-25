@@ -91,6 +91,11 @@ button:active {
   -webkit-transition: all 0.25s;
 }
 
+img {
+  border-radius: 24px;
+}
+
+
 .disabled-button {
   font-family: Mori;
   background-color: #5767F9;
