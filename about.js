@@ -35,10 +35,10 @@
         const image = images[Math.floor(Math.random() * images.length)];
         const newImage = document.createElement("img");
         newImage.src = image.src;
-        newImage.style.width = "120px";
+        newImage.style.width = "200px";
         newImage.style.height = "auto";
-        newImage.style.left = (event.clientX - 60) + "px";
-        newImage.style.top = (event.clientY - 30) + "px";
+        newImage.style.left = (event.clientX - 100) + "px";
+        newImage.style.top = (event.clientY - 40) + "px";
         
 
         // Add the image to the page
