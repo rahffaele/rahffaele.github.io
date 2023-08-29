@@ -33,28 +33,30 @@
       // Create a new image element
       if (event.clientY > 60 && event.clientY < window.innerHeight - 200) {
         const image = images[Math.floor(Math.random() * images.length)];
-      const newImage = document.createElement("img");
-      newImage.src = image.src;
-      newImage.style.left = event.clientX + "px";
-      newImage.style.top = event.clientY + "px";
-      newImage.style.width = "30%";
+        const newImage = document.createElement("img");
+        newImage.src = image.src;
+        const middleX = event.clientX - newImage.width / 2;
+        const middleY = event.clientY - newImage.height / 2;
+        newImage.style.left = middleX + "px";
+        newImage.style.top = middleY + "px";
+        newImage.style.width = "30%";
 
-      // Add the image to the page
-      document.body.appendChild(newImage);
+        // Add the image to the page
+        document.body.appendChild(newImage);
 
-      // Fade the image out after a delay
-      setTimeout(() => {
-        newImage.style.opacity = 0;
+        // Fade the image out after a delay
         setTimeout(() => {
-          document.body.removeChild(newImage);
+          newImage.style.opacity = 0;
+          setTimeout(() => {
+            document.body.removeChild(newImage);
+          }, fadeTime);
         }, fadeTime);
-      }, fadeTime);
 
-      // Add a click listener to the image
-      const linkUrl = linkUrls[images.indexOf(image)];
-      newImage.addEventListener("click", () => {
-        window.open(linkUrl, "_self");
-      });
+        // Add a click listener to the image
+        const linkUrl = linkUrls[images.indexOf(image)];
+        newImage.addEventListener("click", () => {
+          window.open(linkUrl, "_self");
+        });
       }
     });
 
