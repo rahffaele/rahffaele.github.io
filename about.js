@@ -11,7 +11,7 @@
       "../orto-botanico-padova.html",
       "../cmik.html",
       "../cx-map.html",
-      "../stemming.html"
+      "../stemming.html",
       "../rahdio-project.html"
     ];
 
