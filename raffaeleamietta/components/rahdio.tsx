@@ -108,7 +108,7 @@ import {
                   <div className="col-span-4">
                     <h5>Overview</h5>
                     <p>
-                      Rahdio is a personal exercise{" "}
+                      Rahdio is a personal exercise ahaha{" "}
                     </p>
                     <p>
                       They requested for a comprehensive interface redesign with a
