@@ -1,0 +1,12 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:black
+}
+
+a {
+    text-decoration:dotted;
+    color: black;
+}
+a:hover {
+    text-decoration:underline dotted;
+}
