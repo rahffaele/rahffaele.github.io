@@ -109,7 +109,7 @@
                 isValidMove(x, y) {
                     return this.maze[y][x] === ' ' || 
                            this.maze[y][x] === '.' || 
-                           this.maze[y][x] === 'E';
+                           this.maze[y][x] === '→';
                 }
     
                 movePlayer(dx, dy) {
@@ -124,7 +124,7 @@
                         this.playerPos.y = newY;
     
                         if (this.maze[newY][newX] === '→') {
-                            alert('Congratulations! You escaped the maze!');
+                            alert('mmh... i should make this harder');
                             this.initializeMaze();
                         }
     
