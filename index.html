@@ -45,5 +45,127 @@
           <p>
             <a href="mailto:raffaele.amietta@gmail.com">email</a>
           </p>
+
+          <!-- maze -->
+
+          <div>
+            <div id="instructions">
+              <p>---</p>
+              <p>use WASD keys to escape the maze</p>
+            </div>
+            <pre id="maze"></pre>
+            <!-- <button id="reset-btn">Reset Maze</button> -->
+        </div>
+    
+        <script>
+            class AsciiMaze {
+                constructor() {
+                    this.initializeMaze();
+                    this.mazeElement = document.getElementById('maze');
+                    this.resetButton = document.getElementById('reset-btn');
+                    this.setupControls();
+                    this.renderMaze();
+                }
+    
+                initializeMaze() {
+                    this.maze = [
+                      
+                        "==================================================.",
+                        "| |         | |   |         |     |   |     |     |",
+                        "| '=. .==== | | | | .== .=. '=. ==' | | .=. | | | |",
+                        "|   | |     |   |   |   | |   |     |   | |   | | |",
+                        "|=. | | ====+=====. | .=' '=. '=. ==+===' '===' | |",
+                        "| |   |     |     | | |     |   |   |       |   | |",
+                        "| '======== | ==. |=' | ==. '=. '=. '==== | | ==| |",
+                        "|   |       |   | |   |   |   |   |       | |   | |",
+                        "| | | ========= | | .===. '=. |== |=======' |=. | |",
+                        "| | |     |     |   |   |   | |   | |       | | | |",
+                        "| '=====. | .=======' | |=. | | .=' | .=====' | '=|",
+                        "|       |   |         | | | |   |   | |       |   |",
+                        "| | ========' ========| | | |===| ==' | .==== |== |",
+                        "| |       |       |   |   | |   |       |     |   |",
+                        "| '=====. | .==== | .=' .=' | ==| .===========' | |",
+                        "|   |   |   | |   | |   |   |   | |             | |",
+                        "|=. | ======' | .=' | ==| .=' | | | .===========' |",
+                        "| | |         | |       | |   |   | | |   |   |   |",
+                        "| | '== .==== | '=======' '=======' | | | | | | =='",
+                        "|       |     |                     |   |   |     →",
+                        "'==================================================",
+                    ];
+                    this.trail = new Set();
+                    this.playerPos = { x: 1, y: 1 };
+                }
+    
+                renderMaze() {
+                    this.mazeElement.textContent = this.maze.map((row, y) => 
+                        row.split('').map((cell, x) => {
+                            if (x === this.playerPos.x && y === this.playerPos.y) return '✴︎';
+                            if (this.trail.has(`${x},${y}`)) return '.';
+                            return cell;
+                        }).join('')
+                    ).join('\n');
+                }
+    
+                isValidMove(x, y) {
+                    return this.maze[y][x] === ' ' || 
+                           this.maze[y][x] === '.' || 
+                           this.maze[y][x] === 'E';
+                }
+    
+                movePlayer(dx, dy) {
+                    const newX = this.playerPos.x + dx;
+                    const newY = this.playerPos.y + dy;
+    
+                    if (this.isValidMove(newX, newY)) {
+                        // Add current position to trail
+                        this.trail.add(`${this.playerPos.x},${this.playerPos.y}`);
+    
+                        this.playerPos.x = newX;
+                        this.playerPos.y = newY;
+    
+                        if (this.maze[newY][newX] === '→') {
+                            alert('Congratulations! You escaped the maze!');
+                            this.initializeMaze();
+                        }
+    
+                        this.renderMaze();
+                    }
+                }
+    
+                setupControls() {
+                    document.addEventListener('keydown', (event) => {
+                        switch(event.key) {
+                            case 'ArrowUp':
+                            case 'w':
+                                this.movePlayer(0, -1);
+                                break;
+                            case 'ArrowDown':
+                            case 's':
+                                this.movePlayer(0, 1);
+                                break;
+                            case 'ArrowLeft':
+                            case 'a':
+                                this.movePlayer(-1, 0);
+                                break;
+                            case 'ArrowRight':
+                            case 'd':
+                                this.movePlayer(1, 0);
+                                break;
+                        }
+                    });
+    
+                    // Add reset button functionality
+                    // this.resetButton.addEventListener('click', () => {
+                    //     this.initializeMaze();
+                    //     this.renderMaze();
+                    // });
+                }
+            }
+    
+            // Initialize the maze when the page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                new AsciiMaze();
+            });
+        </script>
   </body>
 </html>
