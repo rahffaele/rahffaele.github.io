@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friction Garden</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script/cursor.js"></script>
+  </head>
+  <body>
+    <!-- activity log -->
+    <div id="activity-log">
+      <div class="slot">
+        <div class="slot-label">X,Y</div>
+        <div id="coordinates-value" class="slot-value">0, 0</div>
+      </div>
+      <div class="slot">
+        <div class="slot-label">DISTANCE TRAVELLED</div>
+        <div id="distance-value" class="slot-value">0.00 m</div>
+      </div>
+      <div class="slot">
+        <div class="slot-label">HOURS SPENT HERE</div>
+        <div id="time-value" class="slot-value">00.0 hrs</div>
+      </div>
+      <div class="slot">
+        <div class="slot-label">SPEED</div>
+        <div id="speed-value" class="slot-value">00.0 m/s</div>
+      </div>
+    </div>
+    <script src="script/activitylog.js"></script>
+
+    <!-- ------ -->
+    <div class="pop-up" id="popup">
+      <h2>
+        Friction is resistance. It derives from physical interaction between
+        humans, and humans and things – its reach is holistic.
+      </h2>
+      <p>
+        All senses, elements and emotions play a role: sight, sound, smell,
+        taste, touch, air, earth, temperature, agitation, passion, joy,
+        sadness... With movement comes friction. The more we move and act, the
+        more friction we encounter. The more friction there is, the more we
+        engage and care. Friction drives our engagement. Friction, in this
+        context, is not synonymous with either anger or conflict, nor is it
+        malfunctioning technology. Friction is an essential ingredient that
+        makes up our humanness and sparks human connection. Friction is a
+        lively, intrinsic experience.
+      </p>
+      <p>
+        To facilitate it: design [products with] digital technology in a way
+        that makes space for our humanness. Here friction is a core ingredient.
+        Digital technology should create environments and situations in which we
+        can truly connect with each other, as well as with the unknown, the
+        uncontrolled, with all senses, all elements, all emotions. It should
+        create situations that are not predicted, measured and calculated
+        beforehand; situations that result from and amount to the present
+        moment.
+      </p>
+      <button onclick="dismissPopup()" class="button">Dismiss</button>
+    </div>
+    <script>
+      function dismissPopup() {
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

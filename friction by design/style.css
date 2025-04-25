@@ -1,0 +1,94 @@
+@font-face {
+  font-family: William Subhead;
+  src: url(assets/font/William\ Subhead\ Pro\ Reg.otf);
+}
+
+body {
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  background-color: #fff;
+  font-family: William Subhead;
+  color: #333;
+}
+body {
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(-90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(
+      transparent 3px,
+      #f2f2f2 3px,
+      #f2f2f2 78px,
+      transparent 78px
+    ),
+    linear-gradient(-90deg, #aaa 1px, transparent 1px),
+    linear-gradient(
+      -90deg,
+      transparent 3px,
+      #f2f2f2 3px,
+      #f2f2f2 78px,
+      transparent 78px
+    ),
+    linear-gradient(#aaa 1px, transparent 1px), #f2f2f2;
+  background-size: 8px 8px, 8px 8px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
+    80px 80px, 80px 80px;
+}
+#main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+#activity-log {
+  width: 300px;
+  padding: 15px;
+  display: absolute;
+}
+
+.slot {
+  margin-bottom: 16px;
+}
+
+.slot-label {
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.slot-value {
+  font-size: 14px;
+  color: #333;
+}
+
+.pop-up {
+  position: fixed; /* Ensures the popup is positioned relative to the viewport */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjust for the element's width and height */
+  background-color: #fff;
+  border: solid 0.75px black;
+  border-radius: 4px;
+  padding: 8px 24px 16px 24px;
+  width: 40%; /* 40% of the viewport width */
+  box-sizing: border-box; /* Padding and borders included in width */
+}
+h2 {
+  text-transform: capitalize;
+}
+
+.button {
+  background-color: #000; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  float: right;
+}

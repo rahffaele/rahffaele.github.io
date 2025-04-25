@@ -1,0 +1,181 @@
+img {
+	width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title-column {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-top: 5%;
+}
+
+.fullimg-column {
+  width: 100%;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  background-color: #2F7BFF;
+}
+
+.fullimg-column-pad {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.img-column {
+  width: 60%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.left-column {
+  width: 40%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.right-column {
+  width: 40%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.little-column {
+  width: 20%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.list {
+	font-family: "Mori", sans-serif;
+	color: #5767F9;
+	display: inline-block;
+}
+
+
+.list-element {
+	font-family: "Mori", sans-serif;
+	color: #5767F9;
+	text-align: left;
+	padding: 8px 0;
+}
+
+.side-image {
+	display: inline;
+	max-width: 49%;
+}
+
+.gallery-image {
+  display: inline;
+  max-width: auto;
+}
+
+.grid-image {
+  padding-bottom: 25px;
+}
+
+.footer-column {
+  width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+h1 {
+	font-family: "Mori", sans-serif;
+	font-size: 4vw;
+	color: #5767F9;
+	margin-bottom: 16px;
+}
+
+h2 {
+	font-family: "Mori", sans-serif;
+	color: #5767F9;
+}
+
+h3 {
+	font-family: "Mori", sans-serif;
+	color: #5767F9;
+	opacity: 50%;
+}
+
+p {
+  font-family: 'Mori', sans-serif;
+  color: #5767F9;
+}
+
+sup {
+	font-size: 60%;
+	font-family: 'Mori', sans-serif;
+  	color: black;
+}
+
+.sticky-title {
+  position: sticky;
+  top: 50px;
+  backdrop-filter: blur(5px);
+  background-color: #F1F2F450;
+}
+
+
+/* responsiveness */
+
+@media (max-width: 768px) {
+  .title-column {
+  width: 100%;
+  margin-top: 15%;
+  }
+
+  .img-column {
+  width: 100%;
+  }
+
+  .left-column {
+    width: 100%;
+  }
+
+  .right-column {
+    width: 100%;
+  }
+
+  .little-column {
+  width: 100%;
+  }
+  .side-image {
+	display: inline;
+	max-width: 100%;
+	margin-top: 8px;
+  }
+
+  .footer-column {
+  font-size: 12px;
+  }
+
+  .gallery-image {
+  max-width: 25%;
+  }
+
+  h1 {
+	font-family: "Mori", sans-serif;
+	font-size: 40px;
+	color: #5767F9;
+	margin-bottom: 8px;
+ }
+
+ video {
+	width: 100%;
+ }
+
+
+
+}
+
+
+{}

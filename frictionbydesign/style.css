@@ -1,0 +1,73 @@
+@font-face {
+    font-family: William Subhead;
+    src: url(assets/font/William\ Subhead\ Pro\ Reg.otf);
+}
+@font-face {
+    font-family: "Ortica";
+    src: url(assets/font/Ortica/web/OrticaLinear-Regular.woff2);
+}
+
+body {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    background-color: #fff;
+    font-family: "Ortica";
+    color: #333;
+}
+body {
+    background:
+        linear-gradient(-90deg, rgba(0,0,0,.05) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px), 
+        linear-gradient(-90deg, rgba(0, 0, 0, .04) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+        linear-gradient(transparent 3px, #f2f2f2 3px, #f2f2f2 78px, transparent 78px),
+        linear-gradient(-90deg, #aaa 1px, transparent 1px),
+        linear-gradient(-90deg, transparent 3px, #f2f2f2 3px, #f2f2f2 78px, transparent 78px),
+        linear-gradient(#aaa 1px, transparent 1px),
+        #f2f2f2;
+    background-size:
+        8px 8px,
+        8px 8px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px,
+        80px 80px;
+}
+#main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#activity-log {
+    width: 300px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slot {
+    margin-bottom: 16px;
+}
+
+.slot-label {
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.slot-value {
+    font-size: 14px;
+    color: #333;
+}
+
+.pop-up {
+    padding: 16px;
+    border-radius: 4px;
+    border: solid 1px black;
+    background-color: #fff;
+    margin: 32px auto;
+    align-items: center;
+    max-width: 30%;
+}
