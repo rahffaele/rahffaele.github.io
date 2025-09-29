@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "content/about.md"
+        label: "About Me"
+        name: "about"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    file: "content/projects.json"
+    fields:
+      - {
+          label: "Projects",
+          name: "projects",
+          widget: "list",
+          fields:
+            [
+              { label: "Title", name: "title", widget: "string" },
+              { label: "URL", name: "url", widget: "string" },
+              { label: "Description", name: "description", widget: "text" },
+            ],
+        }
